@@ -18,6 +18,7 @@ hang_words = ["HANG", "HANGING", "HUNG", "HANGED"]
 name_words = ["CINNAMON BUN", "BEST GIRL"]
 goodnight_words = ["GOODNIGHT", "GN", "GOODNIGHT,", "GOODNIGHT!"]
 kill_words = ["KILL"]
+breakfast_words =["BREAKFAST"]
 
 s_poem_intros = ["Oh, I really loved writing this one!", "I hope you like it!", "I can't wait to show you this one!"]
 n_poem_intros = ["I hope she doesn't get mad at me for showing you this...", "Oh! This is one of Natsuki's best poems!", "Aw, this is a cute one, just like her!"]
@@ -43,7 +44,7 @@ laughs = ["Hehehehehe!~", "Ahahahaha!!", "*giggles*", "**PFFFT AHAHAHAHAHAHHAHAH
 goodafternoon_reactions = ["Good afternoon!", "Afternoon?? Shoot! I'm late for school again!", "Good afternoon, indeed!", "Afternoon!"]
 headpat_reactions = ["Hehehe!~", "Just don't mess up my bow!", "S-stop being so silly! :blush:", "Well, my hair's already pretty messy, so I don't see an issue!", "Hehehe! Thank you!"]
 suicide_prevention = ["H-Hey! There's no need to do that, I promise you! Someone out there still wants you to keep going, I'm sure!", "If I'm reading this right, then it sounds like you're thinking of doing something terrible. Please, don't do it!", "Listen, I've been where you are. You'll get through it, I promise.", "Here, this is the National Suicide Prevention Lifeline. They'll be able to help you, I promise! 1-800-273-8255"]
-
+breakfast_reaction = ["I WANT BREAKFAST!"]
 
 answers = ["Yes!", "No.", "Maybe.", "Possibly?", "Of course, silly!", "I'd say ask Monika, but she's busy being ~~a meanie~~ an amazing club president!", "I'd say ask Yuri, but she's a little shy at the moment.", "I'd say ask Natsuki, but she's busy baking some cookies for ~~me to steal~~ the club!", "You've got a better chance of having a happy ending in DDLC! Ehehe...~", "Maybe we should ask The Magic Conch, instead.", "As sure as I'm depressed!", "Not really.", "My Vice President Powers tell me yes!", "My Vice President Powers tell me no!", "My Vice President Powers tell me maybe!", "J-Just a little bit!"]
 
@@ -135,6 +136,16 @@ async def on_message(message):
                     await asyncio.sleep(1)
                     await channel.send(random.choice(hang_reactions))
                     return
+        elif word.upper() in breakfast_words:
+            chat_serverID = message.guild.id
+            if chat_serverID in s_hang_false_ids:
+                pass
+            else:
+                await asyncio.sleep(1)
+                await channel.trigger_typing()
+                await asyncio.sleep(1)
+                await channel.send(random.choice(breakfast_reactions))
+                return
         elif word.upper() in name_words:
             chat_serverID = message.guild.id
             if chat_serverID in s_hang_false_ids:
