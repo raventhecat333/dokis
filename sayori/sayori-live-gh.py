@@ -220,7 +220,7 @@ async def on_message(message):
             await channel.send(random.choice(jokes))
             await asyncio.sleep(5)
             if Author in joke_cooldown:
-		del joke_cooldown[Author]
+	    del joke_cooldown[Author]
             return
 
     if message.content.upper().startswith('S_HUG'):
