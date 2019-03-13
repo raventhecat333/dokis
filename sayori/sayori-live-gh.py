@@ -47,6 +47,17 @@ suicide_prevention = ["H-Hey! There's no need to do that, I promise you! Someone
 
 answers = ["Yes!", "No.", "Maybe.", "Possibly?", "Of course, silly!", "I'd say ask Monika, but she's busy being ~~a meanie~~ an amazing club president!", "I'd say ask Yuri, but she's a little shy at the moment.", "I'd say ask Natsuki, but she's busy baking some cookies for ~~me to steal~~ the club!", "You've got a better chance of having a happy ending in DDLC! Ehehe...~", "Maybe we should ask The Magic Conch, instead.", "As sure as I'm depressed!", "Not really.", "My Vice President Powers tell me yes!", "My Vice President Powers tell me no!", "My Vice President Powers tell me maybe!", "J-Just a little bit!"]
 
+#ok so heres the cooldowns. the current implementation goes like this:
+#	after a command has been entered, add the user to the list
+#	if the user tries to run the command again while their name is in the list, dont do the command
+#	after 5 seconds, remove that user from the list
+#it seems like there are times when that code that removes the user from the list doesnt run. what we really should do is:
+#	after a command has been entered, set the users value to the time that the command was run
+#	if the user tries to run the command again while their name's value is greater than the current time plus however long the cooldown is, dont do the command
+#	every certain amount of time (maybe 15 to 30 minutes) clear all values that have expired (maybe even the whole map, it shouldnt hurt) so the map doesnt become huge
+
+#of course these lists need to be changed to maps
+
 ask_cooldown = []
 commands_cooldown = []
 feed_cooldown = []
@@ -54,7 +65,7 @@ headpat_cooldown = []
 help_cooldown = []
 hug_cooldown = []
 invite_cooldown = []
-joke_cooldown = []
+joke_cooldown = {}
 lifeline_cooldown = []
 poems_cooldown = []
 quote_cooldown = []
@@ -194,11 +205,12 @@ async def on_message(message):
 
     if message.content.upper().startswith('S_JOKE'):
         Author = message.author.id
-        if Author in joke_cooldown:
+        CurTime = time.time()
+        if Author in joke_cooldown and joke_cooldown[Author] > CurTime():
             await channel.send("Hold on! I need time to think of another joke for you...")
             return
         else:
-            joke_cooldown.insert(0, Author)
+            joke_cooldown[Author] = CurTime + 5.0
             await asyncio.sleep(1)
             await channel.trigger_typing()
             await asyncio.sleep(1)
@@ -206,7 +218,7 @@ async def on_message(message):
             "What do attorneys wear to court? Lawsuits!", "Why are there gates around cemeteries? Everyone is dying to get in!", "Why did the baby strawberry cry? His parents were in a jam!", "I was gonna tell a joke about a broken pencil, but it's pointless.", "The past, present, and future walk into a bar. It was tense.", "How do you comfort the Grammar Police? \"There, they're, their...\"", "Is there a word in the English language that uses all 5 vowels, as well as 'y'? Unquestionably!", "Once, I was spacing out in class and my English teacher asked me to name two pronouns. Not sure who she was talking to, I replied, \"Who, me?\"", "Why do writers feel so cold? They're surrounded by drafts!", "A man went into a library and asked for a book on how to commit suicide. The librarian replies, \"Why would I give you that? You won't return it!\"", "\"I'm sorry\" and \"I apologize\" mean the same thing. Unless you're at a funeral.", "A dyslexic man walks into a bra..."]
             await channel.send(random.choice(jokes))
             await asyncio.sleep(5)
-            joke_cooldown.remove(Author)
+            del joke_cooldown[Author]
             return
 
     if message.content.upper().startswith('S_HUG'):
