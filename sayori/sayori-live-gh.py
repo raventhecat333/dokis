@@ -18,7 +18,7 @@ hang_words = ["HANG", "HANGING", "HUNG", "HANGED"]
 name_words = ["CINNAMON BUN", "BEST GIRL"]
 goodnight_words = ["GOODNIGHT", "GN", "GOODNIGHT,", "GOODNIGHT!"]
 kill_words = ["KILL"]
-breakfast_words = ["BREAKFAST"]
+breakfast_words =["BREAKFAST"]
 
 s_poem_intros = ["Oh, I really loved writing this one!", "I hope you like it!", "I can't wait to show you this one!"]
 n_poem_intros = ["I hope she doesn't get mad at me for showing you this...", "Oh! This is one of Natsuki's best poems!", "Aw, this is a cute one, just like her!"]
@@ -44,11 +44,13 @@ laughs = ["Hehehehehe!~", "Ahahahaha!!", "*giggles*", "**PFFFT AHAHAHAHAHAHHAHAH
 goodafternoon_reactions = ["Good afternoon!", "Afternoon?? Shoot! I'm late for school again!", "Good afternoon, indeed!", "Afternoon!"]
 headpat_reactions = ["Hehehe!~", "Just don't mess up my bow!", "S-stop being so silly! :blush:", "Well, my hair's already pretty messy, so I don't see an issue!", "Hehehe! Thank you!"]
 suicide_prevention = ["H-Hey! There's no need to do that, I promise you! Someone out there still wants you to keep going, I'm sure!", "If I'm reading this right, then it sounds like you're thinking of doing something terrible. Please, don't do it!", "Listen, I've been where you are. You'll get through it, I promise.", "Here, this is the National Suicide Prevention Lifeline. They'll be able to help you, I promise! 1-800-273-8255"]
+
 breakfast_reactions = ["I WANT BREAKFAST!"]
 jokes = ["What do you call a mix between a fish and an elephant? Swimming trunks!", "I was going to tell a joke about a skunk, but, honestly, it really stinks.", "Why did the rooster cross the road? To prove he wasn't a chicken!", "Why did the golfer wear two pairs of pants? In case he got a hole in one!", "I have severe depression. That's not a joke, it's a cry for help.", "My life. Ehehe...~", "What do you get when you cross an author and an alcoholic? Ernest Hemmingway!", "What do you call fake spaghetti? An im-pasta!", "Why don't cannibals eat clowns? Because they taste funny...", "What do you call a bird that sticks to everything? A vel-crow!", "What do you call a sleepwalking nun? A Roamin' Catholic!", "What's brown and sticky? A stick!", "Why do seagulls fly over the sea? Because if they flew over the bay, they'd be bagels.", "How many tickles does it take to make an octopus laugh? Ten tickles!", "Why do stadiums get hot after games? All the fans left!", "What do attorneys wear to court? Lawsuits!", "Why are there gates around cemeteries? Everyone is dying to get in!", "Why did the baby strawberry cry? His parents were in a jam!", "I was gonna tell a joke about a broken pencil, but it's pointless.", "The past, present, and future walk into a bar. It was tense.", "How do you comfort the Grammar Police? \"There, they're, their...\"", "Is there a word in the English language that uses all 5 vowels, as well as 'y'? Unquestionably!", "Once, I was spacing out in class and my English teacher asked me to name two pronouns. Not sure who she was talking to, I replied, \"Who, me?\"", "Why do writers feel so cold? They're surrounded by drafts!", "A man went into a library and asked for a book on how to commit suicide. The librarian replies, \"Why would I give you that? You won't return it!\"", "\"I'm sorry\" and \"I apologize\" mean the same thing. Unless you're at a funeral.", "A dyslexic man walks into a bra..."]
 normal_hugs = ["One hug, coming right up! *hugs <@%s>*", "I'll try not to squeeze too hard! *hugs <@%s>*", "Time for the super-mega-cinnamon-bun hug! *hugs <@%s>*", "How could I say no to a hug? *hugs <@%s>*", "Yay, hugs! *hugs <@%s>*"]
 quotes = ["I want breakfast.", "AAAAAaaaaAAAAAAAAHH!!!!", "get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head get out of my head", "I made eggs and toast!", "It's bad to skip breakfast! I get all cranky...", "I was playing with the crayons and smacked my forehead into the shelf!", "Yuri's boobs are just as they've always been! Big and beautiful!", "I did something bad, and now I have to accept the revolution!", "This isn't the napping club!", "I'm fine with--looking like a unicorn--", "So, if I keep it unbuttoned then I won't get a boyfriend, right?"]
 mentioned_hugs = ["One hug, coming right up! *hugs %s*", "I'll try not to squeeze too hard! *hugs %s*", "Time for the super-mega-cinnamon-bun hug! *hugs %s*", "How could I say no to a hug? *hugs %s*", "Yay, hugs! *hugs %s*"]
+
 
 answers = ["Yes!", "No.", "Maybe.", "Possibly?", "Of course, silly!", "I'd say ask Monika, but she's busy being ~~a meanie~~ an amazing club president!", "I'd say ask Yuri, but she's a little shy at the moment.", "I'd say ask Natsuki, but she's busy baking some cookies for ~~me to steal~~ the club!", "You've got a better chance of having a happy ending in DDLC! Ehehe...~", "Maybe we should ask The Magic Conch, instead.", "As sure as I'm depressed!", "Not really.", "My Vice President Powers tell me yes!", "My Vice President Powers tell me no!", "My Vice President Powers tell me maybe!", "J-Just a little bit!"]
 
@@ -151,6 +153,16 @@ async def on_message(message):
                     await asyncio.sleep(1)
                     await channel.send(random.choice(hang_reactions))
                     return
+        elif word.upper() in breakfast_words:
+            chat_serverID = message.guild.id
+            if chat_serverID in s_hang_false_ids:
+                pass
+            else:
+                await asyncio.sleep(1)
+                await channel.trigger_typing()
+                await asyncio.sleep(1)
+                await channel.send(random.choice(breakfast_reactions))
+                return
         elif word.upper() in name_words:
             chat_serverID = message.guild.id
             if chat_serverID in s_hang_false_ids:
