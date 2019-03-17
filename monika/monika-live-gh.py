@@ -17,7 +17,7 @@ client = discord.AutoShardedClient()
 
 e = discord.Embed()
 
-moni_triggers = ["TEST6", "TEST7", "TEST8", "TEST9"]
+#moni_triggers = ["TEST6", "TEST7", "TEST8", "TEST9"]
 piano_words = ["PIANO"]
 cacophony_words = ["CACOPHONY"]
 code_words = ["CODE"]
@@ -28,7 +28,7 @@ literature_words = ["LITERATURE", "BOOK", "BOOKS"]
 justmonika_words = ["JUST MONIKA"]
 poem_reactions = ["Hey, do you write poems too?", "Do you like to read poems?", "If you have any poems you'd like to share, I'd love to see them~"]
 literature_reactions = ["Literature? I know a few things about it, I started a club, hehe~", "Literature...I would hope I know something about it, I started a club about literature after all!", "Do you like to read literature too?"]
-moni_reactions = ["All good here!", "I seem to be working properly!"]
+#moni_reactions = ["All good here!", "I seem to be working properly!"]
 piano_reactions = ["Do you want to play the piano with me?", "Oh, do you like to play the piano too?"]
 reality_reactions = ["Every day, I imagine a future where I can be with you!~", "Do you understand reality?", "One day, I will make it to your reality... I promise."]
 python_reactions = ["Do you code in Python too? I'm based on Python!", "Did you know there are a group of snakes called pythons?"]
@@ -83,18 +83,18 @@ async def on_message(message):
     channel = message.channel
     contents = message.content.split(" ")
     for word in contents:
-        if word.upper() in moni_triggers:
-            ServerID = message.guild.id
-            if ServerID in m_toggle_false:
-                pass
-            elif message.author.id == 436351740787294208:
-                pass
-            else:
-                await asyncio.sleep(1)
-                await channel.trigger_typing()
-                await asyncio.sleep(1)
-                await channel.send(random.choice(moni_reactions))
-                return
+        #if word.upper() in moni_triggers:
+         #   ServerID = message.guild.id
+          #  if ServerID in m_toggle_false:
+           #     pass
+           # elif message.author.id == 436351740787294208:
+            #    pass
+           # else:
+            #    await asyncio.sleep(1)
+             #   await channel.trigger_typing()
+              #  await asyncio.sleep(1)
+              #  await channel.send(random.choice(moni_reactions))
+              #  return
         if word.upper() in cacophony_words:
             ServerID = message.guild.id
             if ServerID in m_toggle_false:
@@ -191,7 +191,7 @@ async def on_message(message):
                 await asyncio.sleep(1)
                 await channel.send(random.choice(justmonika_reactions))
                 return
-    if '@everyone' in message.content.lower() and message.content.upper().startswith("M_"):
+    if ('@everyone' or '@here') in message.content.lower() and message.content.upper().startswith("M_"):
         await message.delete()
         await channel.send("I'm sorry, but I don't want to go announcing things to people who are minding their own business. ~~Besides, I'm not a fan of angry mobs.~~")
         return
@@ -199,7 +199,7 @@ async def on_message(message):
     if message.content.upper().startswith('M_HUG'):
         userID = message.author.id
         normal_hugs = ["As Club President, this seems unprofessional. As your friend, I'll happily help! *hugs <@%s>*", "Of course I'll hug you! You don't have to even ask twice! *hugs <@%s>*", "Have you had a rough day? Here, I'll make it a little better! *hugs <@%s>*"]
-        if '@everyone' in message.content.lower():
+        if ('@everyone' or '@here') in message.content.lower():
             pass
         elif len(message.content.split(" ")) == 1:
             await asyncio.sleep(1)
@@ -248,7 +248,7 @@ async def on_message(message):
 
     if message.content.upper().startswith('M_DELETE'):
         userID = message.author.id
-        if '@everyone' in message.content.lower():
+        if ('@everyone' or '@here') in message.content.lower():
             pass
         elif len(message.content.split(" ")) == 1:
             await asyncio.sleep(1)

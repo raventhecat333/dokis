@@ -111,7 +111,7 @@ async def on_message(message):
     if message.content.upper().startswith('N_HUG'):
         userID = message.author.id
         normal_hugs = ["F-fine, but only because I'll look like a jerk if I don't! *hugs <@%s>*", "I guess a quick hug never hurt anyone... *hugs <@%s>*"]
-        if '@everyone' in message.content.lower():
+        if ('@everyone' or '@here') in message.content.lower():
             pass
         elif len(message.content.split(" ")) == 1:
             await asyncio.sleep(1)
@@ -134,7 +134,7 @@ async def on_message(message):
 
     if message.content.upper().startswith('N_MOTIVATE'):
         member = message.content.split(" ")[1]
-        if '@everyone' in message.content.lower():
+        if ('@everyone' or '@here') in message.content.lower():
             pass
         elif len(message.content.split(" ")) == 1:
             await asyncio.sleep(1)
@@ -153,7 +153,7 @@ async def on_message(message):
             await channel.send(random.choice(mentioned_motivations) % (member))
 
     if message.content.upper().startswith('N_HEADPAT'):
-        if '@everyone' in message.content.lower():
+        if ('@everyone' or '@here') in message.content.lower():
             pass
         else:
             await asyncio.sleep(1)
@@ -161,7 +161,7 @@ async def on_message(message):
             await asyncio.sleep(1)
             await channel.send(random.choice(headpat_reactions))
 
-    if '@everyone' in message.content.lower() and message.content.upper().startswith("N_"):
+    if ('@everyone' or '@here') in message.content.lower() and message.content.upper().startswith("N_"):
         await message.delete()
         await channel.send("Hey! Do you **WANT** everyone to freak out in the chat?! Because I won't let you do that!")
         return
