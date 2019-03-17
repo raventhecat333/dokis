@@ -191,7 +191,7 @@ async def on_message(message):
                 await asyncio.sleep(1)
                 await channel.send(random.choice(justmonika_reactions))
                 return
-    if '@everyone' in message.content.lower() and message.content.upper().startswith("M_"):
+    if ('@everyone' or '@here') in message.content.lower() and message.content.upper().startswith("M_"):
         await message.delete()
         await channel.send("I'm sorry, but I don't want to go announcing things to people who are minding their own business. ~~Besides, I'm not a fan of angry mobs.~~")
         return
@@ -199,7 +199,7 @@ async def on_message(message):
     if message.content.upper().startswith('M_HUG'):
         userID = message.author.id
         normal_hugs = ["As Club President, this seems unprofessional. As your friend, I'll happily help! *hugs <@%s>*", "Of course I'll hug you! You don't have to even ask twice! *hugs <@%s>*", "Have you had a rough day? Here, I'll make it a little better! *hugs <@%s>*"]
-        if '@everyone' in message.content.lower():
+        if ('@everyone' or '@here') in message.content.lower():
             pass
         elif len(message.content.split(" ")) == 1:
             await asyncio.sleep(1)
@@ -248,7 +248,7 @@ async def on_message(message):
 
     if message.content.upper().startswith('M_DELETE'):
         userID = message.author.id
-        if '@everyone' in message.content.lower():
+        if ('@everyone' or '@here') in message.content.lower():
             pass
         elif len(message.content.split(" ")) == 1:
             await asyncio.sleep(1)
