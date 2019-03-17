@@ -145,7 +145,7 @@ async def on_message(message):
                 await channel.send(random.choice(pen_reactions))
                 return
 
-    if '@everyone' in message.content.lower() and message.content.upper().startswith("Y_"):
+    if ('@everyone' or '@here') in message.content.lower() and message.content.upper().startswith("Y_"):
         ServerID = message.guild.id
         await message.delete()
         if ServerID in y_act2:
@@ -157,7 +157,7 @@ async def on_message(message):
 
     if message.content.upper().startswith('Y_HUG'):
         ServerID = message.guild.id
-        if '@everyone' in message.content.lower():
+        if ('@everyone' or '@here') in message.content.lower():
             pass
         elif ServerID in y_act2:
             userID = message.author.id
