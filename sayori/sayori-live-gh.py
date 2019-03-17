@@ -230,7 +230,7 @@ async def on_message(message):
 
     if message.content.upper().startswith('S_HUG'):
         Author = message.author.id
-        if '@everyone' in message.content.lower():
+        if ('@everyone' or '@here') in message.content.lower():
             pass
         elif Author in hug_cooldown:
             await channel.send("Give me a few seconds; I'm still getting over how nice that last hug was!")
@@ -382,7 +382,7 @@ async def on_message(message):
                     await asyncio.sleep(1)
                     await channel.send("Yeah, I guess he is a bit of a meanie, but I know he means well!")
                     return
-                elif member == 'everyone' or member == '@everyone' or member == 'everybody':
+                elif member == 'everyone' or member == '@everyone' or member == '@here' or member == 'everybody':
                     await asyncio.sleep(1)
                     await channel.trigger_typing()
                     await asyncio.sleep(1)
@@ -418,7 +418,7 @@ async def on_message(message):
                     await channel.trigger_typing()
                     await asyncio.sleep(1)
                     await channel.send("Yay! I'm glad she does!")
-                elif member == 'everyone' or member == '@everyone' or member == 'everybody':
+                elif member == 'everyone' or member == '@everyone' or member == '@here' or member == 'everybody':
                     await asyncio.sleep(1)
                     await channel.trigger_typing()
                     await asyncio.sleep(1)
@@ -556,7 +556,7 @@ async def on_message(message):
 
 ########################################
 
-    if '@everyone' in message.content.lower() and message.content.upper().startswith("S_"):
+    if ('@everyone' or '@here') in message.content.lower() and message.content.upper().startswith("S_"):
         await message.delete()
         await channel.send("We don't need to get everyone's attention!")
         return
