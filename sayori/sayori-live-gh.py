@@ -216,6 +216,7 @@ async def on_message(message):
             return
         else:
             joke_cooldown[Author] = CurTime + 5.0
+            print("added %s to cooldown" % Author)
             await asyncio.sleep(1)
             await channel.trigger_typing()
             await asyncio.sleep(1)
@@ -224,6 +225,7 @@ async def on_message(message):
             await asyncio.sleep(5)
             if Author in joke_cooldown:
                 del joke_cooldown[Author]
+                print("removed %s from cooldown" % Author)
             return
 
     if message.content.upper().startswith('S_HUG'):
