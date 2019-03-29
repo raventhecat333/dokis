@@ -20,7 +20,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         print(f"Config name: '{conf.name}''")
         print("Are you braindead: Most Likely")
         print(f"Defualt Prefix: '{conf.prefix}''")
-        await self.b.change_presence(activity=discord.Game(name='Online', status=discord.Status.online))
+        await self.b.change_presence(activity=discord.Game(name="Type 'n_help' for a list of my commands!", status=discord.Status.online))
 
 
     
