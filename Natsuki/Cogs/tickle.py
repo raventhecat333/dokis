@@ -9,7 +9,7 @@ class Tickle(client.Cog):#Class thing no touchy!!!111
          self.b = bot #Please no touchy thx
 
     @client.command()
-    async def recipe(self,ctx): 
+    async def tickle(self,ctx): 
         laughs = ["H-hey! Cut that out!! Ahahahaha!!", "Hehehehe!!", "Ehehehe!", "STOP IT! STOP! EHEHEHEHE!!!", "I'm gonna break your ribs for this! Hehehe!"]
         async with ctx.message.channel.typing():
             await asyncio.sleep(0.4) 

@@ -3,7 +3,7 @@ from discord.ext import commands as client
 #Imports
 
 
-class Hug(commands.Cog):#Class thing no touchy!!!111
+class Hug(client.Cog):#Class thing no touchy!!!111
 
     def __init__(self, bot):
          self.b = bot #Please no touchy thx
