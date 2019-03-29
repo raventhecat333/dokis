@@ -12,14 +12,14 @@ class Event(commands.Cog): #Silly man class leave alone thx
     @commands.Cog.listener()
     async def on_ready(self):
         print("\n")
-        print("Connected to Discord as: {}")
+        print(f"Connected to Discord as: {self.b.user}")
         if conf.sharding is False:
             print(f"Sharding: Disabled")
         elif conf.sharding is True:
             print("Sharding: Enabled")
-        print(f"Config name: {conf.name}")
+        print(f"Config name: '{conf.name}''")
         print("Are you braindead: Most Likely")
-        print(f"Defualt Prefix: {conf.prefix}")
+        print(f"Defualt Prefix: '{conf.prefix}''")
         await self.b.change_presence(activity=discord.Game(name='Online', status=discord.Status.online))
 
 
