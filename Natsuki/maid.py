@@ -4,8 +4,12 @@ from os import listdir
 from os.path import isfile, join
 from Cogs.config import conf
 #Import some important modules
+if conf.sharding is True:
+    client = commands.AutoShardedBot(command_prefix=conf.prefix, status=discord.Status.do_not_disturb, activity=discord.Game(name="Starting..."), shard_count=2, shard_ids=(0, 1)) # Defining what our prefix for the bot will be
+elif conf.sharding is False:
+    client = commands.Bot(command_prefix=conf.prefix, status=discord.Status.do_not_disturb, activity=discord.Game(name="Starting...")) # Defining what our prefix for the bot will be
 
-client = commands.Bot(command_prefix=conf.prefix, status=discord.Status.do_not_disturb, activity=discord.Game(name="Starting...")) # Defining what our prefix for the bot will be
+
 cogd = conf.cogd
 
 if __name__ == '__main__': # Load every file that have a .py extension in the Cogs folder

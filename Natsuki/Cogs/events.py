@@ -1,8 +1,6 @@
 import discord, random, asyncio
 from discord.ext import commands as client
 from Cogs.config import conf
-#Imports 
-
 
 class Event(client.Cog): #Silly man class leave alone thx
 
@@ -17,6 +15,8 @@ class Event(client.Cog): #Silly man class leave alone thx
             print(f"Sharding: Disabled")
         elif conf.sharding is True:
             print("Sharding: Enabled")
+            print(f"Using SHARD's {self.b.shard_ids}")
+
         print(f"Config name: '{conf.name}''")
         print("Are you braindead: Most Likely")
         print(f"Defualt Prefix: '{conf.prefix}''")

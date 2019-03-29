@@ -9,7 +9,7 @@ class conf(commands.Cog):
     prefix = "n_"
     name = "Natsuki"
     version = "1.0a"
-    sharding = False
+    sharding = True
     cogd = "Cogs"
 
     ''' Just wanted to clear out that these hex codes bellow are for embed colours so i don't have to keep changing them in every single fucking file '''
