@@ -4,12 +4,12 @@ from Cogs.config import conf
 #Imports
 
 
-class General(commands.Cog):#Class thing no touchy!!!111
+class Help(client.Cog):#Class thing no touchy!!!111
 
     def __init__(self, bot):
          self.b = bot #Please no touchy thx
 
-    @commands.command()
+    @client.command()
     async def help(self,ctx): 
         embed = discord.Embed(title="Hey, it's me, Natsuki.", description="Freaking Cole decided to turn my .chr file into a file that lets me be on this Discord server. It's not like I'm here because I want to be or anything, you dummies! A-anyway, here are the things I can do:", color=conf.norm)
         embed.add_field(name="n_ask", value="You can ask me any yes-or-no question with this. But don't get mad if I don't know the answer or if I give the wrong answer!", inline=True)
@@ -29,4 +29,4 @@ class General(commands.Cog):#Class thing no touchy!!!111
 
 def setup(bot):#No no child keep your hands off or this will break and not load
     bot.remove_command("help")
-    bot.add_cog(General(bot))
+    bot.add_cog(Help(bot))

@@ -6,10 +6,7 @@ from Cogs.config import conf
 #Import some important modules
 
 client = commands.Bot(command_prefix=conf.prefix, status=discord.Status.do_not_disturb, activity=discord.Game(name="Starting...")) # Defining what our prefix for the bot will be
-cogd = "Cogs" # Just the folder where we put our cogs so we can use this to load em
-
-
-
+cogd = conf.cogd
 
 if __name__ == '__main__': # Load every file that have a .py extension in the Cogs folder
     for extension in [f.replace('.py', '') for f in listdir(cogd) if isfile(join(cogd, f))]:

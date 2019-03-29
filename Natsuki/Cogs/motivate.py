@@ -1,14 +1,14 @@
 import discord, random, asyncio
-from discord.ext import commands
+from discord.ext import commands as client
 #Imports
 
 
-class General(commands.Cog):#Class thing no touchy!!!111
+class Motivate(client.Cog):#Class thing no touchy!!!111
 
     def __init__(self, bot):
          self.b = bot #Please no touchy thx
 
-    @commands.command()
+    @client.command()
     async def motivate(self,ctx, *, message=None): 
         member = ctx.message.content.split(" ")[0]
         if message is None: #No argument? Just assume it's you
@@ -35,4 +35,4 @@ class General(commands.Cog):#Class thing no touchy!!!111
 
 
 def setup(bot):#No no child keep your hands off or this will break and not load
-    bot.add_cog(General(bot))
+    bot.add_cog(Motivate(bot))

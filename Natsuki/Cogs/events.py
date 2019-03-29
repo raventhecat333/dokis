@@ -1,15 +1,15 @@
 import discord, random, asyncio
-from discord.ext import commands
+from discord.ext import commands as client
 from Cogs.config import conf
 #Imports 
 
 
-class Event(commands.Cog): #Silly man class leave alone thx
+class Event(client.Cog): #Silly man class leave alone thx
 
     def __init__(self, bot):
          self.b = bot
 
-    @commands.Cog.listener()
+    @client.Cog.listener()
     async def on_ready(self):
         print("\n")
         print(f"Connected to Discord as: {self.b.user}")
@@ -24,7 +24,7 @@ class Event(commands.Cog): #Silly man class leave alone thx
 
 
     
-    @commands.Cog.listener()
+    @client.Cog.listener()
     async def on_message(self,message):
         if message.author.bot:
             return# Now the bot won't respond to itself
