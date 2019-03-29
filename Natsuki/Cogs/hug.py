@@ -18,6 +18,10 @@ class General(commands.Cog):#Class thing no touchy!!!111
                 await asyncio.sleep(0.4) 
             await ctx.send(random.choice(hug_list))
 
+        elif message == '@everyone' or message == '@here':
+            from Cogs.config import conf
+            await ctx.send(conf.everyone_tag)
+            
         elif message == '<@551799233418756101>': # Oh noes it's me!
             hug_list = [f"...fine. *hugs myself*", "Well, if you say so... *hugs myself*", "*hugs myself* Huh. Now I see why you guys like my hugs so much."]
             async with ctx.message.channel.typing():
