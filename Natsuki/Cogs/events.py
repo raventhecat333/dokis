@@ -13,7 +13,7 @@ class Event(commands.Cog): #Silly man class leave alone thx
     async def on_ready(self):
         print("\n")
         print("Connected to Discord as: {}")
-        if conf.sharding is False
+        if conf.sharding is False:
             print(f"Sharding: Disabled")
         elif conf.sharding is True:
             print("Sharding: Enabled")
