@@ -126,7 +126,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await message.channel.send("Ha! Of course I am!")
                         return
                     else:
-                        await message.channel.send("WHY IS IT PASSING FFS")
+                        pass
             
                 else:
                     async with message.channel.typing():
