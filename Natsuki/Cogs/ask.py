@@ -14,7 +14,7 @@ class Ask(client.Cog):#Class thing no touchy!!!111
             await ctx.send("Hey! You wanted to ask me something so what is it?!")
         else:
             answer_list = ["Eh. Probably not.","I guess so.","How should I know, dummy?", "I don't know. Ask Monika if you want the answer that badly.", "No.","Pfft. In your dreams!", "Is manga literature?", "Yuri might know"]
-            async with message.channel.typing():
+            async with ctx.message.channel.typing():
                 await asyncio.sleep(0.4) 
             await ctx.send(random.choice(answer_list))
 

@@ -11,7 +11,7 @@ class Headpat(client.Cog):#Class thing no touchy!!!111
     @client.command()
     async def headpat(self,ctx): 
         headpat_list = ["Hey! Don't pat me so hard!", "Geez, you're gonna mess up my hair!", "...okay, I guess that kinda felt nice...", "What do I look like, a puppy??", "T-thanks, I guess..."]
-        async with message.channel.typing():
+        async with ctx.message.channel.typing():
             await asyncio.sleep(0.4) 
         await ctx.send(random.choice(headpat_list))
 
