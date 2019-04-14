@@ -12,6 +12,8 @@ class conf(commands.Cog):
     sharding = False
     cogd = "Cogs"
     type_speed = 2
+    playing_msg = ["Type 'n_help' for help!","Doki Doki Literature Club","Don't Starve","Cooking Mama"]
+
 
     ''' Just wanted to clear out that these hex codes bellow are for embed colours so i don't have to keep changing them in every single fucking file '''
     err = 0xff42e2 # The Error Embed Colour

@@ -1,4 +1,4 @@
-import discord, os, traceback
+import discord, os, traceback, random
 from discord.ext import commands
 from os import listdir
 from os.path import isfile, join
@@ -23,4 +23,4 @@ if __name__ == '__main__': # Load every file that have a .py extension in the Co
             traceback.print_exc()#If it fails then give us a traceback
             print("\n")
 
-client.run(conf.token) # Login via our token inside of the config file
+client.run(conf.token, reconnect=True) # Login via our token inside of the config file
