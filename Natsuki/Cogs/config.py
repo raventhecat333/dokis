@@ -27,10 +27,10 @@ class conf(commands.Cog):
 
 
     ''' Doki Bot's ID'S '''
-    natsuki_id = 0
-    monika_id = 0 
-    sayori_id = 0
-    yuri_id = 0
+    natsuki_id = 531555963908653076
+    monika_id = 531556928732528670 
+    sayori_id = 531554745337249792
+    yuri_id = 531556397746356224
 
 
 
