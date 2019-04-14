@@ -13,7 +13,7 @@ class Hug(client.Cog):#Class thing no touchy!!!111
         member = ctx.message.content.split(" ")[0]
         if message is None: #No argument? Just assume it's you
             user = ctx.author
-            hug_list = [f"F-fine, but only because I'll look like a jerk if I don't! *hugs {user.name}*", f"I guess a quick hug never hurt anyone... *hugs {user.name}*"]
+            hug_list = [f"F-fine, but only because I'll look like a jerk if I don't! *hugs <@{user.id}>*", f"I guess a quick hug never hurt anyone... *hugs {user.name}*"]
             async with ctx.message.channel.typing():
                 await asyncio.sleep(0.4) 
             await ctx.send(random.choice(hug_list))
