@@ -13,7 +13,7 @@ class Ask(client.Cog):#Class thing no touchy!!!111
         if arg1 is None:
             await ctx.send("Hey! You wanted to ask me something so what is it?!")
         else:
-            answer_list = ["Yes!", "No.", "Maybe.", "Possibly?", "Of course, silly!", "I'd say ask Monika, but she's busy being ~~a meanie~~ an amazing club president!", "I'd say ask Yuri, but she's a little shy at the moment.", "I'd say ask Natsuki, but she's busy baking some cookies for ~~me to steal~~ the club!", "You've got a better chance of having a happy ending in DDLC! Ehehe...~", "Maybe we should ask The Magic Conch, instead.", "As sure as I'm depressed!", "Not really.", "My Vice President Powers tell me yes!", "My Vice President Powers tell me no!", "My Vice President Powers tell me maybe!", "J-Just a little bit!"]            
+            answer_list = ["Eh. Probably not.","I guess so.","How should I know, dummy?", "I don't know. Ask Monika if you want the answer that badly.", "No.","Pfft. In your dreams!", "Is manga literature?", "Yuri might know"]
             async with ctx.message.channel.typing():
                 await asyncio.sleep(0.4) 
             await ctx.send(random.choice(answer_list))
