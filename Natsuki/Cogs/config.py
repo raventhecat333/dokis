@@ -13,10 +13,10 @@ class conf(commands.Cog):
     cogd = "Cogs"
     type_speed = 2
     playing_msg = ["Type 'n_help' for help!","Doki Doki Literature Club","Don't Starve","Cooking Mama"]
-
+    admins = [480580173431832577, 279732337971953664, 332271541859647498, 218085039768993803, 310496481435975693, 270057011251642368]
 
     ''' Just wanted to clear out that these hex codes bellow are for embed colours so i don't have to keep changing them in every single fucking file '''
-    err = 0xff42e2 # The Error Embed Colour
+    err = 0xC91313 # The Error Embed Colour
     norm = 0xff42e2 # The Normal or Yeah sure i did this command heres an embed color Embed Colour
     warn = 0xff42e2 # The Warning Embed Colour
     suc = 0xff42e2 # The Success i did a thing Embed Colour

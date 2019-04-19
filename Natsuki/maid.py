@@ -1,4 +1,4 @@
-import discord, os, traceback, random
+import discord, os, traceback, random, chalk
 from discord.ext import commands
 from os import listdir
 from os.path import isfile, join
@@ -10,17 +10,22 @@ elif conf.sharding is False:
     client = commands.Bot(command_prefix=conf.prefix, status=discord.Status.do_not_disturb, activity=discord.Game(name="Starting...")) # Defining what our prefix for the bot will be
 
 
-cogd = conf.cogd
+Cogs = conf.cogd
 
 if __name__ == '__main__': # Load every file that have a .py extension in the Cogs folder
-    for extension in [f.replace('.py', '') for f in listdir(cogd) if isfile(join(cogd, f))]:
+    for extension in [f.replace('.py', '') for f in listdir(Cogs) if isfile(join(Cogs, f))]:
         try:
-            client.load_extension(cogd + "." + extension) # Here's were we load them
-            print(f"Loaded {extension}")
+            if extension == "config" or extension == "checks":
+                pass
+            else:   
+                client.load_extension(Cogs + "." + extension) # Here's were we load them
+                print(chalk.green(f"Loaded {extension}"))
         except (discord.ClientException, ModuleNotFoundError): # Oh fuck something happened lets reppoooooorrrrrt it!!!!111111!!!!!!
-            print(f'\nFailed to load extension {extension} with the Traceback bellow.')
+            crash_thing = traceback.format_exc()
+            print(chalk.red(f'Failed to load extension {extension}', file=sys.stderr))
+            ono = traceback.format_exc()
+            print(chalk.red(ono))
             print("\n")
-            traceback.print_exc()#If it fails then give us a traceback
-            print("\n")
+            continue
 
 client.run(conf.token, reconnect=True) # Login via our token inside of the config file
