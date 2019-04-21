@@ -22,7 +22,7 @@ class conf(commands.Cog):
     suc = 0xff42e2 # The Success i did a thing Embed Colour
 
     ''' These are just some error quotes so i can change them really quickly instead of doing the same quote for each error in every file '''
-    everyone_tag = "Nice try to ping everyone, Baka."
+    everyone_tag = "Hey! Do you **WANT** everyone to freak out in the chat?! Because I won't let you do that!"
     econfused = "Uh... What?"
 
 
