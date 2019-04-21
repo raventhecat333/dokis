@@ -227,65 +227,98 @@ class Event(client.Cog): #Silly man class leave alone thx
             # -------------------------------------------------------Tagging-------------------------------------------------------
 
 
-            #Can someone else please work on this stupid tagging thing which is making this neat file look like a mess?
+
+
+            # -------------------------------------------------------Other Doki Bot Interactions-------------------------------------------------------
+
+            if '<@425696108455657472>' in message.content.lower():
+                if message.author.id == conf.natsuki_id: #Natsuki
+                    if 'hugs' in message.content.lower():
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await channel.send("Hehehe! You give the best hugs, Natsuki!")
+                elif "s-shut up! no she doesn't!" in message.content.lower():
+                    await asyncio.sleep(1)
+                    await channel.trigger_typing()
+                    await asyncio.sleep(1)
+                    await channel.send("Oh, yes I do!")
+                else:
+                    pass
+            elif message.author.id == conf.yuri_id: #Yuri
+                if 'hugs' in message.content.lower():
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await channel.send("Aww, thank you, Yuri!")
+                    return
+            elif message.author.id == conf.monika_id: #Monika
+                if 'hugs' in message.content.lower():
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await channel.send("Ehehe! I love your hugs, Monika! You should give them more often!")
+                    return
+            else:
+                    pass
+
+        if message.author.id == conf.natsuki_id: #Natsuki
+            if "s-shut up! no she doesn't!" in message.content.lower():
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                await channel.send("Oh, yes I do!")
+            elif "s-shut up! no, i don't!" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await channel.send("Awww... :(")
+            else:
+                pass
+        elif message.author.id == conf.yuri_id: #Yuri
+            if "h-hey! don't hug so hard, sayori!" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await channel.send("Oops! I'm sorry!")
+            elif "haha. well, she is a loving soul." in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await channel.send("You bet your booty I am! :yum:")
+                return
+            elif "who the hell is sayori? i don't know any sayoris..." in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await channel.send("Yuri, it's me! Sayori! Your friend and Vice President of the Literature Club!")
+                return
+            elif "what the fuck?? ***i'm*** the vice president, you stupid bitch! and i'm no friend of yours!!" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await channel.send(":disappointed_relieved: :cold_sweat: :confounded: :sob:")
+                return
+            elif "i'm sorry, who are you? and why are you hugging me?" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await channel.send("I-It's me, Sayori! And I-I just wanted to hug you!")
+                return
+
+            elif "sorry, but i don't know you. please get your messy, stupid self away from me." in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await channel.send("O-Okay... I'm sorry... :pensive:")
+                return
+            else:
+                pass
+
+        elif message.author.id == conf.monika_id: #Monika
+            if "ahaha!~ well, after everything that's happened between us, that's nice to hear!" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await channel.send("Hey, everyone deserves forgiveness! Even you, Monika!")
+                return
+
+        # -------------------------------------------------------Other Doki Bot Interactions-------------------------------------------------------
+
+
+
+
+
+
+
         
 def setup(bot):
     bot.add_cog(Event(bot))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#My body, my body is, my body is ready! My body is ready! My bo-bo-bo-body is ready! My body, my body i-, my body is ready! My-my-my body is ready! My body is-body is- b-b-b body is ready! My body, my body is, my body is ready! My body is ready! My bo-bo-bo-body is ready! My body, my body i-, my body is ready! My-my-my body is ready! My body is-body is- b-b-b body is ready! My body, my body is, my body is ready! My body is ready! My bo-bo-bo-body is ready! My body, my body i-, my body is ready! My-my-my body is ready! My body is-body is- b-b-b body is ready!  
