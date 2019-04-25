@@ -61,7 +61,7 @@ class Event(client.Cog): #Silly man class leave alone thx
 
 
             # -------------------------------------------------------Tagging-------------------------------------------------------
-        elif message.content.lower().startswith(f"<@{self.b.user.id}>"):
+        elif message.content.lower().startswith(f"<@{self.b.user.id}>") or message.content.lower().startswith(f"<@!{self.b.user.id}>"):
             if len(message.content.lower().split(" ")) == 1:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
