@@ -195,15 +195,12 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await channel.send(random.choice(love_tag_list))
 
 
-                elif 'syka blyat' in message.content.lower() or 'pidor ebony' in message.content.lower():
-                    russian_list = ["I don't speak Russian, but I'm assuming that's a compliment, to which I say thank you!", "Sorry, I only know English, despite being Japanese.", "Hehehe. That sounds funny."]
-                    async with message.channel.typing():
-                        await asyncio.sleep(conf.type_speed)
-                    await channel.send(random.choice(russian_reactions))
-                    return
-
-                elif "best girl" in message.content.lower():
-                    best_girl = ["Ha! It's obviously me!","Clearly i'm the best girl than all the other dokis"]
+            if "syka blyat" in message.content.lower() or "pidor ebony" in message.content.lower():
+                russian_list = ["I don't speak Russian, but I'm assuming that's a compliment, to which I say thank you!", "Sorry, I only know English, despite being Japanese.", "Hehehe. That sounds funny."]
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await channel.send(random.choice(russian_reactions))
+                return
 
             elif "best doki" in message.content.lower() or "best girl" in message.content.lower():
                 if message1 == "Monika" or message1 == "Natsuki" or message1 == "Yuri" or message1 == "<@436350586670153730>" or message1 == "<@433834936450023424>":
@@ -234,9 +231,9 @@ class Event(client.Cog): #Silly man class leave alone thx
             if '<@425696108455657472>' in message.content.lower():
                 if message.author.id == conf.natsuki_id: #Natsuki
                     if 'hugs' in message.content.lower():
-                    async with message.channel.typing():
-                        await asyncio.sleep(conf.type_speed)
-                    await channel.send("Hehehe! You give the best hugs, Natsuki!")
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)
+                        await channel.send("Hehehe! You give the best hugs, Natsuki!")
                 elif "s-shut up! no she doesn't!" in message.content.lower():
                     await asyncio.sleep(1)
                     await channel.trigger_typing()
@@ -263,7 +260,7 @@ class Event(client.Cog): #Silly man class leave alone thx
             if "s-shut up! no she doesn't!" in message.content.lower():
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)
-                await channel.send("Oh, yes I do!")
+                    await channel.send("Oh, yes I do!")
             elif "s-shut up! no, i don't!" in message.content.lower():
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
