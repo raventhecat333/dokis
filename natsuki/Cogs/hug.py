@@ -20,7 +20,6 @@ class Hug(client.Cog):#Class thing no touchy!!!111
             await ctx.send(random.choice(hug_list))
 
         elif message == '@everyone' or message == '@here':
-            from Cogs.config import conf
             await ctx.send(conf.everyone_tag)
             
         elif message == '<@551799233418756101>': # Oh noes it's me!

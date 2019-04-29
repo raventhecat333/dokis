@@ -20,7 +20,6 @@ class Motivate(client.Cog):#Class thing no touchy!!!111
             await ctx.send("I need someone to motivate! (n_motivate someone)")
 
         elif message == '@everyone' or message == '@here':
-            from Cogs.config import conf
             await ctx.send(conf.everyone_tag)
             
         elif message == 'y_act' or message == 'y_act1' or message == 'y_act2':
