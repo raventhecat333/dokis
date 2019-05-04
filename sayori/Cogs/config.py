@@ -1,9 +1,4 @@
-import discord
-from discord.ext import commands
-
-class conf(commands.Cog):
-    def __init__(self, bot):
-         self.b = bot
+class conf():
 
     token = "token"
     prefix = "s_"
@@ -11,9 +6,9 @@ class conf(commands.Cog):
     version = "1.0a"
     sharding = False
     cogd = "Cogs"
-    type_speed = 1.5
+    type_speed = 2
     playing_msg = [f"Type '{prefix}_help' for help!","Doki Doki Literature Club","with the crayons!","Katawa Shoujo","with Mr. Cow!"]
-
+    admins = [480580173431832577, 279732337971953664, 332271541859647498, 218085039768993803, 310496481435975693, 270057011251642368]
 
     ''' Just wanted to clear out that these hex codes bellow are for embed colours so i don't have to keep changing them in every single fucking file '''
     err = 0xff42e2 # The Error Embed Colour
@@ -32,7 +27,3 @@ class conf(commands.Cog):
     sayori_id = 531554745337249792
     yuri_id = 531556397746356224
 
-
-
-def setup(bot):
-    bot.add_cog(conf(bot))
