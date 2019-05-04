@@ -1,9 +1,4 @@
-import discord
-from discord.ext import commands
-
-class conf(commands.Cog):
-    def __init__(self, bot):
-         self.b = bot
+class conf():
 
     token = "token"
     prefix = "n_"
@@ -34,5 +29,3 @@ class conf(commands.Cog):
 
 
 
-def setup(bot):
-    bot.add_cog(conf(bot))
