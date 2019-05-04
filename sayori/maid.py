@@ -1,4 +1,4 @@
-import discord, os, traceback, random, chalk
+import discord, os, traceback, random, chalk, sys
 from discord.ext import commands
 from os import listdir
 from os.path import isfile, join
