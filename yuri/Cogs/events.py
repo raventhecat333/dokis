@@ -22,6 +22,8 @@ class Event(client.Cog): #Silly man class leave alone thx
         print(chalk.cyan("Are you braindead: Most Likely"))
         print(chalk.cyan("Do you eat chicken nuggets: Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes."))
         aaa = True
+        for guild in self.b.guilds:
+            conf.act1.insert(0, guild.id)
         while aaa:
             for list in conf.playing_msg:
                 await self.b.change_presence(activity=discord.Game(name=list))
@@ -31,7 +33,7 @@ class Event(client.Cog): #Silly man class leave alone thx
     @client.Cog.listener()
     async def on_message(self,message):
         if message.author.bot:
-            return# Now the bot won't respond to itself
+            return # Now the bot won't respond to itself
         
         # ------------------------------------------------------------------------------------------------------------------------------------------------
         cut_words = ["cut", "cutting", "cuts", "stab", "stabbing", "stabs"]
@@ -57,6 +59,11 @@ class Event(client.Cog): #Silly man class leave alone thx
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
                 await message.channel.send(random.choice(cut_list_act_2)) 
+            
+            else:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send("Uuuu... Sorry about this but i have seemed to have been restarted, re-run `y_act1` to continue using me")   
 
 
         if message.content.lower() in knife_words:
@@ -69,7 +76,12 @@ class Event(client.Cog): #Silly man class leave alone thx
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
                 await message.channel.send(random.choice(knife_list_act2)) 
-    
+
+            else:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send("Uuuu... Sorry about this but i have seemed to have been restarted, re-run `y_act1` to continue using me")   
+
 
         if message.content.lower() in pen_words:
             if message.guild.id in conf.act1:
@@ -239,6 +251,10 @@ class Event(client.Cog): #Silly man class leave alone thx
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("I love you, but I have no clue what you just said.")
+            else:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send("Uuuu... Sorry about this but i have seemed to have been restarted, re-run `y_act1` to continue using me")   
 
             # -------------------------------------------------------Tagging-------------------------------------------------------
 
