@@ -28,4 +28,4 @@ if __name__ == '__main__': # Load every file that have a .py extension in the Co
             print("\n")
             continue
 
-client.run(conf.token, reconnect=True) # Login via our token inside of the config file
+client.run(conf.token) # Login via our token inside of the config file
