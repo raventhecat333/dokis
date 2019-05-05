@@ -284,7 +284,7 @@ async def on_message(message):
                 await channel.send("os.remove(\"characters/%s.chr\")" % (member))
 
     if message.content.upper().startswith('M_INVITE'):
-        embed = discord.Embed(title="My invite link!", description="Oh, you would like to add me to a new server? you can get my link below", color=0xff42e2)
+        embed = discord.Embed(title="My invite link!", description="Oh, you would like to add me to a new server? You can get my link below!", color=0xff42e2)
         embed.add_field(name="Here it is!", value="https://discordapp.com/api/oauth2/authorize?client_id=436351740787294208&permissions=8&scope=bot", inline=True)
         await channel.send(embed=embed)
 # Pickling Stuff ###############################################################
