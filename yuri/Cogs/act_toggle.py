@@ -10,6 +10,7 @@ class Tickle(client.Cog):
          self.b = bot 
 
     @client.command()
+    @client.has_permissions(administrator=True)
     async def act1(self,ctx): 
         if ctx.guild.id in conf.act2:
             conf.act2.remove(ctx.guild.id) #If the ID is already in act2 but we're trying to get back into act1 just remove it from act2
@@ -23,6 +24,7 @@ class Tickle(client.Cog):
 
 
     @client.command()
+    @client.has_permissions(administrator=True) #Cooldowns when
     async def act2(self,ctx): 
         if ctx.guild.id in conf.act1:
             conf.act1.remove(ctx.guild.id) #If the ID is already in act2 but we're trying to get back into act1 just remove it from act2
