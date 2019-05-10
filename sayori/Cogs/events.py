@@ -50,7 +50,6 @@ class Event(client.Cog): #Silly man class leave alone thx
         suicide_list = ["H-Hey! There's no need to do that, I promise you! Someone out there still wants you to keep going, I'm sure!", "If I'm reading this right, then it sounds like you're thinking of doing something terrible. Please, don't do it!", "Listen, I've been where you are. You'll get through it, I promise.", "Here, this is the National Suicide Prevention Lifeline. They'll be able to help you, I promise! 1-800-273-8255"]
 
         kill_words = ["kill"]
-        kill_list = []
         # ------------------------------------------------------------------------------------------------------------------------------------------------
 
         if message.content.lower() in name_words: 
@@ -59,21 +58,21 @@ class Event(client.Cog): #Silly man class leave alone thx
             await message.channel.send(random.choice(name_list)) 
 
         elif message.content.lower() in hang_words: 
-            if message.author.id == self.bot.user.id:
+            if message.author.id == self.b.user.id:
                 pass
 
-            elif message.content.upper().startswith(f"<@{self.bot.user.id}>"):
+            elif message.content.upper().startswith(f"<@{self.b.user.id}>"):
                 pass
 
             elif "myself" in message.content.lower():
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
-                await channel.send(random.choice(suicide_list))
+                await message.channel.send(random.choice(suicide_list))
                 
             else:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
-                await channel.send(random.choice(hang_list))
+                await message.channel.send(random.choice(hang_list))
             
         elif message.content.lower() in breakfast_words: 
             async with message.channel.typing():
@@ -93,21 +92,21 @@ class Event(client.Cog): #Silly man class leave alone thx
             await message.channel.send(f"Hey! Don't be a big meanie, <@{message.author.id}>!")
 
         elif message.content.lower() in kill_words: 
-            if message.author.id == self.bot.user.id:
+            if message.author.id == self.b.user.id:
                 pass
 
-            elif message.content.upper().startswith(f"<@{self.bot.user.id}>"):
+            elif message.content.upper().startswith(f"<@{self.b.user.id}>"):
                 pass
 
             elif "myself" in message.content.lower():
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
-                await channel.send(random.choice(suicide_list))
+                await message.channel.send(random.choice(suicide_list))
                 
             else:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
-                await channel.send(random.choice("Can we change the topic to something more wholsem please?"))
+                await message.channel.send(random.choice("Can we change the topic to something more wholsem please?"))
 
             # -------------------------------------------------------Tagging-------------------------------------------------------
         elif message.content.lower().startswith(f"<@{self.b.user.id}>") or message.content.lower().startswith(f"<@!{self.b.user.id}>"):
