@@ -15,12 +15,12 @@ class Tickle(client.Cog):
         if ctx.guild.id in conf.act2:
             conf.act2.remove(ctx.guild.id) #If the ID is already in act2 but we're trying to get back into act1 just remove it from act2
             conf.act1.insert(0, ctx.guild.id) #Inserting the ID into act1 so if that id matches the guild ID we run in act1 mode and not act2 mode 
-            await ctx.send("Running in act1 mode")
+            await ctx.send("O-Oh... Wh-What just happened? I feel funny...")
         elif ctx.guild.id in conf.act1:
-            await ctx.send("I'm already in act1 mode")
+            await ctx.send("I'm already in my 'Act 1' mode. And I'd prefer if it stayed that way...")
         else:
             conf.act1.insert(0, ctx.guild.id) #Inserting the ID into act1 so if that id matches the guild ID we run in act1 mode and not act2 mode
-            await ctx.send("Running in act1 mode")
+            await ctx.send("O-Oh... Wh-What just happened? I feel funny...")
 
 
     @client.command()
@@ -29,12 +29,12 @@ class Tickle(client.Cog):
         if ctx.guild.id in conf.act1:
             conf.act1.remove(ctx.guild.id) #If the ID is already in act2 but we're trying to get back into act1 just remove it from act2
             conf.act2.insert(0, ctx.guild.id) #Inserting the ID into act1 so if that id matches the guild ID we run in act1 mode and not act2 mode 
-            await ctx.send("Running in act2 mode")
+            await ctx.send("Ha. Haha. HAHAHAHAHHAHAHA!!!!")
         elif ctx.guild.id in conf.act2:
-            await ctx.send("I'm already in act2 mode")
+            await ctx.send("Oh, you little cutie! I'm already in Act 2 mode! Ahaha!!")
         else:
             conf.act2.insert(0, ctx.guild.id) #Inserting the ID into act1 so if that id matches the guild ID we run in act1 mode and not act2 mode
-            await ctx.send("Running in act2 mode")
+            await ctx.send("Ha. Haha. HAHAHAHAHHAHAHA!!!!")
 
 
 def setup(bot):

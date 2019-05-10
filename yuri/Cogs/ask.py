@@ -22,7 +22,7 @@ class Ask(client.Cog):#Class thing no touchy!!!111
 
         elif ctx.guild.id in conf.act2:
             if arg1 is None:
-                await ctx.send("Insert missing argument for act2 ask command here")
+                await ctx.send("Ahaha... If you don't have a question, that's okay. I'd rather stare at you.")
             else:
                 answer_list = ["Yes.", "I don't know, and I don't care. I just want to look at you...", "No.", "Possibly, but who knows?", "Meet me in the closet and we'll find out... :kissing_closed_eyes:", "Ahaha! You're so silly to ask such a question!", "I'm not sure... I'll think about it while I'm touching myself to you tonight."]
                 async with ctx.message.channel.typing():
