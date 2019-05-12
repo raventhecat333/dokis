@@ -20,7 +20,7 @@ class Help(client.Cog):#Class thing no touchy!!!111
         embed.add_field(name="m_tickle", value="O-Oh! Well, I guess there are worse things to do to me than tickling!", inline=True)
         embed.add_field(name="I do believe that's it!", value="I'm still in very early stages of development, but if Cole was able to create the other girls quickly, I'm sure I'll be finished before you know it!")
         embed.set_footer(text="Support Server: https://discord.gg/QnzsG38")
-        await channel.send(embed=embed)
+        await ctx.send(embed=embed)
 
 
 def setup(bot):#No no child keep your hands off or this will break and not load
