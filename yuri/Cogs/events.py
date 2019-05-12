@@ -29,7 +29,11 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await self.b.change_presence(activity=discord.Game(name=list))
                 await asyncio.sleep(900)
 
-    
+    @client.Cog.listener()
+    async def on_guild_join(self,guild):
+        for guild in guild:
+            conf.act1.insert(0, guild.id)
+
     @client.Cog.listener()
     async def on_message(self,message):
         if message.author.bot:
@@ -259,6 +263,113 @@ class Event(client.Cog): #Silly man class leave alone thx
             # -------------------------------------------------------Tagging-------------------------------------------------------
 
 
-        
+
+        # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
+        if f'<@{self.b.user.id}>' in message.content.lower() or f'<@{self.b.user.id}>':
+            if message.author.id == 433834936450023424: #Natsuki
+                if 'hugs' in message.content.lower():
+                    if message.guild.id in conf.act2:
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)
+                        await message.channel.send("Get your fucking hands off of me!!")
+                        
+                    else:
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)
+                        await message.channel.send("Oh! Well, that was certainly unexpected!")
+                        
+
+            elif message.author.id == 425696108455657472: #Sayori
+                if 'hugs' in message.content.lower():
+                    if message.guild.id in conf.act2:
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)
+                        await message.channel.send("I'm sorry, who are you? And why are you hugging me?")
+                        
+                    else:
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)
+                        await message.channel.send("H-Hey! Don't hug so hard, Sayori!")
+                        
+            elif message.author.id == 436351740787294208: #Monika
+                if 'hugs' in message.content.lower():
+                    if message.guild.id in conf.act2:
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)
+                        await message.channel.send("Get your dirty, selfish hands off of me before I kill you and take your spot as President!!")
+                        
+                    else:
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)
+                        await message.channel.send("O-Oh! Well, uh, thank you, Monika.")
+                        
+
+        if message.author.id == 433834936450023424: #Natsuki
+            if "geez, yuri! don't make it all awkward!" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send("I'm sorry...")
+                
+            elif "w-well it's not like i love her back or anything!!" in message.content.lower():
+                if message.guild.id in conf.act2:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send("No shocker there, you selfish bitch!")
+                    
+                else:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send("Oh... I see...")
+                    
+            elif "what the hell?? yuri, why would you say something so mean??" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send("Because it's the fucking truth, you little bitch!!")
+                
+
+        elif message.author.id == 425696108455657472: #Sayori
+            if "aww, thank you, yuri!" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send("Y-You're welcome, Sayori.")
+                
+            elif "well, of course she does! yuri loves everybody!" in message.content.lower():
+                if message.guild.id in conf.act2:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send("No, I don't. In fact, I hate most people.")
+                    
+                else:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send("S-Sayori! You didn't have to say it like that...")
+                    
+            elif "yuri, it's me! sayori! your friend and vice president of the literature club!" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send("What the fuck?? ***I'M*** the Vice President, you stupid bitch! And I'm no friend of yours!!")
+                
+            elif "i-it's me, sayori! and i-i just wanted to hug you!" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send("Sorry, but I don't know you. Please get your messy, stupid self away from me.")
+                
+
+        elif message.author.id == 436351740787294208: #Monika
+            if "well, that's a pleasant surprise! and i understand why she doesn't have the courage to say it to me directly." in message.content.lower():
+                if message.guild.id in conf.act2:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send("Except that I don't love you, sooo...")
+                    
+                else:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send("Uuu... :flushed:")    
+        else:
+            pass
+        # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
+
+
 def setup(bot):
     bot.add_cog(Event(bot))
