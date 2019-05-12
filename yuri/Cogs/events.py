@@ -327,7 +327,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await message.channel.send("Because it's the fucking truth, you little bitch!!")
                 
 
-        if message.author.id == 279732337971953664: #Sayori
+        if message.author.id == conf.sayori_id: #Sayori
             if "aww, thank you, yuri!" in message.content.lower():
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
