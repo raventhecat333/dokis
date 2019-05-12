@@ -20,7 +20,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         print(chalk.cyan(f"Config name: '{conf.name}''"))
         print(chalk.cyan(f"Defualt Prefix: '{conf.prefix}''"))
         print(chalk.cyan("Are you braindead: Most Likely"))
-        print(chalk.cyan("Do you eat chicken nuggets: Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes."))
+        print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] servers."))
         aaa = True
         for guild in self.b.guilds:
             conf.act1.insert(0, guild.id)
