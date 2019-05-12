@@ -176,7 +176,77 @@ class Event(client.Cog): #Silly man class leave alone thx
             # -------------------------------------------------------Tagging-------------------------------------------------------
 
 
-            #Can someone else please work on this stupid tagging thing which is making this neat file look like a mess?
-        
+        # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
+        if f'<@{self.b.user.id}>' in message.content.lower() or f'<@!{self.b.user.id}' in message.content.lower():
+            if message.author.id == conf.sayori_id: #Sayori
+                if 'hugs' in message.content.lower():
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)  
+                    await message.hannel.send("H-hey! Let me go, Sayori!!")
+
+            elif message.author.id == conf.yuri_id: #Yuri
+                if 'hugs' in message.content.lower():
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)  
+                    await message.channel.send("Geez, Yuri! Don't make it all awkward!")
+
+            elif message.author.id == conf.monika_id: #Monika
+                if 'hugs' in message.content.lower():
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)  
+                    await message.channel.send("Okay, this is just awkward for both of us.")
+
+
+
+        if message.author.id == conf.sayori_id: #Sayori
+            if "awww, she does??" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send("S-shut up! No, I don't!")
+            else:
+                pass
+
+        elif message.author.id == conf.yuri_id: #Yuri
+            if "oh... i see..." in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send("...great, now I look like the bad guy!")
+
+            elif "sh-she does?" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed) 
+                await message.channel.send("Urk! N-No! Not like that!!")
+
+            elif "pfft. as if. that immature brat doesn't love anyone but herself." in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed) 
+                await message.channel.send("What the hell?? Yuri, why would you say something so mean??")
+
+            elif "because it's the fucking truth, you little bitch!!" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed) 
+                await message.channel.send(":rage: :rage: :rage:")
+
+            elif "get your fucking hands off of me!!" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed) 
+                await message.channel.send(":angry:")
+
+            elif "no shocker there, you selfish bitch!" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed) 
+                await message.channel.send(":angry:")
+            else:
+                pass
+
+
+        elif message.author.id == conf.monika_id: #Monika
+            if "oh, really? she, of all people, said that?" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed) 
+                await message.channel.send("***NO!!!*** I never said that!!")
+        # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
+
+
 def setup(bot):
     bot.add_cog(Event(bot))
