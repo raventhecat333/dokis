@@ -20,7 +20,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         print(chalk.cyan(f"Config name: '{conf.name}''"))
         print(chalk.cyan(f"Defualt Prefix: '{conf.prefix}''"))
         print(chalk.cyan("Are you braindead: Most Likely"))
-        print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] servers."))
+        print(chalk.cyan("Do you eat chicken nuggets: Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes."))
         aaa = True
         while aaa:
             for list in conf.playing_msg:
@@ -206,7 +206,7 @@ class Event(client.Cog): #Silly man class leave alone thx
             else:
                 pass
 
-        elif message.author.id == conf.yuri_id: #Yuri
+        if message.author.id == conf.yuri_id: #Yuri
             if "oh... i see..." in message.content.lower():
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
@@ -240,7 +240,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                 pass
 
 
-        elif message.author.id == conf.monika_id: #Monika
+        if message.author.id == conf.monika_id: #Monika
             if "oh, really? she, of all people, said that?" in message.content.lower():
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed) 
