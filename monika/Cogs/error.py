@@ -30,7 +30,7 @@ class CommandErrorHandler(commands.Cog):
 
         else:
             tra = traceback.format_exception_only(type(error), error)
-            e = discord.Embed(description="`Oh jeez...I didn't break anything, did I? Hold on a sec, I can probably fix this... I think...` ```Error```",color=eol)
+            e = discord.Embed(description=f"`Oh jeez...I didn't break anything, did I? Hold on a sec, I can probably fix this... I think...` ```py\n%s\n```" % ''.join(tra), file=sys.stderr, color=eol)
             e.set_author(name="That's an issue!",icon_url=ctx.message.author.avatar_url)
             e.set_footer(text=ver)
             await ctx.send(embed=e)
