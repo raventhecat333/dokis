@@ -4,6 +4,23 @@ from os import listdir
 from os.path import isfile, join
 from Cogs.config import conf
 #Import some important modules
+
+if conf.test_mode is True:
+    print(chalk.red('''---------------------Testing Mode--------------------- 
+Warning!
+
+You are currently running Maid Core in testing mode!
+Please disable testing mode before launching this code. 
+If you are unsure how to turn testing mode off:
+
+1. Go to the config
+2. Find "test_mode ="
+3. Change "False" to "True"
+---------------------Testing Mode--------------------- \n'''))
+else:
+    pass
+
+
 if conf.sharding is True:
     client = commands.AutoShardedBot(command_prefix=conf.prefix, status=discord.Status.idle, shard_count=2, shard_ids=(0, 1)) # Defining what our prefix for the bot will be
 elif conf.sharding is False:
