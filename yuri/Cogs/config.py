@@ -9,7 +9,8 @@ class conf():
     type_speed = 2
     playing_msg = ["Type 'y_help' for help!","Doki Doki Literature Club","With knives!","Everlasting Summer","Yandere Simulator"]
     admins = [480580173431832577, 279732337971953664, 332271541859647498, 218085039768993803, 310496481435975693, 270057011251642368]
-
+    test_mode = False
+    
     ''' Just wanted to clear out that these hex codes bellow are for embed colours so i don't have to keep changing them in every single fucking file '''
     err = 0xC91313 # The Error Embed Colour
     norm = 0x8524c8 # The Normal or Yeah sure i did this command heres an embed color Embed Colour
@@ -26,8 +27,16 @@ class conf():
 
 
     ''' Doki Bot's ID'S '''
-    natsuki_id = 531555963908653076
-    monika_id = 531556928732528670 
-    sayori_id = 531554745337249792
-    yuri_id = 531556397746356224
+    if test_mode is True:
+        natsuki_id = 531555963908653076
+        monika_id = 531556928732528670 
+        sayori_id = 531554745337249792
+        yuri_id = 531556397746356224
+
+    elif test_mode is False:
+        natsuki_id = 433834936450023424
+        monika_id = 436351740787294208 
+        sayori_id = 425696108455657472
+        yuri_id = 436350586670153730
+
 
