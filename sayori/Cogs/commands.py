@@ -10,7 +10,7 @@ class Help(client.Cog):#Class thing no touchy!!!111
          self.b = bot #Please no touchy thx
 
     @client.command()
-    async def help(self,ctx): 
+    async def commands(self,ctx): 
         e = discord.Embed(title="Commands!", description="Here are all the commands/words/phrases you can use when you @mention me! Though it's ***VERY*** important that the @mention is at the very beginning!", color=0x3eb0ff)
         e.add_field(name="Hi, Hello", value="Nothing wrong with a simple hello every now and then, right?", inline=True)
         e.add_field(name="Test", value="Just to see if I'm working properly!", inline=True)
@@ -24,5 +24,4 @@ class Help(client.Cog):#Class thing no touchy!!!111
 
 
 def setup(bot):#No no child keep your hands off or this will break and not load
-    bot.remove_command("help")
     bot.add_cog(Help(bot))
