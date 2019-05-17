@@ -34,7 +34,7 @@ class Event(client.Cog): #Silly man class leave alone thx
             return# Now the bot won't respond to itself
         
         # ------------------------------------------------------------------------------------------------------------------------------------------------
-        chat_filter = ["nigger"]
+        chat_filter = ["3, 6, 9 Girls wanna drink wine. Tell the man not to waste your time. If the man broke, the man he a joke. So you gotta get loose with the Henny and the coke"]
 
         name_words = ["cinnamon bun", "best girl"]
         name_list = ["Did someone mention me?", "You rang?", "Are you guys talking about me?"]
@@ -50,6 +50,10 @@ class Event(client.Cog): #Silly man class leave alone thx
         suicide_list = ["H-Hey! There's no need to do that, I promise you! Someone out there still wants you to keep going, I'm sure!", "If I'm reading this right, then it sounds like you're thinking of doing something terrible. Please, don't do it!", "Listen, I've been where you are. You'll get through it, I promise.", "Here, this is the National Suicide Prevention Lifeline. They'll be able to help you, I promise! 1-800-273-8255"]
 
         kill_words = ["kill"]
+
+        meanie_words = ["meanie"]
+        meanie_list = ["Do we have a meanie in the server? If so, please stop.", "Cease your bulli, you meanie!", "Boo! You meanie..."]
+
         # ------------------------------------------------------------------------------------------------------------------------------------------------
 
         if message.content.lower() in name_words: 
@@ -90,6 +94,11 @@ class Event(client.Cog): #Silly man class leave alone thx
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send(f"Hey! Don't be a big meanie, <@{message.author.id}>!")
+
+        elif message.content.lower() in meanie_words: 
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed) 
+            await message.channel.send(random.choice(meanie_list)) 
 
         elif message.content.lower() in kill_words: 
             if message.author.id == self.b.user.id:
