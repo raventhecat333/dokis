@@ -177,74 +177,63 @@ class Event(client.Cog): #Silly man class leave alone thx
 
 
         # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
-        if f'<@{self.b.user.id}>' in message.content.lower() or f'<@!{self.b.user.id}' in message.content.lower():
-            if message.author.id == conf.sayori_id: #Sayori
-                if 'hugs' in message.content.lower():
-                    async with message.channel.typing():
-                        await asyncio.sleep(conf.type_speed)  
-                    await message.hannel.send("H-hey! Let me go, Sayori!!")
+        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.sayori_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.sayori_id: 
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)  
+            await message.hannel.send("H-hey! Let me go, Sayori!!")
 
-            elif message.author.id == conf.yuri_id: #Yuri
-                if 'hugs' in message.content.lower():
-                    async with message.channel.typing():
-                        await asyncio.sleep(conf.type_speed)  
-                    await message.channel.send("Geez, Yuri! Don't make it all awkward!")
+        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id: 
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)  
+            await message.channel.send("Geez, Yuri! Don't make it all awkward!")
 
-            elif message.author.id == conf.monika_id: #Monika
-                if 'hugs' in message.content.lower():
-                    async with message.channel.typing():
-                        await asyncio.sleep(conf.type_speed)  
-                    await message.channel.send("Okay, this is just awkward for both of us.")
+        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.monika_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.monika_id: 
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)  
+            await message.channel.send("Okay, this is just awkward for both of us.")
 
 
 
-        if message.author.id == conf.sayori_id: #Sayori
-            if "awww, she does??" in message.content.lower():
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)  
-                await message.channel.send("S-shut up! No, I don't!")
-            else:
-                pass
+        if "aww she does??" in message.content.lower() and message.author.id == conf.sayori_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)  
+            await message.channel.send("S-shut up! No, I don't!")
 
-        if message.author.id == conf.yuri_id: #Yuri
-            if "oh... i see..." in message.content.lower():
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)  
-                await message.channel.send("...great, now I look like the bad guy!")
+        if "oh... i see..." in message.content.lower() and message.author.id == conf.yuri_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)  
+            await message.channel.send("...great, now I look like the bad guy!")
 
-            elif "sh-she does?" in message.content.lower():
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed) 
-                await message.channel.send("Urk! N-No! Not like that!!")
+        if "sh-she does?" in message.content.lower() and message.author.id == conf.yuri_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed) 
+            await message.channel.send("Urk! N-No! Not like that!!")
 
-            elif "pfft. as if. that immature brat doesn't love anyone but herself." in message.content.lower():
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed) 
-                await message.channel.send("What the hell?? Yuri, why would you say something so mean??")
+        if "pfft. as if. that immature brat doesn't love anyone but herself." in message.content.lower() and message.author.id == conf.yuri_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed) 
+            await message.channel.send("What the hell?? Yuri, why would you say something so mean??")
 
-            elif "because it's the fucking truth, you little bitch!!" in message.content.lower():
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed) 
-                await message.channel.send(":rage: :rage: :rage:")
+        if "because it's the fucking truth, you little bitch!!" in message.content.lower() and message.author.id == conf.yuri_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed) 
+            await message.channel.send(":rage: :rage: :rage:")
 
-            elif "get your fucking hands off of me!!" in message.content.lower():
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed) 
-                await message.channel.send(":angry:")
+        if "get your fucking hands off of me!!" in message.content.lower() and message.author.id == conf.yuri_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed) 
+            await message.channel.send(":angry:")
 
-            elif "no shocker there, you selfish bitch!" in message.content.lower():
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed) 
-                await message.channel.send(":angry:")
-            else:
-                pass
+        if "no shocker there, you selfish bitch!" in message.content.lower() and message.author.id == conf.yuri_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed) 
+            await message.channel.send(":angry:")
 
 
-        if message.author.id == conf.monika_id: #Monika
-            if "oh, really? she, of all people, said that?" in message.content.lower():
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed) 
-                await message.channel.send("***NO!!!*** I never said that!!")
+        if "oh, really? she, of all people, said that?" in message.content.lower() and message.author.id == conf.monika_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed) 
+            await message.channel.send("***NO!!!*** I never said that!!")
         # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
 
 
