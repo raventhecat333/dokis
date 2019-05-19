@@ -254,8 +254,6 @@ class Event(client.Cog): #Silly man class leave alone thx
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("y_act1")
-            await message.channel.send("Don't forget to add the ability for Monika to use the act1 command")
-
             # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
 
 
