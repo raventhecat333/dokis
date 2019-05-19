@@ -29,10 +29,7 @@ class Event(client.Cog): #Silly man class leave alone thx
 
     
     @client.Cog.listener()
-    async def on_message(self,message):
-        if message.author.bot:
-            return# Now the bot won't respond to itself
-        
+    async def on_message(self,message):        
         # ------------------------------------------------------------------------------------------------------------------------------------------------
         dad_words = ["daddy","papa","dad","father"]
         dad_list = ["Hey! Can you not say that word around me, you jerk??","W-what?? Is Papa here??"] # Just a list of responses to the dad phrase
@@ -191,7 +188,6 @@ class Event(client.Cog): #Silly man class leave alone thx
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
             await message.channel.send("Okay, this is just awkward for both of us.")
-
 
 
         if "aww she does??" in message.content.lower() and message.author.id == conf.sayori_id:
