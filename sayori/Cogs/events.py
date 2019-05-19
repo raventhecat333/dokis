@@ -30,9 +30,6 @@ class Event(client.Cog): #Silly man class leave alone thx
     
     @client.Cog.listener()
     async def on_message(self,message):
-        if message.author.bot:
-            return# Now the bot won't respond to itself
-        
         # ------------------------------------------------------------------------------------------------------------------------------------------------
         chat_filter = ["3, 6, 9 Girls wanna drink wine. Tell the man not to waste your time. If the man broke, the man he a joke. So you gotta get loose with the Henny and the coke"]
 
@@ -254,7 +251,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Aww, thank you, Yuri!")
 
-        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id: 
+        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.monika_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.monika_id: 
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Ehehe! I love your hugs, Monika! You should give them more often!")
