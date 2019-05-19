@@ -35,10 +35,7 @@ class Event(client.Cog): #Silly man class leave alone thx
             conf.act1.insert(0, guild.id)
 
     @client.Cog.listener()
-    async def on_message(self,message):
-        if message.author.bot:
-            return # Now the bot won't respond to itself
-        
+    async def on_message(self,message):        
         # ------------------------------------------------------------------------------------------------------------------------------------------------
         cut_words = ["cut", "cutting", "cuts", "stab", "stabbing", "stabs"]
         cut_list = ["Uuu...!", "D-Did you have to say that word...?", "I-I'm sorry, I-I really don't like that word...", ":confounded:"]
@@ -289,12 +286,12 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await message.channel.send("O-Oh! Well, uh, thank you, Monika.")
                         
 
-        if "geez, yuri! don't make it all awkward!" in message.content.lower() and message.author.id == conf.natsuki_id    
+        if "geez, yuri! don't make it all awkward!" in message.content.lower() and message.author.id == conf.natsuki_id:
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("I'm sorry...")
 
-        if "w-well it's not like i love her back or anything!!" in message.content.lower() and message.author.id == conf.natsuki_id   
+        if "w-well it's not like i love her back or anything!!" in message.content.lower() and message.author.id == conf.natsuki_id:  
             if message.guild.id in conf.act2:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
@@ -306,19 +303,19 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await message.channel.send("Oh... I see...")
                     
 
-        if "what the hell?? yuri, why would you say something so mean??" in message.content.lower() and message.author.id == conf.natsuki_id   
+        if "what the hell?? yuri, why would you say something so mean??" in message.content.lower() and message.author.id == conf.natsuki_id:  
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Because it's the fucking truth, you little bitch!!")
             
 
-        if "aww thank you, yuri!" in message.content.lower() and message.author.id == conf.sayori_id   
+        if "aww thank you, yuri!" in message.content.lower() and message.author.id == conf.sayori_id:
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Y-You're welcome, Sayori.")
 
 
-        if "well, of course she does! yuri loves everybody!" in message.content.lower() and message.author.id == conf.sayori_id   
+        if "well, of course she does! yuri loves everybody!" in message.content.lower() and message.author.id == conf.sayori_id:   
             if message.guild.id in conf.act2:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
@@ -330,18 +327,18 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await message.channel.send("S-Sayori! You didn't have to say it like that...")
                 
 
-        if "yuri, it's me! sayori! your friend and vice president of the literature club!" in message.content.lower() and message.author.id == conf.sayori_id   
+        if "yuri, it's me! sayori! your friend and vice president of the literature club!" in message.content.lower() and message.author.id == conf.sayori_id:
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("What the fuck?? ***I'M*** the Vice President, you stupid bitch! And I'm no friend of yours!!")
 
-        if "i-it's me, sayori! and i-i just wanted to hug you!" in message.content.lower() and message.author.id == conf.sayori_id   
+        if "i-it's me, sayori! and i-i just wanted to hug you!" in message.content.lower() and message.author.id == conf.sayori_id:
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Sorry, but I don't know you. Please get your messy, stupid self away from me.")
             
 
-        if "well, that's a pleasant surprise! and i understand why she doesn't have the courage to say it to me directly." in message.content.lower() and message.author.id == conf.monika_id   
+        if "well, that's a pleasant surprise! and i understand why she doesn't have the courage to say it to me directly." in message.content.lower() and message.author.id == conf.monika_id:   
             if message.guild.id in conf.act2:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
@@ -351,6 +348,17 @@ class Event(client.Cog): #Silly man class leave alone thx
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
                 await message.channel.send("Uuu... :flushed:")    
+
+        if "y_act1" in message.content.lower() and message.author.id == conf.monika_id:
+            if message.guild.id in conf.act2:
+                conf.act2.remove(message.guild.id) 
+                conf.act1.insert(0, message.guild.id)
+                await message.channel.send("O-Oh... Wh-What just happened? I feel funny...")
+            else:
+                conf.act1.insert(0, message.guild.id) 
+                await message.channel.send("O-Oh... Wh-What just happened? I feel funny...")
+
+            
 
         # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
 
