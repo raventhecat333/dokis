@@ -1,9 +1,10 @@
 class conf():
 
-	token = "token"
-    prefix = "m_"
+    token = "token"
+    prefix1 = "m_"
+    prefix2 = "M_"    
     name = "Monika"
-    version = "1.0a"
+    version = "1.0L Biscuit"
     sharding = False
     cogd = "Cogs"
     type_speed = 2
