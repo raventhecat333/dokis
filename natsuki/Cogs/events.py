@@ -177,7 +177,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.sayori_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.sayori_id: 
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
-            await message.hannel.send("H-hey! Let me go, Sayori!!")
+            await message.channel.send("H-hey! Let me go, Sayori!!")
 
         if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id: 
             async with message.channel.typing():
