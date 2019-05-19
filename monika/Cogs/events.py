@@ -18,7 +18,7 @@ class Event(client.Cog): #Silly man class leave alone thx
             print(chalk.yellow(f"Using SHARD's {self.b.shard_ids}"))
 
         print(chalk.cyan(f"Config name: '{conf.name}''"))
-        print(chalk.cyan(f"Defualt Prefix: '{conf.prefix}''"))
+        print(chalk.cyan(f"Defualt Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'"))
         print(chalk.cyan("Are you braindead: Most Likely"))
         print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] servers."))
         aaa = True
