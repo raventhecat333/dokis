@@ -14,8 +14,7 @@ class Tickle(client.Cog):#Class thing no touchy!!!111
     @checks.dev()
     @client.command(enabled=True)
     async def test(self,ctx):
-        if ctx.guild.id in conf.act1:
-            e = discord.Embed(title=f'''Version: {conf.version}
+        e = discord.Embed(title=f'''Version: {conf.version}
 Name: {conf.name}
 Username: {self.b.user.name}
 Prefix 1: {conf.prefix1}
@@ -24,16 +23,16 @@ Testing Mode: {conf.test_mode}
 Sharding: {conf.sharding}
 Type Speed: {conf.type_speed}
 ''',color=0x36393f)
-            e.set_author(name=f"Hiya {ctx.author.name}!", icon_url=ctx.author.avatar_url)
-            e2 = discord.Embed(title=f'''Doki ID's:
+        e.set_author(name=f"Hiya {ctx.author.name}!", icon_url=ctx.author.avatar_url)
+        e2 = discord.Embed(title=f'''Doki ID's:
 Monika: {conf.monika_id}
 Natsuki: {conf.natsuki_id}
 Sayori: {conf.sayori_id}
 Yuri: {conf.yuri_id}
 ''',color=0x36393f)
 
-            await ctx.send(embed=e)
-            await ctx.send(embed=e2)
+        await ctx.send(embed=e)
+        await ctx.send(embed=e2)
 
 
 
