@@ -5,8 +5,17 @@ DO NOT COPY THESE FILES TO RUN YOUR OWN INSTANCES - THIS IS PROHIBITED
 
 ----------------------------------------------------------------------------------------------
 
-The "Rewrite dev" branch is the development branch for the current prototype of the currently being remade Doki Bot.
+The "Rewrite dev" branch is the development branch for the current prototype of the currently being remade Doki Bots.
 
-This version previews the "Natsuki" bot and currently lacks a lot of commands.
+Most features have been completed and can be used as a beta launch.
 
-Yes, the development branch and the remake prototype alone will have some bugs here and there.
+These branch is home to:
+Monika
+Natsuki
+Sayori
+Yuri
+
+
+Please note that not everything is finished.
+
+
