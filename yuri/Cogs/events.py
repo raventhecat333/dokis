@@ -17,10 +17,10 @@ class Event(client.Cog): #Silly man class leave alone thx
             print(chalk.green("Sharding: Enabled"))
             print(chalk.yellow(f"Using SHARD's {self.b.shard_ids}"))
 
-        print(chalk.cyan(f"Config name: '{conf.name}''"))
+        print(chalk.cyan(f"Config name: '{conf.name}'"))
         print(chalk.cyan(f"Defualt Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'"))
         print(chalk.cyan("Are you braindead: Most Likely"))
-        print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] servers."))
+        print(chalk.cyan("Do you eat chicken nuggets: Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes."))
         aaa = True
         for guild in self.b.guilds:
             conf.act1.insert(0, guild.id)
@@ -285,6 +285,18 @@ class Event(client.Cog): #Silly man class leave alone thx
                     await asyncio.sleep(conf.type_speed)
                 await message.channel.send("O-Oh! Well, uh, thank you, Monika.")
                         
+
+        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id: #Monika
+            if message.guild.id in conf.act2:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send("I'm sorry, who are you? And why are you hugging me?")
+                
+            else:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send("H-Hey! Don't hug so hard, Sayori!")
+
 
         if "geez, yuri! don't make it all awkward!" in message.content.lower() and message.author.id == conf.natsuki_id:
             async with message.channel.typing():
