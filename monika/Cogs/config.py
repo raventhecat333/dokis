@@ -5,12 +5,12 @@ class conf():
     prefix2 = "M_"    
     name = "Monika"
     version = "1.0L Biscuit"
-    sharding = False
+    sharding = True
     cogd = "Cogs"
     type_speed = 2
     playing_msg = ["Type 'm_help' for help!","Doki Doki Literature Club","Don't Starve","Cooking Mama"]
     admins = [480580173431832577, 279732337971953664, 332271541859647498, 218085039768993803, 310496481435975693, 270057011251642368]
-    test_mode = True
+    test_mode = False
 
     ''' Just wanted to clear out that these hex codes bellow are for embed colours so i don't have to keep changing them in every single fucking file '''
     err = 0xC91313 # The Error Embed Colour
