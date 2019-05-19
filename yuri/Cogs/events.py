@@ -286,7 +286,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await message.channel.send("O-Oh! Well, uh, thank you, Monika.")
                         
 
-        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id: #Monika
+        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.sayori_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.sayori_id: #Monika
             if message.guild.id in conf.act2:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
