@@ -4,7 +4,7 @@ class conf():
     prefix1 = "n_"
     prefix2 = "N_"
     name = "Natsuki"
-    version = "1.0L Biscuit"
+    version = "1.1L Biscuit"
     sharding = True
     cogd = "Cogs"
     type_speed = 2
