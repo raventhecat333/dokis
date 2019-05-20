@@ -11,8 +11,8 @@ class Invite(client.Cog):#Class thing no touchy!!!111
 
     @client.command()
     async def invite(self,ctx): 
-        e = discord.Embed(title="My invite link!", description="F-fine! I guess I can join someone else's server, too... but I probably won't like it!", colour=conf.norm)
-        e.add_field(name="Here goes...", value="(Click here to invite me!)[https://discordapp.com/api/oauth2/authorize?client_id=436351740787294208&permissions=8&scope=bot]", inline=True)
+        e = discord.Embed(title="My invite link!", description="Oh, you would like to add me to a new server? You can get my link below!", colour=conf.norm)
+        e.add_field(name="Here it is!", value="[Click here to invite me!](https://discordapp.com/api/oauth2/authorize?client_id=436351740787294208&permissions=8&scope=bot)", inline=True)
         await ctx.send(embed=e)
 
 
