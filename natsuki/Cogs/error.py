@@ -28,6 +28,9 @@ class CommandErrorHandler(commands.Cog):
         elif isinstance(error, checks.dev_only):
             return
 
+        elif isinstance(error, commands.MissingPermissions):
+            await ctx.send("Whoa there, Dummy! Only an admin can use that command!")
+
         else:
             tra = traceback.format_exception_only(type(error), error)
             e = discord.Embed(description="`Oops! That's not supposed to happen, here's the traceback below.` ```py\n%s\n```" % ''.join(tra), file=sys.stderr, color=eol)
