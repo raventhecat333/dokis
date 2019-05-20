@@ -28,6 +28,9 @@ class CommandErrorHandler(commands.Cog):
         elif isinstance(error, checks.dev_only):
             return
 
+        elif isinstance(error, commands.MissingPermissions):
+            await ctx.send("Better ask a Club President to help with that one! (you need admin to change this setting)")
+
         else:
             tra = traceback.format_exception_only(type(error), error)
             e = discord.Embed(description=f"`Oh jeez...I didn't break anything, did I? Hold on a sec, I can probably fix this... I think...` ```py\n%s\n```" % ''.join(tra), file=sys.stderr, color=eol)

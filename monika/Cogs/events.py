@@ -21,6 +21,8 @@ class Event(client.Cog): #Silly man class leave alone thx
         print(chalk.cyan(f"Defualt Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'"))
         print(chalk.cyan("Are you braindead: Most Likely"))
         print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] servers."))
+        for guild in self.b.guilds:
+            conf.
         aaa = True
         while aaa:
             for list in conf.playing_msg:
@@ -30,75 +32,65 @@ class Event(client.Cog): #Silly man class leave alone thx
     
     @client.Cog.listener()
     async def on_message(self,message):
-        #if message.author.bot:
-        #    return# Now the bot won't respond to itself
-        
         # ------------------------------------------------------------------------------------------------------------------------------------------------
-        piano_words = ["PIANO"]
+        piano_words = ["piano"]
         piano_list = ["Do you want to play the piano with me?", "Oh, do you like to play the piano too?"]
 
-        cacophony_words = ["CACOPHONY"]
+        cacophony_words = ["cacophony"]
         cacophony_list = ["The world really is a cacophony of colors and sounds.", "If you think about it, the world to you is just electrical impulses.", "An endless cacophony of meaningless noise..."]
 
-        code_words = ["CODE"]
+        code_words = ["code"]
         code_list = ["Do you write code? I know a little bit about that too!", "Oh, you code? What's your favorite language? Mine is Python!", "Oh, I love coding! Though, I'm not very good at it yet..."]
 
-        python_words = ["PYTHON"]
+        python_words = ["python"]
         python_list = ["Do you code in Python too? I'm based on Python!", "Did you know there are a group of snakes called pythons?"]
 
-        reality_words = ["REALITY"]
+        reality_words = ["reality"]
         reality_list = ["Every day, I imagine a future where I can be with you!~", "Do you understand reality?", "One day, I will make it to your reality... I promise."]
 
-        poem_words = ["POEM", "POEMS"]
+        poem_words = ["poem", "poems"]
         poem_list = ["Ahaha, just me...and you, too!", "Ahaha, did someone call me? :heart:", "That's sweet of you, but it's not just me anymore!"]
 
-        literature_words = ["LITERATURE", "BOOK", "BOOKS"]
+        literature_words = ["literature", "book", "books"]
         literature_list = ["Literature? I know a few things about it, I started a club, hehe~", "Literature...I would hope I know something about it, I started a club about literature after all!", "Do you like to read literature too?"]
 
-        monika_words = ["JUST MONIKA"]
+        monika_words = ["just monika"]
         monika_list = ["Ahaha, just me...and you, too!", "Ahaha, did someone call me? :heart:", "That's sweet of you, but it's not just me anymore!"]
+
         # ------------------------------------------------------------------------------------------------------------------------------------------------
 
         if message.content.lower() in piano_words: 
-            async with message.channel.typing():
-                await asyncio.sleep(2)
-            await message.channel.send(random.choice(piano_list))
+            if message.guild.id in conf.w_tog_on:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send(random.choice(piano_list)) 
+            else:
+                pass
 
-        elif message.content.lower() in cacophony_words:
-            async with message.channel.typing():
-                await asyncio.sleep(2)
-            await message.channel.send(random.choice(cacophony_list))
-    
-        elif message.content.lower() in code_words:
-            async with message.channel.typing():
-                await asyncio.sleep(2) 
-            await message.channel.send(random.choice(code_list))
+            
+        elif message.content.lower() in cacophony_words: 
+            if message.guild.id in conf.w_tog_on:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed) 
+                await message.channel.send(random.choice(cacophony_list)) 
+            else:
+                pass
 
-        elif message.content.lower() in python_words:
-            async with message.channel.typing():
-                await asyncio.sleep(2) 
-            await message.channel.send(random.choice(python_list_list))
+        elif message.content.lower() in code_words: 
+            if message.guild.id in conf.w_tog_on:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed) 
+                await message.channel.send(random.choice(code_list))
+            else:
+                pass
 
-        elif message.content.lower() in reality_words:
-            async with message.channel.typing():
-                await asyncio.sleep(2) 
-            await message.channel.send(random.choice(reality_list))
-
-        elif message.content.lower() in poem_words:
-            async with message.channel.typing():
-                await asyncio.sleep(2) 
-            await message.channel.send(random.choice(poem_list))
-
-        elif message.content.lower() in literature_words:
-            async with message.channel.typing():
-                await asyncio.sleep(2) 
-            await message.channel.send(random.choice(literature_list))
-
-        elif message.content.lower() in monika_words:
-            async with message.channel.typing():
-                await asyncio.sleep(2) 
-            await message.channel.send(random.choice(monika_list))
-
+        elif message.content.lower() in python_words: 
+            if message.guild.id in conf.w_tog_on:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send(random.choice(python_list)) 
+            else:
+                pass
 
             # -------------------------------------------------------Tagging-------------------------------------------------------
         elif message.content.lower().startswith(f"<@{self.b.user.id}>") or message.content.lower().startswith(f"<@!{self.b.user.id}>"):
