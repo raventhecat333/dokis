@@ -8,7 +8,7 @@ class conf():
     sharding = True
     cogd = "Cogs"
     type_speed = 2
-    playing_msg = ["Type 'm_help' for help!","Doki Doki Literature Club","Don't Starve","Cooking Mama"]
+    playing_msg = ["Type 'm_help' for help!","Doki Doki Literature Club","the piano!", "Super Smash Bros Ultimate.", "If My Heart Had Wings"]
     admins = [480580173431832577, 279732337971953664, 332271541859647498, 218085039768993803, 310496481435975693, 270057011251642368]
     test_mode = False
 
