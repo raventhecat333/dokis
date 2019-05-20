@@ -22,7 +22,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         print(chalk.cyan("Are you braindead: Most Likely"))
         print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] servers."))
         for guild in self.b.guilds:
-            conf.
+            conf.w_tog_on.insert(0, guild.id)
         aaa = True
         while aaa:
             for list in conf.playing_msg:
