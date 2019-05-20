@@ -21,6 +21,8 @@ class Event(client.Cog): #Silly man class leave alone thx
         print(chalk.cyan(f"Defualt Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'"))
         print(chalk.cyan("Are you braindead: Most Likely"))
         print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] servers."))
+        for guild in self.b.guilds:
+            conf.w_tog_on.insert(0, guild.id)
         aaa = True
         while aaa:
             for list in conf.playing_msg:
@@ -53,12 +55,19 @@ class Event(client.Cog): #Silly man class leave alone thx
 
         # ------------------------------------------------------------------------------------------------------------------------------------------------
 
-        if message.content.lower() in name_words: 
-            async with message.channel.typing():
-                await asyncio.sleep(conf.type_speed)
-            await message.channel.send(random.choice(name_list)) 
+        if message.content.lower() in name_words:
+            if message.guild.id in conf.w_tog_on:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send(random.choice(name_list)) 
+            else:
+                pass
 
-        elif message.content.lower() in hang_words: 
+
+        elif message.content.lower() in hang_words:
+            if message.guid.id in conf.w_tog_off:
+                pass
+
             if message.author.id == self.b.user.id:
                 pass
 
@@ -75,16 +84,22 @@ class Event(client.Cog): #Silly man class leave alone thx
                     await asyncio.sleep(conf.type_speed)
                 await message.channel.send(random.choice(hang_list))
             
-        elif message.content.lower() in breakfast_words: 
-            async with message.channel.typing():
-                await asyncio.sleep(conf.type_speed) 
-            await message.channel.send(random.choice(breakfast_list)) 
+        elif message.content.lower() in breakfast_words:
+            if message.guild.id in conf.w_tog_on: 
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed) 
+                await message.channel.send(random.choice(breakfast_list)) 
+            else:
+                pass
 
+        elif message.content.lower() in goodnight_words:
+            if message.guild.id in conf.w_tog_on:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed) 
+                await message.channel.send(random.choice(breakfast_list)) 
+            else:
+                pass
 
-        elif message.content.lower() in goodnight_words: 
-            async with message.channel.typing():
-                await asyncio.sleep(conf.type_speed) 
-            await message.channel.send(random.choice(breakfast_list)) 
 
         elif message.content.lower() in chat_filter:
             await message.delete()
@@ -92,12 +107,20 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send(f"Hey! Don't be a big meanie, <@{message.author.id}>!")
 
-        elif message.content.lower() in meanie_words: 
-            async with message.channel.typing():
-                await asyncio.sleep(conf.type_speed) 
-            await message.channel.send(random.choice(meanie_list)) 
 
-        elif message.content.lower() in kill_words: 
+        elif message.content.lower() in meanie_words: 
+            if message.guild.id in conf.w_tog_on:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed) 
+                await message.channel.send(random.choice(meanie_list)) 
+            else:
+                pass
+
+
+        elif message.content.lower() in kill_words:
+            if message.guild.id in conf.w_tog_off:
+                pass
+
             if message.author.id == self.b.user.id:
                 pass
 
