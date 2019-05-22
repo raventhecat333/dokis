@@ -135,7 +135,7 @@ class Event(client.Cog): #Silly man class leave alone thx
             else:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
-                await message.channel.send(random.choice("Can we change the topic to something more wholsem please?"))
+                await message.channel.send("Can we change the topic to something more wholsem please?")
 
             # -------------------------------------------------------Tagging-------------------------------------------------------
         elif message.content.lower().startswith(f"<@{self.b.user.id}>") or message.content.lower().startswith(f"<@!{self.b.user.id}>"):
