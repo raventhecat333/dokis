@@ -244,11 +244,11 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await asyncio.sleep(conf.type_speed)
                     await message.channel.send("S-Stop it! That's not true!")
                 
-                else:
-                    async with message.channel.typing():
-                        await asyncio.sleep(conf.type_speed)
-                    no_responses = ["Huh? I don't understand.", "I don't get it.", "???", "Maybe try something I actually understand?"]  
-                    await message.channel.send(random.choice(no_responses))
+            else:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                no_responses = ["Huh? I don't understand.", "I don't get it.", "???", "Maybe try something I actually understand?"]  
+                await message.channel.send(random.choice(no_responses))
 
 
             # -------------------------------------------------------Tagging-------------------------------------------------------
