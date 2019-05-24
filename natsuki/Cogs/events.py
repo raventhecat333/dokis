@@ -75,7 +75,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                     await message.channel.send(random.choice(hello_list))
 
                 elif "test" in message.content.lower():
-                    await message.channel.send("tagging me is working just fine.")
+                    await message.channel.send("I'm working just fine.")
 
                 elif "i love you" in message.content.lower() or "ily" in message.content.lower():
                     love_list = ["...I love you, too, okay??", "W-what?? Don't expect me to say that I love you back or anything, you d-dummy!", "*urk!* :flushed:", "Shut up! You don't mean that!"]
