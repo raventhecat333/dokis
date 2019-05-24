@@ -118,7 +118,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await message.channel.send(random.choice(hello_list))
 
                     elif "test" in message.content.lower():
-                        await message.channel.send("tagging me is working just fine.")
+                        await message.channel.send("I-I believe I'm working properly... Oh, I hope I am...")
 
                     elif "i love you" in message.content.lower() or "ily" in message.content.lower():
                         love_list = ["O-Oh! W-W-Well, uhh... :flushed:", "I-I love you, too... :relaxed:", "R-Really? Why? I-I don't have anything worth loving...", "Uuu, why is my heart beating so fast right now??"]
@@ -195,7 +195,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await message.channel.send(random.choice(hello_list))
 
                     elif "test" in message.content.lower():
-                        await message.channel.send("Tagging me is working just fine.")
+                        await message.channel.send("I'm working fine, I promise you! Can we just read already??")
 
                     elif "i love you" in message.content.lower() or "ily" in message.content.lower():
                         love_list = ["I love you, too! I love you so much that I touch myself to you every night!", "I'm glad, because if you didn't, I'd be very, *very* upset...", ":smirk:", "...Ahahaha. Ahahahahahaha! Ahahahahahahahaha! AHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA"]
