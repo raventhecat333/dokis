@@ -117,7 +117,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                     await message.channel.send(random.choice(hello_list))
 
                 elif "test" in message.content.lower():
-                    await message.channel.send("tagging me is working just fine.")
+                    await message.channel.send("As fine as I can be given my current realization of being nothing more than a videogame character turned Discord bot!")
 
                 elif "i love you" in message.content.lower() or "ily" in message.content.lower():
                     love_list = ["Ahaha!~ W-Well, I'm flattered, to say the least!", "And I love you, too!", "Well, in fairness, why wouldn't you? Ahaha!~"]
