@@ -84,7 +84,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         elif message.content.lower() in goodnight_words: 
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed) 
-            await message.channel.send(random.choice(breakfast_list)) 
+            await message.channel.send(random.choice(goodnight_list)) 
 
         elif message.content.lower() in chat_filter:
             await message.delete()
