@@ -151,7 +151,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await message.channel.send(random.choice(compliment_list))
 
                 elif "i apologise" in message.content.lower() or "sorry" in message.content.lower():
-                    apology_list = ["Hmph. I'll forgive you, but it's not like you deserve it!", "Fine. I guess I'll let it go...", "You better be sorry, you baka!"]
+                    apology_list = ["Well, I thank you for the apology. Let's try not to do that again, hm?", "Apology accepted!~", "Very well, then! I hope you've learned your lesson."]
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)  
                     await message.channel.send(random.choice(apology_list))
