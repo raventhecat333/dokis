@@ -52,7 +52,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         # ------------------------------------------------------------------------------------------------------------------------------------------------
 
         if message.content.lower() in cut_words:
-            if message.guild_id in conf.w_tog_on:
+            if message.guild.id in conf.w_tog_on:
                 if message.guild.id in conf.act1:
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)
