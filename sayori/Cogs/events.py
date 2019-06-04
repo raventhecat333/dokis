@@ -65,7 +65,7 @@ class Event(client.Cog): #Silly man class leave alone thx
 
 
         elif message.content.lower() in hang_words:
-            if message.guid.id in conf.w_tog_off:
+            if message.guild.id in conf.w_tog_off:
                 pass
 
             if message.author.id == self.b.user.id:
