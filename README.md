@@ -5,17 +5,8 @@ DO NOT COPY THESE FILES TO RUN YOUR OWN INSTANCES - THIS IS PROHIBITED
 
 ----------------------------------------------------------------------------------------------
 
-The "Rewrite dev" branch is the development branch for the current prototype of the currently being remade Doki Bots.
+The "master" branch is the home of all the doki's, this branch is used for launch purposes and such.
 
-Most features have been completed and can be used as a beta launch.
-
-These branch is home to:
-Monika
-Natsuki
-Sayori
-Yuri
-
-
-Please note that not everything is finished.
+Please do not modify any contents within the "master" branch and instead do so in the "Rewrite-dev" branch, more detail about the "Rewrite-dev" branch is in the "README.md" file within the "Rewrite-dev" branch
 
 
