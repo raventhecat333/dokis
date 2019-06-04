@@ -24,6 +24,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         aaa = True
         for guild in self.b.guilds:
             conf.act1.insert(0, guild.id)
+            conf.w_tog_on.insert(0, guild.id)
         while aaa:
             for list in conf.playing_msg:
                 await self.b.change_presence(activity=discord.Game(name=list))
@@ -51,50 +52,56 @@ class Event(client.Cog): #Silly man class leave alone thx
         # ------------------------------------------------------------------------------------------------------------------------------------------------
 
         if message.content.lower() in cut_words:
-            if message.guild.id in conf.act1:
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)
-                await message.channel.send(random.choice(cut_list)) 
+            if message.guild.id in conf.w_tog_on:
+                if message.guild.id in conf.act1:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send(random.choice(cut_list)) 
 
-            elif message.guild.id in conf.act2:
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)
-                await message.channel.send(random.choice(cut_list_act_2)) 
-            
+                elif message.guild.id in conf.act2:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send(random.choice(cut_list_act_2)) 
+
+                else:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send("Uuuu... Sorry about this but i have seemed to have been restarted, re-run `y_act1` to continue using me")   
             else:
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)
-                await message.channel.send("Uuuu... Sorry about this but i have seemed to have been restarted, re-run `y_act1` to continue using me")   
-
+                pass
 
         if message.content.lower() in knife_words:
-            if message.guild.id in conf.act1:
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)
-                await message.channel.send(random.choice(knife_list)) 
+            if message.guild.id in conf.w_tog_on:
+                if message.guild.id in conf.act1:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send(random.choice(knife_list)) 
 
-            elif message.guild.id in conf.act2:
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)
-                await message.channel.send(random.choice(knife_list_act2)) 
+                elif message.guild.id in conf.act2:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send(random.choice(knife_list_act2)) 
 
+                else:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send("Uuuu... Sorry about this but i have seemed to have been restarted, re-run `y_act1` to continue using me")   
             else:
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)
-                await message.channel.send("Uuuu... Sorry about this but i have seemed to have been restarted, re-run `y_act1` to continue using me")   
-
+                pass
 
         if message.content.lower() in pen_words:
-            if message.guild.id in conf.act1:
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)
-                await message.channel.send(random.choice(pen_list)) 
+            if message.guild.id in conf.w_tog_on:
+                if message.guild.id in conf.act1:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send(random.choice(pen_list)) 
 
-            elif message.guild.id in conf.act2:
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)
-                await message.channel.send(random.choice(pen_list_act2)) 
-
+                elif message.guild.id in conf.act2:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send(random.choice(pen_list_act2)) 
+            else:
+                pass
 
 
             # -------------------------------------------------------Tagging-------------------------------------------------------

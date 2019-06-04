@@ -4,7 +4,7 @@ class conf():
     prefix1 = "y_"
     prefix2 = "Y_"
     name = "Yuri"
-    version = "1.0L Biscuit"
+    version = "1.2L Biscuit"
     sharding = False
     cogd = "Cogs"
     type_speed = 2
@@ -26,6 +26,9 @@ class conf():
     everyone_tag = "Hey! Do you **WANT** everyone to freak out in the chat?! Because I won't let you do that!"
     econfused = "Uh... What?"
 
+    ''' These are for the chat trigger'''
+    w_tog_on = []
+    w_tog_off = [] 
 
     ''' Doki Bot's ID'S '''
     if test_mode is True:

@@ -4,7 +4,7 @@ class conf():
     prefix1 = "s_"
     prefix2 = "S_"
     name = "Sayori"
-    version = "1.0L Biscuit"
+    version = "1.2L Biscuit"
     sharding = True
     cogd = "Cogs"
     type_speed = 2
@@ -22,6 +22,9 @@ class conf():
     everyone_tag = "Nice try to ping everyone, Baka."
     econfused = "Uh... What?"
 
+    ''' These are for the chat trigger'''
+    w_tog_on = []
+    w_tog_off = [] 
 
     ''' Doki Bot's ID'S '''
     if test_mode is True:

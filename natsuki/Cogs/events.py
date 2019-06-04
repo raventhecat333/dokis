@@ -21,6 +21,8 @@ class Event(client.Cog): #Silly man class leave alone thx
         print(chalk.cyan(f"Defualt Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'"))
         print(chalk.cyan("Are you braindead: Most Likely"))
         print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] servers."))
+        for guild in self.b.guilds:
+            conf.w_tog_on.insert(0, guild.id)
         aaa = True
         while aaa:
             for list in conf.playing_msg:
@@ -42,20 +44,29 @@ class Event(client.Cog): #Silly man class leave alone thx
         # ------------------------------------------------------------------------------------------------------------------------------------------------
 
         if message.content.lower() in dad_words: # Is the user saying a word inside of dad_words?
-            async with message.channel.typing():
-                await asyncio.sleep(2)
-            await message.channel.send(random.choice(dad_list)) # Pick out something inside of dad_list and say it 
+            if message.guild.id in conf.w_tog_on:
+                async with message.channel.typing():
+                    await asyncio.sleep(2)
+                await message.channel.send(random.choice(dad_list)) # Pick out something inside of dad_list and say it 
+            else:
+                pass
 
         elif message.content.lower() in cupcake_words: # Is the user saying a word inside of cupcake_words?
-            async with message.channel.typing():
-                await asyncio.sleep(2)
-            await message.channel.send(random.choice(cupcake_list)) # Pick out something inside of dad_list and say it 
-    
-        elif message.content.lower() in manga_words: # Is the user saying a word inside of manga_words?
-            async with message.channel.typing():
-                await asyncio.sleep(2) 
-            await message.channel.send(random.choice(manga_list)) # Pick out something inside of manga_list and say it 
+            if message.guild.id in conf.w_tog_on:
+                async with message.channel.typing():
+                    await asyncio.sleep(2)
+                await message.channel.send(random.choice(cupcake_list)) # Pick out something inside of dad_list and say it 
+            else:
+                pass
 
+
+        elif message.content.lower() in manga_words: # Is the user saying a word inside of manga_words?
+            if message.guild.id in conf.w_tog_on:
+                async with message.channel.typing():
+                    await asyncio.sleep(2) 
+                await message.channel.send(random.choice(manga_list)) # Pick out something inside of manga_list and say it 
+            else:
+                pass
 
 
             # -------------------------------------------------------Tagging-------------------------------------------------------

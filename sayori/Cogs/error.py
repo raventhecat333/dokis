@@ -29,7 +29,7 @@ class CommandErrorHandler(commands.Cog):
             return
 
         elif isinstance(error, commands.MissingPermissions):
-            await ctx.send("Whoa there, Dummy! Only an admin can use that command!")
+            await ctx.send("Sorry, but you don't have permission to use this command. You might need to ask the Club Leader to switch this.")
 
         else:
             tra = traceback.format_exception_only(type(error), error)

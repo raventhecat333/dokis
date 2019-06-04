@@ -4,11 +4,11 @@ class conf():
     prefix1 = "m_"
     prefix2 = "M_"    
     name = "Monika"
-    version = "1.0L Biscuit"
+    version = "1.2L Biscuit"
     sharding = True
     cogd = "Cogs"
     type_speed = 2
-    playing_msg = ["Type 'm_help' for help!","Doki Doki Literature Club","Don't Starve","Cooking Mama"]
+    playing_msg = ["Type 'm_help' for help!","Doki Doki Literature Club","the piano!", "Super Smash Bros Ultimate.", "If My Heart Had Wings"]
     admins = [480580173431832577, 279732337971953664, 332271541859647498, 218085039768993803, 310496481435975693, 270057011251642368]
     test_mode = False
 
@@ -22,6 +22,9 @@ class conf():
     everyone_tag = "Hey! Do you **WANT** everyone to freak out in the chat?! Because I won't let you do that!"
     econfused = "Uh... What?"
 
+    ''' These are for the chat trigger'''
+    w_tog_on = []
+    w_tog_off = [] 
     
     ''' Doki Bot's ID'S '''
     if test_mode is True:
