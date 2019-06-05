@@ -96,7 +96,7 @@ class Event(client.Cog): #Silly man class leave alone thx
             if message.guild.id in conf.w_tog_on:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed) 
-                await message.channel.send(random.choice(breakfast_list)) 
+                await message.channel.send(random.choice(goodnight_list)) 
             else:
                 pass
 
