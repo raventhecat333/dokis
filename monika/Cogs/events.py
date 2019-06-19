@@ -29,11 +29,11 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await self.b.change_presence(activity=discord.Game(name=list))
                 await asyncio.sleep(900)
 
-    @client.Cog.listener()
-    async def on_guild_join(self,guild):
-        e = discord.Embed(title="Hi! I'm Monika!",description="I DON'T KNOW WHAT KINDA DESC TO PUT IN HERE IM A DEVELOPER NOT A WRITER!!!!!!!!1111",color=conf.norm)
-        await guild.owner.send(embed=e)
-        print("Test")
+    #@client.Cog.listener()
+    #async def on_guild_join(self,guild):
+    #    e = discord.Embed(title="Hi! I'm Monika!",description="I DON'T KNOW WHAT KINDA DESC TO PUT IN HERE IM A DEVELOPER NOT A WRITER!!!!!!!!1111",color=conf.norm)
+    #    await guild.owner.send(embed=e)
+    #    print("Test")
 
     @client.Cog.listener()
     async def on_message(self,message):
