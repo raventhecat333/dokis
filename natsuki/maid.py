@@ -1,4 +1,4 @@
-import discord, os, traceback, random, chalk, sys
+import discord, os, traceback, chalk, sys
 from discord.ext import commands
 from os import listdir
 from os.path import isfile, join
@@ -9,7 +9,7 @@ if conf.test_mode is True:
     print(chalk.red('''---------------------Testing Mode--------------------- 
 Warning!
 
-You are currently running Maid Core in testing mode!
+You are currently running the Pythonic Doki Bot's in testing mode!
 Please disable testing mode before launching this code. 
 If you are unsure how to turn testing mode off:
 
@@ -21,14 +21,11 @@ else:
     pass
 
 
-async def prefix(bot, message):
-  return [conf.prefix1, conf.prefix2]  # or a list, ["pre1","pre2"]
-
 
 if conf.sharding is True:
-    client = commands.AutoShardedBot(command_prefix=prefix, status=discord.Status.idle, shard_count=2, shard_ids=(0, 1)) # Defining what our prefix for the bot will be
+    client = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or(conf.prefix1,conf.prefix2), status=discord.Status.idle, shard_count=2, shard_ids=(0, 1)) # Defining what our prefix for the bot will be
 elif conf.sharding is False:
-    client = commands.Bot(command_prefix=prefix, status=discord.Status.idle) # Defining what our prefix for the bot will be
+    client = commands.Bot(command_prefix=commands.when_mentioned_or(conf.prefix1,conf.prefix2), status=discord.Status.idle) # Defining what our prefix for the bot will be
 
 
 Cogs = conf.cogd

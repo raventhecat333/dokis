@@ -28,7 +28,7 @@ class Poems(client.Cog):#Class thing no touchy!!!111
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await ctx.send(random.choice(s_poem_intros))
-            embed = discord.Embed(title="Dear Sunshine", description="*by Sayori*", color=nol)
+            embed = discord.Embed(title="Dear Sunshine", description="*by Sayori*", color=conf.norm)
             await ctx.send(embed=embed)
             await ctx.send(''' 
 The way you glow through my blinds in the morning 
@@ -53,7 +53,7 @@ I want breakfast.''')
         elif poem == "bottles":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
-            embed = discord.Embed(title="Bottles", description="*by Sayori*", color=nol)
+            embed = discord.Embed(title="Bottles", description="*by Sayori*", color=conf.norm)
             await ctx.send(random.choice(s_poem_intros))
             await ctx.send(embed=embed)
             await ctx.send(''' 
@@ -104,7 +104,7 @@ Inside my head.''')
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await ctx.send(random.choice(s_poem_intros))
-            embed = discord.Embed(title="%", description="*by Sayori*", color=nol)
+            embed = discord.Embed(title="%", description="*by Sayori*", color=conf.norm)
             await ctx.send(embed=embed)
             await ctx.send(''' 
 Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of 

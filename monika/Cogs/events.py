@@ -20,7 +20,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         print(chalk.cyan(f"Config name: '{conf.name}''"))
         print(chalk.cyan(f"Defualt Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'"))
         print(chalk.cyan("Are you braindead: Most Likely"))
-        print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] servers."))
+        print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] server(s)."))
         for guild in self.b.guilds:
             conf.w_tog_on.insert(0, guild.id)
         aaa = True
@@ -29,7 +29,12 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await self.b.change_presence(activity=discord.Game(name=list))
                 await asyncio.sleep(900)
 
-    
+    @client.Cog.listener()
+    async def on_guild_join(self,guild):
+        e = discord.Embed(title="Hi! I'm Monika!",description="I DON'T KNOW WHAT KINDA DESC TO PUT IN HERE IM A DEVELOPER NOT A WRITER!!!!!!!!1111",color=conf.norm)
+        await guild.owner.send(embed=e)
+        print("Test")
+
     @client.Cog.listener()
     async def on_message(self,message):
         # ------------------------------------------------------------------------------------------------------------------------------------------------
@@ -58,42 +63,101 @@ class Event(client.Cog): #Silly man class leave alone thx
         monika_list = ["Ahaha, just me...and you, too!", "Ahaha, did someone call me? :heart:", "That's sweet of you, but it's not just me anymore!"]
 
         # ------------------------------------------------------------------------------------------------------------------------------------------------
+        mct = message.content.split(" ") # (MCT | Meesage Contents)
+        for word in mct:
+            if word.lower() in piano_words: 
+                if message.author.id == self.b.user.id:
+                    return
+                    
+                elif message.guild.id in conf.w_tog_on:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send(random.choice(piano_list)) 
+                else:
+                    pass
 
-        if message.content.lower() in piano_words: 
-            if message.guild.id in conf.w_tog_on:
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)
-                await message.channel.send(random.choice(piano_list)) 
-            else:
-                pass
+            if word.lower() in cacophony_words:
+                if message.author.id == self.b.user.id:
+                    return
+                    
+                elif message.guild.id in conf.w_tog_on:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed) 
+                    await message.channel.send(random.choice(cacophony_list)) 
+                else:
+                    pass
 
-            
-        elif message.content.lower() in cacophony_words: 
-            if message.guild.id in conf.w_tog_on:
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed) 
-                await message.channel.send(random.choice(cacophony_list)) 
-            else:
-                pass
+            if word.lower() in code_words: 
+                if message.author.id == self.b.user.id:
+                    return
+                    
+                elif message.guild.id in conf.w_tog_on:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed) 
+                    await message.channel.send(random.choice(code_list))
+                else:
+                    pass
 
-        elif message.content.lower() in code_words: 
-            if message.guild.id in conf.w_tog_on:
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed) 
-                await message.channel.send(random.choice(code_list))
-            else:
-                pass
+            if word.lower() in python_words: 
+                if message.author.id == self.b.user.id:
+                    return
+                    
+                elif message.guild.id in conf.w_tog_on:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send(random.choice(python_list)) 
+                else:
+                    pass
 
-        elif message.content.lower() in python_words: 
-            if message.guild.id in conf.w_tog_on:
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)
-                await message.channel.send(random.choice(python_list)) 
-            else:
-                pass
+
+            if word.lower() in reality_words: 
+                if message.author.id == self.b.user.id:
+                    return
+                    
+                elif message.guild.id in conf.w_tog_on:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send(random.choice(reality_list)) 
+                else:
+                    pass
+
+            if word.lower() in poem_words: 
+                if message.author.id == self.b.user.id:
+                    return
+                    
+                elif message.guild.id in conf.w_tog_on:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send(random.choice(poem_list)) 
+                else:
+                    pass
+
+
+            if word.lower() in literature_words: 
+                if message.author.id == self.b.user.id:
+                    return
+                    
+                elif message.guild.id in conf.w_tog_on:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send(random.choice(literature_list)) 
+                else:
+                    pass
+
+            if word.lower() in monika_words: 
+                if message.author.id == self.b.user.id:
+                    return
+                    
+                elif message.guild.id in conf.w_tog_on:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send(random.choice(monika_list)) 
+                else:
+                    pass
 
             # -------------------------------------------------------Tagging-------------------------------------------------------
-        elif message.content.lower().startswith(f"<@{self.b.user.id}>") or message.content.lower().startswith(f"<@!{self.b.user.id}>"):
+
+        if message.content.lower().startswith(f"<@{self.b.user.id}>") or message.content.lower().startswith(f"<@!{self.b.user.id}>"):
             if len(message.content.lower().split(" ")) == 1:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
@@ -107,9 +171,6 @@ class Event(client.Cog): #Silly man class leave alone thx
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)  
                     await message.channel.send(random.choice(hello_list))
-
-                elif "test" in message.content.lower():
-                    await message.channel.send("As fine as I can be given my current realization of being nothing more than a videogame character turned Discord bot!")
 
                 elif "i love you" in message.content.lower() or "ily" in message.content.lower():
                     love_list = ["Ahaha!~ W-Well, I'm flattered, to say the least!", "And I love you, too!", "Well, in fairness, why wouldn't you? Ahaha!~"]
@@ -148,6 +209,12 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await asyncio.sleep(conf.type_speed)  
                     await message.channel.send(random.choice(apology_list))
 
+                elif "i'm sick'" in message.content.lower() or "puke" in message.content.lower() or "not feeling good" in message.content.lower() or "not feeling great" in message.content.lower():
+                    gwell_list = ["Oh! I hope you feel better, after all, I have to take care of my club members!", "I hope you feel better! I'm sure all of the other club members would say the same!"]
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)  
+                    await message.channel.send(random.choice(gwell_list))
+
                 elif 'loves you' in message.content.lower():
                     member = message.content.split(" ")[1]
                     love_tag_list = [f"Aww! Well, you can tell {member} that I love them, too!", f"{member} does? Well, that's so sweet to hear!", f"And I love {member}, too! :heart:", f"Yay! I'm loved by {member}!"]
@@ -181,14 +248,14 @@ class Event(client.Cog): #Silly man class leave alone thx
 
 
                 elif "best doki" in message.content.lower() or "best girl" in message.content.lower():
-                    if message1 == "monika" or message1 == "Yuri" or message1 == "Sayori" or message1 == "<@425696108455657472>" or message1 == "<@436350586670153730>":
+                    if message1 == "Yuri" or message1 == "Sayori" or message1 == "<@425696108455657472>" or message1 == "<@436350586670153730>":
                         imbestgirl_list = ["I'm sorry, I didn't catch that. What did you say?", "Hm? Did you say something?", "Ahaha!~ You're funny!"]
                         await message.delete()
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed) 
                         await message.channel.send(random.choice(imbestgirl_list))
 
-                    elif message1 == "is" or message1 == f"<@{conf.natsuki_id}>" or message1 == "you" or message1 == "you're":
+                    elif message1 == "is" or message1 == f"<@{conf.monika_id}>" or message1 == "you" or message1 == "you're":
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("O-Oh! Out of all the other girls, you think *I'M* the best? Well, that's quite an honor!")
@@ -196,10 +263,10 @@ class Event(client.Cog): #Silly man class leave alone thx
                     else:
                         pass
             
-                else:
+                '''else:
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)  
-                    await message.channel.send("I'm afraid I don't understand what you said. I'm terribly sorry!")
+                    await message.channel.send("I'm afraid I don't understand what you said. I'm terribly sorry!")'''
 
 
             # -------------------------------------------------------Tagging-------------------------------------------------------
@@ -247,6 +314,14 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("y_act1")
             # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
+
+
+
+
+
+
+
+
 
 
 

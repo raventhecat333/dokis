@@ -20,8 +20,7 @@ class toggle(client.Cog):#Class thing no touchy!!!111
             conf.w_tog_on.insert(0, ctx.guild.id) #If the ID is already in act2 but we're trying to get back into act1 just remove it from act2
             await ctx.send("Okay, I'll react to the triggers in chat!")
         else:
-            conf.w_tog_on.insert(0, ctx.guild.id)
-            await ctx.send("Okay, I'll react to the triggers in chat!")
+            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know.")
     
 
 

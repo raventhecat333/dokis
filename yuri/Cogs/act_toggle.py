@@ -1,10 +1,10 @@
 import discord, random, asyncio
 from discord.ext import commands as client
-from Cogs.config import conf
+from Cogs.config import conf 
 #Imports
 
 
-class Tickle(client.Cog):
+class act_toggle(client.Cog):
 
     def __init__(self, bot):
          self.b = bot 
@@ -18,9 +18,10 @@ class Tickle(client.Cog):
             await ctx.send("O-Oh... Wh-What just happened? I feel funny...")
         elif ctx.guild.id in conf.act1:
             await ctx.send("I'm already in my 'Act 1' mode. And I'd prefer if it stayed that way...")
+        elif ctx.guild.id in conf.act1 and ctx.guild.id in conf.act2::
+            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know.")
         else:
-            conf.act1.insert(0, ctx.guild.id) #Inserting the ID into act1 so if that id matches the guild ID we run in act1 mode and not act2 mode
-            await ctx.send("O-Oh... Wh-What just happened? I feel funny...")
+            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know.")
 
 
     @client.command()
@@ -32,10 +33,11 @@ class Tickle(client.Cog):
             await ctx.send("Ha. Haha. HAHAHAHAHHAHAHA!!!!")
         elif ctx.guild.id in conf.act2:
             await ctx.send("Oh, you little cutie! I'm already in Act 2 mode! Ahaha!!")
+        elif ctx.guild.id in conf.act1 and ctx.guild.id in conf.act2::
+            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know.")
         else:
-            conf.act2.insert(0, ctx.guild.id) #Inserting the ID into act1 so if that id matches the guild ID we run in act1 mode and not act2 mode
-            await ctx.send("Ha. Haha. HAHAHAHAHHAHAHA!!!!")
+            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know.")
 
 
 def setup(bot):
-    bot.add_cog(Tickle(bot))
+    bot.add_cog(act_toggle(bot))

@@ -20,7 +20,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         print(chalk.cyan(f"Config name: '{conf.name}''"))
         print(chalk.cyan(f"Defualt Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'"))
         print(chalk.cyan("Are you braindead: Most Likely"))
-        print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] servers."))
+        print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] server(s)."))
         for guild in self.b.guilds:
             conf.w_tog_on.insert(0, guild.id)
         aaa = True
@@ -36,41 +36,51 @@ class Event(client.Cog): #Silly man class leave alone thx
         dad_words = ["daddy","papa","dad","father"]
         dad_list = ["Hey! Can you not say that word around me, you jerk??","W-what?? Is Papa here??"] # Just a list of responses to the dad phrase
 
-        cupcake_words = ["cupcake"]
+        cupcake_words = ["cupcake","cupcakes"]
         cupcake_list = ["Did someone mention me?", "What did you call me??", "Yes?"]
 
         manga_words = ["manga"]
         manga_list = ["You like manga, too?? I-I mean, it's not like I like manga or anything...!", "...!", "***MANGA IS LITERATURE!***"]
         # ------------------------------------------------------------------------------------------------------------------------------------------------
+        mct = message.content.split(" ") # (MCT | Meesage Contents)
+        for word in mct:
+            if word.lower() in dad_words: # Is the user saying a word inside of dad_words?
+                if message.author.id == self.b.user.id:
+                    return
 
-        if message.content.lower() in dad_words: # Is the user saying a word inside of dad_words?
-            if message.guild.id in conf.w_tog_on:
-                async with message.channel.typing():
-                    await asyncio.sleep(2)
-                await message.channel.send(random.choice(dad_list)) # Pick out something inside of dad_list and say it 
-            else:
-                pass
-
-        elif message.content.lower() in cupcake_words: # Is the user saying a word inside of cupcake_words?
-            if message.guild.id in conf.w_tog_on:
-                async with message.channel.typing():
-                    await asyncio.sleep(2)
-                await message.channel.send(random.choice(cupcake_list)) # Pick out something inside of dad_list and say it 
-            else:
-                pass
+                if message.guild.id in conf.w_tog_on:
+                    async with message.channel.typing():
+                        await asyncio.sleep(2)
+                    await message.channel.send(random.choice(dad_list)) # Pick out something inside of dad_list and say it 
+                else:
+                    pass
 
 
-        elif message.content.lower() in manga_words: # Is the user saying a word inside of manga_words?
-            if message.guild.id in conf.w_tog_on:
-                async with message.channel.typing():
-                    await asyncio.sleep(2) 
-                await message.channel.send(random.choice(manga_list)) # Pick out something inside of manga_list and say it 
-            else:
-                pass
+            if word.lower() in cupcake_words: # Is the user saying a word inside of cupcake_words?
+                if message.author.id == self.b.user.id:
+                    return
+                    
+                if message.guild.id in conf.w_tog_on:
+                    async with message.channel.typing():
+                        await asyncio.sleep(2)
+                    await message.channel.send(random.choice(cupcake_list)) # Pick out something inside of dad_list and say it 
+                else:
+                    pass
+
+            if word.lower() in manga_words: # Is the user saying a word inside of manga_words?
+                if message.author.id == self.b.user.id:
+                    return
+                    
+                if message.guild.id in conf.w_tog_on:
+                    async with message.channel.typing():
+                        await asyncio.sleep(2) 
+                    await message.channel.send(random.choice(manga_list)) # Pick out something inside of manga_list and say it 
+                else:
+                    pass
 
 
             # -------------------------------------------------------Tagging-------------------------------------------------------
-        elif message.content.lower().startswith(f"<@{self.b.user.id}>") or message.content.lower().startswith(f"<@!{self.b.user.id}>"):
+        if message.content.lower().startswith(f"<@{self.b.user.id}>") or message.content.lower().startswith(f"<@!{self.b.user.id}>"):
             if len(message.content.lower().split(" ")) == 1:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
@@ -84,9 +94,6 @@ class Event(client.Cog): #Silly man class leave alone thx
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)  
                     await message.channel.send(random.choice(hello_list))
-
-                elif "test" in message.content.lower():
-                    await message.channel.send("I'm working just fine.")
 
                 elif "i love you" in message.content.lower() or "ily" in message.content.lower():
                     love_list = ["...I love you, too, okay??", "W-what?? Don't expect me to say that I love you back or anything, you d-dummy!", "*urk!* :flushed:", "Shut up! You don't mean that!"]
@@ -160,7 +167,11 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await message.channel.send(random.choice(love_tag_list))
 
 
-
+                elif "i'm sick" in message.content.lower() or "puke" in message.content.lower() or "not feeling good" in message.content.lower() or "not feeling great" in message.content.lower():
+                    gwell_list = ["Ok... well you'd better get better soon... not that I care or anything..", "Ok dummy! Get rest!"]
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)  
+                    await message.channel.send(random.choice(gwell_list))
 
                 elif "best doki" in message.content.lower() or "best girl" in message.content.lower():
                     if message1 == "monika" or message1 == "Yuri" or message1 == "Sayori" or message1 == "<@425696108455657472>" or message1 == "<@436350586670153730>":
