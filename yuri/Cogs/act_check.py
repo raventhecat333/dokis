@@ -14,13 +14,13 @@ class Act_check(client.Cog):#Class thing no touchy!!!111
     @client.command()
     async def act(self,ctx): 
         if ctx.guild.id in conf.act1:
-            await ctx.send("I'm on act1 mode.")
+            await ctx.send("I'm on act1.")
         elif ctx.guild.id in conf.act2:
-            await ctx.send("I'm on act2 mode.")
+            await ctx.send("I'm on act2.")
         elif ctx.guild.id in conf.act1 and conf.act2:
             await ctx.send("Ok, this is a bug. Can you report this for me? Just say that both acts are active at the same time in the same server. Thanks.")
         else:
-            await ctx.send("I'm not in the list ")
+            await ctx.send("Ok, this is a bug. Can you report this for me? Thanks.")
 
 
 def setup(bot):#No no child keep your hands off or this will break and not load

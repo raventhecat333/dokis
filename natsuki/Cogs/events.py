@@ -42,7 +42,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         manga_words = ["manga"]
         manga_list = ["You like manga, too?? I-I mean, it's not like I like manga or anything...!", "...!", "***MANGA IS LITERATURE!***"]
         # ------------------------------------------------------------------------------------------------------------------------------------------------
-        mct = message.content.split(" ") # (MCT | Meesage Contents)
+        mct = message.content.lower().split(" ") # (MCT | Meesage Contents)
         for word in mct:
             if word.lower() in dad_words: # Is the user saying a word inside of dad_words?
                 if message.author.id == self.b.user.id:
@@ -187,9 +187,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                         pass
             
                 else:
-                    async with message.channel.typing():
-                        await asyncio.sleep(conf.type_speed)  
-                    await message.channel.send(conf.econfused)
+                    pass
 
 
             # -------------------------------------------------------Tagging-------------------------------------------------------

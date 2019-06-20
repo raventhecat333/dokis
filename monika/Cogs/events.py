@@ -29,11 +29,11 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await self.b.change_presence(activity=discord.Game(name=list))
                 await asyncio.sleep(900)
 
-    #@client.Cog.listener()
-    #async def on_guild_join(self,guild):
-    #    e = discord.Embed(title="Hi! I'm Monika!",description="I DON'T KNOW WHAT KINDA DESC TO PUT IN HERE IM A DEVELOPER NOT A WRITER!!!!!!!!1111",color=conf.norm)
-    #    await guild.owner.send(embed=e)
-    #    print("Test")
+    @client.Cog.listener()
+    async def on_guild_join(self,guild):
+        e = discord.Embed(title="Hi! I'm Monika!",description="I DON'T KNOW WHAT KINDA DESC TO PUT IN HERE IM A DEVELOPER NOT A WRITER!!!!!!!!1111",color=conf.norm)
+        await guild.owner.send(embed=e)
+        print("Test")
 
     @client.Cog.listener()
     async def on_message(self,message):
@@ -63,7 +63,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         monika_list = ["Ahaha, just me...and you, too!", "Ahaha, did someone call me? :heart:", "That's sweet of you, but it's not just me anymore!"]
 
         # ------------------------------------------------------------------------------------------------------------------------------------------------
-        mct = message.content.split(" ") # (MCT | Meesage Contents)
+        mct = message.content.lower().split(" ") # (MCT | Meesage Contents)
         for word in mct:
             if word.lower() in piano_words: 
                 if message.author.id == self.b.user.id:
@@ -263,10 +263,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                     else:
                         pass
             
-                '''else:
-                    async with message.channel.typing():
-                        await asyncio.sleep(conf.type_speed)  
-                    await message.channel.send("I'm afraid I don't understand what you said. I'm terribly sorry!")'''
+
 
 
             # -------------------------------------------------------Tagging-------------------------------------------------------

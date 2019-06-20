@@ -52,7 +52,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         pen_list = ["I-I get the feeling you're insulting me by mentioning pens...", "Uuu...! Why did Monika have to make me do...things...? Now I can't think of pens the same way again...!! :cold_sweat:", "I-I only use pens for writing, I swear!!"]
         pen_list_act2 = ["I still have the pen I stole from MC... I even still use it from time to time...", "Hahaha. Are you expecting me to do something naughty with a pen? Because I just might if you ask nicely...", "Oh... Oh...! OH!!! YES, YES, YESYESYES!!!"]
         # ------------------------------------------------------------------------------------------------------------------------------------------------
-        mct = message.content.split(" ") # (MCT | Meesage Contents) 
+        mct = message.content.lower().split(" ") # (MCT | Meesage Contents) 
         for word in mct:
             if word.lower() in cut_words:
                 if message.guild.id in conf.w_tog_on:
@@ -194,9 +194,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                             pass
                 
                     else:
-                        async with message.channel.typing():
-                            await asyncio.sleep(conf.type_speed)  
-                        await message.channel.send("I-I'm sorry, but I don't understand what you mean...")
+                        pass
 
 
             #-------------------- Act 2 --------------------

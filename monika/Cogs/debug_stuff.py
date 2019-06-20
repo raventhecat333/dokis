@@ -28,11 +28,11 @@ Python Version: {sys.version}
         e.set_author(name=f"Hiya {ctx.author.name}!", icon_url=ctx.author.avatar_url)
 
         if ctx.guild.id in conf.w_tog_off:
-            e2 = discord.Embed(title=f'''Does Guild use chat triggers: Yes
+            e2 = discord.Embed(title=f'''Does Guild use chat triggers: No
 I'm currently in [{len(self.b.guilds)}] server(s)!
 ''',color=0x36393f)
         else:
-            e2 = discord.Embed(title=f'''Does Guild use chat triggers: No
+            e2 = discord.Embed(title=f'''Does Guild use chat triggers: Yes
 I'm currently in [{len(self.b.guilds)}] server(s)!
 ''',color=0x36393f)        
 
@@ -43,7 +43,7 @@ Total Guilds: {len(self.b.guilds)}
         else:
             pass
 
-        e4 = discord.Embed(title=f'''Doki ID's:
+        e4 = discord.Embed(title=f'''Doki ID's: 
 Monika: {conf.monika_id}
 Natsuki: {conf.natsuki_id}
 Sayori: {conf.sayori_id}

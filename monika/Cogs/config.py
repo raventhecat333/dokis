@@ -1,6 +1,6 @@
 class conf():
 
-    token = "NTMxNTU2OTI4NzMyNTI4Njcw.XOFIWw.MHlqlJKhiA_BeZ62LVozFzLiFdA"
+    token = "Token"
     prefix1 = "m_"
     prefix2 = "M_"  # There are 2 prefixes cause i keep getting blasted about how mobile users start there sentence with a captial letter, it's here now, shut the fuck up   
     name = "Monika"
@@ -12,7 +12,7 @@ class conf():
 
     if test_mode is False:
         sharding = True
-        version = "2.0 Club Sandwich"
+        version = "2.0B CS"
     else:
         sharding = False
         version = "2.0B CS"

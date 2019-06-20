@@ -28,10 +28,10 @@ Python Version: {sys.version}
         e.set_author(name=f"Hiya {ctx.author.name}!", icon_url=ctx.author.avatar_url)
 
         if ctx.guild.id in conf.w_tog_off:
-            e2 = discord.Embed(title=f'''Does Guild use chat triggers: Yes
+            e2 = discord.Embed(title=f'''Does Guild use chat triggers: No
 ''',color=0x36393f)
         else:
-            e2 = discord.Embed(title=f'''Does Guild use chat triggers: No
+            e2 = discord.Embed(title=f'''Does Guild use chat triggers: Yes
 ''',color=0x36393f)        
 
         if conf.sharding is True:

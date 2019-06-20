@@ -12,7 +12,7 @@ class conf():
 
     if test_mode is False:
         sharding = True
-        version = "2.0 Club Sandwich"
+        version = "2.0B CS"
     else:
         sharding = False
         version = "2.0B CS"

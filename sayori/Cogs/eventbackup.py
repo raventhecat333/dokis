@@ -36,13 +36,16 @@ class Event(client.Cog): #Silly man class leave alone thx
         name_words = ["cinnamon bun", "best girl"]
         name_list = ["Did someone mention me?", "You rang?", "Are you guys talking about me?"]
 
-        goodmorning_words = ["goodmorning", "goodmorning,", "goodmorning!", "good morning", "Good Morning", "Good morning"]
+        goodmorning_words = ["goodmorning", "goodmorning,", "goodmorning!"]
+        gmsp_words = ["good morning", "Good Morning", "Good morning"] 
         goodmorning_list = ["Good morning! I hope you slept well!~", "Morning, everyone!", "Goooooooood morning!~", "Morning, Sunshine!~"]
 
-        goodafternoon_words = ["goodafternoon", "goodafternoon,", "goodafternoon!", "good afternoon", "Good Afternoon", "Good afternoon"]
+        goodafternoon_words = ["goodafternoon", "goodafternoon,", "goodafternoon!"]
+        gasp_words = ["good afternoon", "Good Afternoon", "Good afternoon"]
         goodafternoon_list = ["Good afternoon!", "Afternoon?? Shoot! I'm late for school again!", "Good afternoon, indeed!", "Afternoon!"]
 
-        goodnight_words = ["goodnight", "gn", "goodnight,", "goodnight!", "good night", "Good Night", "Good night"]
+        goodnight_words = ["goodnight", "gn", "goodnight,", "goodnight!"]
+        gnsp_words = ["good night", "Good Night", "Good night"]
         goodnight_list = ["Goodnight! Sleep tight! Don't let the bedbugs bite!~", "Nighty night!~", "Sleep well!", "Goodnight!"]
 
         breakfast_words = ["breakfast"]
@@ -58,7 +61,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         meanie_list = ["Do we have a meanie in the server? If so, please stop.", "Cease your bulli, you meanie!", "Boo! You meanie..."]
 
         # ------------------------------------------------------------------------------------------------------------------------------------------------
-        mct =  message.content.lower().split(" ") # (MCT | Meesage Contents)
+        mct = message.content.lower().split(" ") # (MCT | Meesage Contents)
         for word in mct:
             if message.content.lower() in name_words:
                 if message.author.id == self.b.user.id:
@@ -93,6 +96,17 @@ class Event(client.Cog): #Silly man class leave alone thx
                     else:
                         pass
 
+            if message.content.lower() in gmsp_words:
+                if message.author.id == self.b.user.id:
+                    pass
+                else:    
+                    if message.guild.id in conf.w_tog_on: 
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed) 
+                        await message.channel.send(random.choice(goodmorning_list)) 
+                    else:
+                        pass
+
             if word.lower() in goodafternoon_words:
                 if message.author.id == self.b.user.id:
                     pass
@@ -101,6 +115,17 @@ class Event(client.Cog): #Silly man class leave alone thx
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed) 
                         await message.channel.send(random.choice(goodafternoon_list)) 
+                    else:
+                        pass
+
+            if message.content.lower() in gasp_words:
+                if message.author.id == self.b.user.id:
+                    pass
+                else:    
+                    if message.guild.id in conf.w_tog_on: 
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed) 
+                        await message.channel.send(random.choice(goodmorning_list)) 
                     else:
                         pass
 
@@ -115,6 +140,16 @@ class Event(client.Cog): #Silly man class leave alone thx
                     else:
                         pass
 
+            if message.content.lower() in gnsp_words:
+                if message.author.id == self.b.user.id:
+                    pass
+                else:    
+                    if message.guild.id in conf.w_tog_on: 
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed) 
+                        await message.channel.send(random.choice(goodmorning_list)) 
+                    else:
+                        pass
 
             if word.lower() in meanie_words:
                 if message.author.id == self.b.user.id:
