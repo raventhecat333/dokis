@@ -18,7 +18,7 @@ class act_toggle(client.Cog):
             await ctx.send("O-Oh... Wh-What just happened? I feel funny...")
         elif ctx.guild.id in conf.act1:
             await ctx.send("I'm already in my 'Act 1' mode. And I'd prefer if it stayed that way...")
-        elif ctx.guild.id in conf.act1 and ctx.guild.id in conf.act2::
+        elif ctx.guild.id in conf.act1 and ctx.guild.id in conf.act2:
             await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know.")
         else:
             await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know.")
@@ -33,7 +33,7 @@ class act_toggle(client.Cog):
             await ctx.send("Ha. Haha. HAHAHAHAHHAHAHA!!!!")
         elif ctx.guild.id in conf.act2:
             await ctx.send("Oh, you little cutie! I'm already in Act 2 mode! Ahaha!!")
-        elif ctx.guild.id in conf.act1 and ctx.guild.id in conf.act2::
+        elif ctx.guild.id in conf.act1 and ctx.guild.id in conf.act2:
             await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know.")
         else:
             await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know.")
