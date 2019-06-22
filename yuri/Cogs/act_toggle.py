@@ -19,9 +19,9 @@ class act_toggle(client.Cog):
         elif ctx.guild.id in conf.act1:
             await ctx.send("I'm already in my 'Act 1' mode. And I'd prefer if it stayed that way...")
         elif ctx.guild.id in conf.act1 and ctx.guild.id in conf.act2:
-            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know.")
+            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know. (Also report that both acts are running at the same time)")
         else:
-            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know.")
+            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know. (Also report that this is an ELSE statement)")
 
 
     @client.command()
@@ -34,9 +34,9 @@ class act_toggle(client.Cog):
         elif ctx.guild.id in conf.act2:
             await ctx.send("Oh, you little cutie! I'm already in Act 2 mode! Ahaha!!")
         elif ctx.guild.id in conf.act1 and ctx.guild.id in conf.act2:
-            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know.")
+            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know. Sorry about this. (Also report that both acts are running at the same time)")
         else:
-            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know.")
+            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know. Sorry about this. (Also report that this is an ELSE statement)")
 
 
 def setup(bot):
