@@ -269,13 +269,11 @@ class Event(client.Cog): #Silly man class leave alone thx
                             pass
                 
                     else:
-                        async with message.channel.typing():
-                            await asyncio.sleep(conf.type_speed)  
-                        await message.channel.send("I love you, but I have no clue what you just said.")
+                        pass
             else:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
-                await message.channel.send("Uuuu... Sorry about this but i have seemed to have been restarted, re-run `y_act1` to continue using me")   
+                await message.channel.send("This could be a bug, but i'm not sure. What i do know is that this is an ELSE statement which is not usually meant to happen, try re-running y_act1 and see if that solves this. Sorry!")   
 
             # -------------------------------------------------------Tagging-------------------------------------------------------
 
