@@ -20,7 +20,7 @@ class Act_check(client.Cog):#Class thing no touchy!!!111
         elif ctx.guild.id in conf.act1 and conf.act2:
             await ctx.send("Ok, this is a bug. Can you report this for me? Just say that both acts are active at the same time in the same server. Thanks.")
         else:
-            await ctx.send("Ok, this is a bug. Can you report this for me? Thanks.")
+            await ctx.send("Ok, this is a bug. Can you report this for me? Thanks. (Also report that this is an ELSE statement)")
 
 
 def setup(bot):#No no child keep your hands off or this will break and not load
