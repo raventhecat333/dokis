@@ -23,17 +23,13 @@ class Event(client.Cog): #Silly man class leave alone thx
         print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] server(s)."))
         aaa = True
         for guild in self.b.guilds:
-            conf.act1.insert(0, guild.id)
             conf.w_tog_on.insert(0, guild.id)
         while aaa:
             for list in conf.playing_msg:
                 await self.b.change_presence(activity=discord.Game(name=list))
                 await asyncio.sleep(900)
 
-    @client.Cog.listener()
-    async def on_guild_join(self,guild):
-        for guild in guild:
-            conf.act1.insert(0, guild.id)
+
 
     @client.Cog.listener()
     async def on_message(self,message):  
@@ -59,7 +55,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                     if message.author.id == self.b.user.id:
                         return
 
-                    if message.guild.id in conf.act1:
+                    if message.guild.id not in conf.act2:
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send(random.choice(cut_list)) 
@@ -81,7 +77,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                     if message.author.id == self.b.user.id:
                         return
 
-                    if message.guild.id in conf.act1:
+                    if message.guild.id not in conf.act2:
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send(random.choice(knife_list)) 
@@ -103,7 +99,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                     if message.author.id == self.b.user.id:
                         return
 
-                    if message.guild.id in conf.act1:
+                    if message.guild.id not in conf.act2:
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send(random.choice(pen_list)) 
@@ -120,7 +116,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         if message.content.lower().startswith(f"<@{self.b.user.id}>") or message.content.lower().startswith(f"<@!{self.b.user.id}>"):
 
             #-------------------- Act 1 --------------------
-            if message.guild.id in conf.act1:
+            if message.guild.id not in conf.act2:
                 if len(message.content.lower().split(" ")) == 1:
                     tag_react_list1 = ["Y-Yes...?", "Did you want to talk to me...?", "Hm?"]
                     async with message.channel.typing():
@@ -382,7 +378,6 @@ class Event(client.Cog): #Silly man class leave alone thx
         if "y_act1" in message.content.lower() and message.author.id == conf.monika_id:
             if message.guild.id in conf.act2:
                 conf.act2.remove(message.guild.id) 
-                conf.act1.insert(0, message.guild.id)
                 await message.channel.send("O-Oh... Wh-What just happened? I feel funny...")
             else:
                 await message.channel.send("Oh snap! You encountered a bug! Please report this to the developers if you're seeing this message!")

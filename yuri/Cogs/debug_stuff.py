@@ -14,7 +14,7 @@ class Debug(client.Cog):#Class thing no touchy!!!111
     @checks.dev()
     @client.command(enabled=True)
     async def debug(self,ctx):
-        if ctx.guild.id in conf.act1:
+        if ctx.guild.id not in conf.act2:
             e = discord.Embed(title=f'''Version: {conf.version}
 Name: {conf.name}
 Username: {self.b.user.name}

@@ -12,7 +12,7 @@ class Hug(client.Cog):#Class thing no touchy!!!111
     @client.command()
     @client.guild_only()
     async def hug(self,ctx, *, message=None): 
-        if ctx.guild.id in conf.act1:
+        if ctx.guild.id not in conf.act2:
             if message is None: #No argument? Just assume it's you
                 user = ctx.author
                 hug_list1 = [f"Y-you want me to hug you? Well, o-okay, I guess I can do that for you... *hugs <@{user.id}>*", f"Just let me know if this is too much for you... *hugs <@{user.id}>*", f"*hugs <@{user.id}>* Mmm... this feels nice... ***OH!*** I-I'm sorry, I didn't mean for that to sound weird!"]

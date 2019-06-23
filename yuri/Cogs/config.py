@@ -26,7 +26,6 @@ class conf():
     suc = 0xff42e2 # The Success i did a thing Embed Colour
 
     ''' Special thing for yuri as she holds the act command, on startup this list will be empty though if using act1 or 2 they will have ID's added, once again if a startup was to occur, even if there was ID's in this list, the list itself would be wiped '''
-    act1 = []
     act2 = []
 
     ''' These are just some error quotes so i can change them really quickly instead of doing the same quote for each error in every file '''

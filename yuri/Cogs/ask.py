@@ -11,7 +11,7 @@ class Ask(client.Cog):#Class thing no touchy!!!111
 
     @client.command()
     async def ask(self,ctx, arg1=None): # we make arg1 so we can have the command as this "n_ask my dad is in jail lmao" and it will obviously respond, if your missing the "answer arg" which comes after the command then the command will obviously not run
-        if ctx.guild.id in conf.act1:
+        if ctx.guild.id not in conf.act2:
             if arg1 is None:
                 await ctx.send("Did you want to ask me something? S-sorry if i was bothering you! Uuu...")
             else:

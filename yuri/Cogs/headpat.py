@@ -12,7 +12,7 @@ class Headpat(client.Cog):#Class thing no touchy!!!111
     @client.command()
     @client.guild_only()
     async def headpat(self,ctx):
-        if ctx.guild.id in conf.act1: 
+        if ctx.guild.id not in conf.act2: 
             headpat_list1 = ["Mmm... :relaxed:", "Oh... I'm not sure how to feel about that...", "H-Hey, could you be a little more gentle, please?", "That feels rather nice...", "T-Thank you."]
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  

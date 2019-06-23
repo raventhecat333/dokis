@@ -25,7 +25,7 @@ class CommandError(commands.Cog):
         elif isinstance(error, commands.CommandNotFound):
             return
         
-        elif isinstance(error, command.GuildOnly):
+        elif isinstance(error, commands.NoPrivateMessage):
             await ctx.send("Sorry but this command can only be used in servers! (*I'm not a bot for dm's you know*).")
 
         elif isinstance(error, commands.MissingPermissions):

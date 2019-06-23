@@ -12,7 +12,7 @@ class Tickle(client.Cog):#Class thing no touchy!!!111
     @client.command()
     @client.guild_only()
     async def tickle(self,ctx):
-        if ctx.guild.id in conf.act1:
+        if ctx.guild.id not in conf.act2:
             laughs1 = ["Oh! Hehehe!", "P-Please! Stop it! Ehehe!", "Hey, that tickles! Hahaha!", "HAHAHAHAHAHA! *snort*", "H-Hey! That's my ticklish spot!! :laughing:"]
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
