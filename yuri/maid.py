@@ -28,11 +28,8 @@ elif conf.sharding is False:
 
 
 Cogs = conf.cogd
-aaa=True
-if aaa is True:
-    for guild in client.guilds:
-        conf.act1.insert(0, guild.id)
-        conf.w_tog_on.insert(0, guild.id)
+
+
 
 
 if __name__ == '__main__': # Load every file that have a .py extension in the Cogs folder
