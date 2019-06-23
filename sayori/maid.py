@@ -21,11 +21,10 @@ else:
     pass
 
 
-
 if conf.sharding is True:
-    client = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or(conf.prefix1,conf.prefix2), status=discord.Status.idle) # Defining what our prefix for the bot will be
+    client = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or(conf.prefix1,conf.prefix2), status=discord.Status.idle, activity=discord.Game(name="Starting Up..."), shard_count=2, shard_ids=(0, 1)) # Defining what our prefix for the bot will be
 elif conf.sharding is False:
-    client = commands.Bot(command_prefix=commands.when_mentioned_or(conf.prefix1,conf.prefix2), status=discord.Status.idle) # Defining what our prefix for the bot will be
+    client = commands.Bot(command_prefix=commands.when_mentioned_or(conf.prefix1,conf.prefix2), status=discord.Status.idle, activity=discord.Game(name="Starting Up...")) # Defining what our prefix for the bot will be
 
 
 Cogs = conf.cogd
@@ -46,4 +45,4 @@ if __name__ == '__main__': # Load every file that have a .py extension in the Co
             print("\n")
             continue
 
-client.run(conf.token, reconnect=True) # Login via our token inside of the config file
+client.run(conf.token) # Login via our token inside of the config file
