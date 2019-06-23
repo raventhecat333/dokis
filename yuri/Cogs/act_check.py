@@ -12,6 +12,7 @@ class Act_check(client.Cog):#Class thing no touchy!!!111
     #A test command to see if the "Act" function is working properly as intended
 
     @client.command()
+    @client.guild_only()
     async def act(self,ctx): 
         if ctx.guild.id in conf.act1:
             await ctx.send("I'm on act1.")

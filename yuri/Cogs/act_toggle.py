@@ -11,6 +11,7 @@ class act_toggle(client.Cog):
 
     @client.command()
     @client.has_permissions(administrator=True)
+    @client.guild_only()
     async def act1(self,ctx): 
         if ctx.guild.id in conf.act2:
             conf.act2.remove(ctx.guild.id) #If the ID is already in act2 but we're trying to get back into act1 just remove it from act2
@@ -19,13 +20,19 @@ class act_toggle(client.Cog):
         elif ctx.guild.id in conf.act1:
             await ctx.send("I'm already in my 'Act 1' mode. And I'd prefer if it stayed that way...")
         elif ctx.guild.id in conf.act1 and ctx.guild.id in conf.act2:
-            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know. (Also report that both acts are running at the same time)")
+            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know. Sorry about this. I'll send you to act 1 (Just report that both acts are running at the same time)")
+            conf.act2.remove(0,ctx.guild.id)
         else:
-            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know. (Also report that this is an ELSE statement)")
-
+            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know. Sorry about this. I'll send you to act 1 (Just report that this is an ELSE statement)")
+            if ctx.guild in conf.act2:
+                conf.act2.remove(ctx.guild.id)
+                conf.act1.insert(0, ctx.guild.id)
+            else:
+                conf.act1.insert(0, ctx.guild.id)
 
     @client.command()
     @client.has_permissions(administrator=True) #Cooldowns when
+    @client.guild_only()
     async def act2(self,ctx): 
         if ctx.guild.id in conf.act1:
             conf.act1.remove(ctx.guild.id) #If the ID is already in act2 but we're trying to get back into act1 just remove it from act2
@@ -34,10 +41,15 @@ class act_toggle(client.Cog):
         elif ctx.guild.id in conf.act2:
             await ctx.send("Oh, you little cutie! I'm already in Act 2 mode! Ahaha!!")
         elif ctx.guild.id in conf.act1 and ctx.guild.id in conf.act2:
-            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know. Sorry about this. (Also report that both acts are running at the same time)")
+            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know. Sorry about this. I'll send you to act 2 (Just report that both acts are running at the same time)")
+            conf.act1.remove(0,ctx.guild.id)
         else:
-            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know. Sorry about this. (Also report that this is an ELSE statement)")
-
+            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know. Sorry about this. I'll send you to act 2 (Just report that this is an ELSE statement)")
+            if ctx.guild in conf.act1:
+                conf.act1.remove(ctx.guild.id)
+                conf.act2.insert(0, ctx.guild.id)
+            else:
+                conf.act2.insert(0, ctx.guild.id)
 
 def setup(bot):
     bot.add_cog(act_toggle(bot))

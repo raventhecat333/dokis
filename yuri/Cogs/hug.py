@@ -10,6 +10,7 @@ class Hug(client.Cog):#Class thing no touchy!!!111
          self.b = bot #Please no touchy thx
 
     @client.command()
+    @client.guild_only()
     async def hug(self,ctx, *, message=None): 
         if ctx.guild.id in conf.act1:
             if message is None: #No argument? Just assume it's you
@@ -55,6 +56,6 @@ class Hug(client.Cog):#Class thing no touchy!!!111
                     await asyncio.sleep(conf.type_speed)  
                 await ctx.send("No. I refuse to hug anyone other than you.")
 
-
+        
 def setup(bot):#No no child keep your hands off or this will break and not load
     bot.add_cog(Hug(bot))

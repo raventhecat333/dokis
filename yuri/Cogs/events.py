@@ -22,9 +22,6 @@ class Event(client.Cog): #Silly man class leave alone thx
         print(chalk.cyan("Are you braindead: Most Likely"))
         print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] server(s)."))
         aaa = True
-        for guild in self.b.guilds:
-            conf.act1.insert(0, guild.id)
-            conf.w_tog_on.insert(0, guild.id)
         while aaa:
             for list in conf.playing_msg:
                 await self.b.change_presence(activity=discord.Game(name=list))

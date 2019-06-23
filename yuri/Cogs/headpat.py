@@ -10,6 +10,7 @@ class Headpat(client.Cog):#Class thing no touchy!!!111
          self.b = bot #Please no touchy thx
 
     @client.command()
+    @client.guild_only()
     async def headpat(self,ctx):
         if ctx.guild.id in conf.act1: 
             headpat_list1 = ["Mmm... :relaxed:", "Oh... I'm not sure how to feel about that...", "H-Hey, could you be a little more gentle, please?", "That feels rather nice...", "T-Thank you."]
