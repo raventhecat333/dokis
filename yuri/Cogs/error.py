@@ -7,7 +7,7 @@ ver = conf.version
 eol = conf.err
 checks = Cogs.checks
 
-class CommandErrorHandler(commands.Cog):
+class CommandError(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -25,6 +25,9 @@ class CommandErrorHandler(commands.Cog):
         elif isinstance(error, commands.CommandNotFound):
             return
         
+        elif isinstance(error, commands.NoPrivateMessage):
+            await ctx.send("Sorry but this command can only be used in servers! (*I'm not a bot for dm's you know*).")
+
         elif isinstance(error, commands.MissingPermissions):
             await ctx.send("I-I'm terribly sorry, but you don't seem to have the permissions to use this command...")
  
@@ -33,15 +36,15 @@ class CommandErrorHandler(commands.Cog):
 
         else:
             tra = traceback.format_exception_only(type(error), error)
-            e = discord.Embed(description="`Oops! That's not supposed to happen, here's the traceback below.` ```py\n%s\n```" % ''.join(tra), file=sys.stderr, color=eol)
+            e = discord.Embed(description="`Oops! That's not supposed to happen, here's the traceback below.` ```py\n%s\n``` \nLooks like you encountered an issue! If you want, you can report this by clicking [here!](https://forms.gle/hJ3KHVwKMFzfs5eq9) (It takes you to a form where you can explain the bug in detail.)" % ''.join(tra), file=sys.stderr, color=eol)
             e.set_author(name="That's an issue!",icon_url=ctx.message.author.avatar_url)
-            e.set_footer(text=ver)
+            e.set_footer(text="v"+ver)
             await ctx.send(embed=e)
-            print("\n")
-            traceback.print_exc(file=sys.stdout)
+            print(chalk.yellow(f"Warning! The command '{ctx.command}' has just Errored!")) 
+            print(chalk.red(f"Traceback: %s" % ''.join(tra)))
 
 
 
 
 def setup(bot):
-    bot.add_cog(CommandErrorHandler(bot))
+    bot.add_cog(CommandError(bot))

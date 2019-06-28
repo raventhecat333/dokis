@@ -18,7 +18,5 @@ class Ask(client.Cog):#Class thing no touchy!!!111
                 await asyncio.sleep(0.4) 
             await ctx.send(random.choice(answer_list))
 
-
-
 def setup(bot):#No no child keep your hands off or this will break and not load
     bot.add_cog(Ask(bot))

@@ -1,16 +1,22 @@
 class conf():
 
-    token = "token"
+    token = "Token"
     prefix1 = "n_"
     prefix2 = "N_"
     name = "Natsuki"
-    version = "1.2L Biscuit"
-    sharding = True
     cogd = "Cogs"
-    type_speed = 2
-    playing_msg = ["Type 'n_help' for help!","Doki Doki Literature Club","Don't Starve","Cooking Mama"]
+    type_speed = 1.5
+    playing_msg = ["Type 'n_help' for help!","Doki Doki Literature Club","Don't Starve","Cooking Mama", "with new recipies", "some anime through your computer!"]
     admins = [480580173431832577, 279732337971953664, 332271541859647498, 218085039768993803, 310496481435975693, 270057011251642368]
-    test_mode = False
+    test_mode = False  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
+
+    if test_mode is False:
+        sharding = True
+        version = "2.0B CS"
+    else:
+        sharding = False
+        version = "2.0B CS"
+    #L|Launch    B|Beta
 
     ''' Just wanted to clear out that these hex codes bellow are for embed colours so i don't have to keep changing them in every single fucking file '''
     err = 0xC91313 # The Error Embed Colour
@@ -33,15 +39,10 @@ class conf():
         sayori_id = 531554745337249792
         yuri_id = 531556397746356224
 
-    elif test_mode is False:
+    else:
         natsuki_id = 433834936450023424
         monika_id = 436351740787294208 
         sayori_id = 425696108455657472
         yuri_id = 436350586670153730
-
-    else:
-        print("fail")
-
-
 
 

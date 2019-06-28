@@ -4,7 +4,7 @@ from Cogs.config import conf
 #Imports
 
 
-class Help(client.Cog):#Class thing no touchy!!!111
+class Commands(client.Cog):#Class thing no touchy!!!111
 
     def __init__(self, bot):
          self.b = bot #Please no touchy thx
@@ -24,4 +24,4 @@ class Help(client.Cog):#Class thing no touchy!!!111
 
 
 def setup(bot):#No no child keep your hands off or this will break and not load
-    bot.add_cog(Help(bot))
+    bot.add_cog(Commands(bot))
