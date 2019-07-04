@@ -20,7 +20,7 @@ class Changelog(client.Cog):
 
 ```
 ''', color=conf.norm)
-        e.set_author(name="The Changelog for Monika.",icon_url=self.b.user.avatar_url)
+        e.set_author(name="The Changelog for Natsuki.",icon_url=self.b.user.avatar_url)
         await ctx.send(embed=e)
 
 
