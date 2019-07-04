@@ -22,15 +22,3 @@ def dev():# This check will check if the command is being executed by a develope
             raise dev_only
     return commands.check(predicate)
 
-def test(enabled=0,admin=0,developer=0):
-    def predicate(ctx):
-        if developer is 1 and ctx.author.id in conf.admins:
-            return True
-        if admin is 1:
-            return True
-        if enabled is 1:
-            return True
-        else:
-            print("Hey that's not right...")
-            return False
-    return commands.check(predicate)
