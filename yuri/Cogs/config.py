@@ -1,6 +1,6 @@
 class conf():
 
-    token = "Token"
+    token = "token"
     prefix1 = "y_"
     prefix2 = "Y_"
     name = "Yuri"

@@ -10,7 +10,7 @@ class act_toggle(client.Cog):
          self.b = bot 
 
     @client.command()
-    @client.has_permissions(administrator=True)
+    @client.has_permissions(administrator=True) #Change this to "manage_messages"
     @client.guild_only()
     async def act1(self,ctx): 
         if ctx.guild.id in conf.act2:

@@ -37,8 +37,7 @@ I'm currently in [{len(self.b.guilds)}] server(s)!
 ''',color=0x36393f)        
 
         if conf.sharding is True:
-            e3 = discord.Embed(title=f'''Number of Shard's: {len(self.b.shard_ids)}
-Total Guilds: {len(self.b.guilds)}
+            e3 = discord.Embed(title=f'''Number of Shard's: 
 ''',color=0x36393f)
         else:
             pass

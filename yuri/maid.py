@@ -39,10 +39,10 @@ if __name__ == '__main__': # Load every file that have a .py extension in the Co
                 pass
             else:   
                 client.load_extension(Cogs + "." + extension) # Here's were we load them
-                print(chalk.green(f"Loaded {extension}"))
+                print(chalk.green(f"[INFO] Loaded {extension}"))
         except (discord.ClientException, ModuleNotFoundError): # Oh fuck something happened lets reppoooooorrrrrt it!!!!111111!!!!!!
             crash_thing = traceback.format_exc()
-            print(chalk.red(f'Failed to load extension {extension}', file=sys.stderr))
+            print(chalk.red(f'[ERROR] Failed to load extension {extension}', file=sys.stderr))
             ono = traceback.format_exc()
             print(chalk.red(ono))
             print("\n")

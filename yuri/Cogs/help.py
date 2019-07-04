@@ -22,6 +22,7 @@ class Help(client.Cog):#Class thing no touchy!!!111
             e1.add_field(name="y_invite", value="Y-You can use this to have me post my invite link so I can visit other servers. A-Although, I don't see why anyone would want that. I'm so useless...", inline=True)
             e1.add_field(name="y_quote", value="You can use this to have me say one of my quotes from Doki Doki Literature Club, although some of them, I'm not proud to admit that I said... Uu...", inline=True)
             e1.add_field(name="y_tickle", value="You can use this to tickle me, although I should warn you that I tend to have embarassing laughs...", inline=True)
+            e1.add_field(name="y_changelog", value="Check out what's been changed!", inline=True)
             e1.add_field(name="I believe that's everything.", value="Cole says more features are coming soon, so until then, this will have to suffice. I hope you enjoy my presence on your Discord server, and if you have any questions, comments, or suggestions, feel free to visit Cole's Support Server. Thank you.", inline=True)
             e1.set_footer(text="Support Server: https://discord.gg/QnzsG38")
             await ctx.send(embed=e1)
@@ -37,6 +38,7 @@ class Help(client.Cog):#Class thing no touchy!!!111
             e2.add_field(name="y_quote", value="You can use this to have me say one of my quotes from Doki Doki Literature Club.", inline=True)
             e2.add_field(name="y_tickle", value="You can use this to tickle me, which is so hot and sexy...", inline=True)
             e2.add_field(name="I believe that's everything.", value="Cole says more features are coming soon, so until then, this will have to suffice. If he doesn't add new things soon, I'm afraid he might not be breathing for too much longer... Feel free to visit Cole's Support Server to let him know that I'm counting on him to make me do anything possible to spend time with you.", inline=True)
+            e2.add_field(name="y_changelog", value="Check out what's been changed!", inline=True)
             e2.set_footer(text="Support Server: https://discord.gg/QnzsG38")
             await ctx.send(embed=e2)
         else:
@@ -50,6 +52,7 @@ class Help(client.Cog):#Class thing no touchy!!!111
             e3.add_field(name="y_invite", value="Y-You can use this to have me post my invite link so I can visit other servers. A-Although, I don't see why anyone would want that. I'm so useless...", inline=True)
             e3.add_field(name="y_quote", value="You can use this to have me say one of my quotes from Doki Doki Literature Club, although some of them, I'm not proud to admit that I said... Uu...", inline=True)
             e3.add_field(name="y_tickle", value="You can use this to tickle me, although I should warn you that I tend to have embarassing laughs...", inline=True)
+            e3.add_field(name="y_changelog", value="Check out what's been changed!", inline=True)
             e3.add_field(name="I believe that's everything.", value="Cole says more features are coming soon, so until then, this will have to suffice. I hope you enjoy my presence on your Discord server, and if you have any questions, comments, or suggestions, feel free to visit Cole's Support Server. Thank you.", inline=True)
             e3.set_footer(text="Support Server: https://discord.gg/QnzsG38")
             await ctx.send(embed=e3)

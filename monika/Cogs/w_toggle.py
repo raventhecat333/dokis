@@ -9,7 +9,7 @@ class toggle(client.Cog):#Class thing no touchy!!!111
          self.b = bot #Please no touchy thx
 
     @client.command()
-    @client.has_permissions(administrator=True)
+    @client.has_permissions(administrator=False)
     async def toggle(self,ctx): # we make arg1 so we can have the command as this "n_ask my dad is in jail lmao" and it will obviously respond, if your missing the "answer arg" which comes after the command then the command will obviously not run
         if ctx.guild.id in conf.w_tog_on:
             conf.w_tog_on.remove(ctx.guild.id) #If the ID is already in act2 but we're trying to get back into act1 just remove it from act2
@@ -22,7 +22,5 @@ class toggle(client.Cog):#Class thing no touchy!!!111
         else:
             await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know.")
     
-
-
 def setup(bot):#No no child keep your hands off or this will break and not load
     bot.add_cog(toggle(bot))

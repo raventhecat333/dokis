@@ -40,8 +40,8 @@ class CommandError(commands.Cog):
             e.set_author(name="That's an issue!",icon_url=ctx.message.author.avatar_url)
             e.set_footer(text="v"+ver)
             await ctx.send(embed=e)
-            print(chalk.yellow(f"Warning! The command '{ctx.command}' has just Errored!")) 
-            print(chalk.red(f"Traceback: %s" % ''.join(tra)))
+            print(chalk.yellow(f"[INFO] Warning! The command '{ctx.command}' has just Errored!")) 
+            print(chalk.red(f"[ERROR] Traceback: %s" % ''.join(tra)))
 
 
 

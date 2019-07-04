@@ -1,11 +1,12 @@
 class conf():
 
-    token = "Token"
+    token = "token"
     prefix1 = "m_"
     prefix2 = "M_"  # There are 2 prefixes cause i keep getting blasted about how mobile users start there sentence with a captial letter, it's here now, shut the fuck up   
     name = "Monika"
     cogd = "Cogs"
     type_speed = 1.5
+    cooldown_timer = 1.5
     playing_msg = ["Type 'm_help' for help!","Doki Doki Literature Club","the piano!", "Super Smash Bros Ultimate.", "If My Heart Had Wings", "with you!", "Just Monika.", "from your computer!", "your reality!"]
     admins = [480580173431832577, 279732337971953664, 332271541859647498, 218085039768993803, 310496481435975693, 270057011251642368]
     test_mode = False  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
@@ -31,7 +32,8 @@ class conf():
     ''' These are for the chat trigger''' 
     w_tog_on = []
     w_tog_off = [] 
-    
+    event_cooldown = []
+
     ''' Doki Bot's ID'S '''
     if test_mode is True or test_mode is 1:
         natsuki_id = 531555963908653076
@@ -44,6 +46,3 @@ class conf():
         monika_id = 436351740787294208 
         sayori_id = 425696108455657472
         yuri_id = 436350586670153730
-
-        
-
