@@ -45,7 +45,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         goodnight_words = ["goodnight", "gn", "goodnight,", "goodnight!", "good night", "Good Night", "Good night"]
         goodnight_list = ["Goodnight! Sleep tight! Don't let the bedbugs bite!~", "Nighty night!~", "Sleep well!", "Goodnight!"]
 
-        breakfast_words = ["breakfast"]
+        breakfast_words = ["breakfast", "b2"]
         breakfast_list = ["i want breakfast"]
 
         hang_words = ["hang", "hanging", "hung", "hanged"]
@@ -61,69 +61,76 @@ class Event(client.Cog): #Silly man class leave alone thx
         mct =  message.content.lower().split(" ") # (MCT | Meesage Contents)
         for word in mct:
             if message.content.lower() in name_words:
-                if message.author.id == self.b.user.id:
+                if message.author.bot:
                     pass
+
                 else:    
                     if message.guild.id in conf.w_tog_on: 
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed) 
-                        return await message.channel.send(random.choice(name_list)) 
+                        await message.channel.send(random.choice(name_list)) 
+                        return
                     else:
                         pass
 
             if word.lower() in breakfast_words:
-                if message.author.id == self.b.user.id:
+                if message.author.bot:
+                    return
+                    
+                if message.guild.id in conf.w_tog_on:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed) 
+                    await message.channel.send(random.choice(breakfast_list)) 
+                    return
+                else:
                     pass
-                else:    
-                    if message.guild.id in conf.w_tog_on: 
-                        async with message.channel.typing():
-                            await asyncio.sleep(conf.type_speed) 
-                        await message.channel.send(random.choice(breakfast_list)) 
-                    else:
-                        pass
 
             if word.lower() in goodmorning_words:
-                if message.author.id == self.b.user.id:
+                if message.author.bot:
                     pass
                 else:    
                     if message.guild.id in conf.w_tog_on: 
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed) 
                         await message.channel.send(random.choice(goodmorning_list)) 
+                        return
                     else:
                         pass
 
             if word.lower() in goodafternoon_words:
-                if message.author.id == self.b.user.id:
+                if message.author.bot:
                     pass
                 else:    
                     if message.guild.id in conf.w_tog_on: 
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed) 
                         await message.channel.send(random.choice(goodafternoon_list)) 
+                        return
                     else:
                         pass
 
             if word.lower() in goodnight_words:
-                if message.author.id == self.b.user.id:
+                if message.author.bot:
                     pass
                 else:    
                     if message.guild.id in conf.w_tog_on: 
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed) 
                         await message.channel.send(random.choice(goodnight_list)) 
+                        return
                     else:
                         pass
 
 
             if word.lower() in meanie_words:
-                if message.author.id == self.b.user.id:
+                if message.author.bot:
                     pass
                 else:    
                     if message.guild.id in conf.w_tog_on: 
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed) 
                         await message.channel.send(random.choice(meanie_list)) 
+                        return
                     else:
                         pass
 
@@ -131,7 +138,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                 if message.guild.id in conf.w_tog_off:
                     pass
 
-                if message.author.id == self.b.user.id:
+                if message.author.bot:
                     pass
 
                 elif message.content.upper().startswith(f"<@{self.b.user.id}>"):
@@ -141,18 +148,22 @@ class Event(client.Cog): #Silly man class leave alone thx
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)
                     await message.channel.send(random.choice(suicide_list))
+                    return
                     
                 else:
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)
                     await message.channel.send(random.choice(hang_list))
-
+                    return
 
             if word.lower() in kill_words:
                 if message.guild.id in conf.w_tog_off:
                     pass
 
-                if message.author.id == self.b.user.id:
+                if message.author.bot:
+                    pass
+
+                if message.author.id is conf.natsuki_id:
                     pass
 
                 elif message.content.upper().startswith(f"<@{self.b.user.id}>"):
@@ -162,18 +173,21 @@ class Event(client.Cog): #Silly man class leave alone thx
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)
                     await message.channel.send(random.choice(suicide_list))
-                    
+                    return
+
                 else:
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)
                     await message.channel.send("Can we change the topic to something more wholesome please?")
-
+                    return
+                        
             # -------------------------------------------------------Tagging-------------------------------------------------------
         if message.content.lower().startswith(f"<@{self.b.user.id}>") or message.content.lower().startswith(f"<@!{self.b.user.id}>"):
             if len(message.content.lower().split(" ")) == 1:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send("Yes?")
+                return
 
             else:
                 message1 = message.content.lower().split(" ")[1]
@@ -183,50 +197,58 @@ class Event(client.Cog): #Silly man class leave alone thx
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)  
                     await message.channel.send(random.choice(hello_list))
+                    return
 
                 elif "i love you" in message.content.lower() or "ily" in message.content.lower():
                     love_list = ["Aww! I love you too!", "Thank you so much!~", "I love you too! :smile:", ":blush:", "I don't really deserve your love, but I'm flattered, anyway!"]                    
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)  
                     await message.channel.send(random.choice(love_list))
+                    return 
 
                 elif "good night" in message.content.lower() or "goodnight" in message.content.lower():
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)  
                     await message.channel.send(random.choice(goodnight_list))
+                    return
 
                 elif "good morning" in message.content.lower() or "goodmorning" in message.content.lower():
                     goodmorning_list = ["Good morning! I hope you slept well!~", "Morning, everyone!", "Goooooooood morning!~", "Morning, Sunshine!~"]                    
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)  
                     await message.channel.send(random.choice(goodmorning_list))
+                    return
 
                 elif "good afternoon" in message.content.lower() or "goodafternoon" in message.content.lower():
                     goodafternoon_list = ["Good afternoon!", "Afternoon?? Shoot! I'm late for school again!", "Good afternoon, indeed!", "Afternoon!"]                    
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)  
                     await message.channel.send(random.choice(goodafternoon_list))
+                    return
 
                 elif "you are cute" in message.content.lower() or "you're cute" in message.content.lower() or "you are beautiful" in message.content.lower() or "you're beautiful" in message.content.lower():
                     cute_list = ["Awww! Thank you so much! :blush:", "I know you are, but what am I? :stuck_out_tongue_closed_eyes:", "Y-You really think so? Aww!~", "How sweet! Thank you so much!"]                    
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)  
                     await message.channel.send(random.choice(cute_list))
+                    return
 
                 elif "i apologise" in message.content.lower() or "sorry" in message.content.lower():
                     apology_list = ["It's okay; I forgive you!", "Well, alright. As long as you promise to behave yourself!", "Thank you for apologizing!", "Okay. Just try not to do it again!"]                    
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)  
                     await message.channel.send(random.choice(apology_list))
+                    return 
 
                 elif 'loves you' in message.content.lower():
                     member = message.content.split(" ")[1]
                     love_tag_list = [f"Aww! Well, you can tell {member} that I love them, too!", f"{member} does? Well, that's so sweet to hear!", f"And I love {member}, too! :heart:", f"Yay! I'm loved by {member}!"]
                     if 'nigger' in message.content.lower():
-                        pass
+                        return
 
                     elif member == "loves":
                         await message.channel.send("Ehh?")
+                        return
 
                     elif message.content.lower() == f'<@{conf.natsuki_id}>': #Natsuki
                         async with message.channel.typing():
@@ -238,46 +260,52 @@ class Event(client.Cog): #Silly man class leave alone thx
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Well, of course she does! Yuri loves everybody!")
-                    
+                        return
                     elif message.content.lower() == f'<@{conf.monika_id}>': #Monika
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Yay! I'm glad she does!")
-                    
+                        return
+
                     elif message.content.lower() == 'everyone' or message.content.lower() == '@everyone' or message.content.lower() == '@here' or message.content.lower() == 'everybody':
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("R-really? EVERYONE? Oh, my!")
-                    
+                        return
+
                     else:
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send(random.choice(love_tag_list))
-
+                        return
 
                 elif "syka blyat" in message.content.lower() or "pidor ebony" in message.content.lower():
                     russian_list = ["I don't speak Russian, but I'm assuming that's a compliment, to which I say thank you!", "Sorry, I only know English, despite being Japanese.", "Hehehe. That sounds funny."]
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)
                     await message.channel.send(random.choice(russian_list))
-
+                    return 
+                    
                 elif "i'm sick" in message.content.lower() or "puke" in message.content.lower() or "not feeling good" in message.content.lower() or "not feeling great" in message.content.lower():
                     gwell_list = ["Don't worry! I'm sure you'll feel better soon!", "Aww... get plenty of rest, and eat a lot of healthy foods!"]
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)  
                     await message.channel.send(random.choice(gwell_list))
+                    return 
 
                 elif "best doki" in message.content.lower() or "best girl" in message.content.lower():
                     if message1 == "Monika" or message1 == "Natsuki" or message1 == "Yuri" or message1 == "<@436350586670153730>" or message1 == "<@433834936450023424>":
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send("Well, I respect your opinion!")
+                        return 
 
                     elif message1 == "is" or message1 == "<@436350586670153730>" or message1 == "you" or message1 == "you're":
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send("S-Stop it! That's not true!")
-                    
+                        return
+
                 else:
                     pass
 

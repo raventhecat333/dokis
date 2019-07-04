@@ -21,6 +21,7 @@ class Help(client.Cog):#Class thing no touchy!!!111
         embed.add_field(name="n_quote", value="You can use this to make me say one of my quotes from the game.", inline=True)
         embed.add_field(name="n_recipe", value="Do you like baking, like me? Well, I've got a few recipes in my cookbook; feel free to check them out!", inline=True)
         embed.add_field(name="n_tickle", value="You can use this to... TICKLE ME?? Oh, don't you dare use that unless you want a trip to the hospital!", inline=True)
+        embed.add_field(name="n_changelog", value="Check out what's been changed!", inline=True)
         embed.add_field(name="@Natsuki", value="Use this to get my attention, if you want. You can even try to use certain words or phrases to get certain responses. But that doesn't mean I'll understand everything you say!", inline=True)
         embed.add_field(name="I guess that's it...", value="Cole will make me do more stuff soon, but I'm not looking forward to it! If you want, you can go visit his Support Server and give him a piece of my mind! Anyway, see you later, ~~bakas~~ everyone!", inline=True)
         embed.set_footer(text="Support Server: https://discord.gg/QnzsG38")

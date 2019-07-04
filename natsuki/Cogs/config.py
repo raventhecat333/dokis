@@ -1,12 +1,12 @@
 class conf():
 
-    token = "Token"
+    token = "token"
     prefix1 = "n_"
     prefix2 = "N_"
     name = "Natsuki"
     cogd = "Cogs"
     type_speed = 1.5
-    playing_msg = ["Type 'n_help' for help!","Doki Doki Literature Club","Don't Starve","Cooking Mama", "with new recipies", "some anime through your computer!"]
+    playing_msg = ["Type 'n_help' for help!","Doki Doki Literature Club","Don't Starve","Cooking Mama", "some anime through your computer!"]
     admins = [480580173431832577, 279732337971953664, 332271541859647498, 218085039768993803, 310496481435975693, 270057011251642368]
     test_mode = False  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
 
