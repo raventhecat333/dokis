@@ -2,7 +2,6 @@ import discord, random, asyncio, emoji
 from discord.ext import commands as client
 from Cogs.config import conf
 #Imports
-''' Will say, this is a very long command, even longer now that it uses Yuri's Act1/2 mode. -Cheezy '''
 
 class Feed(client.Cog):#Class thing no touchy!!!111
 
