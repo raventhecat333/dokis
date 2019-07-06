@@ -20,4 +20,4 @@ class maid(commands.AutoShardedBot):
 
 client = maid()
 config = json.loads(open('../config.json', 'r').read())
-client.run(config.get('sayori_token'))
+client.run(config.get('mc_token'))
