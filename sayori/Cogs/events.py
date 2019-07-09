@@ -57,8 +57,10 @@ class Event(client.Cog): #Silly man class leave alone thx
         meanie_words = ["meanie"]
         meanie_list = ["Do we have a meanie in the server? If so, please stop.", "Cease your bulli, you meanie!", "Boo! You meanie..."]
 
+        confused_list = ["????????", "Maybe try something I actually understand?"]
+
         # ------------------------------------------------------------------------------------------------------------------------------------------------
-        mct =  message.content.lower().split(" ") # (MCT | Meesage Contents)
+        mct =  message.content.lower().split(" ") # (MCT | Message Contents)
         for word in mct:
             if message.content.lower() in name_words:
                 if message.author.bot:
@@ -233,7 +235,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                     await message.channel.send(random.choice(cute_list))
                     return
 
-                elif "i apologise" in message.content.lower() or "sorry" in message.content.lower():
+                elif "i apologise" in message.content.lower() or "sorry" in message.content.lower() or "i apologize" in message.content.lower():
                     apology_list = ["It's okay; I forgive you!", "Well, alright. As long as you promise to behave yourself!", "Thank you for apologizing!", "Okay. Just try not to do it again!"]                    
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)  
@@ -306,8 +308,15 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await message.channel.send("S-Stop it! That's not true!")
                         return
 
+                elif "test" in message.content.lower():
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send("Testing, testing! 1-2-1-2 testing!")
+
                 else:
-                    pass
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send(random.choice(confused_list))
 
 
             # -------------------------------------------------------Tagging-------------------------------------------------------
