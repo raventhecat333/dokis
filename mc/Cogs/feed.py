@@ -1,25 +1,25 @@
-import discord, random, asyncio, emoji
+import discord, random, asyncio
 from discord.ext import commands as client
 from Cogs.config import conf
 #Imports
 
 
-class Feed(client.Cog):#Class thing no touchy!!!111
+class Feed(client.Cog):
 
     def __init__(self, bot):
-         self.b = bot #Please no touchy thx
+         self.b = bot
 
     @client.command()
     @client.guild_only()
-    async def feed(self,ctx, arg1=None): # we make arg1 so we can have the command as this "n_ask my dad is in jail lmao" and it will obviously respond, if your missing the "answer arg" which comes after the command then the command will obviously not run
-        if arg1 is None:
+    async def feed(self,ctx, arg1=None):
+        if arg1 is None: # If you don't provide an emoji :P
             await ctx.send("H-hey! Don't feel like you have to feed me anything! I'm okay!")
             
         elif arg1 == "🍪":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed) 
             await ctx.send("A cookie?? Yummy! Thank you so much!")
-         #------------------- Cookie ------------------- 
+        #------------------- Cookie ------------------- 
 
 
         elif arg1 == "🍣" or arg1 == "🍱" or arg1 == "🍛" or arg1 == "🍙" or arg1 == "🍚" or arg1 == "🍘" or arg1 == "🍜" or arg1 == "🍢" or arg1 == "🍡" or arg1 == "🍥":
@@ -160,5 +160,5 @@ class Feed(client.Cog):#Class thing no touchy!!!111
 
 
 
-def setup(bot):#No no child keep your hands off or this will break and not load
+def setup(bot):
     bot.add_cog(Feed(bot))

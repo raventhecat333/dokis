@@ -8,7 +8,7 @@ class maid(commands.AutoShardedBot):
         self.prefix = commands.when_mentioned_or(conf.prefix1,conf.prefix2)
         super().__init__(command_prefix=self.prefix, status=discord.Status.idle, activity=discord.Game(name="Starting Up..."))
 
-        for file in os.listdir("Cogs"):
+        for file in os.listdir(conf.cogd):
             if file.endswith(".py"):
                 name = file[:-3]
                 if name == "config" or name == "checks":
