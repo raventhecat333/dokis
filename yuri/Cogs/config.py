@@ -7,7 +7,7 @@ class conf():
     cogd = "Cogs"
     type_speed = 2
     playing_msg = ["Type 'y_help' for help!", "Doki Doki Literature Club", "with knifes!", "Everlasting Summer", "Yandere Simulator", "with your pen!"]
-    admins = [480580173431832577, 279732337971953664, 332271541859647498, 218085039768993803, 310496481435975693, 270057011251642368]
+    admins = [480580173431832577, 332271541859647498, 218085039768993803, 310496481435975693, 270057011251642368]
     test_mode = False  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
 
     if test_mode is False:
@@ -42,10 +42,12 @@ class conf():
         monika_id = 531556928732528670 
         sayori_id = 531554745337249792
         yuri_id = 531556397746356224
+        mc_id = 100000000000000001
 
     else:
         natsuki_id = 433834936450023424
         monika_id = 436351740787294208 
         sayori_id = 425696108455657472
         yuri_id = 436350586670153730
+        mc_id = 100000000000000002
 

@@ -34,7 +34,7 @@ if __name__ == '__main__': # Load every file that have a .py extension in the Co
         try:
             if extension == "config" or extension == "checks":
                 pass
-            else:   
+            else:
                 client.load_extension(Cogs + "." + extension) # Here's were we load them
                 print(chalk.green(f"Loaded {extension}"))
         except (discord.ClientException, ModuleNotFoundError): # Oh fuck something happened lets reppoooooorrrrrt it!!!!111111!!!!!!
