@@ -10,7 +10,6 @@ class Tickle(client.Cog):
          self.b = bot
 
     @client.command()
-    @client.guild_only()
     async def tickle(self,ctx):       
         async with ctx.message.channel.typing():
             await asyncio.sleep(conf.type_speed)  

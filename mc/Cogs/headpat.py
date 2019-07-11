@@ -7,10 +7,9 @@ from Cogs.config import conf
 class Headpat(client.Cog):
 
     def __init__(self, bot):
-         self.b = bot #Please no touchy thx
+         self.b = bot
 
     @client.command()
-    @client.guild_only()
     async def headpat(self,ctx):   
         async with ctx.message.channel.typing():
             await asyncio.sleep(conf.type_speed)

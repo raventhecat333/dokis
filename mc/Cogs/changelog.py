@@ -11,16 +11,14 @@ class Changelog(client.Cog):
 
     @client.command()
     async def changelog(self,ctx): 
-        e = discord.Embed(title=f"A beta update! This has been changed at 29/06/2019. Version: {conf.version}",description='''
+        e = discord.Embed(title=f"A beta update! This has been changed at 11/07/2019. Version: {conf.version}",description='''
 ```
 
--Fixed a majour bug that caused people to spam the doki's using trigger words
-
--Added the "changelog" command
+-Hi The Freaking IDroid give free cookies xx luv beefy man no homo
 
 ```
 ''', color=conf.norm)
-        e.set_author(name="The Changelog for Sayori.",icon_url=self.b.user.avatar_url)
+        e.set_author(name=f"The Changelog for {conf.name}.",icon_url=self.b.user.avatar_url)
         await ctx.send(embed=e)
 
 
