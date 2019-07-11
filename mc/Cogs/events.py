@@ -19,7 +19,6 @@ class Event(client.Cog): #Silly man class leave alone thx
 
         print(chalk.cyan(f"Config name: '{conf.name}''"))
         print(chalk.cyan(f"Defualt Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'"))
-        print(chalk.cyan("Are you braindead: Most Likely"))
         print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] server(s)."))
         for guild in self.b.guilds:
             conf.w_tog_on.insert(0, guild.id)
@@ -33,157 +32,29 @@ class Event(client.Cog): #Silly man class leave alone thx
     @client.Cog.listener()
     async def on_message(self,message):
         # ------------------------------------------------------------------------------------------------------------------------------------------------
-        name_words = ["cinnamon bun", "best girl"]
-        name_list = ["Did someone mention me?", "You rang?", "Are you guys talking about me?"]
-
-        goodmorning_words = ["goodmorning", "goodmorning,", "goodmorning!", "good morning", "Good Morning", "Good morning"]
-        goodmorning_list = ["Good morning! I hope you slept well!~", "Morning, everyone!", "Goooooooood morning!~", "Morning, Sunshine!~"]
-
-        goodafternoon_words = ["goodafternoon", "goodafternoon,", "goodafternoon!", "good afternoon", "Good Afternoon", "Good afternoon"]
-        goodafternoon_list = ["Good afternoon!", "Afternoon?? Shoot! I'm late for school again!", "Good afternoon, indeed!", "Afternoon!"]
-
-        goodnight_words = ["goodnight", "gn", "goodnight,", "goodnight!", "good night", "Good Night", "Good night"]
-        goodnight_list = ["Goodnight! Sleep tight! Don't let the bedbugs bite!~", "Nighty night!~", "Sleep well!", "Goodnight!"]
-
-        breakfast_words = ["breakfast", "b2"]
-        breakfast_list = ["i want breakfast"]
-
-        hang_words = ["hang", "hanging", "hung", "hanged"]
-        hang_list = [":unamused:", "Hey! Stop acting like a meanie!", ":rolling_eyes:", "I thought we were better than this...", "Ha, ha. Funny. Can you sense my sarcasm?"]
-        suicide_list = ["H-Hey! There's no need to do that, I promise you! Someone out there still wants you to keep going, I'm sure!", "If I'm reading this right, then it sounds like you're thinking of doing something terrible. Please, don't do it!", "Listen, I've been where you are. You'll get through it, I promise.", "Here, this is the National Suicide Prevention Lifeline. They'll be able to help you, I promise! 1-800-273-8255"]
-
-        kill_words = ["kill"]
-
-        meanie_words = ["meanie"]
-        meanie_list = ["Do we have a meanie in the server? If so, please stop.", "Cease your bulli, you meanie!", "Boo! You meanie..."]
-
-        confused_list = ["????????", "Maybe try something I actually understand?"]
+        trigger_words = ["rope", "poetry"]
 
         # ------------------------------------------------------------------------------------------------------------------------------------------------
         mct =  message.content.lower().split(" ") # (MCT | Message Contents)
         for word in mct:
-            if message.content.lower() in name_words:
+            if message.content.lower() in trigger_words:
                 if message.author.bot:
                     pass
-
-                else:    
-                    if message.guild.id in conf.w_tog_on: 
-                        async with message.channel.typing():
-                            await asyncio.sleep(conf.type_speed) 
-                        await message.channel.send(random.choice(name_list)) 
-                        return
-                    else:
-                        pass
-
-            if word.lower() in breakfast_words:
-                if message.author.bot:
-                    return
-                    
-                if message.guild.id in conf.w_tog_on:
-                    async with message.channel.typing():
-                        await asyncio.sleep(conf.type_speed) 
-                    await message.channel.send(random.choice(breakfast_list)) 
-                    return
-                else:
-                    pass
-
-            if word.lower() in goodmorning_words:
-                if message.author.bot:
-                    pass
-                else:    
-                    if message.guild.id in conf.w_tog_on: 
-                        async with message.channel.typing():
-                            await asyncio.sleep(conf.type_speed) 
-                        await message.channel.send(random.choice(goodmorning_list)) 
-                        return
-                    else:
-                        pass
-
-            if word.lower() in goodafternoon_words:
-                if message.author.bot:
-                    pass
-                else:    
-                    if message.guild.id in conf.w_tog_on: 
-                        async with message.channel.typing():
-                            await asyncio.sleep(conf.type_speed) 
-                        await message.channel.send(random.choice(goodafternoon_list)) 
-                        return
-                    else:
-                        pass
-
-            if word.lower() in goodnight_words:
-                if message.author.bot:
-                    pass
-                else:    
-                    if message.guild.id in conf.w_tog_on: 
-                        async with message.channel.typing():
-                            await asyncio.sleep(conf.type_speed) 
-                        await message.channel.send(random.choice(goodnight_list)) 
-                        return
-                    else:
-                        pass
-
-
-            if word.lower() in meanie_words:
-                if message.author.bot:
-                    pass
-                else:    
-                    if message.guild.id in conf.w_tog_on: 
-                        async with message.channel.typing():
-                            await asyncio.sleep(conf.type_speed) 
-                        await message.channel.send(random.choice(meanie_list)) 
-                        return
-                    else:
-                        pass
-
-            if word.lower() in hang_words:
-                if message.guild.id in conf.w_tog_off:
-                    pass
-
-                if message.author.bot:
-                    pass
-
-                elif message.content.upper().startswith(f"<@{self.b.user.id}>"):
-                    pass
-
-                elif "myself" in message.content.lower():
-                    async with message.channel.typing():
-                        await asyncio.sleep(conf.type_speed)
-                    await message.channel.send(random.choice(suicide_list))
-                    return
-                    
-                else:
-                    async with message.channel.typing():
-                        await asyncio.sleep(conf.type_speed)
-                    await message.channel.send(random.choice(hang_list))
-                    return
-
-            if word.lower() in kill_words:
-                if message.guild.id in conf.w_tog_off:
-                    pass
-
-                if message.author.bot:
-                    pass
-
-                if message.author.id is conf.natsuki_id:
-                    pass
-
-                elif message.content.upper().startswith(f"<@{self.b.user.id}>"):
-                    pass
-
-                elif "myself" in message.content.lower():
-                    async with message.channel.typing():
-                        await asyncio.sleep(conf.type_speed)
-                    await message.channel.send(random.choice(suicide_list))
-                    return
 
                 else:
-                    async with message.channel.typing():
-                        await asyncio.sleep(conf.type_speed)
-                    await message.channel.send("Can we change the topic to something more wholesome please?")
-                    return
+                    if message.guild.id in conf.w_tog_on:
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)
+                        if word == trigger_words[0]:
+                            await message.channel.send("NO!")
+                        else:
+                            await message.channel.send("Oh... you make poems too, cool.")
+                        return
+                    else:
+                        pass
                         
             # -------------------------------------------------------Tagging-------------------------------------------------------
+            # TODO: Change Sayori's responses with MC's.
         if message.content.lower().startswith(f"<@{self.b.user.id}>") or message.content.lower().startswith(f"<@!{self.b.user.id}>"):
             if len(message.content.lower().split(" ")) == 1:
                 async with message.channel.typing():
