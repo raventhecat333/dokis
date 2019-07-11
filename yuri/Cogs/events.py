@@ -2,39 +2,43 @@ import discord, random, asyncio, chalk
 from discord.ext import commands as client
 from Cogs.config import conf
 
-class Event(client.Cog): #Silly man class leave alone thx
+class Event(client.Cog):
 
     def __init__(self, bot):
          self.b = bot
 
     @client.Cog.listener()
-    async def on_ready(self):
+    async def on_ready(self): #When the bot is ready
         print("\n")
         print(chalk.green(f"[SUCCESS] Connected to Discord as: {self.b.user}"))
-        if conf.sharding is False:
+        if conf.sharding is False: #If sharding is disabled
             print(chalk.red(f"[WARNING] Sharding: Disabled"))
-        elif conf.sharding is True:
+        elif conf.sharding is True: #If sharding is Enabled
             print(chalk.green("[INFO] Sharding: Enabled"))
-            print(chalk.yellow(f"[INFO] Using SHARD's {self.b.shard_ids}"))
+            print(chalk.yellow(f"[INFO] Using SHARD's {self.b.shard_ids}")) #Shows us how many shards we are currently using
 
-        print(chalk.cyan(f"[INFO] Config name: '{conf.name}'"))
-        print(chalk.cyan(f"[INFO] Defualt Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'"))
-        print(chalk.cyan("[INFO] Are you braindead: Most Likely"))
-        print(chalk.cyan(f"[INFO] I'm currently in [{len(self.b.guilds)}] server(s)."))
+        print(chalk.cyan(f"[INFO] Config name: '{conf.name}'")) #Shows us the name defined in the config
+        print(chalk.cyan(f"[INFO] Defualt Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'")) #Shows us the 2 prefixes defined in the config
+        print(chalk.cyan("[INFO] Are you braindead: Most Likely")) #Yup
+        print(chalk.cyan(f"[INFO] I'm currently in [{len(self.b.guilds)}] server(s).")) #Shows us how many servers we are in
         aaa = True
-        for guild in self.b.guilds:
+        for guild in self.b.guilds: #Set all guild the doki is in to have triggers enabled on startup otherwise they no be in list which means triggers are off.
             conf.w_tog_on.insert(0, guild.id)
-        while aaa:
+            conf.act1.insert(0,guild.id)
+        while aaa: #A loop to make the game activity change every 900 seconds
             for list in conf.playing_msg:
                 await self.b.change_presence(activity=discord.Game(name=list))
                 await asyncio.sleep(900)
 
-
+    @client.Cog.listener()
+    async def on_guild_join(self,guild):
+        conf.w_tog_on.insert(0, guild.id)
+        # Remember to add a message here
 
     @client.Cog.listener()
-    async def on_message(self,message):  
+    async def on_message(self,message):
         if message.author.id == self.b.user.id:
-            pass      
+            pass
         # ------------------------------------------------------------------------------------------------------------------------------------------------
         cut_words = ["cut", "cutting", "cuts", "stab", "stabbing", "stabs"]
         cut_list = ["Uuu...!", "D-Did you have to say that word...?", "I-I'm sorry, I-I really don't like that word...", ":confounded:"]
@@ -50,18 +54,18 @@ class Event(client.Cog): #Silly man class leave alone thx
         # ------------------------------------------------------------------------------------------------------------------------------------------------
         mct = message.content.lower().split(" ") # (MCT | Meesage Contents) 
         for word in mct:
-            if word.lower() in cut_words:
+            if word.lower() in cut_words: #Cut trigger words
                 if message.guild.id in conf.w_tog_on:
                     if message.author.bot:
                         return
 
-                    if message.guild.id not in conf.act2:
+                    if message.guild.id not in conf.act2: #This is incase the guild that this command was used in is set to act1
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send(random.choice(cut_list)) 
                         return 
 
-                    elif message.guild.id in conf.act2:
+                    elif message.guild.id in conf.act2:  #This is incase the guild that this command was used in is set to act2
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send(random.choice(cut_list_act_2)) 
@@ -70,8 +74,8 @@ class Event(client.Cog): #Silly man class leave alone thx
                     else:
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
-                        await message.channel.send("Uuuu... Sorry about this but i have seemed to have been restarted, re-run `y_act1` to continue using me")   
-                        return
+                        await message.channel.send(random.choice(cut_list)) 
+                        return 
 
                 else:
                     pass
@@ -81,42 +85,48 @@ class Event(client.Cog): #Silly man class leave alone thx
                     if message.author.bot:
                         return
 
-                    if message.guild.id not in conf.act2:
+                    if message.guild.id not in conf.act2: #This is incase the guild that this command was used in is set to act1
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send(random.choice(knife_list)) 
                         return
 
-                    elif message.guild.id in conf.act2:
+                    elif message.guild.id in conf.act2: #This is incase the guild that this command was used in is set to act2
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send(random.choice(knife_list_act2)) 
                         return
 
-                    else:
+                    else: #Just incase the user is in a PM
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
-                        await message.channel.send("Uuuu... Sorry about this but i have seemed to have been restarted, re-run `y_act1` to continue using me")   
+                        await message.channel.send(random.choice(knife_list)) 
                         return
 
                 else:
                     pass
 
-            if word.lower() in pen_words:
+            if word.lower() in pen_words: #Pen word trigger words
                 if message.guild.id in conf.w_tog_on:
                     if message.author.bot:
                         return
 
-                    if message.guild.id not in conf.act2:
+                    if message.guild.id not in conf.act2: #This is incase the guild that this command was used in is set to act1
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send(random.choice(pen_list)) 
                         return
 
-                    elif message.guild.id in conf.act2:
+                    elif message.guild.id in conf.act2: #This is incase the guild that this command was used in is set to act2
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send(random.choice(pen_list_act2)) 
+                        return
+                    
+                    else:
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)
+                        await message.channel.send(random.choice(pen_list)) 
                         return
 
                 else:   
@@ -127,7 +137,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         if message.content.lower().startswith(f"<@{self.b.user.id}>") or message.content.lower().startswith(f"<@!{self.b.user.id}>"):
 
             #-------------------- Act 1 --------------------
-            if message.guild.id not in conf.act2:
+            if message.guild.id not in conf.act2: 
                 if len(message.content.lower().split(" ")) == 1:
                     tag_react_list1 = ["Y-Yes...?", "Did you want to talk to me...?", "Hm?"]
                     async with message.channel.typing():

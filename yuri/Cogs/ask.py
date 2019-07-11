@@ -10,9 +10,8 @@ class Ask(client.Cog):#Class thing no touchy!!!111
          self.b = bot #Please no touchy thx
 
     @client.command()
-    @client.guild_only()
     async def ask(self,ctx, arg1=None): # we make arg1 so we can have the command as this "n_ask my dad is in jail lmao" and it will obviously respond, if your missing the "answer arg" which comes after the command then the command will obviously not run
-        if ctx.guild.id not in conf.act2:
+        if ctx.guild.id not in conf.act2: #This is incase the guild that this command was used in is set to act1
             if arg1 is None:
                 await ctx.send("Did you want to ask me something? S-sorry if i was bothering you! Uuu...")
             else:
@@ -21,7 +20,7 @@ class Ask(client.Cog):#Class thing no touchy!!!111
                     await asyncio.sleep(conf.type_speed) 
                 await ctx.send(random.choice(answer_list1))
 
-        elif ctx.guild.id in conf.act2:
+        elif ctx.guild.id in conf.act2: #This is incase the guild that this command was used in is set to act2
             if arg1 is None:
                 await ctx.send("Ahaha... If you don't have a question, that's okay. I'd rather stare at you.")
             else:
@@ -30,7 +29,7 @@ class Ask(client.Cog):#Class thing no touchy!!!111
                     await asyncio.sleep(conf.type_speed)
                 await ctx.send(random.choice(answer_list2))            
         
-        else:
+        else: #This is incase the guild that this command was used in is set to act2
             if arg1 is None:
                 await ctx.send("Did you want to ask me something? S-sorry if i was bothering you! Uuu...")
             else:
