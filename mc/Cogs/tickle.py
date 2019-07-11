@@ -7,15 +7,13 @@ from Cogs.config import conf
 class Tickle(client.Cog):
 
     def __init__(self, bot):
-         self.b = bot #Please no touchy thx
+         self.b = bot
 
     @client.command()
     @client.guild_only()
-    async def tickle(self,ctx): 
-        #laughs = ["Hehehehehe!~", "Ahahahaha!!", "*giggles*", "**PFFFT AHAHAHAHAHAHHAHAHAHHAHA!!!!!**", "Ehehe!~", "WAHAHAHAHAHA!!!~"]        
+    async def tickle(self,ctx):       
         async with ctx.message.channel.typing():
             await asyncio.sleep(conf.type_speed)  
-        #await ctx.send(random.choice(laughs))
         await ctx.send("I'm not ticklish, please stop.")
 
 

@@ -10,6 +10,7 @@ class Headpat(client.Cog):
          self.b = bot #Please no touchy thx
 
     @client.command()
+    @client.guild_only()
     async def headpat(self,ctx):   
         async with ctx.message.channel.typing():
             await asyncio.sleep(conf.type_speed)
