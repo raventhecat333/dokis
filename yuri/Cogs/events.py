@@ -331,7 +331,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await message.channel.send("O-Oh! Well, uh, thank you, Monika.")
                         
 
-        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.sayori_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.sayori_id: #Monika
+        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.sayori_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.sayori_id: #Sayori
             if message.guild.id in conf.act2:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
@@ -406,7 +406,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                     await asyncio.sleep(conf.type_speed)
                 await message.channel.send("Uuu... :flushed:")    
 
-        if "y_act1" in message.content.lower() and message.author.id == conf.monika_id:
+        if "y_act1" in message.content.lower() and (message.author.id == conf.monika_id or message.author.id == conf.mc_id):
             if message.guild.id in conf.act2:
                 conf.act2.remove(message.guild.id) 
                 await message.channel.send("O-Oh... Wh-What just happened? I feel funny...")
@@ -414,7 +414,18 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await message.channel.send("Oh snap! You encountered a bug! Please report this to the developers if you're seeing this message!")
                 pass
 
-            
+        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.mc_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            if message.guild.id in conf.act2:
+                await message.channel.send(f"That's right <@{conf.mc_id}>, let me feel your pulsating cock on my pussy.")
+            else:
+                await message.channel.send("Augh!")
+
+        if "fuck no, get away from me, yuri." in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("Then I'll stab you and crawl in your skin.")
 
         # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
 

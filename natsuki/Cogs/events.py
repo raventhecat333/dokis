@@ -222,11 +222,15 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await asyncio.sleep(conf.type_speed)  
             await message.channel.send("Geez, Yuri! Don't make it all awkward!")
 
-        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.monika_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.monika_id: 
+        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.monika_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.monika_id:
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
             await message.channel.send("Okay, this is just awkward for both of us.")
 
+        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.mc_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send(f"Ah! You scared me, <@{conf.mc_id}>")
 
         if "aww she does??" in message.content.lower() and message.author.id == conf.sayori_id:
             async with message.channel.typing():

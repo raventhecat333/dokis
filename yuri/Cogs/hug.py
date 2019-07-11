@@ -46,10 +46,15 @@ class Hug(client.Cog):#Class thing no touchy!!!111
             elif message == '@everyone' or message == '@here':
                 await ctx.send(conf.everyone_tag)
             
-            elif message == '<@551799233418756101>' or message == "Yuri" or message == "yuri" or message == "yourself": # Oh noes it's me!
+            elif message == f'<@{conf.yuri_id}>' or message == "Yuri" or message == "yuri" or message == "yourself": # Oh noes it's me!
                 async with ctx.message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await ctx.send("But I don't ***want*** to hug myself! I want to hug ***YOU!!!***")
+
+            elif message == '<@{conf.mc_id}>':
+                async with ctx.message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await ctx.send(f"Hey <@{conf.mc_id}>, get your sexy body over here and fuck me~")
 
             else: # Argument, okay let's just make yuri not do that cause she's in act2 LOLOLOLOLOL GET REKT M8
                 async with ctx.message.channel.typing():

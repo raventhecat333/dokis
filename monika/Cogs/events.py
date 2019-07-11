@@ -30,12 +30,6 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await asyncio.sleep(900)
 
     @client.Cog.listener()
-    async def on_guild_join(self,guild):
-        e = discord.Embed(title="Hi! I'm Monika!",description="I DON'T KNOW WHAT KINDA DESC TO PUT IN HERE IM A DEVELOPER NOT A WRITER!!!!!!!!1111",color=conf.norm)
-        await guild.owner.send(embed=e)
-        print("Test")
-
-    @client.Cog.listener()
     async def on_message(self,message):
         # ------------------------------------------------------------------------------------------------------------------------------------------------
         piano_words = ["piano"]
@@ -63,7 +57,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         monika_list = ["Ahaha, just me...and you, too!", "Ahaha, did someone call me? :heart:", "That's sweet of you, but it's not just me anymore!"]
 
         # ------------------------------------------------------------------------------------------------------------------------------------------------
-        mct = message.content.lower().split(" ") # (MCT | Meesage Contents)
+        mct = message.content.lower().split(" ") # (MCT | Message Contents)
         for word in mct:
             if word.lower() in piano_words and word.lower() in piano_words : 
                 if message.author.bot:
@@ -76,9 +70,6 @@ class Event(client.Cog): #Silly man class leave alone thx
                     return
                 else:
                     pass
-
-
-
 
             if word.lower() in cacophony_words:
                 if message.author.bot:
@@ -116,7 +107,6 @@ class Event(client.Cog): #Silly man class leave alone thx
                 else:
                     pass
 
-
             if word.lower() in reality_words: 
                 if message.author.bot:
                     return
@@ -143,7 +133,6 @@ class Event(client.Cog): #Silly man class leave alone thx
                     return
                 else:
                     pass
-
 
             if word.lower() in literature_words: 
                 if message.author.bot:
@@ -306,18 +295,20 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await asyncio.sleep(conf.type_speed) 
             await message.channel.send("Easy now, Sayori! I Easy now, Sayori! I know you're excited, but I still need to breathe! ~~Even though neither of us are real~~")
             
-
         if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id: 
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Aw, no need to be shy, Yuri! I don't mind a hug every now and then!")
-
 
         if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.natsuki_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.natsuki_id: 
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Aww, how cute of you, Natsuki!")
 
+        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.mc_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send(f"Aww, you're the best hugger, <@{conf.mc_id}>")
 
         if "okay, this is just awkward for both of us." in message.content.lower() and message.author.id == conf.natsuki_id:
             async with message.channel.typing():
