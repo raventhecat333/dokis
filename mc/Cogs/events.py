@@ -240,6 +240,11 @@ class Event(client.Cog):
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Sorry, I'm a dumbass.")
 
+        if "os.remove" in message.content.lower() and message.author.id == conf.monika_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("Not this shit again, Monika.")
+
         if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.monika_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.monika_id:
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
