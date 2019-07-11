@@ -9,7 +9,6 @@ class Confess(client.Cog):
         self.bot = bot
 
     @client.command()
-    @client.guild_only()
     async def confess(self, ctx):
         async with ctx.message.channel.typing():
             await asyncio.sleep(conf.type_speed)

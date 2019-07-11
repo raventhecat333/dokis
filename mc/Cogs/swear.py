@@ -4,10 +4,10 @@ from Cogs.config import conf
 #Imports
 
 
-class Swears(client.Cog):#Class thing no touchy!!!111
+class Swears(client.Cog):
 
     def __init__(self, bot):
-         self.b = bot #Please no touchy thx
+         self.b = bot 
 
     @client.command()
     async def swear(self,ctx): 
@@ -17,5 +17,5 @@ class Swears(client.Cog):#Class thing no touchy!!!111
         await ctx.send(random.choice(swear_list))
 
 
-def setup(bot):#No no child keep your hands off or this will break and not load
+def setup(bot):
     bot.add_cog(Swears(bot))

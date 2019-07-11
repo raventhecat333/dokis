@@ -1,26 +1,45 @@
-import discord, os, traceback, chalk, json
+import discord, os, traceback, chalk, sys
 from discord.ext import commands
 from Cogs.config import conf
+#Import some important modules
 
-class maid(commands.AutoShardedBot):
-    
-    def __init__(self):
-        self.prefix = commands.when_mentioned_or(conf.prefix1,conf.prefix2)
-        super().__init__(command_prefix=self.prefix, status=discord.Status.idle, activity=discord.Game(name="Starting Up..."))
+if conf.test_mode is True:
+    print(chalk.red('''---------------------Testing Mode--------------------- 
+Warning!
 
-        for file in os.listdir(conf.cogd):
-            if file.endswith(".py"):
-                name = file[:-3]
-                if name == "config" or name == "checks":
-                    pass
-                else:
-                    try:
-                        self.load_extension(f"Cogs.{name}")
-                        print(chalk.green(f"Loaded {name}"))
-                    except (discord.ClientException, ModuleNotFoundError):
-                        print('Failed to load Cog {name}')
-                        print(traceback.format_exc())
+You are currently running the Pythonic Doki Bot's in testing mode!
+Please disable testing mode before launching this code. 
+If you are unsure how to turn testing mode off:
+
+1. Go to the config
+2. Find "test_mode ="
+3. Change "False" to "True"
+---------------------Testing Mode--------------------- \n'''))
+else:
+    pass
 
 
-client = maid()
-client.run(conf.token)
+if conf.sharding is True:
+    client = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or(conf.prefix1,conf.prefix2), status=discord.Status.idle, activity=discord.Game(name="Starting Up..."), shard_count=2, shard_ids=(0, 1)) # Defining what our prefix for the bot will be
+elif conf.sharding is False:
+    client = commands.Bot(command_prefix=commands.when_mentioned_or(conf.prefix1,conf.prefix2), status=discord.Status.idle, activity=discord.Game(name="Starting Up...")) # Defining what our prefix for the bot will be
+
+
+Cogs = conf.cogd
+
+if __name__ == '__main__': # Load every file that have a .py extension in the Cogs folder
+    for file in os.listdir(conf.cogd):
+        if file.endswith(".py"):
+            name = file[:-3]
+            if name == "config" or name == "checks":
+                pass
+            else:
+                try:
+                    client.load_extension(f"Cogs.{name}")
+                    print(chalk.green(f"[INFO] Loaded {name}"))
+                except (discord.ClientException, ModuleNotFoundError):
+                    print('[ERROR] Failed to load Cog {name}')
+                    print(traceback.format_exc())
+                    continue
+
+client.run(conf.token) # Login via our token inside of the config file

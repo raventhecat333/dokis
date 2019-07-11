@@ -2,12 +2,13 @@ class conf():
 
     token = "token"
     prefix1 = "mc_"
-    prefix2 = "MC_"
+    prefix2 = "Mc_"
     name = "MC"
     cogd = "Cogs"
     type_speed = 2
-    playing_msg = [f"Type 'mc_help' for help!","Doki Doki Literature Club","with the crayons!","Katawa Shoujo","with Mr. Cow!", "with a noose!"]
-    admins = [480580173431832577, 332271541859647498, 218085039768993803, 310496481435975693, 270057011251642368]
+    playing_msg = [f"Type 'mc_help' for help!","Doki Doki Literature Club","with a shoe lace","aloof","in a dark void"]
+    admins = [480580173431832577, 279732337971953664, 310496481435975693, 270057011251642368]
+    #         Tsumiki             Cheezy              IDroid              Cole
     test_mode = False  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
 
     if test_mode is False:
@@ -26,12 +27,11 @@ class conf():
     suc = 0xff42e2 # The Success (i did a thing) Embed Colour
 
     ''' These are just some error quotes so i can change them really quickly instead of doing the same quote for each error in every file '''
-    everyone_tag = "Nice try to ping everyone, Baka."
+    everyone_tag = "Did you try to make me ping everyone? Well, uhh. Nice try i suppose."
     econfused = "Uh... What?"
 
     ''' These are for the chat trigger'''
     w_tog_on = []
-    w_tog_off = [] 
 
     ''' Doki Bot's ID'S '''
     if test_mode is True:
@@ -39,7 +39,7 @@ class conf():
         monika_id = 531556928732528670 
         sayori_id = 531554745337249792
         yuri_id = 531556397746356224
-        mc_id = 100000000000000001
+        mc_id = 100000000000000001 #Don't forget to add mc's public bot id
 
     else:
         natsuki_id = 433834936450023424

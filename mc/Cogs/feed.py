@@ -10,7 +10,6 @@ class Feed(client.Cog):
          self.b = bot
 
     @client.command()
-    @client.guild_only()
     async def feed(self,ctx, arg1=None):
         if arg1 is None: # If you don't provide an emoji :P
             await ctx.send("It's fine, I brought my own food...")
