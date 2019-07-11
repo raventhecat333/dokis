@@ -13,7 +13,7 @@ class Feed(client.Cog):
     @client.guild_only()
     async def feed(self,ctx, arg1=None):
         if arg1 is None: # If you don't provide an emoji :P
-            await ctx.send("H-hey! Don't feel like you have to feed me anything! I'm okay!")
+            await ctx.send("It's fine, I brought my own food...")
             
         elif arg1 == "🍪":
             async with ctx.message.channel.typing():
@@ -21,27 +21,23 @@ class Feed(client.Cog):
             await ctx.send("A cookie?? Yummy! Thank you so much!")
         #------------------- Cookie ------------------- 
 
-
         elif arg1 == "🍣" or arg1 == "🍱" or arg1 == "🍛" or arg1 == "🍙" or arg1 == "🍚" or arg1 == "🍘" or arg1 == "🍜" or arg1 == "🍢" or arg1 == "🍡" or arg1 == "🍥":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
-            await ctx.send("Oooo! Japanese food! Reminds me of home!") 
-        #------------------- Japenese Food ------------------- 
-
+            await ctx.send("I mean, it's from my homeland. *eats happily*") 
+        #------------------- Japanese Food ------------------- 
 
         elif arg1 == "🍕":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
-            await ctx.send("I love pizza! Thanks!") 
+            await ctx.send("Pizza, eh? Ok, then. *eats*") 
         #------------------- Pizza ------------------- 
-
 
         elif arg1 == "🍔":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
-            await ctx.send("Mmmmm! Burgers are delicious!") 
+            await ctx.send("A burger? I'm not sure about this...") 
         #------------------- Burger ------------------- 
-
 
         elif arg1 == "🍧" or arg1 == "🍦" or arg1 == "🍨":
             async with ctx.message.channel.typing():
@@ -49,13 +45,11 @@ class Feed(client.Cog):
             await ctx.send("AHH! Brain freeze!!")
         #------------------- Cold Foods ------------------- 
 
-
         elif arg1 == "🍺" or arg1 == "🍻" or arg1 == "🍷" or arg1 == "🍸" or arg1 == "🍹" or arg1 == "🍶":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
-            await ctx.send("H-Hey! I'm too young for that!")
+            await ctx.send("What the fuck? I'm not drinking alcohol!")
         #------------------- Alcohol ------------------- 
-
 
         elif arg1 == "☕":
             async with ctx.message.channel.typing():
@@ -69,13 +63,11 @@ class Feed(client.Cog):
             await ctx.send("Ah, the delicious beverage known as coffee! Where would I be without thee?")
         #------------------- Tea ------------------- '''
 
-
         elif arg1 == "🍞" or arg1 == "🥖":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
             await ctx.send("I mean, I suppose I could survive off of plain bread...")
         #------------------- Bread ------------------- 
-
 
         elif arg1 == "🌶":
             async with ctx.message.channel.typing():
@@ -83,13 +75,11 @@ class Feed(client.Cog):
             await ctx.send("***OWOWOWOWHOTHOTHOTHOT!!!***")
         #------------------- Hot Pepper ------------------- '''
 
-
         elif arg1 == "🍳":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
             await ctx.send("I made eggs and toast!")
         #------------------- Cooking ------------------- '''
-
 
         elif arg1 == "🌮" or arg1 == "🌯":
             async with ctx.message.channel.typing():
@@ -97,13 +87,11 @@ class Feed(client.Cog):
             await ctx.send("Ole!")
         #------------------- Mexican -------------------  Does that include burritos?
 
-
         elif arg1 == "🍰" or arg1 == "🍮" or arg1 == "🍬" or arg1 == "🍫" or arg1 == "🍩":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
-            await ctx.send("Sweets! My one, true weakness!! *omnomnomnomnom*")
+            await ctx.send(f"Something sweet? For me? Thanks, {ctx.author.id}")
         #------------------- Sweets ------------------- '''
-
 
         elif arg1 == "🍿":
             async with ctx.message.channel.typing():
@@ -123,41 +111,35 @@ class Feed(client.Cog):
             await ctx.send("I feel like I should cook this, first...")
         #------------------- Egg ------------------- '''
 
-
         elif arg1 == "🍴" or arg1 == "🍽" or arg1 == "🥄":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
             await ctx.send("I didn't know you could eat silverware!")
         #------------------- Silverware ------------------- '''
         
-
         elif arg1 == "🥛":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
             await ctx.send("Ah, a nice, cold glass of milk is always welcoming!")
         #------------------- Milk ------------------- '''
         
-
         elif arg1 == "🎂":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
-            await ctx.send("It's not my birthday, but I accept!")
+            await ctx.send(f"It's not my birthday, and even if it was, I don't want a cake {ctx.author.id}")
         #------------------- Birthday Cake ------------------- '''
-
 
         elif arg1 == "🍎" or arg1 == "🍏" or arg1 == "🍐" or arg1 == "🍊" or arg1 == "🍋" or arg1 == "🍌" or arg1 == "🍉" or arg1 == "🍇" or arg1 == "🍓" or arg1 == "🍈" or arg1 == "🍒" or arg1 == "🍑" or arg1 == "🍍" or arg1 == "🍅" or arg1 == "🍆" or arg1 == "🌽" or arg1 == "🍠" or arg1 == "🍯" or arg1 == "🍗" or arg1 == "🍖" or arg1 == "🍤" or arg1 == "🍟" or arg1 == "🌭" or arg1 == "🍝" or arg1 == "🥐" or arg1 == "🥑" or arg1 == "🥒" or arg1 == "🥓" or arg1 == "🥔" or arg1 == "🥕" or arg1 == "🥗" or arg1 == "🥘" or arg1 == "🥙" or arg1 == "🥜" or arg1 == "🥝" or arg1 == "🥞" or arg1 == "🧀":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
-            await ctx.send("*om nom nom* Thank you! That was delicious! :grin:")
+            await ctx.send("Um, thanks? *eats the food*")
         #------------------- Misc ------------------- '''
-
 
         else:
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
             await ctx.send("Ptoo ptoo! This isn't food, you meanie!")        
-            #------------------- Not Listed ------------------- '''
-
+        #------------------- Not Listed ------------------- '''
 
 
 def setup(bot):
