@@ -40,6 +40,10 @@ class Delete(client.Cog):#Class thing no touchy!!!111
         if "not this shit again, monika." in message.content.lower() and message.author.id == conf.mc_id:
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
+            await message.channel.send("Ugh, fine.")
+            await asyncio.sleep(1)
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
             await message.channel.send("os.restore(\"./characters/{arg}.chr\"")
             self.arg = ""
 
