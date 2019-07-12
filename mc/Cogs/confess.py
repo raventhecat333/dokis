@@ -21,7 +21,7 @@ class Confess(client.Cog):
             await ctx.send("Monika?")
         elif arg == f"<@{conf.yuri_id}>":
             await ctx.send("I-I love you, Yuri.")
-        elif arg == f"<@(conf.natsuki_id}>":
+        elif arg == f"<@{(conf.natsuki_id}>":
             await ctx.send("H-Hey, Natsuki?")
         else:
             await ctx.send(f"*starts to blush* Ok, I'll admit it {message}, I love you!")
