@@ -394,6 +394,16 @@ class Event(client.Cog): #Silly man class leave alone thx
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("YAY! *hugs <@{conf.mc_id}> again*")
+
+        if "hey, sayori?" in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("Yes?")
+
+        if "i-i love you, sayori" in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("I-I do too! *hugs MC*")
     
         # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
 

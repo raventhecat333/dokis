@@ -427,6 +427,14 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Then I'll stab you and crawl in your skin.")
 
+        if "i-i love you, yuri." in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            if message.guild.id in conf.act2:
+                await message.channel.send(f"I love you too, you sexy <@{conf.mc_id}>! Now fuck me!!! :smirk:")
+            else:
+                await message.channel.send("*tackle hugs MC*")
+
         # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
 
 

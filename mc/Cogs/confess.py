@@ -9,11 +9,22 @@ class Confess(client.Cog):
         self.bot = bot
 
     @client.command()
-    async def confess(self, ctx):
+    async def confess(self, ctx, *, message=None):
+        member = ctx.message.content.split(" ")[0]
         async with ctx.message.channel.typing():
             await asyncio.sleep(conf.type_speed)
-        await ctx.send(f"*starts to blush* Ok, I'll admit it <@{ctx.author.id}>, I love you!")
-
+        if arg is None:
+            await ctx.send(f"*starts to blush* Ok, I'll admit it <@{ctx.author.id}>, I love you!")
+        elif arg == f"<@{conf.sayori_id}>":
+            await ctx.send("Hey, Sayori?")
+        elif arg == f"<@{conf.monika_id}>":
+            await ctx.send("Monika?")
+        elif arg == f"<@{conf.yuri_id}>":
+            await ctx.send("I-I love you, Yuri.")
+        elif arg == f"<@(conf.natsuki_id}>":
+            await ctx.send("H-Hey, Natsuki?")
+        else:
+            await ctx.send(f"*starts to blush* Ok, I'll admit it {message}, I love you!")
 
 def setup(bot):
     bot.add_cog(Confess(bot))

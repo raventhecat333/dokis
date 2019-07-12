@@ -329,6 +329,21 @@ class Event(client.Cog): #Silly man class leave alone thx
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("y_act1")
+
+        if "monika" in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send(f"Yes, <@{conf.mc_id}>?")
+
+        if "i need to tell you something." in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("Hmm?")
+
+        if "i love you, monika" in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("I-I do too!")
             # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
 
 

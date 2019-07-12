@@ -267,11 +267,30 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await asyncio.sleep(conf.type_speed) 
             await message.channel.send(":angry:")
 
-
         if "oh, really? she, of all people, said that?" in message.content.lower() and message.author.id == conf.monika_id:
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed) 
             await message.channel.send("***NO!!!*** I never said that!!")
+
+        if "h-hey, natsuki?" in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed) 
+            await message.channel.send("What do you want, dummy?")
+
+        if "i-i love you, natsuki..." in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed) 
+            await message.channel.send("*blushes* O-Oh...")
+            await asyncio.sleep(1)
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed) 
+            await message.channel.send("Well, I-I do too...")
+
+        if "*hugs natsuki*" in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed) 
+            await message.channel.send("*hugs back*")
+
         # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
 
 

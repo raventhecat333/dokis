@@ -264,14 +264,48 @@ class Event(client.Cog):
             async with message.author.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Augh!")
+
+        if "yes?" in message.content.lower() and message.author.id == conf.sayori_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("I-I love you, Sayori.")
+
+        if "i-i do too! *hugs mc*" in message.content.lower() and message.author.id == conf.sayori_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("*hugs back*")
+
+        if f"yes, <@{conf.mc_id}>?" in message.content.lower() and message.author.id == conf.monika_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("I need to tell you something.")
+
+        if "hmm?" in message.content.lower() and message.author.id == conf.monika_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("I love you, Monika.")
+
+        if "*tackle hugs mc" in message.content.lower() and message.author.id == conf.yuri_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("*hugs back*")
+
+        if "i love you too, you sexy <@{conf.mc_id}>. now fuck me!!!" in message.content.lower() and message.author.id == conf.yuri_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("Oh hell no!")
+
+        if "what do you want, dummy?" in message.content.lower() and message.author.id == conf.natsuki_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("I-I love you, Natsuki...")
+
+        if "well, i-i do too..." in message.content.lower() and message.author.id == conf.natsuki_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("*hugs Natsuki*")
     
         # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
-
-
-
-
-
-
 
         
 def setup(bot):
