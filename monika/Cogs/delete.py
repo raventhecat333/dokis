@@ -29,6 +29,10 @@ class Delete(client.Cog):#Class thing no touchy!!!111
                 await asyncio.sleep(conf.type_speed)
             await ctx.send("Why would you want to delete the man who gave you the ability to use me? Shame on you!")
 
+        elif arg1 == f"<@{conf.monika_id}>" or arg1 == "Monika":
+            async with ctx.message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await ctx.send("Ahahahaha! No.")
         else:
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed) 
@@ -44,7 +48,7 @@ class Delete(client.Cog):#Class thing no touchy!!!111
             await asyncio.sleep(1)
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
-            await message.channel.send(f"os.restore(\"./characters/{self.arg}.chr\"")
+            await message.channel.send(f"os.restore(\"./characters/{self.arg}.chr)\"")
             self.arg = ""
 
 def setup(bot):#No no child keep your hands off or this will break and not load
