@@ -393,7 +393,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         if "finnnnnnne, sayori." in message.content.lower() and message.author.id == conf.mc_id:
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
-            await message.channel.send("YAY! *hugs <@{conf.mc_id}> again*")
+            await message.channel.send(f"YAY! *keeps hugging <@{conf.mc_id}>*")
 
         if "hey, sayori?" in message.content.lower() and message.author.id == conf.mc_id:
             async with message.channel.typing():
