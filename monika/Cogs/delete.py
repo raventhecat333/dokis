@@ -44,7 +44,7 @@ class Delete(client.Cog):#Class thing no touchy!!!111
             await asyncio.sleep(1)
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
-            await message.channel.send("os.restore(\"./characters/{arg}.chr\"")
+            await message.channel.send(f"os.restore(\"./characters/{self.arg}.chr\"")
             self.arg = ""
 
 def setup(bot):#No no child keep your hands off or this will break and not load

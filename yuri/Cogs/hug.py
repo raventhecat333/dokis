@@ -32,7 +32,7 @@ class Hug(client.Cog):#Class thing no touchy!!!111
             else: # Argument, okay let's spit whatever the user just said
                 hug_list3 = [f"Y-you want me to hug them? Well, o-okay, I guess I can do that for you... *hugs {message}*", f"Just let me know if this is too much for you... *hugs {message}*", f"*hugs {message}* Mmm... this feels nice... ***OH!*** I-I'm sorry, I didn't mean for that to sound weird!"]
                 async with ctx.message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)  
+                    await asyncio.sleep(conf.type_speed)
                 await ctx.send(random.choice(hug_list3))
 
         if ctx.guild.id in conf.act2:
@@ -40,7 +40,7 @@ class Hug(client.Cog):#Class thing no touchy!!!111
                 user = ctx.author
                 hug_list4 = [f"*hugs <@{user.id}>* Ahaha... I could hug you forever...!", f"Oh, you have no idea how long I've been waiting for you to say that!! *hugs <@{user.id}>*", f"*hugs <@{user.id}>* Mmm... You smell so wonderful! I wish I could smell this smell forever!", f"Uhuhu... You can even grab my ass while we hug if you wanted. I don't mind ;) *hugs <@{user.id}>*", f"*hugs <@{user.id}>* Oh, you're pressing hard against my chest. I must say, I really, really love it!"]
                 async with ctx.message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)  
+                    await asyncio.sleep(conf.type_speed)
                 await ctx.send(random.choice(hug_list4))
 
             elif message == '@everyone' or message == '@here':
@@ -51,7 +51,7 @@ class Hug(client.Cog):#Class thing no touchy!!!111
                     await asyncio.sleep(conf.type_speed)  
                 await ctx.send("But I don't ***want*** to hug myself! I want to hug ***YOU!!!***")
 
-            elif message == f'<@{conf.mc_id}>':
+            elif message == f'<@{conf.mc_id}>' or message == "MC":
                 async with ctx.message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
                 await ctx.send(f"Hey <@{conf.mc_id}>, get your sexy body over here and fuck me~")
