@@ -9,7 +9,7 @@ class Confess(client.Cog):
         self.bot = bot
 
     @client.command()
-    async def confess(self, ctx, *, message=None):
+    async def confess(self, ctx, *, arg=None):
         member = ctx.message.content.split(" ")[0]
         async with ctx.message.channel.typing():
             await asyncio.sleep(conf.type_speed)
@@ -24,7 +24,7 @@ class Confess(client.Cog):
         elif arg == f"<@{conf.natsuki_id}>":
             await ctx.send("H-Hey, Natsuki?")
         else:
-            await ctx.send(f"*starts to blush* Ok, I'll admit it {message}, I love you!")
+            await ctx.send(f"*starts to blush* Ok, I'll admit it {arg}, I love you!")
 
 def setup(bot):
     bot.add_cog(Confess(bot))
