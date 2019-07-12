@@ -9,7 +9,7 @@ class conf():
     playing_msg = [f"Type 'mc_help' for help!","Doki Doki Literature Club","with a shoe lace","aloof","in a dark void"]
     admins = [480580173431832577, 279732337971953664, 310496481435975693, 270057011251642368]
     #         Tsumiki             Cheezy              IDroid              Cole
-    test_mode = False  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
+    test_mode = True  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
 
     if test_mode is False:
         sharding = True
@@ -39,12 +39,12 @@ class conf():
         monika_id = 531556928732528670 
         sayori_id = 531554745337249792
         yuri_id = 531556397746356224
-        mc_id = 100000000000000001 #Don't forget to add mc's public bot id
+        mc_id = 596409849131171870
 
     else:
         natsuki_id = 433834936450023424
         monika_id = 436351740787294208 
         sayori_id = 425696108455657472
         yuri_id = 436350586670153730
-        mc_id = 598598983866253363
+        mc_id = 596407346176065552
 
