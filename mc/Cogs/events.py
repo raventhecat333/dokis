@@ -212,7 +212,7 @@ class Event(client.Cog):
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Yeah, fuck no.")
-            asyncio.sleep(1)
+            await asyncio.sleep(1)
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("y_act1")
