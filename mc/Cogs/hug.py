@@ -14,7 +14,7 @@ class Hug(client.Cog):
         member = ctx.message.content.split(" ")[0]
         if message is None: # No argument? Just assume it's you
             user = ctx.author
-            hug_list = [f"Uh, ok? *hugs <@{user.id}>*", f"I don't do hugs, <@{user.id}>", f"I mean, if you want. *hugs <@{user.id}>*", "No thanks, I'm fine.", f"If it makes you happy, then fine. *hugs <@{user.id}>*", "*runs away*", f"Yay, hugs! *hugs <@{user.id}>*"]
+            hug_list = [f"Uh, ok? *hugs <@{user.id}>*", f"I don't do hugs, <@{user.id}>", f"I mean, if you want. *hugs <@{user.id}>*", "No thanks, I'm fine.", f"If it makes you happy, then fine. *hugs <@{user.id}>*", "*runs away*"]
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
             await ctx.send(random.choice(hug_list))
@@ -29,7 +29,7 @@ class Hug(client.Cog):
             await ctx.send(random.choice(hug_list))
 
         else: # Argument, okay let's spit whatever the user just said
-            hug_list = [f"Uh, ok? *hugs {message}*", f"I don't do hugs, {message}", f"I mean, if you want. *hugs {message}*", "No thanks, I'm fine.", f"If it makes you happy, then fine. *hugs {message}*","*runs away*",  f"Yay, hugs! *hugs {message}*"] 
+            hug_list = [f"Uh, ok? *hugs {message}*", f"I don't do hugs, <@{ctx.author.id}>", f"I mean, if you want. *hugs {message}*", "No thanks, I'm fine.", f"If it makes you happy, then fine. *hugs {message}*","*runs away*"] 
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
             await ctx.send(random.choice(hug_list))

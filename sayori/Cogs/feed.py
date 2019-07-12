@@ -1,4 +1,4 @@
-import discord, random, asyncio, emoji
+import discord, random, asyncio
 from discord.ext import commands as client
 from Cogs.config import conf
 #Imports
