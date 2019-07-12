@@ -1,7 +1,5 @@
 import discord, os, traceback, chalk, sys
 from discord.ext import commands
-from os import listdir
-from os.path import isfile, join
 from Cogs.config import conf
 #Import some important modules
 
@@ -30,19 +28,18 @@ elif conf.sharding is False:
 Cogs = conf.cogd
 
 if __name__ == '__main__': # Load every file that have a .py extension in the Cogs folder
-    for extension in [f.replace('.py', '') for f in listdir(Cogs) if isfile(join(Cogs, f))]:
-        try:
-            if extension == "config" or extension == "checks":
+    for file in os.listdir(conf.cogd):
+        if file.endswith(".py"):
+            name = file[:-3]
+            if name == "config" or name == "checks":
                 pass
             else:
-                client.load_extension(Cogs + "." + extension) # Here's were we load them
-                print(chalk.green(f"Loaded {extension}"))
-        except (discord.ClientException, ModuleNotFoundError): # Oh fuck something happened lets reppoooooorrrrrt it!!!!111111!!!!!!
-            crash_thing = traceback.format_exc()
-            print(chalk.red(f'Failed to load extension {extension}', file=sys.stderr))
-            ono = traceback.format_exc()
-            print(chalk.red(ono))
-            print("\n")
-            continue
+                try:
+                    client.load_extension(f"Cogs.{name}")
+                    print(chalk.green(f"[INFO] Loaded {name}"))
+                except (discord.ClientException, ModuleNotFoundError):
+                    print('[ERROR] Failed to load Cog {name}')
+                    print(traceback.format_exc())
+                    continue
 
 client.run(conf.token) # Login via our token inside of the config file

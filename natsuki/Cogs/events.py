@@ -8,27 +8,31 @@ class Event(client.Cog): #Silly man class leave alone thx
          self.b = bot
 
     @client.Cog.listener()
-    async def on_ready(self):
+    async def on_ready(self): #When the bot is ready
         print("\n")
-        print(chalk.green(f"Connected to Discord as: {self.b.user}"))
-        if conf.sharding is False:
-            print(chalk.red(f"Sharding: Disabled"))
-        elif conf.sharding is True:
-            print(chalk.green("Sharding: Enabled"))
-            print(chalk.yellow(f"Using SHARD's {self.b.shard_ids}"))
+        print(chalk.green(f"[SUCCESS] Connected to Discord as: {self.b.user}"))
+        if conf.sharding is False: #If sharding is disabled
+            print(chalk.red(f"[WARNING] Sharding: Disabled"))
+        elif conf.sharding is True: #If sharding is Enabled
+            print(chalk.green("[INFO] Sharding: Enabled"))
+            print(chalk.yellow(f"[INFO] Using SHARD's {self.b.shard_ids}")) #Shows us how many shards we are currently using
 
-        print(chalk.cyan(f"Config name: '{conf.name}''"))
-        print(chalk.cyan(f"Defualt Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'"))
-        print(chalk.cyan("Are you braindead: Most Likely"))
-        print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] server(s)."))
-        for guild in self.b.guilds:
-            conf.w_tog_on.insert(0, guild.id)
+        print(chalk.cyan(f"[INFO] Config name: '{conf.name}'")) #Shows us the name defined in the config
+        print(chalk.cyan(f"[INFO] Defualt Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'")) #Shows us the 2 prefixes defined in the config
+        print(chalk.cyan("[INFO] Are you braindead: Most Likely")) #Yup
+        print(chalk.cyan(f"[INFO] I'm currently in [{len(self.b.guilds)}] server(s).")) #Shows us how many servers we are in
         aaa = True
-        while aaa:
+        for guild in self.b.guilds: #Set all guild the doki is in to have triggers enabled on startup otherwise they no be in list which means triggers are off.
+            conf.w_tog_on.insert(0, guild.id)
+        while aaa: #A loop to make the game activity change every 900 seconds
             for list in conf.playing_msg:
                 await self.b.change_presence(activity=discord.Game(name=list))
                 await asyncio.sleep(900)
 
+    @client.Cog.listener()
+    async def on_guild_join(self,guild):
+        conf.w_tog_on.insert(0, guild.id)
+        # Remember to add a message here
     
     @client.Cog.listener()
     async def on_message(self,message):        
@@ -148,29 +152,29 @@ class Event(client.Cog): #Silly man class leave alone thx
                     if 'nigger' in message.content.lower():
                         return
 
-                    elif member == "loves":
+                    if member == "loves":
                         await message.channel.send("Ehh?")
                         return
 
-                    elif message.content.lower() == f'<@{conf.sayori_id}>': #Sayori
+                    if message.content.lower() == f'<@{conf.sayori_id}>': #Sayori
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("S-shut up! No she doesn't!")
                         return
                         
-                    elif message.content.lower() == f'<@{conf.yuri_id}>': #Yuri
+                    if message.content.lower() == f'<@{conf.yuri_id}>': #Yuri
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("W-Well it's not like I love her back or anything!!")
                         return
 
-                    elif message.content.lower() == f'<@{conf.monika_id}>': #Monika
+                    if message.content.lower() == f'<@{conf.monika_id}>': #Monika
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Act 2 says otherwise.")
                         return
 
-                    elif message.content.lower() == 'everyone' or message.content.lower() == '@everyone' or message.content.lower() == '@here' or message.content.lower() == 'everybody':
+                    if message.content.lower() == 'everyone' or message.content.lower() == '@everyone' or message.content.lower() == '@here' or message.content.lower() == 'everybody':
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Hey! Do you **WANT** everyone to freak out in the chat?! Because I won't let you do that!")
