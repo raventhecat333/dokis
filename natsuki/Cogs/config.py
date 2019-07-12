@@ -5,12 +5,12 @@ class conf():
     prefix2 = "N_"
     name = "Natsuki"
     cogd = "Cogs"
-    type_speed = 1.5
+    type_speed = 2
     playing_msg = ["Type 'n_help' for help!","Doki Doki Literature Club","Don't Starve","Cooking Mama", "some anime through your computer!"]
     admins = [480580173431832577, 279732337971953664, 310496481435975693, 270057011251642368]
     #         Tsumiki             Cheezy              IDroid              Cole 
-    test_mode = False  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
-    
+    test_mode = True  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
+
     if test_mode is False:
         sharding = True
         version = "2.0B CS"

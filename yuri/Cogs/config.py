@@ -18,7 +18,6 @@ class conf():
         sharding = False
         version = "2.0B CS"
     #L|Launch    B|Beta
-
     
     ''' Just wanted to clear out that these hex codes bellow are for embed colours so i don't have to keep changing them in every single fucking file '''
     err = 0xC91313 # The Error Embed Colour

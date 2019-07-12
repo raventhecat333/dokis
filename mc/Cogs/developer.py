@@ -55,7 +55,7 @@ class Developer(client.Cog):
     @checks.dev()
     async def eval(self, ctx, *, message: str):
         env = {
-            'bot': self.bot,
+            'bot': self.b,
             'ctx': ctx,
             'channel': ctx.channel,
             'author': ctx.author,
