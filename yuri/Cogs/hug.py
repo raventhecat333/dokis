@@ -51,7 +51,7 @@ class Hug(client.Cog):#Class thing no touchy!!!111
                     await asyncio.sleep(conf.type_speed)  
                 await ctx.send("But I don't ***want*** to hug myself! I want to hug ***YOU!!!***")
 
-            elif message == '<@{conf.mc_id}>':
+            elif message == f'<@{conf.mc_id}>':
                 async with ctx.message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
                 await ctx.send(f"Hey <@{conf.mc_id}>, get your sexy body over here and fuck me~")

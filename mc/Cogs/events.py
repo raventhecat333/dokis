@@ -217,7 +217,7 @@ class Event(client.Cog):
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("y_act1")
 
-        if "that's right <@{conf.mc_id}>, let me feel your pulsating cock on my pussy." in message.content.lower() and message.author.id == conf.yuri_id:
+        if f"that's right <@{conf.mc_id}>, let me feel your pulsating cock on my pussy." in message.content.lower() and message.author.id == conf.yuri_id:
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Oh hell no...")
@@ -277,7 +277,7 @@ class Event(client.Cog):
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("*hugs back*")
 
-        if "i love you too, you sexy <@{conf.mc_id}>! now fuck me!!!" in message.content.lower() and message.author.id == conf.yuri_id:
+        if f"i love you too, you sexy <@{conf.mc_id}>! now fuck me!!!" in message.content.lower() and message.author.id == conf.yuri_id:
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Oh hell no!")
