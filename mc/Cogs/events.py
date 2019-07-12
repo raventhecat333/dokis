@@ -180,7 +180,7 @@ class Event(client.Cog):
                 else:
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)
-                    await message.channel.send(random.choice(confused_list))
+                    await message.channel.send("Eh?")
 
             # -------------------------------------------------------Tagging-------------------------------------------------------
 

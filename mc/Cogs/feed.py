@@ -83,7 +83,7 @@ class Feed(client.Cog):
         elif arg1 == "🍰" or arg1 == "🍮" or arg1 == "🍬" or arg1 == "🍫" or arg1 == "🍩":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
-            await ctx.send(f"Something sweet? For me? Thanks, {ctx.author.id}")
+            await ctx.send(f"Something sweet? For me? Thanks, <@{ctx.author.id}>")
         #------------------- Sweets -------------------
 
         elif arg1 == "🍿":
