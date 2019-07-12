@@ -21,9 +21,9 @@ class Help(client.Cog):
         embed.add_field(name="mc_tickle", value="I'm not tickleish, don't bother.", inline=True)
         embed.add_field(name="mc_changelog", value="Check out what's been changed!", inline=True)
         embed.add_field(name="mc_confess", value="Don't use this at all!", inline=True)
-        embed.add_field(name="mc_rename", value="You can change my name (note, this only for the server and you must have manage nicknames or administrator permissions)")
+        embed.add_field(name="mc_rename", value="You can change my name (note, this only for the server and you must have manage nicknames or administrator permissions)", inline=True)
         embed.add_field(name="@MC", value="So use this I think to get my attention. You can also type 'mc_commands' for a full list of what I can do (not much) or mc_invite if for some reason you want me on your server.", inline=True)
-        embed.add_field(name="I think that's all about me, most likely Cole will make me do more things (sadly) if I’m buggy blame Monika and let Cole know if you have any questions I guess, I’m going back to sleep now~")
+        embed.add_field(name="I think that's all about me!", value="Most likely Cole will make me do more things (sadly) if I’m buggy blame Monika and let Cole know if you have any questions I guess, I’m going back to sleep now~")
         embed.set_footer(text="Support Server: https://discord.gg/QnzsG38")
         await ctx.send(embed=embed)
 

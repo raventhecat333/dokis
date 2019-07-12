@@ -2,7 +2,9 @@ import traceback, sys, discord, Cogs.checks, chalk
 from discord.ext import commands
 from Cogs.config import conf
 
-
+name = conf.name
+ver = conf.version
+eol = conf.err
 checks = Cogs.checks
 
 class CommandError(commands.Cog):
