@@ -15,7 +15,7 @@ class toggle(client.Cog):#Class thing no touchy!!!111
             conf.w_tog_on.remove(ctx.guild.id) #If the ID is already in act2 but we're trying to get back into act1 just remove it from act2
             conf.w_tog_off.insert(0, ctx.guild.id) #If the ID is already in act2 but we're trying to get back into act1 just remove it from act2
             await ctx.send("Ok, I guess you don't want to hear from me.")
-        elif ctx.guild.id in conf.w_tog_off:
+        elif ctx.guild.id not in conf.w_tog_on:
             conf.w_tog_off.remove(ctx.guild.id) #If the ID is already in act2 but we're trying to get back into act1 just remove it from act2
             conf.w_tog_on.insert(0, ctx.guild.id) #If the ID is already in act2 but we're trying to get back into act1 just remove it from act2
             await ctx.send("Ok, I guess you do want to hear from me.")

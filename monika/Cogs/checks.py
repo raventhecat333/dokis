@@ -13,6 +13,14 @@ ver=conf.version
 class dev_only(commands.CommandError):# This creates the dev_only error which is used in Error.py
     pass
 
+def exp():# This check will check if the command is being executed by a developer whose id is in the dev_id list in the config file, if not then we will throw an error, else not then run the command ( @checks.dev() )
+    def predicate(ctx):
+        if ctx.author.guild.id in conf.exp_on:
+            return True
+        else:
+            raise dev_only
+    return commands.check(predicate)
+
 
 def dev():# This check will check if the command is being executed by a developer whose id is in the dev_id list in the config file, if not then we will throw an error, else not then run the command ( @checks.dev() )
     def predicate(ctx):

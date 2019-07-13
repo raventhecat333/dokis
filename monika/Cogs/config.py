@@ -10,7 +10,7 @@ class conf():
     playing_msg = ["Type 'm_help' for help!","Doki Doki Literature Club","the piano!", "Super Smash Bros Ultimate.", "If My Heart Had Wings", "with you!", "Just Monika.", "from your computer!", "your reality!"]
     admins = [480580173431832577, 279732337971953664, 310496481435975693, 270057011251642368]
     #         Tsumiki             Cheezy              IDroid              Cole 
-    test_mode = False  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
+    test_mode = True  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
 
     if test_mode is False:
         sharding = True
@@ -33,6 +33,10 @@ class conf():
     ''' These are for the chat trigger''' 
     w_tog_on = []
     event_cooldown = []
+
+
+    exp_on = []
+
 
     ''' Doki Bot's ID'S '''
     if test_mode is True or test_mode is 1:
