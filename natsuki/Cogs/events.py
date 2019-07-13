@@ -148,7 +148,7 @@ class Event(client.Cog): #Silly man class leave alone thx
 
                 elif 'loves you' in message.content.lower():
                     member = message.content.split(" ")[1]
-                    love_tag_list = [f"Aww! Well, you can tell {member} that I love them, too!", f"{member} does? Well, that's so sweet to hear!", f"And I love {member}, too! :heart:", f"Yay! I'm loved by {member}!"]
+                    love_tag_list = [f"W-well, it's not like I love {member} back or anything!", f"Shut up! {member} doesn't love me!", f"{member} loves me? Yeah, I'll believe that when they tell me that, themselves!"]
                     if 'nigger' in message.content.lower():
                         return
 
@@ -156,28 +156,28 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await message.channel.send("Ehh?")
                         return
 
-                    if message.content.lower() == f'<@{conf.sayori_id}>': #Sayori
+                    if member.lower() == f'<@{conf.sayori_id}>': #Sayori
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send("S-shut up! No she doesn't!")
                         return
                         
-                    if message.content.lower() == f'<@{conf.yuri_id}>': #Yuri
+                    if member.lower() == f'<@{conf.yuri_id}>': #Yuri
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("W-Well it's not like I love her back or anything!!")
                         return
 
-                    if message.content.lower() == f'<@{conf.monika_id}>': #Monika
+                    if member.lower() == f'<@{conf.monika_id}>': #Monika
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Act 2 says otherwise.")
                         return
 
-                    if message.content.lower() == 'everyone' or message.content.lower() == '@everyone' or message.content.lower() == '@here' or message.content.lower() == 'everybody':
+                    if member.lower() == 'everyone' or member.lower() == '@everyone' or member.lower() == '@here' or member.lower() == 'everybody':
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
-                        await message.channel.send("Hey! Do you **WANT** everyone to freak out in the chat?! Because I won't let you do that!")
+                        await message.channel.send("Ha! I'm sure everyone does! I'm sure it's not because of my cupcakes!!!")
                         return
 
                     else:

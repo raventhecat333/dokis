@@ -234,27 +234,27 @@ class Event(client.Cog): #Silly man class leave alone thx
 
                 elif 'loves you' in message.content.lower():
                     member = message.content.split(" ")[1]
-                    love_tag_list = [f"Aww! Well, you can tell {member} that I love them, too!", f"{member} does? Well, that's so sweet to hear!", f"And I love {member}, too! :heart:", f"Yay! I'm loved by {member}!"]
+                    love_tag_list = [f"Well, of course {member} does! Why wouldn't they? Ahaha!~", f"{member}, I can certainly see why you'd be a little embarassed to tell me that! But it's okay; I love you, too!", f"W-Well, I suppose you can't control how you feel about people, {member}, but I'm the Club President, so I have to stay professional! ~~It's okay, my love; I love you very much, as well!~~"]
                     if 'nigger' in message.content.lower():
                         return
 
-                    elif member == "loves":
+                    elif member.lower() == "loves":
                         await message.channel.send("Ehh?")
                         return
 
-                    elif message.content.lower() == f'<@{conf.sayori_id}>': #Sayori
+                    elif member.lower() == f'<@{conf.sayori_id}>': #Sayori
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Ahaha!~ Well, after everything that's happened between us, that's nice to hear!")
                         return
 
-                    elif message.content.lower() == f'<@{conf.yuri_id}>': #Yuri
+                    elif member.lower() == f'<@{conf.yuri_id}>': #Yuri
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Well, that's a pleasant surprise! And I understand why she doesn't have the courage to say it to me directly.")
                         return
 
-                    elif message.content.lower() == f'<@{conf.natsuki_id}>': #Natsuki
+                    elif member.lower() == f'<@{conf.natsuki_id}>': #Natsuki
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Oh, really? She, of all people, said that?")
@@ -265,8 +265,6 @@ class Event(client.Cog): #Silly man class leave alone thx
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send(random.choice(love_tag_list))
                         return
-
-
 
                 elif "best doki" in message.content.lower() or "best girl" in message.content.lower():
                     if "sayori" in message1.lower() or "natsuki" in message1.lower() or "yuri" in message1.lower() or message1 == f"<@{conf.sayori_id}>" or message1 == f"<@{conf.natsuki_id}>" or message1 == f"<@{conf.yuri_id}>":
@@ -284,13 +282,8 @@ class Event(client.Cog): #Silly man class leave alone thx
                         return
                     else:
                         pass
-            
-
-
 
             # -------------------------------------------------------Tagging-------------------------------------------------------
-
-
 
 
 
@@ -298,7 +291,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.sayori_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.sayori_id: 
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed) 
-            await message.channel.send("Easy now, Sayori! I Easy now, Sayori! I know you're excited, but I still need to breathe! ~~Even though neither of us are real~~")
+            await message.channel.send("Easy now, Sayori! I know you're excited, but I still need to breathe! ~~Even though neither of us are real~~")
             
         if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id: 
             async with message.channel.typing():
