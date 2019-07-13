@@ -252,6 +252,12 @@ class Event(client.Cog): #Silly man class leave alone thx
                     if 'nigger' in message.content.lower():
                         return
 
+                    elif member == "everyone" or member == "@everyone" or member == "@here" or member == "everybody": #as seen in original
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)
+                        await message.channel.send("R-really? EVERYONE? Oh, my!")
+                        return
+
                     elif member == "loves":
                         await message.channel.send("Ehh?")
                         return
