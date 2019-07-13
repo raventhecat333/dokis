@@ -14,10 +14,10 @@ class conf():
 
     if test_mode is False:
         sharding = True
-        version = "2.0B CS"
+        version = "2.1B CS"
     else:
         sharding = False
-        version = "2.0B CS"
+        version = "2.1B CS"
     #L|Launch    B|Beta
 
     ''' Just wanted to clear out that these hex codes bellow are for embed colours so i don't have to keep changing them in every single fucking file '''
