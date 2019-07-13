@@ -10,7 +10,7 @@ class Changelog(client.Cog):
          self.b = bot 
 
     @client.command()
-    async def changelog(self,ctx): 
+    async def changelog(self,ctx): #dd/mm/yy
         e = discord.Embed(title=f"A beta update! This has been changed at 12/07/2019. Version: {conf.version}",description='''
 ```
 

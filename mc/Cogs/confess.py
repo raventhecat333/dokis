@@ -10,7 +10,6 @@ class Confess(client.Cog):
 
     @client.command()
     async def confess(self, ctx, *, arg=None):
-        member = ctx.message.content.split(" ")[0]
         async with ctx.message.channel.typing():
             await asyncio.sleep(conf.type_speed)
         if arg is None:

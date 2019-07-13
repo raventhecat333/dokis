@@ -9,7 +9,7 @@ class Commands(client.Cog):
     def __init__(self, bot):
          self.b = bot 
 
-    @client.command()
+    @client.command(enabled=False)
     async def commands(self,ctx): 
         e = discord.Embed(title="Commands!", description="Here are all the commands/words/phrases you can use when you @mention me, although I hope you don't do this.", color=0xfcc608)
         e.add_field(name="Hi, Hello", value="Nothing wrong with a greeting, even when I don't want to do it.", inline=True)

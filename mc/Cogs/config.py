@@ -13,16 +13,16 @@ class conf():
 
     if test_mode is False:
         sharding = True
-        version = "2.0B CS"
+        version = "2.1B CS"#Still in beta!
     else:
         sharding = False
-        version = "2.0B CS"
+        version = "2.1B CS"
     #L|Launch    B|Beta
 
 
     ''' Just wanted to clear out that these hex codes bellow are for embed colours so i don't have to keep changing them in every single fucking file '''
     err = 0xff42e2 # The Error Embed Colour
-    norm = 0x3eb0ff # The Normal or Yeah sure i did this command heres an embed color, Embed Colour
+    norm = 0xdb7915 # The Normal or Yeah sure i did this command heres an embed color, Embed Colour
     warn = 0xff42e2 # The Warning Embed Colour
     suc = 0xff42e2 # The Success (i did a thing) Embed Colour
 
