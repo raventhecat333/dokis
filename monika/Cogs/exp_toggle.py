@@ -26,4 +26,4 @@ class Expermental_Commands(client.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Delete(bot))
+    bot.add_cog(Expermental_Commands(bot))
