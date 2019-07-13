@@ -269,7 +269,7 @@ class Event(client.Cog): #Silly man class leave alone thx
 
 
                 elif "best doki" in message.content.lower() or "best girl" in message.content.lower():
-                    if message1 == "Yuri" or message1 == "Sayori" or message1 == "<@425696108455657472>" or message1 == "<@436350586670153730>":
+                    if "sayori" in message1.lower() or "natsuki" in message1.lower() or "yuri" in message1.lower() or message1 == f"<@{conf.sayori_id}>" or message1 == f"<@{conf.natsuki_id}>" or message1 == f"<@{conf.yuri_id}>":
                         imbestgirl_list = ["I'm sorry, I didn't catch that. What did you say?", "Hm? Did you say something?", "Ahaha!~ You're funny!"]
                         await message.delete()
                         async with message.channel.typing():

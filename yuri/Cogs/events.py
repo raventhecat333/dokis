@@ -206,13 +206,13 @@ class Event(client.Cog):
                         return
 
                     elif "best doki" in message.content.lower() or "best girl" in message.content.lower():
-                        if message1 == "monika" or message1 == "Yuri" or message1 == "Sayori" or message1 == "<@425696108455657472>" or message1 == "<@436350586670153730>":
+                        if "monika" in message1.lower() or "natsuki" in message1.lower() or "sayori" in message1.lower() or message1 == f"<@{conf.monika_id}>" or message1 == f"<@{conf.natsuki_id}>" or message1 == f"<@{conf.sayori_id}>":
                             async with message.channel.typing():
                                 await asyncio.sleep(conf.type_speed)  
                             await message.channel.send("W-Well, I suppose that's true; she's much better than I am...")
                             return
 
-                        elif message1 == "is" or message1 == "<@433834936450023424>" or message1 == "you" or message1 == "you're":
+                        elif message1 == "is" or message1 == f"<@{conf.yuri_id}>" or message1 == "you" or message1 == "you're":
                             async with message.channel.typing():
                                 await asyncio.sleep(conf.type_speed)  
                             await message.channel.send("Oh! Uh... Well, I'm glad you think that!")
@@ -291,15 +291,15 @@ class Event(client.Cog):
                         return
 
                     elif "best doki" in message.content.lower() or "best girl" in message.content.lower():
-                        if message1 == "monika" or message1 == "Yuri" or message1 == "Sayori" or message1 == "<@425696108455657472>" or message1 == "<@436350586670153730>":
+                        if "monika" in message1.lower() or "natsuki" in message1.lower() or "sayori" in message1.lower() or message1 == f"<@{conf.monika_id}>" or message1 == f"<@{conf.natsuki_id}>" or message1 == f"<@{conf.sayori_id}>":
                             async with message.channel.typing():
                                 await asyncio.sleep(conf.type_speed)  
                             await message.channel.send("No, she's fucking not.")
                             return
 
-                        elif message1 == "is" or message1 == "<@433834936450023424>" or message1 == "you" or message1 == "you're":
+                        elif message1 == "is" or message1 == "<@{conf.yuri_id}>" or message1 == "you" or message1 == "you're":
                             async with message.channel.typing():
-                                await asyncio.sleep(conf.type_speed)  
+                                await asyncio.sleep(conf.type_speed)
                             await message.channel.send("AHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
                             return
                         else:

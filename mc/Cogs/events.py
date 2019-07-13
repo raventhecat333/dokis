@@ -141,6 +141,12 @@ class Event(client.Cog):
                         await message.channel.send("She doesn't just love me. She's a bit of a yandere.")
                         return
 
+                    elif message.content.lower() == f'<@{conf.sayori_id}>': #Sayori
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)
+                        await message.channel.send("Of course she does. She loves everyone.")
+                        return
+
                     elif message.content.lower() == 'everyone' or message.content.lower() == '@everyone' or message.content.lower() == '@here' or message.content.lower() == 'everybody':
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
@@ -160,7 +166,7 @@ class Event(client.Cog):
                     return 
 
                 elif "best doki" in message.content.lower() or "best girl" in message.content.lower():
-                    if message1 == "Monika" or message1 == "Natsuki" or message1 == "Yuri" or message1 == "<@436350586670153730>" or message1 == "<@433834936450023424>":
+                    if "monika" in message1.lower() or "natsuki" in message1.lower() or "yuri" in message1.lower() or "sayori" in message1.lower() or message1 == f"<@{conf.monika_id}>" or message1 == f"<@{conf.natsuki_id}>" or message1 == f"<@{conf.yuri_id}>" or message1 == f"<@{conf.sayori_id}>":
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send("I’ll have to agree with you there.")
@@ -175,7 +181,7 @@ class Event(client.Cog):
                 elif "test" in message.content.lower():
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)
-                    await message.channel.send("Testing, testing! 1-2-1-2 testing!")
+                    await message.channel.send("Yes, I'm fine.")
 
                 else:
                     async with message.channel.typing():

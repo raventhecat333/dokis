@@ -158,7 +158,7 @@ class Event(client.Cog): #Silly man class leave alone thx
 
                     if message.content.lower() == f'<@{conf.sayori_id}>': #Sayori
                         async with message.channel.typing():
-                            await asyncio.sleep(conf.type_speed)  
+                            await asyncio.sleep(conf.type_speed)
                         await message.channel.send("S-shut up! No she doesn't!")
                         return
                         
@@ -194,7 +194,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                     return 
                     
                 elif "best doki" in message.content.lower() or "best girl" in message.content.lower():
-                    if message1 == "monika" or message1 == "Yuri" or message1 == "Sayori" or message1 == "<@425696108455657472>" or message1 == "<@436350586670153730>":
+                    if "monika" in message1.lower() or "sayori" in message1.lower() or "yuri" in message1.lower() or message1 == f"<@{conf.monika_id}>" or message1 == f"<@{conf.sayori_id}>" or message1 == f"<@{conf.yuri_id}>":
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Pfft! As if!")
