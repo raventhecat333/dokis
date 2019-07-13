@@ -27,7 +27,7 @@ Python Version: {sys.version}
 ''',color=0x36393f)
         e.set_author(name=f"Hiya {ctx.author.name}!", icon_url=ctx.author.avatar_url)
 
-        if ctx.guild.id in conf.w_tog_off:
+        if not ctx.guild.id in conf.w_tog_on:
             e2 = discord.Embed(title=f'''Does Guild use chat triggers: No
 ''',color=0x36393f)
         else:
@@ -46,6 +46,7 @@ Monika: {conf.monika_id}
 Natsuki: {conf.natsuki_id}
 Sayori: {conf.sayori_id}
 Yuri: {conf.yuri_id}
+MC: {conf.mc_id}
 ''',color=0x36393f)
 
         await ctx.send(embed=e)
