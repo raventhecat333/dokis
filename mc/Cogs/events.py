@@ -71,7 +71,7 @@ class Event(client.Cog):
                 message1 = message.content.lower().split(" ")[1]
 
                 if "hi" in message.content.lower() or "hello" in message.content.lower() or "hey" in message.content.lower():
-                    hello_list = ["Hi!", "Hello!", "Hiiiiii!~", "Hello, human person!"]                    
+                    hello_list = ["Hi, I guess.", "Hello..."]                    
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)  
                     await message.channel.send(random.choice(hello_list))
@@ -96,17 +96,18 @@ class Event(client.Cog):
                     return
 
                 elif "good afternoon" in message.content.lower() or "goodafternoon" in message.content.lower():
-                    goodafternoon_list = ["Good afternoon!", "Afternoon?? Shoot! I'm late for school again!", "Good afternoon, indeed!", "Afternoon!"]                    
+                    goodafternoon_list = ["Is it a good afternoon?", "What? It's the afternoon?", "Ehhhhhh..."]                    
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)  
                     await message.channel.send(random.choice(goodafternoon_list))
                     return
 
-                elif "you are cute" in message.content.lower() or "you're cute" in message.content.lower() or "you are beautiful" in message.content.lower() or "you're beautiful" in message.content.lower():                   
-                    async with message.channel.typing():
-                        await asyncio.sleep(conf.type_speed)  
-                    await message.channel.send("No I’m not.")
-                    return
+                elif "you are" in message.content.lower() or "you're" in message.content.lower():
+                    if "pretty" in message.content.lower() or "beautiful" in message.content.lower() or "adorable" in message.content.lower() or "cute" in message.content.lower() or "hot" in message.content.lower() or "amazing" in message.content.lower():
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)  
+                        await message.channel.send("No I’m not.")
+                        return
 
                 elif "i apologise" in message.content.lower() or "sorry" in message.content.lower() or "i apologize" in message.content.lower():                  
                     async with message.channel.typing():
@@ -123,28 +124,27 @@ class Event(client.Cog):
                         await message.channel.send("Ehh?")
                         return
 
-                    # TODO: Replace these responses.
                     elif message.content.lower() == f'<@{conf.natsuki_id}>': #Natsuki
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
-                        await message.channel.send("Awww, she does??")
+                        await message.channel.send("She does? That's a surprise.")
                         return
                         
                     elif message.content.lower() == f'<@{conf.yuri_id}>': #Yuri
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
-                        await message.channel.send("Well, of course she does! Yuri loves everybody!")
+                        await message.channel.send("Does she? It's hard to tell when she's so quiet.")
                         return
                     elif message.content.lower() == f'<@{conf.monika_id}>': #Monika
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
-                        await message.channel.send("Yay! I'm glad she does!")
+                        await message.channel.send("She doesn't just love me. She's a bit of a yandere.")
                         return
 
                     elif message.content.lower() == 'everyone' or message.content.lower() == '@everyone' or message.content.lower() == '@here' or message.content.lower() == 'everybody':
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
-                        await message.channel.send("R-really? EVERYONE? Oh, my!")
+                        await message.channel.send("Everyone? How?!")
                         return
 
                     else:
@@ -165,7 +165,7 @@ class Event(client.Cog):
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send("I’ll have to agree with you there.")
                         return 
-                    # TODO: Also replace this response.
+
                     elif message1 == "is" or message1 == f"<@{conf.mc_id}>" or message1 == "you" or message1 == "you're":
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)

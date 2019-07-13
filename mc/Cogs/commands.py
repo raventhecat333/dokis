@@ -11,15 +11,14 @@ class Commands(client.Cog):
 
     @client.command()
     async def commands(self,ctx): 
-        e = discord.Embed(title="Commands!", description="Here are all the commands/words/phrases you can use when you @mention me! Though it's ***VERY*** important that the @mention is at the very beginning!", color=0x3eb0ff)
-        e.add_field(name="Hi, Hello", value="Nothing wrong with a simple hello every now and then, right?", inline=True)
-        e.add_field(name="Test", value="Just to see if I'm working properly!", inline=True)
-        e.add_field(name="I love you, ILY", value="Even though I'm not worthy of being loved, you're still free to tell me that you love me if you'd like! Ehehe...", inline=True)
-        e.add_field(name="@mention loves you", value="Want to let me know if someone in the server loves me? Let me know by formatting the message like this: ***@Sayori @mention loves you***", inline=True)
+        e = discord.Embed(title="Commands!", description="Here are all the commands/words/phrases you can use when you @mention me, although I hope you don't do this.", color=0xfcc608)
+        e.add_field(name="Hi, Hello", value="Nothing wrong with a greeting, even when I don't want to do it.", inline=True)
+        e.add_field(name="Test", value="Just to see if I'm fine (which I usually am).", inline=True)
+        e.add_field(name="I love you, ILY", value="Uhhhhh...", inline=True)
+        e.add_field(name="@mention loves you", value="No no no no no no no", inline=True)
         e.add_field(name="Goodnight, Good night, Good morning", value="While not required, it's still nice to recieve a message like this when you wake up/go to sleep.", inline=True)
-        e.add_field(name="@mention is a meanie, @mention is being a meanie", value="Someone in the server being a meanie? Use this to let me know so I can call them out on it! (Full message should look like this: ***@Sayori @mention is (being) a meanie***)", inline=True)
-        e.add_field(name="You are cute, You're cute, You are so cute, You're so cute, You are beautiful, You're beautiful, You are so beautiful, You're so beautiful, You are pretty, You're pretty, You are so pretty, You're so pretty", value="What? A girl likes to be complimented!", inline=True)
-        e.add_field(name="Sorry, Apologize (as long as the word is in there somewhere)", value="Did you accidentally hurt me? Feel free to tell me that you're sorry! It's the right thing to do.", inline=True)
+        e.add_field(name="You are cute, You're cute, You are so cute, You're so cute, You are beautiful, You're beautiful, You are so beautiful, You're so beautiful, You are pretty, You're pretty, You are so pretty, You're so pretty", value="No, I'm not.", inline=True)
+        e.add_field(name="Sorry, Apologize (as long as the word is in there somewhere)", value="In case you ever do something wrong.", inline=True)
         await ctx.send(embed=e)
 
 

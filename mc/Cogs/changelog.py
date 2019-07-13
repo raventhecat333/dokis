@@ -11,10 +11,10 @@ class Changelog(client.Cog):
 
     @client.command()
     async def changelog(self,ctx): 
-        e = discord.Embed(title=f"A beta update! This has been changed at 11/07/2019. Version: {conf.version}",description='''
+        e = discord.Embed(title=f"A beta update! This has been changed at 12/07/2019. Version: {conf.version}",description='''
 ```
 
--Hi The Freaking IDroid give free cookies xx luv beefy man no homo
+I am almost ready. I just hope Yuri doesn't try to have sex with me. -MC 
 
 ```
 ''', color=conf.norm)

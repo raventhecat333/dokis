@@ -88,7 +88,7 @@ class Feed(client.Cog):
 
         elif arg1 == "🍿":
             async with ctx.message.channel.typing():
-                await asyncio.sleep(conf.type_speed)  
+                await asyncio.sleep(conf.type_speed)
             await ctx.send("*crunch crunch crunch*")
         #------------------- Popcorn -------------------
 
