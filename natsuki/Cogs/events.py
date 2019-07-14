@@ -207,8 +207,17 @@ class Event(client.Cog): #Silly man class leave alone thx
                         return
                     else:
                         pass
+
+                elif "test" in message.content.lower():
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send("I'm working just fine.")
+                    return
             
                 else:
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)
+                    await message.channel.send("Uh... What?")
                     pass
 
 
