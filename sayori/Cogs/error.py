@@ -33,7 +33,7 @@ class CommandError(commands.Cog):
 
         else:
             tra = traceback.format_exception_only(type(error), error)
-            e = discord.Embed(description="`Oops! That's not supposed to happen, here's the traceback below.` ```py\n%s\n``` \nLooks like you encountered an issue! If you want, you can report this by clicking [here!](https://forms.gle/hJ3KHVwKMFzfs5eq9) (It takes you to a form where you can explain the bug in detail.)" % ''.join(tra), file=sys.stderr, color=eol)
+            e = discord.Embed(description="`Oops! That's not supposed to happen, here's the traceback below.` ```py\n%s\n``` \nLooks like you encountered an issue! If you want, you can report this by clicking [here!](https://forms.gle/hJ3KHVwKMFzfs5eq9) (It takes you to a form where you can explain the bug in detail.)" % ''.join(tra), file=sys.stderr, color=conf.err)
             e.set_author(name="That's an issue!",icon_url=ctx.message.author.avatar_url)
             e.set_footer(text="v"+ver)
             await ctx.send(embed=e)
