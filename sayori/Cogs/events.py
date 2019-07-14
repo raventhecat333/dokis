@@ -252,7 +252,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                     if 'nigger' in message.content.lower():
                         return
 
-                    elif member == "everyone" or member == "@everyone" or member == "@here" or member == "everybody": #as seen in original
+                    if member == "everyone" or member == "@everyone" or member == "@here" or member == "everybody": #as seen in original
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send("R-really? EVERYONE? Oh, my!")
@@ -262,24 +262,25 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await message.channel.send("Ehh?")
                         return
 
-                    elif message.content.lower() == f'<@{conf.natsuki_id}>': #Natsuki
+                    elif member == f'<@{conf.natsuki_id}>': #Natsuki
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Awww, she does??")
                         return
                         
-                    elif message.content.lower() == f'<@{conf.yuri_id}>': #Yuri
+                    elif member == f'<@{conf.yuri_id}>': #Yuri
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Well, of course she does! Yuri loves everybody!")
                         return
-                    elif message.content.lower() == f'<@{conf.monika_id}>': #Monika
+
+                    elif member == f'<@{conf.monika_id}>': #Monika
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Yay! I'm glad she does!")
                         return
 
-                    elif message.content.lower() == 'everyone' or message.content.lower() == '@everyone' or message.content.lower() == '@here' or message.content.lower() == 'everybody':
+                    elif member == 'everyone' or message.content.lower() == '@everyone' or message.content.lower() == '@here' or message.content.lower() == 'everybody':
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("R-really? EVERYONE? Oh, my!")

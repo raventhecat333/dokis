@@ -238,23 +238,23 @@ class Event(client.Cog): #Silly man class leave alone thx
                     if 'nigger' in message.content.lower():
                         return
 
-                    elif member == "loves":
+                    if member == "loves":
                         await message.channel.send("Ehh?")
                         return
 
-                    elif message.content.lower() == f'<@{conf.sayori_id}>': #Sayori
+                    elif member == f'<@{conf.sayori_id}>': #Sayori
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Ahaha!~ Well, after everything that's happened between us, that's nice to hear!")
                         return
 
-                    elif message.content.lower() == f'<@{conf.yuri_id}>': #Yuri
+                    elif member == f'<@{conf.yuri_id}>': #Yuri
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Well, that's a pleasant surprise! And I understand why she doesn't have the courage to say it to me directly.")
                         return
 
-                    elif message.content.lower() == f'<@{conf.natsuki_id}>': #Natsuki
+                    elif member == f'<@{conf.natsuki_id}>': #Natsuki
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Oh, really? She, of all people, said that?")
