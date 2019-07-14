@@ -11,7 +11,13 @@ class Tickle(client.Cog):#Class thing no touchy!!!111
 
     @client.command()
     async def tickle(self,ctx):
-        if ctx.guild.id not in conf.act2:#This is incase the guild that this command was used in is set to act1
+        if ctx.guild is None:
+            laughs0 = ["Oh! Hehehe!", "P-Please! Stop it! Ehehe!", "Hey, that tickles! Hahaha!", "HAHAHAHAHAHA! *snort*", "H-Hey! That's my ticklish spot!! :laughing:"]
+            async with ctx.message.channel.typing():
+                await asyncio.sleep(conf.type_speed)  
+            await ctx.send(random.choice(laughs0))
+
+        elif ctx.guild.id not in conf.act2:#This is incase the guild that this command was used in is set to act1
             laughs1 = ["Oh! Hehehe!", "P-Please! Stop it! Ehehe!", "Hey, that tickles! Hahaha!", "HAHAHAHAHAHA! *snort*", "H-Hey! That's my ticklish spot!! :laughing:"]
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  

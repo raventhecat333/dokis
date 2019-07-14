@@ -9,7 +9,7 @@ class toggle(client.Cog):
          self.b = bot 
 
     @client.command()
-    @client.has_permissions(administrator=True)
+    @client.has_permissions(manage_messages=True)
     async def toggle(self,ctx): # we make arg1 so we can have the command as this "n_ask my dad is in jail lmao" and it will obviously respond, if your missing the "answer arg" which comes after the command then the command will obviously not run
         if ctx.guild.id in conf.w_tog_on:
             conf.w_tog_on.remove(ctx.guild.id) #If the ID is already in act2 but we're trying to get back into act1 just remove it from act2

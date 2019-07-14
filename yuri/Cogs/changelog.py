@@ -11,12 +11,12 @@ class Changelog(client.Cog):
 
     @client.command()
     async def changelog(self,ctx): 
-        e = discord.Embed(title=f"A beta update! This has been changed at 11/07/2019. Version: {conf.version}",description='''
+        e = discord.Embed(title=f"A beta update! This has been changed at 14/07/2019. Version: {conf.version}",description='''
 ```
 
--Changed Word Toggles to only use one list
+-Yuri can now be mostly used in DM's!
 
--Yuri should now be usable in PM's
+-Commands that required the user to have "admin" has been changed to "manage_messages"
 ```
 ''', color=conf.norm)
         e.set_author(name=f"The Changelog for {conf.name}.",icon_url=self.b.user.avatar_url)

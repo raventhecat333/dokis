@@ -11,10 +11,12 @@ class Changelog(client.Cog):
 
     @client.command()
     async def changelog(self,ctx): #dd/mm/yy
-        e = discord.Embed(title=f"A beta update! This has been changed at 12/07/2019. Version: {conf.version}",description='''
+        e = discord.Embed(title=f"A beta update! This has been changed at 14/07/2019. Version: {conf.version}",description='''
 ```
 
-I am almost ready. I just hope Yuri doesn't try to have sex with me. -MC 
+-Commands that required the user to have "admin" has been changed to "manage_messages"
+
+-Updated the error embed to use the correct colour
 
 ```
 ''', color=conf.norm)

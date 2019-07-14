@@ -1,6 +1,6 @@
 class conf():
 
-    token = "token"
+    token = "NTMxNTU2Mzk3NzQ2MzU2MjI0.XSs11w.KSl2gzH8wjZrXDjrtKJ5VivBS58"
     prefix1 = "y_"
     prefix2 = "Y_"
     name = "Yuri"
@@ -9,7 +9,7 @@ class conf():
     playing_msg = ["Type 'y_help' for help!", "Doki Doki Literature Club", "with knifes!", "Everlasting Summer", "Yandere Simulator", "with your pen!"]
     admins = [480580173431832577, 279732337971953664, 310496481435975693, 270057011251642368]
     #         Tsumiki             Cheezy              IDroid              Cole 
-    test_mode = False  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
+    test_mode = True  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
     
     if test_mode is False:
         sharding = True
