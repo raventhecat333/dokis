@@ -219,8 +219,61 @@ class Event(client.Cog):
                             return
                         else:
                             pass
-                
+
+                    elif "test" in message.content.lower():
+                        await message.channel.send("I-I believe I'm working properly... Oh, I hope I am...")
+                        return
+
+                    elif 'loves you' in message.content.lower():
+                        member = message.content.split(" ")[1]
+                        love_tag_list = [f"O-Oh, {member} does...? W-Well, that's nice to hear.", f"Uuu... I-I'm flattered, {member}...", f"R-Really? {member} loves me...?", f"W-Well... I-I think I love {member}, too...!"]
+                        if 'nigger' in message.content.lower():
+                            return
+
+                        elif member == "everyone" or member == "@everyone" or member == "@here" or member == "everybody": #as seen in original
+                            async with message.channel.typing():
+                                await asyncio.sleep(conf.type_speed)
+                            await message.channel.send("E-E-E-E-Everyone? :confounded:")
+                            return
+
+                        elif member == "loves":
+                            await message.channel.send("Ehh?")
+                            return
+
+                        elif member.lower() == f'<@{conf.sayori_id}>': #Sayori
+                            async with message.channel.typing():
+                                await asyncio.sleep(conf.type_speed)
+                            await message.channel.send("Haha. Well, she is a loving soul.")
+                            return
+
+                        elif member.lower() == f'<@{conf.natsuki_id}>': #Natsuki
+                            async with message.channel.typing():
+                                await asyncio.sleep(conf.type_speed)  
+                            await message.channel.send("Sh-She does?")
+                            return
+
+                        elif member.lower() == f'<@{conf.monika_id}>': #Monika
+                            async with message.channel.typing():
+                                await asyncio.sleep(conf.type_speed)  
+                            await message.channel.send("Ahaha... I-I'm glad that I have a friend like Monika who loves me... :blush:")
+                            return
+
+                        elif member.lower() == f'<@{conf.mc_id}>': #MC
+                            async with message.channel.typing():
+                                await asyncio.sleep(conf.type_speed)
+                            await message.channel.send("Oh, d-does he now? Uhhhh...")
+                            return
+
+                        else:
+                            async with message.channel.typing():
+                                await asyncio.sleep(conf.type_speed)  
+                            await message.channel.send(random.choice(love_tag_list))
+                            return
+
                     else:
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf)
+                        await message.channel.send("I-I'm sorry, but I don't understand what you mean...")
                         pass
 
 
@@ -244,7 +297,7 @@ class Event(client.Cog):
                         return
 
                     elif "test" in message.content.lower():
-                        await message.channel.send("Tagging me is working just fine.")
+                        await message.channel.send("I'm working fine, I promise you! Can we just read already??")
                         return
 
                     elif "i love you" in message.content.lower() or "ily" in message.content.lower():
@@ -277,7 +330,7 @@ class Event(client.Cog):
 
                     elif "you are" in message.content.lower() or "you're" in message.content.lower():
                         if "pretty" in message.content.lower() or "beautiful" in message.content.lower() or "adorable" in message.content.lower() or "cute" in message.content.lower():   
-                            compliment_list2 = ["Ohoho, stop it, you! I'm nothing compared to you!", "But you're 10 times as amazing!", "no u", "Oh? Am I attractive enough for you to pleasure youself to the thought of me? Because I do it to the thought of you all the time!", "Oh, I love it when you tell me that!"]
+                            compliment_list2 = ["Ohoho, stop it, you! I'm nothing compared to you!", "But you're 10 times as amazing!", "no u", "Oh? Am I attractive enough for you to pleasure yourself to the thought of me? Because I do it to the thought of you all the time!", "Oh, I love it when you tell me that!"]
                             async with message.channel.typing():
                                 await asyncio.sleep(conf.type_speed)  
                             await message.channel.send(random.choice(compliment_list2))
@@ -304,8 +357,57 @@ class Event(client.Cog):
                             return
                         else:
                             pass
+
+                    elif 'loves you' in message.content.lower():
+                        member = message.content.split(" ")[1]
+                        love_tag_list = [f"Ohoho, well I think it's safe to say that {member} doesn't love me as much as you do.", f"{member} does, do they? Well, I beg to differ.", f"I'm sorry, {member}, but I already have a lover, and they belong to me and me alone.", f"Well, I suppose I could touch myself to {member}, as well..."]
+                        if 'nigger' in message.content.lower():
+                            return
+
+                        elif member == "everyone" or member == "@everyone" or member == "@here" or member == "everybody": #as seen in original
+                            async with message.channel.typing():
+                                await asyncio.sleep(conf.type_speed)
+                            await message.channel.send("I bet everyone does, but not as much as I love you, you sexy thing!")
+                            return
+
+                        elif member == "loves":
+                            await message.channel.send("Ehh?")
+                            return
+
+                        elif member.lower() == f'<@{conf.sayori_id}>': #Sayori
+                            async with message.channel.typing():
+                                await asyncio.sleep(conf.type_speed)
+                            await message.channel.send("Who the hell is Sayori? I don't know any Sayoris...")
+                            return
+
+                        elif member.lower() == f'<@{conf.natsuki_id}>': #Natsuki
+                            async with message.channel.typing():
+                                await asyncio.sleep(conf.type_speed)  
+                            await message.channel.send("Pfft. As if. That immature brat doesn't love anyone but herself.")
+                            return
+
+                        elif member.lower() == f'<@{conf.monika_id}>': #Monika
+                            async with message.channel.typing():
+                                await asyncio.sleep(conf.type_speed)  
+                            await message.channel.send("I'll believe that when that bitch says it to my face!")
+                            return
+
+                        elif member.lower() == f'<@{conf.mc_id}>': #MC
+                            async with message.channel.typing():
+                                await asyncio.sleep(conf.type_speed)
+                            await message.channel.send("He better love me. I touch myself to him so often, I sometimes think my pen is his cock. :smirk:")
+                            return
+
+                        else:
+                            async with message.channel.typing():
+                                await asyncio.sleep(conf.type_speed)  
+                            await message.channel.send(random.choice(love_tag_list))
+                            return
                 
                     else:
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)
+                        await message.channel.send("I love you, but I have no clue what you just said.")
                         pass
             else:
                 async with message.channel.typing():
