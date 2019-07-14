@@ -11,6 +11,7 @@ class Developer(client.Cog):
 
     def __init__(self, bot):
          self.b = bot
+         self._last_result = None
 
     @client.command()
     @checks.dev()
