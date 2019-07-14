@@ -64,7 +64,7 @@ class Event(client.Cog):
             if len(message.content.lower().split(" ")) == 1:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
-                await message.channel.send("Yes?")
+                await message.channel.send("Hm? What is it?")
                 return
 
             else:
@@ -258,7 +258,7 @@ class Event(client.Cog):
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Augh!")
 
-        if "yes?" in message.content.lower() and message.author.id == conf.sayori_id:
+        if f"yes, <@{self.b.user.id}>?" in message.content.lower() and message.author.id == conf.sayori_id:
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("I-I love you, Sayori.")

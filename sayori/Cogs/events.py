@@ -286,12 +286,6 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await message.channel.send("Yay! My best friend loves me!!! :heart:")
                         return
 
-                    elif message.content.lower() == 'everyone' or message.content.lower() == '@everyone' or message.content.lower() == '@here' or message.content.lower() == 'everybody':
-                        async with message.channel.typing():
-                            await asyncio.sleep(conf.type_speed)  
-                        await message.channel.send("R-really? EVERYONE? Oh, my!")
-                        return
-
                     else:
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
@@ -416,7 +410,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         if "hey, sayori?" in message.content.lower() and message.author.id == conf.mc_id:
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
-            await message.channel.send("Yes?")
+            await message.channel.send(f"Yes, <@{conf.mc_id}>?")
 
         if "i-i love you, sayori" in message.content.lower() and message.author.id == conf.mc_id:
             async with message.channel.typing():
