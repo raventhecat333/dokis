@@ -42,11 +42,5 @@ class Developer(client.Cog):
             await ctx.send(message) # Just send the message
 
 
-    @client.command()
-    @checks.test(0,1,0)
-    async def t_check(self,ctx):
-        await ctx.send("Something went right???")
-
-
 def setup(bot):
     bot.add_cog(Developer(bot))

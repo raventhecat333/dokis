@@ -64,7 +64,7 @@ class Event(client.Cog):
             if len(message.content.lower().split(" ")) == 1:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
-                await message.channel.send("Yes?")
+                await message.channel.send("Hm? What is it?")
                 return
 
             else:
@@ -124,24 +124,30 @@ class Event(client.Cog):
                         await message.channel.send("Ehh?")
                         return
 
-                    elif message.content.lower() == f'<@{conf.natsuki_id}>': #Natsuki
+                    elif member.lower() == f'<@{conf.natsuki_id}>': #Natsuki
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("She does? That's a surprise.")
                         return
                         
-                    elif message.content.lower() == f'<@{conf.yuri_id}>': #Yuri
+                    elif member.lower() == f'<@{conf.yuri_id}>': #Yuri
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Does she? It's hard to tell when she's so quiet.")
                         return
-                    elif message.content.lower() == f'<@{conf.monika_id}>': #Monika
+                    elif member.lower() == f'<@{conf.monika_id}>': #Monika
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("She doesn't just love me. She's a bit of a yandere.")
                         return
 
-                    elif message.content.lower() == 'everyone' or message.content.lower() == '@everyone' or message.content.lower() == '@here' or message.content.lower() == 'everybody':
+                    elif member.lower() == f'<@{conf.sayori_id}>': #Sayori
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)
+                        await message.channel.send("Of course she does. She loves everyone.")
+                        return
+
+                    elif member.lower() == 'everyone' or member.lower() == '@everyone' or member.lower() == '@here' or member.lower() == 'everybody':
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Everyone? How?!")
@@ -160,7 +166,7 @@ class Event(client.Cog):
                     return 
 
                 elif "best doki" in message.content.lower() or "best girl" in message.content.lower():
-                    if message1 == "Monika" or message1 == "Natsuki" or message1 == "Yuri" or message1 == "<@436350586670153730>" or message1 == "<@433834936450023424>":
+                    if "monika" in message1.lower() or "natsuki" in message1.lower() or "yuri" in message1.lower() or "sayori" in message1.lower() or message1 == f"<@{conf.monika_id}>" or message1 == f"<@{conf.natsuki_id}>" or message1 == f"<@{conf.yuri_id}>" or message1 == f"<@{conf.sayori_id}>":
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)
                         await message.channel.send("I’ll have to agree with you there.")
@@ -175,7 +181,7 @@ class Event(client.Cog):
                 elif "test" in message.content.lower():
                     async with message.channel.typing():
                         await asyncio.sleep(conf.type_speed)
-                    await message.channel.send("Testing, testing! 1-2-1-2 testing!")
+                    await message.channel.send("Yes, I'm fine.")
 
                 else:
                     async with message.channel.typing():
@@ -252,7 +258,7 @@ class Event(client.Cog):
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Augh!")
 
-        if "yes?" in message.content.lower() and message.author.id == conf.sayori_id:
+        if f"yes, <@{self.b.user.id}>?" in message.content.lower() and message.author.id == conf.sayori_id:
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("I-I love you, Sayori.")
