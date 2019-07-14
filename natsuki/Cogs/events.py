@@ -209,7 +209,10 @@ class Event(client.Cog): #Silly man class leave alone thx
                         pass
             
                 else:
-                    pass
+                    async with message.channel.typing():
+                        await asyncio.sleep(conf.type_speed)  
+                    await message.channel.send(conf.econfused)
+                    return
 
 
             # -------------------------------------------------------Tagging-------------------------------------------------------

@@ -429,7 +429,7 @@ class Event(client.Cog):
 
                     else:
                         async with message.channel.typing():
-                            await asyncio.sleep(conf)
+                            await asyncio.sleep(conf.type_speed)
                         await message.channel.send("I-I'm sorry, but I don't understand what you mean...")
                         pass
 

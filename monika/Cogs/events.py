@@ -281,8 +281,10 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await message.channel.send("O-Oh! Out of all the other girls, you think *I'M* the best? Well, that's quite an honor!")
                         return
                     else:
-                        pass
-
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)  
+                        await message.channel.send(conf.econfused)
+                        return
             # -------------------------------------------------------Tagging-------------------------------------------------------
 
 

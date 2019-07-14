@@ -27,7 +27,7 @@ class conf():
 
     ''' These are just some error quotes so i can change them really quickly instead of doing the same quote for each error in every file '''
     everyone_tag = "Nice try to ping everyone, Baka."
-    econfused = "Uh... What?"
+    econfused = "Uh?"
 
     ''' These are for the chat trigger'''
     w_tog_on = []
