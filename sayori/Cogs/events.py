@@ -274,7 +274,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await message.channel.send("Well, of course she does! Yuri loves everybody!")
                         return
 
-                    elif member == f'<@{conf.monika_id}>': #Monika
+                    elif member.lower() == f'<@{conf.monika_id}>': #Monika
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Yay! I'm glad she does!")
