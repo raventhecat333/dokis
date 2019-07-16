@@ -25,7 +25,7 @@ class CommandError(commands.Cog):
         elif isinstance(error, commands.CommandNotFound):
             return
  
-        elif isinstance(error, checks.dev_only):
+        elif isinstance(error, checks.blank):
             return
 
         elif isinstance(error, commands.MissingPermissions):

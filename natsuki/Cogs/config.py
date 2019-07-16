@@ -5,17 +5,18 @@ class conf():
     prefix2 = "N_"
     name = "Natsuki"
     cogd = "Cogs"
-    type_speed = 1.5
+    type_speed = 2
     playing_msg = ["Type 'n_help' for help!","Doki Doki Literature Club","Don't Starve","Cooking Mama", "some anime through your computer!"]
-    admins = [480580173431832577, 279732337971953664, 332271541859647498, 218085039768993803, 310496481435975693, 270057011251642368]
+    admins = [480580173431832577, 279732337971953664, 310496481435975693, 270057011251642368]
+    #         Tsumiki             Cheezy              IDroid              Cole 
     test_mode = False  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
 
     if test_mode is False:
         sharding = True
-        version = "2.0B CS"
+        version = "2.1B CS"
     else:
         sharding = False
-        version = "2.0B CS"
+        version = "2.1B CS"
     #L|Launch    B|Beta
 
     ''' Just wanted to clear out that these hex codes bellow are for embed colours so i don't have to keep changing them in every single fucking file '''
@@ -30,7 +31,6 @@ class conf():
 
     ''' These are for the chat trigger'''
     w_tog_on = []
-    w_tog_off = [] 
     
     ''' Doki Bot's ID'S '''
     if test_mode is True:
@@ -38,11 +38,13 @@ class conf():
         monika_id = 531556928732528670 
         sayori_id = 531554745337249792
         yuri_id = 531556397746356224
+        mc_id = 596409849131171870
 
     else:
         natsuki_id = 433834936450023424
         monika_id = 436351740787294208 
         sayori_id = 425696108455657472
         yuri_id = 436350586670153730
+        mc_id = 596407346176065552
 
 

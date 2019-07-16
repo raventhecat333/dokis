@@ -8,32 +8,31 @@ class Event(client.Cog): #Silly man class leave alone thx
          self.b = bot
 
     @client.Cog.listener()
-    async def on_ready(self):
+    async def on_ready(self): #When the bot is ready
         print("\n")
-        print(chalk.green(f"Connected to Discord as: {self.b.user}"))
-        if conf.sharding is False:
-            print(chalk.red(f"Sharding: Disabled"))
-        elif conf.sharding is True:
-            print(chalk.green("Sharding: Enabled"))
-            print(chalk.yellow(f"Using SHARD's {self.b.shard_ids}"))
+        print(chalk.green(f"[SUCCESS] Connected to Discord as: {self.b.user}"))
+        if conf.sharding is False: #If sharding is disabled
+            print(chalk.red(f"[WARNING] Sharding: Disabled"))
+        elif conf.sharding is True: #If sharding is Enabled
+            print(chalk.green("[INFO] Sharding: Enabled"))
+            print(chalk.yellow(f"[INFO] Using SHARD's {self.b.shard_ids}")) #Shows us how many shards we are currently using
 
-        print(chalk.cyan(f"Config name: '{conf.name}''"))
-        print(chalk.cyan(f"Defualt Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'"))
-        print(chalk.cyan("Are you braindead: Most Likely"))
-        print(chalk.cyan(f"I'm currently in [{len(self.b.guilds)}] server(s)."))
-        for guild in self.b.guilds:
-            conf.w_tog_on.insert(0, guild.id)
+        print(chalk.cyan(f"[INFO] Config name: '{conf.name}'")) #Shows us the name defined in the config
+        print(chalk.cyan(f"[INFO] Defualt Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'")) #Shows us the 2 prefixes defined in the config
+        print(chalk.cyan("[INFO] Are you braindead: Most Likely")) #Yup
+        print(chalk.cyan(f"[INFO] I'm currently in [{len(self.b.guilds)}] server(s).")) #Shows us how many servers we are in
         aaa = True
-        while aaa:
+        for guild in self.b.guilds: #Set all guild the doki is in to have triggers enabled on startup otherwise they no be in list which means triggers are off.
+            conf.w_tog_on.insert(0, guild.id)
+        while aaa: #A loop to make the game activity change every 900 seconds
             for list in conf.playing_msg:
                 await self.b.change_presence(activity=discord.Game(name=list))
                 await asyncio.sleep(900)
 
     @client.Cog.listener()
     async def on_guild_join(self,guild):
-        e = discord.Embed(title="Hi! I'm Monika!",description="I DON'T KNOW WHAT KINDA DESC TO PUT IN HERE IM A DEVELOPER NOT A WRITER!!!!!!!!1111",color=conf.norm)
-        await guild.owner.send(embed=e)
-        print("Test")
+        conf.w_tog_on.insert(0, guild.id)
+        # Remember to add a message here
 
     @client.Cog.listener()
     async def on_message(self,message):
@@ -63,7 +62,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         monika_list = ["Ahaha, just me...and you, too!", "Ahaha, did someone call me? :heart:", "That's sweet of you, but it's not just me anymore!"]
 
         # ------------------------------------------------------------------------------------------------------------------------------------------------
-        mct = message.content.lower().split(" ") # (MCT | Meesage Contents)
+        mct = message.content.lower().split(" ") # (MCT | Message Contents)
         for word in mct:
             if word.lower() in piano_words and word.lower() in piano_words : 
                 if message.author.bot:
@@ -76,9 +75,6 @@ class Event(client.Cog): #Silly man class leave alone thx
                     return
                 else:
                     pass
-
-
-
 
             if word.lower() in cacophony_words:
                 if message.author.bot:
@@ -116,7 +112,6 @@ class Event(client.Cog): #Silly man class leave alone thx
                 else:
                     pass
 
-
             if word.lower() in reality_words: 
                 if message.author.bot:
                     return
@@ -143,7 +138,6 @@ class Event(client.Cog): #Silly man class leave alone thx
                     return
                 else:
                     pass
-
 
             if word.lower() in literature_words: 
                 if message.author.bot:
@@ -240,27 +234,27 @@ class Event(client.Cog): #Silly man class leave alone thx
 
                 elif 'loves you' in message.content.lower():
                     member = message.content.split(" ")[1]
-                    love_tag_list = [f"Aww! Well, you can tell {member} that I love them, too!", f"{member} does? Well, that's so sweet to hear!", f"And I love {member}, too! :heart:", f"Yay! I'm loved by {member}!"]
+                    love_tag_list = [f"Well, of course {member} does! Why wouldn't they? Ahaha!~", f"{member}, I can certainly see why you'd be a little embarassed to tell me that! But it's okay; I love you, too!", f"W-Well, I suppose you can't control how you feel about people, {member}, but I'm the Club President, so I have to stay professional! ~~It's okay, my love; I love you very much, as well!~~"]
                     if 'nigger' in message.content.lower():
                         return
 
-                    elif member == "loves":
+                    elif member.lower() == "loves":
                         await message.channel.send("Ehh?")
                         return
 
-                    elif message.content.lower() == f'<@{conf.sayori_id}>': #Sayori
+                    elif member.lower() == f'<@{conf.sayori_id}>': #Sayori
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Ahaha!~ Well, after everything that's happened between us, that's nice to hear!")
                         return
 
-                    elif message.content.lower() == f'<@{conf.yuri_id}>': #Yuri
+                    elif member.lower() == f'<@{conf.yuri_id}>': #Yuri
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Well, that's a pleasant surprise! And I understand why she doesn't have the courage to say it to me directly.")
                         return
 
-                    elif message.content.lower() == f'<@{conf.natsuki_id}>': #Natsuki
+                    elif member.lower() == f'<@{conf.natsuki_id}>': #Natsuki
                         async with message.channel.typing():
                             await asyncio.sleep(conf.type_speed)  
                         await message.channel.send("Oh, really? She, of all people, said that?")
@@ -272,10 +266,8 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await message.channel.send(random.choice(love_tag_list))
                         return
 
-
-
                 elif "best doki" in message.content.lower() or "best girl" in message.content.lower():
-                    if message1 == "Yuri" or message1 == "Sayori" or message1 == "<@425696108455657472>" or message1 == "<@436350586670153730>":
+                    if "sayori" in message1.lower() or "natsuki" in message1.lower() or "yuri" in message1.lower() or message1 == f"<@{conf.sayori_id}>" or message1 == f"<@{conf.natsuki_id}>" or message1 == f"<@{conf.yuri_id}>":
                         imbestgirl_list = ["I'm sorry, I didn't catch that. What did you say?", "Hm? Did you say something?", "Ahaha!~ You're funny!"]
                         await message.delete()
                         async with message.channel.typing():
@@ -289,14 +281,11 @@ class Event(client.Cog): #Silly man class leave alone thx
                         await message.channel.send("O-Oh! Out of all the other girls, you think *I'M* the best? Well, that's quite an honor!")
                         return
                     else:
-                        pass
-            
-
-
-
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed)  
+                        await message.channel.send(conf.econfused)
+                        return
             # -------------------------------------------------------Tagging-------------------------------------------------------
-
-
 
 
 
@@ -304,20 +293,22 @@ class Event(client.Cog): #Silly man class leave alone thx
         if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.sayori_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.sayori_id: 
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed) 
-            await message.channel.send("Easy now, Sayori! I Easy now, Sayori! I know you're excited, but I still need to breathe! ~~Even though neither of us are real~~")
+            await message.channel.send("Easy now, Sayori! I know you're excited, but I still need to breathe! ~~Even though neither of us are real~~")
             
-
         if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.yuri_id: 
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Aw, no need to be shy, Yuri! I don't mind a hug every now and then!")
-
 
         if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.natsuki_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.natsuki_id: 
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("Aww, how cute of you, Natsuki!")
 
+        if f"hugs <@{self.b.user.id}>" in message.content.lower() and message.author.id == conf.mc_id     or     f"hugs @!<{self.b.user.id}>" in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send(f"Aww, you're the best hugger, <@{conf.mc_id}>")
 
         if "okay, this is just awkward for both of us." in message.content.lower() and message.author.id == conf.natsuki_id:
             async with message.channel.typing():
@@ -338,6 +329,21 @@ class Event(client.Cog): #Silly man class leave alone thx
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("y_act1")
+
+        if "monika?" in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send(f"Yes, <@{conf.mc_id}>?")
+
+        if "i need to tell you something." in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("Hmm?")
+
+        if "i love you, monika." in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("I-I do too!")
             # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
 
 

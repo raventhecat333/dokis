@@ -11,16 +11,15 @@ class Changelog(client.Cog):
 
     @client.command()
     async def changelog(self,ctx): 
-        e = discord.Embed(title=f"A beta update! This has been changed at 29/06/2019. Version: {conf.version}",description='''
+        e = discord.Embed(title=f"A beta update! This has been changed at 14/07/2019. Version: {conf.version}",description='''
 ```
 
--Fixed a majour bug that caused people to spam the doki's using trigger words
+-Commands that required the user to have "admin" has been changed to "manage_messages"
 
--Added the "changelog" command
-
+-Updated the error embed to use the correct colour
 ```
 ''', color=conf.norm)
-        e.set_author(name="The Changelog for Sayori.",icon_url=self.b.user.avatar_url)
+        e.set_author(name=f"The Changelog for {conf.name}.",icon_url=self.b.user.avatar_url)
         await ctx.send(embed=e)
 
 

@@ -1,7 +1,5 @@
 import discord, os, traceback, chalk, sys
 from discord.ext import commands
-from os import listdir
-from os.path import isfile, join
 from Cogs.config import conf
 #Import some important modules
 
@@ -21,29 +19,31 @@ else:
     pass
 
 
+async def prefix(bot, message):
+  return [conf.prefix1, conf.prefix2]  # or a list, ["pre1","pre2"]
+
 
 if conf.sharding is True:
-    client = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or(conf.prefix1,conf.prefix2), status=discord.Status.idle, activity=discord.Game(name="Starting Up..."), shard_count=2, shard_ids=(0, 1)) # Defining what our prefix for the bot will be
-elif conf.sharding is False:
-    client = commands.Bot(command_prefix=commands.when_mentioned_or(conf.prefix1,conf.prefix2), status=discord.Status.idle, activity=discord.Game(name="Starting Up...")) # Defining what our prefix for the bot will be
+    client = commands.AutoShardedBot(command_prefix=prefix, status=discord.Status.idle, activity=discord.Game(name="Starting Up..."), shard_count=2, shard_ids=(0, 1)) # Defining what our prefix for the bot will be
+elif conf.sharding is False: #Just so cheezy's pc doesn't melt.
+    client = commands.Bot(command_prefix=prefix, status=discord.Status.idle, activity=discord.Game(name="Starting Up...")) # Defining what our prefix for the bot will be
 
 
 Cogs = conf.cogd
 
 if __name__ == '__main__': # Load every file that have a .py extension in the Cogs folder
-    for extension in [f.replace('.py', '') for f in listdir(Cogs) if isfile(join(Cogs, f))]:
-        try:
-            if extension == "config" or extension == "checks":
+    for file in os.listdir(conf.cogd):
+        if file.endswith(".py"):
+            name = file[:-3]
+            if name == "config" or name == "checks":
                 pass
-            else:   
-                client.load_extension(Cogs + "." + extension) # Here's were we load them
-                print(chalk.green(f"Loaded {extension}"))
-        except (discord.ClientException, ModuleNotFoundError): # Oh fuck something happened lets reppoooooorrrrrt it!!!!111111!!!!!!
-            crash_thing = traceback.format_exc()
-            print(chalk.red(f'Failed to load extension {extension}', file=sys.stderr))
-            ono = traceback.format_exc()
-            print(chalk.red(ono))
-            print("\n")
-            continue
+            else:
+                try:
+                    client.load_extension(f"Cogs.{name}")
+                    print(chalk.green(f"[INFO] Loaded {name}"))
+                except (discord.ClientException, ModuleNotFoundError):
+                    print('[ERROR] Failed to load Cog {name}')
+                    print(traceback.format_exc())
+                    continue
 
-client.run(conf.token, reconnect=True) # Login via our token inside of the config file
+client.run(conf.token) # Login via our token inside of the config file
