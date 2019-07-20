@@ -1,8 +1,10 @@
-﻿import discord, random, asyncio
+﻿import discord, random, asyncio, Cogs.checks, io, textwrap, traceback
 from discord.ext import commands as client
 from Cogs.config import conf
+from contextlib import redirect_stdout
 #Imports
 
+checks = Cogs.checks
 
 class Eval(client.Cog):
 
@@ -52,7 +54,7 @@ class Eval(client.Cog):
         else:
             value = stdout.getvalue()
             try:
-                await ctx.message.add_reaction('👌')
+                pass
             except:
                 pass
 
