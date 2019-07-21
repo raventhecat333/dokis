@@ -23,9 +23,9 @@ class Developer(client.Cog):
     async def pull(self, ctx):
         c = subprocess.call(('git', 'pull'))
         if c != 0:
-            await ctx.send("Updating from Git failed.")
+            await ctx.send("I am very sorry, but I couldn’t pull the data from GitHub.")
             return
-        await ctx.send("Successfully updated from Git.")
+        await ctx.send("Ok! I pulled the data from GitHub!")
 
     @client.command()
     @checks.dev()
