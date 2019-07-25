@@ -241,17 +241,17 @@ class Event(client.Cog): #Silly man class leave alone thx
             elif re.search("(sayori.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.sayori_id}>.*loves.*you)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
-                await message.channel.send(random.choice(sayorilove))
+                await message.channel.send(sayorilove)
 
             elif re.search("(natsuki.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.natsuki_id}>.*loves.*you)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
-                await message.channel.send(random.choice(natsukilove))
+                await message.channel.send(natsukilove)
 
             elif re.search("(yuri.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.yuri_id}>.*loves.*you)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
-                await message.channel.send(random.choice(yurilove))
+                await message.channel.send(yurilove)
             # -------------------------------------------------------Tagging-------------------------------------------------------
 
         

@@ -1,4 +1,4 @@
-import discord, random, asyncio, chalk
+import discord, random, asyncio, chalk,re
 from discord.ext import commands as client
 from Cogs.config import conf
 
@@ -36,8 +36,7 @@ class Event(client.Cog):
 
     @client.Cog.listener()
     async def on_message(self,message):
-        if message.author.id == self.b.user.id:
-            pass
+        print(re.search(r"(^|[^A-Za-z])(hi|hello|hey)([^A-Za-z]|$)", message.content, re.IGNORECASE))
         # ------------------------------------------------------------------------------------------------------------------------------------------------
         cut_words = ["cut", "cutting", "cuts", "stab", "stabbing", "stabs"]
         cut_list = ["Uuu...!", "D-Did you have to say that word...?", "I-I'm sorry, I-I really don't like that word...", ":confounded:"]
@@ -146,8 +145,6 @@ class Event(client.Cog):
                         await message.channel.send(random.choice(pen_list)) 
                         return
 
-                else:   
-                    pass
 
 
 
@@ -157,44 +154,48 @@ class Event(client.Cog):
 
 
             # -------------------------------------------------------Tagging-------------------------------------------------------
+        print(re.search(f"^<@!?{self.b.user.id}>", message.content))
         if re.search(f"^<@!?{self.b.user.id}>", message.content): #re check if string *starts with* mentioning me (even if someone nicknames me or not)
 
             #-------------------- Act 1 --------------------
-            if message.guild.id in conf.act1:
-				hi_list = ["H-Hello there.", "...h-hi...", "O-Oh, are you talking to me? S-Sorry, I'm not used to that..."]
-				love_list = ["O-Oh! W-W-Well, uhh... :flushed:", "I-I love you, too... :relaxed:", "R-Really? Why? I-I don't have anything worth loving...", "Uuu, why is my heart beating so fast right now??"]
-				night_list = ["G-Goodnight, then.", "Until next time.", "I hope you have wonderful dreams!"]
-				morning_list = ["It is a good morning, indeed.", "I hope you slept wonderfully!", "Good morning!"]
-				afternoon_list = ["Good afternoon.", "A truly beautiful afternoon, it is.", "Ah, it's times like this where I just want to sit outsite and read a good book."]
-				compliment_list = ["Y-You really think so...?", "Uuu... :flushed:", "T-Thank you. I needed to hear that...", ":blush:"]
-				apology_list = ["I don't think I fully understand why you're apologizing, but I accept it, anyway.", "It's alright; I forgive you.", "N-No, I'm the one who should be sorry; I mess up everything...", "Consider your apology accepted, then!"]
-				sickness_list = ["O-Oh... I hope y-you feel better soon.", "Oh... please do feel better."]
-				otherbestgirl_list = ["W-Well, I suppose that's true; she's much better than I am..."]
-				bestgirl_list = ["Oh! Uh... Well, I'm glad you think that!"]
-				empty_list = ["Y-Yes...?", "Did you want to talk to me...?", "Hm?"]
+            if message.guild.id not in conf.act2:
+                hi_list = ["H-Hello there.", "...h-hi...", "O-Oh, are you talking to me? S-Sorry, I'm not used to that..."]
+                love_list = ["O-Oh! W-W-Well, uhh... :flushed:", "I-I love you, too... :relaxed:", "R-Really? Why? I-I don't have anything worth loving...", "Uuu, why is my heart beating so fast right now??"]
+                night_list = ["G-Goodnight, then.", "Until next time.", "I hope you have wonderful dreams!"]
+                morning_list = ["It is a good morning, indeed.", "I hope you slept wonderfully!", "Good morning!"]
+                afternoon_list = ["Good afternoon.", "A truly beautiful afternoon, it is.", "Ah, it's times like this where I just want to sit outsite and read a good book."]
+                compliment_list = ["Y-You really think so...?", "Uuu... :flushed:", "T-Thank you. I needed to hear that...", ":blush:"]
+                apology_list = ["I don't think I fully understand why you're apologizing, but I accept it, anyway.", "It's alright; I forgive you.", "N-No, I'm the one who should be sorry; I mess up everything...", "Consider your apology accepted, then!"]
+                sickness_list = ["O-Oh... I hope y-you feel better soon.", "Oh... please do feel better."]
+                otherbestgirl_list = ["W-Well, I suppose that's true; she's much better than I am..."]
+                bestgirl_list = ["Oh! Uh... Well, I'm glad you think that!"]
+                natsukilove = "Sh-She does?"
+                monikalove = "Ahaha... I-I'm glad that I have a friend like Monika who loves me... :blush:"
+                sayorilove = "Haha. Well, she is a loving soul."
+                mclove = "Yay! My best friend loves me!!! :heart:"
+                empty_list = ["Yes, my love?", "Oh, did someone call for me?"]
 				
 			#-------------------- Act 2 --------------------
-			elif if message.guild.id in conf.act2:
-				hi_list = ["Hello there.", "Hello, my beloved! Nice to see you!"]
-				love_list = ["I love you, too! I love you so much that I touch myself to you every night!", "I'm glad, because if you didn't, I'd be very, *very* upset...", ":smirk:", "...Ahahaha. Ahahahahahaha! Ahahahahahahahaha! AHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA"]
-				night_list = ["Haha. No. You're not allowed to go.", "Goodnight! I'll be sure to watch over you very closely while you're resting...", "I hope you don't mind if I look at your chest move up and down while the beautiful, soft breathing noises come from your mouth. Ahaha..."]
-				morning_list = ["Good morning, my love!", "Oh, good! You're finally awake!", "Did you know you snore very loudly? Ahaha...", "Good morning! I can't wait to spend the day together! Just you and me, nobody else..."]
-				afternoon_list = ["Good afternoon! But who cares what time it is; we'll be together forever, right??", "A perfect afternoon for just staring at each other, telling what kind of dirty things we could do together..."]
-				compliment_list = ["Ohoho, stop it, you! I'm nothing compared to you!", "But you're 10 times as amazing!", "no u", "Oh? Am I attractive enough for you to pleasure youself to the thought of me? Because I do it to the thought of you all the time!", "Oh, I love it when you tell me that!"]
-				apology_list = ["Ahaha. There's no need to be sorry. I honestly found it kinda hot...", "Well, if it'll make you feel better, I accept your apology.", "Uhuhu. You look so cute when you apologize like that!"]
-				sickness_list = ["Feel better soon my love so we can love each other forever!"]
-				otherbestgirl_list = ["No, she's fucking not."]
-				bestgirl_list = ["AHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA"]
-				empty_list = ["Yes, my love?", "Oh, did someone call for me?"]
+            elif message.guild.id in conf.act2:
+                hi_list = ["Hello there.", "Hello, my beloved! Nice to see you!"]
+                love_list = ["I love you, too! I love you so much that I touch myself to you every night!", "I'm glad, because if you didn't, I'd be very, *very* upset...", ":smirk:", "...Ahahaha. Ahahahahahaha! Ahahahahahahahaha! AHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA"]
+                night_list = ["Haha. No. You're not allowed to go.", "Goodnight! I'll be sure to watch over you very closely while you're resting...", "I hope you don't mind if I look at your chest move up and down while the beautiful, soft breathing noises come from your mouth. Ahaha..."]
+                morning_list = ["Good morning, my love!", "Oh, good! You're finally awake!", "Did you know you snore very loudly? Ahaha...", "Good morning! I can't wait to spend the day together! Just you and me, nobody else..."]
+                afternoon_list = ["Good afternoon! But who cares what time it is; we'll be together forever, right??", "A perfect afternoon for just staring at each other, telling what kind of dirty things we could do together..."]
+                compliment_list = ["Ohoho, stop it, you! I'm nothing compared to you!", "But you're 10 times as amazing!", "no u", "Oh? Am I attractive enough for you to pleasure youself to the thought of me? Because I do it to the thought of you all the time!", "Oh, I love it when you tell me that!"]
+                apology_list = ["Ahaha. There's no need to be sorry. I honestly found it kinda hot...", "Well, if it'll make you feel better, I accept your apology.", "Uhuhu. You look so cute when you apologize like that!"]
+                sickness_list = ["Feel better soon my love so we can love each other forever!"]
+                otherbestgirl_list = ["No, she's fucking not."]
+                bestgirl_list = ["AHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA"]
+                natsukilove = "Pfft. As if. That immature brat doesn't love anyone but herself."
+                monikalove = "I'll believe that when that bitch says it to my face!"
+                sayorilove = "Who the hell is Sayori? I don't know any Sayoris..."
+                mclove = "Yay! My best friend loves me!!! :heart:"
+                empty_list = ["Yes, my love?", "Oh, did someone call for me?"]
 			
-			else:
-				async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)
-				await message.channel.send("This could be a bug, but i'm not sure. What i do know is that this is an ELSE statement which is not usually meant to happen, try re-running y_act1 and see if that solves this. Sorry!")  
-			
-			#-------------------- Responding --------------------
-			content = re.sub(f'^<@!?{self.b.user.id}>', "", message.content).strip()
-			if content == "": #checks if message content is empty excluding my mention
+            #-------------------- Responding --------------------
+            content = re.sub(f'^<@!?{self.b.user.id}>', "", message.content).strip()
+            if content == "": #checks if message content is empty excluding my mention
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
                 await message.channel.send(random.choice(empty_list))
@@ -203,52 +204,68 @@ class Event(client.Cog):
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(hi_list))
-			
-			elif re.search("((^|\s)ily(\s|$)|(^|\s)i\s.*love.*you)", message.content, re.IGNORECASE): #checks if ily (with space between them or on edge of string) or i love you (with any possible characters between them and a must space after i) is in message
+
+            elif re.search("((^|\s)ily(\s|$)|(^|\s)i\s.*love.*you)", message.content, re.IGNORECASE): #checks if ily (with space between them or on edge of string) or i love you (with any possible characters between them and a must space after i) is in message
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(love_list))
-						
-			elif re.search("good.*night", message.content, re.IGNORECASE): #checks if good night (doesn't require anything between, but allows) is in text
+                
+            elif re.search("good.*night", message.content, re.IGNORECASE): #checks if good night (doesn't require anything between, but allows) is in text
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(night_list))
-						
-			elif re.search("good.*morning", message.content, re.IGNORECASE): #checks if good morning (doesn't require anything between, but allows) is in text
+                
+            elif re.search("good.*morning", message.content, re.IGNORECASE): #checks if good morning (doesn't require anything between, but allows) is in text
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(morning_list))
-						
-			elif re.search("good.*afternoon", message.content, re.IGNORECASE): #checks if good afternoon (doesn't require anything between, but allows) is in text
-				async with message.channel.typing():
-					await asyncio.sleep(conf.type_speed)  
-				await message.channel.send(random.choice(afternoon_list))
-						
-			elif re.search("you.*are.*(pretty|beautiful|adorable|cute)", message.content, re.IGNORECASE): #checks if you are (whatever is in the parenthesis) is in text
+                
+            elif re.search("good.*afternoon", message.content, re.IGNORECASE): #checks if good afternoon (doesn't require anything between, but allows) is in text
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send(random.choice(afternoon_list))
+                
+            elif re.search("you.*are.*(pretty|beautiful|adorable|cute)", message.content, re.IGNORECASE): #checks if you are (whatever is in the parenthesis) is in text
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(compliment_list))
-					
-			elif re.search("((^|\s)i\s.*apologi(s|z)e|sorry)", message.content, re.IGNORECASE): #check if sorry or i apologise/apologize is in text
+
+            elif re.search("((^|\s)i\s.*apologi(s|z)e|sorry)", message.content, re.IGNORECASE): #check if sorry or i apologise/apologize is in text
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(apology_list))
-						
-			elif re.search("(i'm.*sick|puke|not.*feeling.*(good|great))", message.content, re.IGNORECASE): #checks if i'm sick, puke or not feeling good/great is in text
+                
+            elif re.search("(i'm.*sick|puke|not.*feeling.*(good|great))", message.content, re.IGNORECASE): #checks if i'm sick, puke or not feeling good/great is in text
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(sickness_list))
-						
-			elif re.search("(monika|sayori|natsuki).*best.*(girl|doki)", message.clean_content, re.IGNORECASE): #checks if user calls one of the other dokis best girl in the text
-				async with message.channel.typing():
+                
+            elif re.search("(monika|sayori|natsuki).*best.*(girl|doki)", message.clean_content, re.IGNORECASE): #checks if user calls one of the other dokis best girl in the text
+                async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(otherbestgirl_list))
-					
-			elif re.search("(you('re|.*are)|^is|yuri).*best.*(girl|doki)", message.clean_content, re.IGNORECASE): #checks if user calls me best girl in the text
-				async with message.channel.typing():
+
+            elif re.search("(you('re|.*are)|^is|yuri).*best.*(girl|doki)", message.clean_content, re.IGNORECASE): #checks if user calls me best girl in the text
+                async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(bestgirl_list))
-            # -------------------------------------------------------Tagging-------------------------------------------------------
+
+            elif re.search("(sayori.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.sayori_id}>.*loves.*you)", message.content, re.IGNORECASE): 
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send(sayorilove)
+
+            elif re.search("(monika.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.monika_id}>.*loves.*you)", message.content, re.IGNORECASE): 
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send(monikalove)
+
+            elif re.search("(natsuki.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.natsuki_id}>.*loves.*you)", message.content, re.IGNORECASE): 
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send(natsukilove)
+                    
+                # -------------------------------------------------------Tagging-------------------------------------------------------
 
 
 

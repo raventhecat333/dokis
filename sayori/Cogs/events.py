@@ -257,32 +257,32 @@ class Event(client.Cog): #Silly man class leave alone thx
             elif re.search("(yuri|sayori|natsuki).*best.*(girl|doki)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
-                await message.channel.send(random.choice(otherbestgirl))
+                await message.channel.send(otherbestgirl)
 
             elif re.search("(you('re|.*are)|^is|yuri).*best.*(girl|doki)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
-                await message.channel.send(random.choice(bestgirl))
+                await message.channel.send(bestgirl)
 
             elif re.search("(monika.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.monika_id}>.*loves.*you)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
-                await message.channel.send(random.choice(monikalove))
+                await message.channel.send(monikalove)
 
             elif re.search("(natsuki.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.natsuki_id}>.*loves.*you)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
-                await message.channel.send(random.choice(natsukilove))
+                await message.channel.send(natsukilove)
 
             elif re.search("(yuri.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.yuri_id}>.*loves.*you)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
-                await message.channel.send(random.choice(yurilove))
+                await message.channel.send(yurilove)
 
             elif re.search("(mc.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.mc_id}>.*loves.*you)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
-                await message.channel.send(random.choice(yurilove))
+                await message.channel.send(yurilove)
 
             elif re.search("cyka.*blyat", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
