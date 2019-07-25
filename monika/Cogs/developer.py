@@ -17,7 +17,15 @@ class Developer(client.Cog):
         await ctx.send(embed=embed)
         await self.b.change_presence(status=discord.Status.dnd)
         await quit()
-
+        
+    @client.command()
+    @checks.dev()
+    async def pull(self, ctx):
+        c = subprocess.call(('git', 'pull'))
+        if c != 0:
+            await ctx.send("I am very sorry, but I couldn’t pull the data from GitHub.")
+            return
+        await ctx.send("Ok! I pulled the data from GitHub!")
 
     @client.command()
     @checks.dev()
