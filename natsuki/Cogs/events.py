@@ -199,7 +199,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send(f"Ah! You scared me, <@{conf.mc_id}>")
 
-        if "aww she does??" in message.content.lower() and message.author.id == conf.sayori_id:
+        if "Awww, she does??" in message.content.lower() and message.author.id == conf.sayori_id:
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
             await message.channel.send("S-shut up! No, I don't!")
