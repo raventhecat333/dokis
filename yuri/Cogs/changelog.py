@@ -14,9 +14,8 @@ class Changelog(client.Cog):
         e = discord.Embed(title=f"A beta update! This has been changed at 14/07/2019. Version: {conf.version}",description='''
 ```
 
--Yuri can now be mostly used in DM's!
+-Rewrote the tagging function to use regex
 
--Commands that required the user to have "admin" has been changed to "manage_messages"
 ```
 ''', color=conf.norm)
         e.set_author(name=f"The Changelog for {conf.name}.",icon_url=self.b.user.avatar_url)
