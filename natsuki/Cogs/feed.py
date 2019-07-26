@@ -156,7 +156,7 @@ class Feed(client.Cog):#Class thing no touchy!!!111
         else:
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
-            await ctx.send("Are you trying to kill me?? That's not food!")        
+            await ctx.send("Are you trying to hurt me?? That's not food!")        
             #------------------- Not Listed ------------------- '''
 
 
