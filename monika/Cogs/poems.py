@@ -160,7 +160,7 @@ And with a breath, she blows me back afloat, and I pick up a gust of wind.''')
 
 
 #--------------------------------------------------------------
-        elif poem == "happy end".loweR():
+        elif poem == "happy end".lower():
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await ctx.send(random.choice(poem_intros))
