@@ -173,8 +173,9 @@ class Event(client.Cog):
                 monikalove = "Ahaha... I-I'm glad that I have a friend like Monika who loves me... :blush:"
                 sayorilove = "Haha. Well, she is a loving soul."
                 mclove = "Yay! My best friend loves me!!! :heart:"
-                empty_list = ["Yes, my love?", "Oh, did someone call for me?"]
-				
+                resempty = ["Y-Yes...?", "Did you want to talk to me...?", "Hm?"]
+				resbad= "I-I'm sorry, but I don't understand what you mean..."
+
 			#-------------------- Act 2 --------------------
             elif message.guild.id in conf.act2:
                 hi_list = ["Hello there.", "Hello, my beloved! Nice to see you!"]
@@ -191,7 +192,8 @@ class Event(client.Cog):
                 monikalove = "I'll believe that when that bitch says it to my face!"
                 sayorilove = "Who the hell is Sayori? I don't know any Sayoris..."
                 mclove = "Yay! My best friend loves me!!! :heart:"
-                empty_list = ["Yes, my love?", "Oh, did someone call for me?"]
+                resempty = ["Yes, my love?", "Oh, did someone call for me?"]
+                resbad = "I love you, but I have no clue what you just said."
 			
             #-------------------- Responding --------------------
             content = re.sub(f'^<@!?{self.b.user.id}>', "", message.content).strip()
@@ -264,7 +266,11 @@ class Event(client.Cog):
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(natsukilove)
-                    
+            
+            else:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send(resbad)             
                 # -------------------------------------------------------Tagging-------------------------------------------------------
 
 

@@ -101,7 +101,8 @@ class Event(client.Cog): #Silly man class leave alone thx
             monikalove = "Act 2 says otherwise."
             yurilove = "W-Well it's not like I love her back or anything!!"
             sayorilove = "S-shut up! No she doesn't!"
-            respempty = conf.econfused
+            respempty = "Yes?"
+            resbad = "Uh... What?"
 
 
 			#-------------------- Responding --------------------
@@ -175,6 +176,11 @@ class Event(client.Cog): #Silly man class leave alone thx
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(yurilove)
+            
+            else:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send(resbad)
             # -------------------------------------------------------Tagging-------------------------------------------------------
 
 

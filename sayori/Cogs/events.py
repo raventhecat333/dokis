@@ -153,13 +153,11 @@ class Event(client.Cog): #Silly man class leave alone thx
 
             if word.lower() in kill_words:
                 if message.guild.id not in conf.w_tog_on:
-                    pass
-
-                if message.author.bot:
-                    pass
+                    return
 
                 if message.author.id is conf.natsuki_id:
-                    pass
+                    return
+
 
                 elif message.content.upper().startswith(f"<@{self.b.user.id}>"):
                     pass
@@ -198,7 +196,8 @@ class Event(client.Cog): #Silly man class leave alone thx
             monikalove = "Yay! I'm glad she does!"
             mclove = "Yay! My best friend loves me!!! :heart:"
             meanie_list = [f"Hey! Stop being a meanie, {regex}!", f"We don't like meanies on this server, {regex}!", f"Are you being a meanie, {regex}? If so, please stop."]
-            respempty = conf.econfused
+            respempty = ["Did someone mention me?", "You rang?", "Are you guys talking about me?"]
+            resbad = ["Huh? I don't understand.", "I don't get it.", "???", "Maybe try something I actually understand?"]
 
 
 			#-------------------- Responding --------------------
@@ -308,6 +307,11 @@ class Event(client.Cog): #Silly man class leave alone thx
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(meanie_list))
 
+
+            else:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send(random.choice(resbad))
             # -------------------------------------------------------Tagging-------------------------------------------------------
 
 

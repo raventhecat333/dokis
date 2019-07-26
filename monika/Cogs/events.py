@@ -178,7 +178,8 @@ class Event(client.Cog): #Silly man class leave alone thx
             natsukilove = "Oh, really? She, of all people, said that?"
             yurilove = "Well, that's a pleasant surprise! And I understand why she doesn't have the courage to say it to me directly."
             sayorilove = "Ahaha!~ Well, after everything that's happened between us, that's nice to hear!"
-            respempty = conf.econfused
+            respempty = ["Yes?", "Does somebody need me?", "I'm here!"]
+            resbad = "I'm afraid I don't understand what you said. I'm terribly sorry!"
 
 
 			#-------------------- Responding --------------------
@@ -186,7 +187,7 @@ class Event(client.Cog): #Silly man class leave alone thx
             if content == "": #checks if message content is empty excluding my mention
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
-                await message.channel.send(respempty)
+                await message.channel.send(random.choice(respempty))
 
             elif re.search(r"(^|[^A-Za-z])(hi|hello|hey)([^A-Za-z]|$)", message.content, re.IGNORECASE): # checks if hi or hey (with space between them or on edge of string) or hello is in message
                 async with message.channel.typing():
@@ -252,6 +253,11 @@ class Event(client.Cog): #Silly man class leave alone thx
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(yurilove)
+            
+            else:
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send(resbad)
             # -------------------------------------------------------Tagging-------------------------------------------------------
 
         

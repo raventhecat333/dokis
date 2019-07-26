@@ -45,6 +45,8 @@ class Changelog(client.Cog):
 -Added the command "Shard" to check what shard your guild is on [ALL]
 
 -Added the "Act" command to check what act you're on [YURI]
+
+-Changed the "that's not food" string [NATSUKI]
 ```
 ''', color=conf.norm)
         e.set_author(name=f"The Changelog for {conf.name}.",icon_url=self.b.user.avatar_url)
