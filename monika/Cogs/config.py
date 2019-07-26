@@ -10,14 +10,14 @@ class conf():
     playing_msg = ["Type 'm_help' for help!","Doki Doki Literature Club","the piano!", "Super Smash Bros Ultimate.", "If My Heart Had Wings", "with you!", "Just Monika.", "from your computer!", "your reality!"]
     admins = [480580173431832577, 279732337971953664, 310496481435975693, 270057011251642368]
     #         Tsumiki             Cheezy              IDroid              Cole 
-    test_mode = True  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
+    test_mode = False  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
 
     if test_mode is False:
         sharding = True
-        version = "2.1B CS"
+        version = "2.2B CS"
     else:
         sharding = False
-        version = "2.1B CS"
+        version = "2.2L CS"
     #L|Launch    B|Beta
 
     ''' Just wanted to clear out that these hex codes bellow are for embed colours so i don't have to keep changing them in every single fucking file '''

@@ -36,6 +36,7 @@ class Event(client.Cog): #Silly man class leave alone thx
     
     @client.Cog.listener()
     async def on_message(self,message):
+
         # ------------------------------------------------------------------------------------------------------------------------------------------------
         name_words = ["cinnamon bun", "best girl"]
         name_list = ["Did someone mention me?", "You rang?", "Are you guys talking about me?"]
@@ -60,8 +61,6 @@ class Event(client.Cog): #Silly man class leave alone thx
 
         meanie_words = ["meanie"]
         meanie_list = ["Do we have a meanie in the server? If so, please stop.", "Cease your bulli, you meanie!", "Boo! You meanie..."]
-
-        confused_list = ["????????", "Maybe try something I actually understand?"]
 
         # ------------------------------------------------------------------------------------------------------------------------------------------------
         mct =  message.content.lower().split(" ") # (MCT | Message Contents)
@@ -128,17 +127,7 @@ class Event(client.Cog): #Silly man class leave alone thx
                         pass
 
 
-            if word.lower() in meanie_words:
-                if message.author.bot:
-                    pass
-                else:    
-                    if message.guild.id in conf.w_tog_on: 
-                        async with message.channel.typing():
-                            await asyncio.sleep(conf.type_speed) 
-                        await message.channel.send(random.choice(meanie_list)) 
-                        return
-                    else:
-                        pass
+
 
             if word.lower() in hang_words:
                 if message.guild.id not in conf.w_tog_on:
@@ -189,6 +178,10 @@ class Event(client.Cog): #Silly man class leave alone thx
                         
             # -------------------------------------------------------Tagging-------------------------------------------------------
         if re.search(f"^<@!?{self.b.user.id}>", message.content): #re check if string *starts with* mentioning me (even if someone nicknames me or not)
+            content = re.sub(f'^<@!?{self.b.user.id}>', "", message.content).strip()
+            regex = re.search(r"(.+)\s(are|is).*meanie", content).group(1)
+
+
             hi_list = ["Hi!", "Hello!", "Hiiiiii!~", "Hello, human person!"]   
             love_list = ["Aww! I love you too!", "Thank you so much!~", "I love you too! :smile:", ":blush:", "I don't really deserve your love, but I'm flattered, anyway!"]
             night_list = ["Goodnight! Sleep tight! Don't let the bedbugs bite!~", "Nighty night!~", "Sleep well!", "Goodnight!"]
@@ -204,11 +197,11 @@ class Event(client.Cog): #Silly man class leave alone thx
             yurilove = "Well, of course she does! Yuri loves everybody!"
             monikalove = "Yay! I'm glad she does!"
             mclove = "Yay! My best friend loves me!!! :heart:"
+            meanie_list = [f"Hey! Stop being a meanie, {regex}!", f"We don't like meanies on this server, {regex}!", f"Are you being a meanie, {regex}? If so, please stop."]
             respempty = conf.econfused
 
 
 			#-------------------- Responding --------------------
-            content = re.sub(f'^<@!?{self.b.user.id}>', "", message.content).strip()
             if content == "": #checks if message content is empty excluding my mention
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
@@ -288,6 +281,33 @@ class Event(client.Cog): #Silly man class leave alone thx
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(russian_list))
+
+            elif re.search("(sayori.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.sayori_id}>.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE): 
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send("Eh?? No, I'm not!!")
+
+            elif re.search("(monika.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.monika_id}>.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE): 
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send("Monika isn't a meanie! And no, I don't feel obligated to say that for fear of her deleting me again...")
+
+            elif re.search("(natsuki.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.natsuki_id}>.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE): 
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send("Hey, she may be spunky, but she's not a meanie!")
+
+            elif re.search("(yuri.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.yuri_id}>.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE): 
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send("What?? Yuri is the last person who would ever be a meanie!")
+
+
+            elif re.search(r".+\s.*(are|is).*meanie", message.content, re.IGNORECASE):
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send(random.choice(meanie_list))
+
             # -------------------------------------------------------Tagging-------------------------------------------------------
 
 

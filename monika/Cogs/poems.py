@@ -160,7 +160,7 @@ And with a breath, she blows me back afloat, and I pick up a gust of wind.''')
 
 
 #--------------------------------------------------------------
-        elif poem == "happy end".loweR():
+        elif poem == "happy end".lower():
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await ctx.send(random.choice(poem_intros))
@@ -179,6 +179,8 @@ After all,
 Not all good times must come to an end''')
 #--------------------------------------------------------------
 
+        else:
+            await ctx.send("Hey! This isn't a poem, sorry about that! Could you please check if you spelt that correctly?")
 
 
 def setup(bot):#No no child keep your hands off or this will break and not load
