@@ -14,6 +14,7 @@ class Debug(client.Cog):#Class thing no touchy!!!111
     @checks.dev()
     @client.command(enabled=True)
     async def debug(self,ctx):
+        pv = ".".join(map(str, sys.version_info[:3]))
         e = discord.Embed(title=f'''Version: {conf.version}
 Name: {conf.name}
 Username: {self.b.user.name}
@@ -23,7 +24,7 @@ Testing Mode: {conf.test_mode}
 Sharding: {conf.sharding}
 Type Speed: {conf.type_speed}
 Discord.py Version: {discord.__version__}
-Python Version: {sys.version}
+Python Version: {pv}
 ''',color=0x36393f)
         e.set_author(name=f"Hiya {ctx.author.name}!", icon_url=ctx.author.avatar_url)
 
@@ -41,7 +42,15 @@ Total Guilds: {len(self.b.guilds)}
         else:
             pass
 
-        e4 = discord.Embed(title=f'''Doki ID's:
+        if not ctx.guild.id in conf.act2:
+            e4 = discord.Embed(title=f'''Is Guild in ACT2: No
+''',color=0x36393f)
+        else:
+            e4 = discord.Embed(title=f'''Is Guild in ACT2: Yes
+''',color=0x36393f)
+
+
+        e5 = discord.Embed(title=f'''Doki ID's:
 Monika: {conf.monika_id}
 Natsuki: {conf.natsuki_id}
 Sayori: {conf.sayori_id}
@@ -56,6 +65,8 @@ MC: {conf.mc_id}
         else:
             pass
         await ctx.send(embed=e4)
+        await ctx.send(embed=e5)
+
 
 
 
