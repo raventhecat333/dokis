@@ -174,7 +174,7 @@ class Event(client.Cog):
                 sayorilove = "Haha. Well, she is a loving soul."
                 mclove = "Yay! My best friend loves me!!! :heart:"
                 resempty = ["Y-Yes...?", "Did you want to talk to me...?", "Hm?"]
-				resbad= "I-I'm sorry, but I don't understand what you mean..."
+                resbad= "I-I'm sorry, but I don't understand what you mean..."
 
 			#-------------------- Act 2 --------------------
             elif message.guild.id in conf.act2:
