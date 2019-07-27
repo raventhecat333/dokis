@@ -126,7 +126,19 @@ class Event(client.Cog): #Silly man class leave alone thx
                     else:
                         pass
 
-
+            if word.lower() in meanie_words:
+                if message.author.bot:
+                    pass
+                elif message.content.startswith(f"<@{self.b.user.id}>") or message.content.startswith(f"<@!{self.b.user.id}>"):
+                    pass
+                else:    
+                    if message.guild.id in conf.w_tog_on: 
+                        async with message.channel.typing():
+                            await asyncio.sleep(conf.type_speed) 
+                        await message.channel.send(random.choice(meanie_list)) 
+                        return
+                    else:
+                        pass
 
 
             if word.lower() in hang_words:
