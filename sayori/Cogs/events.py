@@ -189,7 +189,6 @@ class Event(client.Cog): #Silly man class leave alone thx
             # -------------------------------------------------------Tagging-------------------------------------------------------
         if re.search(f"^<@!?{self.b.user.id}>", message.content): #re check if string *starts with* mentioning me (even if someone nicknames me or not)
             content = re.sub(f'^<@!?{self.b.user.id}>', "", message.content).strip()
-            regex = re.search(r"(.+)\s(are|is).*meanie", content).group(1)
 
 
             hi_list = ["Hi!", "Hello!", "Hiiiiii!~", "Hello, human person!"]   
@@ -207,7 +206,7 @@ class Event(client.Cog): #Silly man class leave alone thx
             yurilove = "Well, of course she does! Yuri loves everybody!"
             monikalove = "Yay! I'm glad she does!"
             mclove = "Yay! My best friend loves me!!! :heart:"
-            meanie_list = [f"Hey! Stop being a meanie, {regex}!", f"We don't like meanies on this server, {regex}!", f"Are you being a meanie, {regex}? If so, please stop."]
+            #Meanie list is located in the meanie trigger due to issues with variables and such, sorry!
             respempty = ["Did someone mention me?", "You rang?", "Are you guys talking about me?"]
             resbad = ["Huh? I don't understand.", "I don't get it.", "???", "Maybe try something I actually understand?"]
 
@@ -216,7 +215,7 @@ class Event(client.Cog): #Silly man class leave alone thx
             if content == "": #checks if message content is empty excluding my mention
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
-                await message.channel.send(respempty)
+                await message.channel.send(random.choice(respempty))
 
             elif re.search(r"(^|[^A-Za-z])(hi|hello|hey)([^A-Za-z]|$)", message.content, re.IGNORECASE): # checks if hi or hey (with space between them or on edge of string) or hello is in message
                 async with message.channel.typing():
@@ -315,6 +314,10 @@ class Event(client.Cog): #Silly man class leave alone thx
 
 
             elif re.search(r".+\s.*(are|is).*meanie", message.content, re.IGNORECASE):
+    
+                meanie_list = [f"Hey! Stop being a meanie, {regex}!", f"We don't like meanies on this server, {regex}!", f"Are you being a meanie, {regex}? If so, please stop."]
+                regex = re.search(r"(.+)\s(are|is).*meanie", content).group(1)
+
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(meanie_list))
