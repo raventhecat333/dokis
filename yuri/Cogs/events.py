@@ -36,7 +36,6 @@ class Event(client.Cog):
 
     @client.Cog.listener()
     async def on_message(self,message):
-        print(re.search(r"(^|[^A-Za-z])(hi|hello|hey)([^A-Za-z]|$)", message.content, re.IGNORECASE))
         # ------------------------------------------------------------------------------------------------------------------------------------------------
         cut_words = ["cut", "cutting", "cuts", "stab", "stabbing", "stabs"]
         cut_list = ["Uuu...!", "D-Did you have to say that word...?", "I-I'm sorry, I-I really don't like that word...", ":confounded:"]
