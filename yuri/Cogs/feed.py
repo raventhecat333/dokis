@@ -460,18 +460,18 @@ class Feed(client.Cog):#Class thing no touchy!!!111
                 await ctx.send("T-Thank you, but I'll have to kindly decline.")
             #------------------- Wine ------------------- 
 
-            elif arg1 == "🍵":
-                async with ctx.message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)  
-                await ctx.send("Ah, thank you so much. All I need now is a good book.")
-            #------------------- Tea -------------------  Who put soup in my coffee? 
-
-
             elif arg1 == "☕":
                 async with ctx.message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await ctx.send("Ah, thank you so much. All I need now is a good book.")
-            #------------------- Cofee ------------------- '''
+            #------------------- Coffee -------------------  Who put soup in my coffee? 
+
+
+            elif arg1 == "🍵":
+                async with ctx.message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await ctx.send("I-I'm more of a tea drinker. I'm sorry...")
+            #------------------- Tea ------------------- '''
 
 
             elif arg1 == "🍞" or arg1 == "🥖":
