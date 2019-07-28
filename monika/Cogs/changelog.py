@@ -11,14 +11,14 @@ class Changelog(client.Cog):
 
     @client.command()
     async def changelog(self,ctx): 
-        e = discord.Embed(title=f"A majour bug-fixing update! This has been changed at 26/07/2019. Version: {conf.version}",description='''
+        e = discord.Embed(title=f"A majour bug-fixing update! This has been changed at 28/07/2019. Version: {conf.version}",description='''
 ```
 
 -Rewrote the tagging function to use regex [ALL]
 
 -Fixed the "Poems" command [MONIKA]
 
-=Fixed "toggle" command [ALL]
+-Fixed "toggle" command [ALL]
 
 -Updated a string for the toggle command [ALL]
 
@@ -47,6 +47,10 @@ class Changelog(client.Cog):
 -Added the "Act" command to check what act you're on [YURI]
 
 -Changed the "that's not food" string [NATSUKI]
+
+-Tea and coffee responses are are fixed [YURI, NATSUKI, SAYORI]
+
+-Self-hug responses are fixed [SAYORI, YURI, MONIKA, NATSUKI]
 ```
 ''', color=conf.norm)
         e.set_author(name=f"The Changelog for {conf.name}.",icon_url=self.b.user.avatar_url)
