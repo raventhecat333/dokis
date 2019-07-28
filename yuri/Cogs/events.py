@@ -190,7 +190,7 @@ class Event(client.Cog):
             if content == "": #checks if message content is empty excluding my mention
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
-                await message.channel.send(random.choice(empty_list))
+                await message.channel.send(random.choice(resempty))
 
             elif re.search(r"(^|[^A-Za-z])(hi|hello|hey)([^A-Za-z]|$)", message.content, re.IGNORECASE): # checks if hi or hey (with space between them or on edge of string) or hello is in message
                 async with message.channel.typing():
