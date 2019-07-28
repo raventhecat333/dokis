@@ -13,10 +13,10 @@ class conf():
 
     if test_mode is False:
         sharding = True
-        version = "2.1B CS"#Still in beta!
+        version = "2.2L CS"
     else:
         sharding = False
-        version = "2.1B CS"
+        version = "2.2B CS" # Testing mode should be beta.
     #L|Launch    B|Beta
 
 
