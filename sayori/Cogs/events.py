@@ -18,7 +18,7 @@ class Event(client.Cog): #Silly man class leave alone thx
             print(chalk.yellow(f"[INFO] Using SHARD's {self.b.shard_ids}")) #Shows us how many shards we are currently using
 
         print(chalk.cyan(f"[INFO] Config name: '{conf.name}'")) #Shows us the name defined in the config
-        print(chalk.cyan(f"[INFO] Defualt Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'")) #Shows us the 2 prefixes defined in the config
+        print(chalk.cyan(f"[INFO] Default Prefix: 'Prefix 1: {conf.prefix1} | Prefix 2: {conf.prefix2}'")) #Shows us the 2 prefixes defined in the config
         print(chalk.cyan("[INFO] Are you braindead: Most Likely")) #Yup
         print(chalk.cyan(f"[INFO] I'm currently in [{len(self.b.guilds)}] server(s).")) #Shows us how many servers we are in
         aaa = True
