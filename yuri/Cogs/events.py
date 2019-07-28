@@ -144,16 +144,9 @@ class Event(client.Cog):
                         await message.channel.send(random.choice(pen_list)) 
                         return
 
-
-
-
-
-
-
-
-
             # -------------------------------------------------------Tagging-------------------------------------------------------
-        print(re.search(f"^<@!?{self.b.user.id}>", message.content))
+
+        #print(re.search(f"^<@!?{self.b.user.id}>", message.content))
         if re.search(f"^<@!?{self.b.user.id}>", message.content): #re check if string *starts with* mentioning me (even if someone nicknames me or not)
 
             #-------------------- Act 1 --------------------
@@ -193,7 +186,7 @@ class Event(client.Cog):
                 mclove = "Yay! My best friend loves me!!! :heart:"
                 resempty = ["Yes, my love?", "Oh, did someone call for me?"]
                 resbad = "I love you, but I have no clue what you just said."
-			
+
             #-------------------- Responding --------------------
             content = re.sub(f'^<@!?{self.b.user.id}>', "", message.content).strip()
             if content == "": #checks if message content is empty excluding my mention
