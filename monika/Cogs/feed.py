@@ -53,7 +53,7 @@ class Feed(client.Cog):#Class thing no touchy!!!111
         elif arg1 == "🍺" or arg1 == "🍻" or arg1 == "🍷" or arg1 == "🍸" or arg1 == "🍹" or arg1 == "🍶":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
-            await ctx.send("Oh! Ahaha... A-As curious as I am, I'm afraid I cannot allow alcoholic beverages here")
+            await ctx.send("Oh! Ahaha... A-As curious as I am, I'm afraid I cannot allow alcoholic beverages here.")
         #------------------- Alcohol ------------------- 
 
 
