@@ -11,25 +11,24 @@ class Hug(client.Cog):#Class thing no touchy!!!111
 
     @client.command()
     async def hug(self,ctx, *, message=None): 
-        member = ctx.message.content.split(" ")[0]
         if message is None: #No argument? Just assume it's you
             user = ctx.author
-            hug_list = [f"F-fine, but only because I'll look like a jerk if I don't! *hugs <@{user.id}>*", f"I guess a quick hug never hurt anyone... *hugs {user.name}*"]
+            hug_list = [f"As Club President, this seems unprofessional. As your friend, I'll happily help! *hugs <@{user.id}>*", f"Of course I'll hug you! You don't have to even ask twice! *hugs <@{user.id}>*",f"Have you had a rough day? Here, I'll make it a little better! *hugs <@{user.id}>*"]
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
             await ctx.send(random.choice(hug_list))
 
-        elif message == '@everyone' or message == '@here':
+        if message == '@everyone' or message == '@here':
             await ctx.send(conf.everyone_tag)
             
-        elif message == f'<@{self.b.user.id}>': # Oh noes it's me!
-            hug_list = [f"...fine. *hugs myself*", "Well, if you say so... *hugs myself*", "*hugs myself* Huh. Now I see why you guys like my hugs so much."]
+        if message == f'<@{self.b.user.id}>': # Oh noes it's me!
+            hug_list = ["Ehehe! This is quite odd, but if it'll make you happy, then who am I to deny you that? *hugs myself*", "*hugs myself* Ahaha! This isn't just some trick to make me look silly, is it?", "Well, as Club President, it's my job to set a good example! *hugs myself*"]
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
             await ctx.send(random.choice(hug_list))
 
         else: # Argument, okay let's spit whatever the user just said
-            hug_list = [f"F-fine, but only because I'll look like a jerk if I don't! *hugs {message}*", f"I guess a quick hug never hurt anyone... *hugs {message}*"]
+            hug_list = [f"As Club President, this seems unprofessional. As your friend, I'll happily help! *hugs {message}*", f"Of course I'll hug you! You don't have to even ask twice! *hugs {message}*",f"Have you had a rough day? Here, I'll make it a little better! *hugs {message}*"]
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
             await ctx.send(random.choice(hug_list))
