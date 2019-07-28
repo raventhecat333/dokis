@@ -20,10 +20,10 @@ class Hug(client.Cog):#Class thing no touchy!!!111
                     await asyncio.sleep(conf.type_speed)  
                 await ctx.send(random.choice(hug_list5))
 
-            if message == '@everyone' or message == '@here':
+            elif message == '@everyone' or message == '@here':
                 await ctx.send(conf.everyone_tag)
             
-            if message == f'<@{self.b.user.id}>': # Oh noes it's me!
+            elif message == f'<@{self.b.user.id}>': # Oh noes it's me!
                 hug_list6 = ["What? O-Okay, I suppose... *hugs myself*", "*hugs myself* Oh, dear, this must look so embarassing! Uuuu...!"]
                 async with ctx.message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
@@ -43,10 +43,10 @@ class Hug(client.Cog):#Class thing no touchy!!!111
                     await asyncio.sleep(conf.type_speed)  
                 await ctx.send(random.choice(hug_list1))
 
-            if message == '@everyone' or message == '@here':
+            elif message == '@everyone' or message == '@here':
                 await ctx.send(conf.everyone_tag)
             
-            if message == f'<@{self.b.user.id}>': # Oh noes it's me!
+            elif message == f'<@{self.b.user.id}>': # Oh noes it's me!
                 hug_list2 = ["What? O-Okay, I suppose... *hugs myself*", "*hugs myself* Oh, dear, this must look so embarassing! Uuuu...!"]
                 async with ctx.message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
@@ -66,15 +66,15 @@ class Hug(client.Cog):#Class thing no touchy!!!111
                     await asyncio.sleep(conf.type_speed)
                 await ctx.send(random.choice(hug_list4))
 
-            if message == '@everyone' or message == '@here':
+            elif message == '@everyone' or message == '@here':
                 await ctx.send(conf.everyone_tag)
             
-            if message == f'<@{self.b.user.id}>' or message == "Yuri" or message == "yuri" or message == "yourself": # Oh noes it's me!
+            elif message == f'<@{self.b.user.id}>' or message == "Yuri" or message == "yuri" or message == "yourself": # Oh noes it's me!
                 async with ctx.message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await ctx.send("But I don't ***want*** to hug myself! I want to hug ***YOU!!!***")
 
-            if message == f'<@{conf.mc_id}>' or message == "MC":
+            elif message == f'<@{conf.mc_id}>' or message == "MC":
                 async with ctx.message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
                 await ctx.send(f"Hey <@{conf.mc_id}>, get your sexy body over here and fuck me~")

@@ -18,10 +18,10 @@ class Hug(client.Cog):#Class thing no touchy!!!111
                 await asyncio.sleep(conf.type_speed)  
             await ctx.send(random.choice(hug_list))
 
-        if message == '@everyone' or message == '@here':
+        elif message == '@everyone' or message == '@here':
             await ctx.send(conf.everyone_tag)
             
-        if message == f'<@{self.b.user.id}>': # Oh noes it's me!
+        elif message == f'<@{self.b.user.id}>': # Oh noes it's me!
             hug_list = ["Ehehe! This is quite odd, but if it'll make you happy, then who am I to deny you that? *hugs myself*", "*hugs myself* Ahaha! This isn't just some trick to make me look silly, is it?", "Well, as Club President, it's my job to set a good example! *hugs myself*"]
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
