@@ -67,7 +67,7 @@ class Feed(client.Cog):#Class thing no touchy!!!111
         elif arg1 == "🍵":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
-            await ctx.send("t's like I'm back in the clubroom! All I need is one of Natsuki's cupcakes.")
+            await ctx.send("It's like I'm back in the clubroom! All I need is one of Natsuki's cupcakes.")
         #------------------- Tea ------------------- '''
 
 
