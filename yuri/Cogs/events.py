@@ -153,7 +153,6 @@ class Event(client.Cog):
 
 
             # -------------------------------------------------------Tagging-------------------------------------------------------
-        print(re.search(f"^<@!?{self.b.user.id}>", message.content))
         if re.search(f"^<@!?{self.b.user.id}>", message.content): #re check if string *starts with* mentioning me (even if someone nicknames me or not)
 
             #-------------------- Act 1 --------------------
