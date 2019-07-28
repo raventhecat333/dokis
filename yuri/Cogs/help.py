@@ -47,7 +47,7 @@ class Help(client.Cog):#Class thing no touchy!!!111
 
         elif ctx.guild.id in conf.act2: #This is incase the guild that this command was used in is set to act2
             e2 = discord.Embed(title="Hello. I'm Yuri.", description="My .chr file was converted by Cole, so now I can join your Discord server. I just know that being with you will be the best thing to ever happen to both of us, ahaha! Here are all the things we can do together:", color=0x8524c8)
-            e2.add_field(name="y_act1/y_act2", value="You can use this to toggle between my Act 1 personality and my Act 2 one. This can only be used by server administrators. Honestly, I love you either way, so I don't care which one I'm one!", inline=True)
+            e2.add_field(name="y_act1/y_act2", value="You can use this to toggle between my Act 1 personality and my Act 2 one. This can only be used by server administrators. Honestly, I love you either way, so I don't care which one I'm on!", inline=True)
             e2.add_field(name="y_act", value="You can use this to check what act i'm on!", inline=True)
             e2.add_field(name="y_ask", value="You can ask me a yes-or-no question if you'd like, and I'll try my hardest to answer it for you!", inline=True)
             e2.add_field(name="y_feed", value="You can use this to feed me any of emojis available. Any of them. *(Format like this: 'y_feed :emoji:')*", inline=True)
