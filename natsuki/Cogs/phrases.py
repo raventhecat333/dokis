@@ -11,7 +11,7 @@ class Phrases(client.Cog):
 
     @client.command()
     async def phrases(self,ctx): 
-        e = discord.Embed(title="Phrases!", description="Here are all the words/phrases you can use when you @mention me! Though it's ***VERY*** important that the @mention is at the very beginning!", color=0x3eb0ff)
+        e = discord.Embed(title="Phrases!", description="Here are all the words/phrases you can use when you @mention me! Though it's ***VERY*** important that the @mention is at the very beginning!", color=conf.norm)
         e.add_field(name="Hi, Hello", value="Nothing wrong with a simple hello every now and then, right?", inline=True)
         e.add_field(name="Test", value="Just to see if I'm working properly!", inline=True)
         e.add_field(name="I love you, ILY", value="Even though I'm not worthy of being loved, you're still free to tell me that you love me if you'd like! Ehehe...", inline=True)
