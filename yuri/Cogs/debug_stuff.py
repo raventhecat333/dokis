@@ -4,12 +4,11 @@ from Cogs.config import conf
 #Imports
 
 checks = Cogs.checks
-class Debug(client.Cog):#Class thing no touchy!!!111
+class Debug(client.Cog):
 
     def __init__(self, bot):
-         self.b = bot #Please no touchy thx
+         self.b = bot 
 
-    #A test command to see if the "Act" function is working properly as intended
 
     @checks.dev()
     @client.command(enabled=True)
@@ -71,5 +70,5 @@ MC: {conf.mc_id}
 
 
 
-def setup(bot):#No no child keep your hands off or this will break and not load
+def setup(bot):
     bot.add_cog(Debug(bot))

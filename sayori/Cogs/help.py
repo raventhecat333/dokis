@@ -24,7 +24,7 @@ class Help(client.Cog):#Class thing no touchy!!!111
         embed.add_field(name="s_swear", value="Use this to have me swear! Why you would want me to, I'm not sure, but the option is there!", inline=True)
         embed.add_field(name="s_tickle", value="Use this to make me laugh!", inline=True)
         embed.add_field(name="s_changelog", value="Check out what's been changed!", inline=True)
-        embed.add_field(name="@Sayori", value="Use this to either get my attention or to use special 'trigger words/phrases' to get certain responses out of me! Type 's_commands' for a full list!", inline=True)
+        embed.add_field(name="@Sayori", value="Use this to either get my attention or to use special 'trigger words/phrases' to get certain responses out of me! Type 's_phrases' or `s_commands` for a full list!", inline=True)
         embed.add_field(name="And that's about it!", value="I'm sure Cole will add more stuff for me to do soon, but for now, I hope you enjoy my presence on the server! If you have any questions, comments, or bugs, let Cole know! Oh, and please don't be a meanie :unamused:. That's all for now. Bye!~")
         embed.set_footer(text="Support Server: https://discord.gg/QnzsG38")
         await ctx.send(embed=embed)
