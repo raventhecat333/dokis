@@ -11,7 +11,7 @@ class Phrases(client.Cog):
 
     @client.command()
     async def phrases(self,ctx):
-        if message.guild.id not in conf.act2:
+        if ctx.guild.id not in conf.act2:
             e = discord.Embed(title="Phrases!", description="Uuuuu... So here are all the words/phrases you can use when you @mention me. It's ***VERY*** important that you @mention me at the very beginning...", color=conf.norm)
             e.add_field(name="Hi, Hello", value="I guess a greeting doesn't hurt every now and then...", inline=True)
             e.add_field(name="Test", value="Just to see if I'm working just fine ~~even when I'm silently reading and avoiding interaction~~.", inline=True)
