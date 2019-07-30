@@ -10,13 +10,9 @@ class Ping(client.Cog):
 
     @client.command()
     async def ping(self, ctx):
-        embed = discord.Embed(
-            colour = discord.Colour.green()
-        )
-        
-        embed.add_field(name='Pong! :ping_pong:', value=f'`{round(self.b.latency * 1000)}ms`', inline=False)
-        
-        await ctx.send(embed=embed)
+        e = discord.Embed(colour=conf.norm)
+        e.add_field(name='Pong! :ping_pong:', value=f'`{round(self.b.latency * 1000)}ms`', inline=False)
+        await ctx.send(embed=e)
 
 
 def setup(bot):
