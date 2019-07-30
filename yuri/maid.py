@@ -24,7 +24,7 @@ async def prefix(bot, message):
 
 
 if conf.sharding is True:
-    client = commands.AutoShardedBot(command_prefix=prefix, status=discord.Status.idle, activity=discord.Game(name="Starting Up..."), shard_count=20, shard_ids=(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)) # Defining what our prefix for the bot will be
+    client = commands.AutoShardedBot(command_prefix=prefix, status=discord.Status.idle, activity=discord.Game(name="Starting Up...")) # Defining what our prefix for the bot will be
 elif conf.sharding is False: #Just so cheezy's pc doesn't melt.
     client = commands.Bot(command_prefix=prefix, status=discord.Status.idle, activity=discord.Game(name="Starting Up...")) # Defining what our prefix for the bot will be
 

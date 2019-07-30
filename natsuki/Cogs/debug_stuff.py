@@ -4,16 +4,16 @@ from Cogs.config import conf
 #Imports
 
 checks = Cogs.checks
-class Debug(client.Cog):#Class thing no touchy!!!111
+class Debug(client.Cog):
 
     def __init__(self, bot):
-         self.b = bot #Please no touchy thx
+         self.b = bot 
 
-    #A test command to see if the "Act" function is working properly as intended
 
     @checks.dev()
     @client.command(enabled=True)
     async def debug(self,ctx):
+        pv = ".".join(map(str, sys.version_info[:3]))
         e = discord.Embed(title=f'''Version: {conf.version}
 Name: {conf.name}
 Username: {self.b.user.name}
@@ -23,7 +23,7 @@ Testing Mode: {conf.test_mode}
 Sharding: {conf.sharding}
 Type Speed: {conf.type_speed}
 Discord.py Version: {discord.__version__}
-Python Version: {sys.version}
+Python Version: {pv}
 ''',color=0x36393f)
         e.set_author(name=f"Hiya {ctx.author.name}!", icon_url=ctx.author.avatar_url)
 
@@ -60,5 +60,6 @@ MC: {conf.mc_id}
 
 
 
-def setup(bot):#No no child keep your hands off or this will break and not load
+
+def setup(bot):
     bot.add_cog(Debug(bot))

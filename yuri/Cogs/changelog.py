@@ -11,12 +11,45 @@ class Changelog(client.Cog):
 
     @client.command()
     async def changelog(self,ctx): 
-        e = discord.Embed(title=f"A beta update! This has been changed at 14/07/2019. Version: {conf.version}",description='''
+        e = discord.Embed(title=f"A majour bug-fixing update! This has been changed at 28/07/2019. Version: {conf.version}",description='''
 ```
+-Rewrote the tagging function to use regex [ALL]
 
--Yuri can now be mostly used in DM's!
+-Fixed the "Poems" command [MONIKA]
 
--Commands that required the user to have "admin" has been changed to "manage_messages"
+-Fixed "toggle" command [ALL]
+
+-Updated a string for the toggle command [ALL]
+
+-Monika now has her own DBL link!
+
+-Traceback embed has the correct color [SAYORI, MC]
+
+-Added DM support [YURI]
+
+-Added changelog command [ALL]
+
+-MC has been made!
+
+-The ACT system has been changed to use one list to fix some issues [YURI]
+
+-The TOGGLE system has been changed to use one list to fix some issues [ALL]
+
+-Added new playing statuses [ALL]
+
+-Cogs are now loaded differently to make the file much more cleaner [ALL]
+
+-Confused responses have been reverted back to the old responses [ALL]
+
+-Added the command "Shard" to check what shard your guild is on [ALL]
+
+-Added the "Act" command to check what act you're on [YURI]
+
+-Changed the "that's not food" string [NATSUKI]
+
+-Tea and coffee responses are are fixed [YURI, NATSUKI, SAYORI]
+
+-Self-hug responses are fixed [SAYORI, YURI, MONIKA, NATSUKI]
 ```
 ''', color=conf.norm)
         e.set_author(name=f"The Changelog for {conf.name}.",icon_url=self.b.user.avatar_url)

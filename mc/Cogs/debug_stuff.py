@@ -14,6 +14,7 @@ class Debug(client.Cog):#Class thing no touchy!!!111
     @checks.dev()
     @client.command(enabled=True)
     async def debug(self,ctx):
+        pv = ".".join(map(str, sys.version_info[:3]))
         e = discord.Embed(title=f'''Version: {conf.version}
 Name: {conf.name}
 Username: {self.b.user.name}
@@ -23,7 +24,7 @@ Testing Mode: {conf.test_mode}
 Sharding: {conf.sharding}
 Type Speed: {conf.type_speed}
 Discord.py Version: {discord.__version__}
-Python Version: {sys.version}
+Python Version: {pv}
 ''',color=0x36393f)
         e.set_author(name=f"Hiya {ctx.author.name}!", icon_url=ctx.author.avatar_url)
 

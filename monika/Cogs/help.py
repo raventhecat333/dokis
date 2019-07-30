@@ -19,6 +19,7 @@ class Help(client.Cog):#Class thing no touchy!!!111
         embed.add_field(name="m_hug", value="I'm always open to giving a hug to anyone who wants one! Or, let's be honest, even if they *don't* want one!", inline=True)
         embed.add_field(name="m_tickle", value="O-Oh! Well, I guess there are worse things to do to me than tickling!", inline=True)
         embed.add_field(name="m_changelog", value="Check out what's been changed!", inline=True)
+        embed.add_field(name="@Monika", value="Use this to get my attention, if you want. You can even try to use certain words or phrases to get certain responses. But that doesn't mean I'll understand everything you say! Type 'm_phrases' for a full list!", inline=True)
         embed.add_field(name="I do believe that's it!", value="I'm still in very early stages of development, but if Cole was able to create the other girls quickly, I'm sure I'll be finished before you know it!")
         embed.set_footer(text="Support Server: https://discord.gg/QnzsG38")
         await ctx.send(embed=embed)

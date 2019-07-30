@@ -18,7 +18,7 @@ class toggle(client.Cog):#Class thing no touchy!!!111
             conf.w_tog_on.insert(0, ctx.guild.id) #If the ID is already in act2 but we're trying to get back into act1 just remove it from act2
             await ctx.send("Ok, I guess you do want to hear from me.")
         else:
-            await ctx.send("Ok. This is a bug. Please contact your Maid to fix this thanks bye. Report this, i don't know.")
+            await ctx.send("Hey so an error happened, i'll just leave a code for you to report! ERROR: 17: Returned ELSE, is this in a PM?")
     
 def setup(bot):#No no child keep your hands off or this will break and not load
     bot.add_cog(toggle(bot))

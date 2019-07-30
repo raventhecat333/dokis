@@ -18,7 +18,7 @@ class toggle(client.Cog):#Class thing no touchy!!!111
             conf.w_tog_on.insert(0, ctx.guild.id) #If the ID is already in act2 but we're trying to get back into act1 just remove it from act2
             await ctx.send("O-Okay, I'll react to chat triggers...")
         else:
-            await ctx.send("This command can not be used in PM's! Sorry.") #Just incase the user is in a PM
+            await ctx.send("Hey so an error happened, i'll just leave a code for you to report! ERROR: 17: Returned ELSE, is this in a PM?")
     
 
 
