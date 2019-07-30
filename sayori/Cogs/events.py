@@ -51,7 +51,7 @@ class Event(client.Cog): #Silly man class leave alone thx
         goodnight_list = ["Goodnight! Sleep tight! Don't let the bedbugs bite!~", "Nighty night!~", "Sleep well!", "Goodnight!"]
 
         breakfast_words = ["breakfast", "b2"]
-        breakfast_list = ["i want breakfast"]
+        breakfast_list = ["I want breakfast"]
 
         hang_words = ["hang", "hanging", "hung", "hanged"]
         hang_list = [":unamused:", "Hey! Stop acting like a meanie!", ":rolling_eyes:", "I thought we were better than this...", "Ha, ha. Funny. Can you sense my sarcasm?"]
