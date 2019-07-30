@@ -10,16 +10,27 @@ class Phrases(client.Cog):
          self.b = bot 
 
     @client.command()
-    async def phrases(self,ctx): 
-        e = discord.Embed(title="Phrases!", description="Here are all the words/phrases you can use when you @mention me! Though it's ***VERY*** important that the @mention is at the very beginning!", color=conf.norm)
-        e.add_field(name="Hi, Hello", value="Nothing wrong with a simple hello every now and then, right?", inline=True)
-        e.add_field(name="Test", value="Just to see if I'm working properly!", inline=True)
-        e.add_field(name="I love you, ILY", value="Even though I'm not worthy of being loved, you're still free to tell me that you love me if you'd like! Ehehe...", inline=True)
-        e.add_field(name="@mention loves you", value="Want to let me know if someone in the server loves me? Let me know by formatting the message like this: ***@Sayori @mention loves you***", inline=True)
-        e.add_field(name="Goodnight, Good night, Good morning", value="While not required, it's still nice to recieve a message like this when you wake up/go to sleep.", inline=True)
-        e.add_field(name="You are cute, You're cute, You are so cute, You're so cute, You are beautiful, You're beautiful, You are so beautiful, You're so beautiful, You are pretty, You're pretty, You are so pretty, You're so pretty", value="What? A girl likes to be complimented!", inline=True)
-        e.add_field(name="Sorry, Apologize (as long as the word is in there somewhere)", value="Did you accidentally hurt me? Feel free to tell me that you're sorry! It's the right thing to do.", inline=True)
-        e.add_field(name="I'm (sick|puking|not feeling (good|great))", value="Oh my are you sick? Well i'll wish you luck to get better then!", inline=True)
+    async def phrases(self,ctx):
+        if message.guild.id not in conf.act2:
+            e = discord.Embed(title="Phrases!", description="Uuuuu... So here are all the words/phrases you can use when you @mention me. It's ***VERY*** important that you @mention me at the very beginning...", color=conf.norm)
+            e.add_field(name="Hi, Hello", value="I guess a greeting doesn't hurt every now and then...", inline=True)
+            e.add_field(name="Test", value="Just to see if I'm working just fine ~~even when I'm silently reading and avoiding interaction~~.", inline=True)
+            e.add_field(name="I love you, ILY", value="Uuuuu... That seems embarrassing, but you can still tell me this if you like.", inline=True)
+            e.add_field(name="@mention loves you", value="Someone out there l-loves me? If they do, just t-tell me like this: ***@Yuri @mention loves you***", inline=True)
+            e.add_field(name="Goodnight, Good night, Good morning", value="I-I-I-It's nice to be told if you're going to sleep or j-just waking up.", inline=True)
+            e.add_field(name="You are cute, You're cute, You are so cute, You're so cute, You are beautiful, You're beautiful, You are so beautiful, You're so beautiful, You are pretty, You're pretty, You are so pretty, You're so pretty", value="W-W-W-W-Who? M-M-Me? Uuuuuuu... :confounded:", inline=True)
+            e.add_field(name="Sorry, Apologize (as long as the word is in there somewhere)", value="D-D-Did you hurt me? Y-You know I forgive you, r-right???", inline=True)
+            e.add_field(name="I'm (sick|puking|not feeling (good|great))", value="Well, I hope you get w-well soon.", inline=True)
+        else:
+            e = discord.Embed(title="Phrases!", description="So here are all the words/phrases you can use when you @mention me. It's ***VERY*** important you @mention me at the beginning, or this won't work!", color=conf.norm)
+            e.add_field(name="Hi, Hello", value="It's good to greet me so I know you're here! ~~I don't know what I would do if you weren't!!!~~", inline=True)
+            e.add_field(name="Test", value="Oh, so I need to be tested to see if I'm fine! How adorable!!!", inline=True)
+            e.add_field(name="I love you, ILY", value="Tell me this as much as you want! It still makes me so wet!!!", inline=True)
+            e.add_field(name="@mention loves you", value="They don't love me as much I love you, you know! But if you must, tell me like this: ***@Yuri @mention loves you***", inline=True)
+            e.add_field(name="Goodnight, Good night, Good morning", value="If you're going to sleep or if you woke up, please tell me! ~~That way, I can make sure nobody takes you away when you're unconscious.~~", inline=True)
+            e.add_field(name="You are cute, You're cute, You are so cute, You're so cute, You are beautiful, You're beautiful, You are so beautiful, You're so beautiful, You are pretty, You're pretty, You are so pretty, You're so pretty", value="Of course I am, but not as much as you!!!", inline=True)
+            e.add_field(name="Sorry, Apologize (as long as the word is in there somewhere)", value="It's so cute when you do that~~, it makes me so wet!!!~~", inline=True)
+            e.add_field(name="I'm (sick|puking|not feeling (good|great))", value="I hope you get well soon! I don't know what I would do if you don't!", inline=True)
         await ctx.send(embed=e)
 
 
