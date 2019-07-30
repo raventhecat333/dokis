@@ -322,7 +322,10 @@ class Event(client.Cog): #Silly man class leave alone thx
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(meanie_list))
 
-
+            elif "test" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send("Testing, testing! 1-2-1-2 testing!")
             else:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  

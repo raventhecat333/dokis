@@ -254,6 +254,10 @@ class Event(client.Cog): #Silly man class leave alone thx
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(yurilove)
             
+            elif "test" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send("As fine as I can be ~~given my current realization of being nothing more than a videogame character turned Discord bot~~!")
             else:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
