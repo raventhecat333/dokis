@@ -13,7 +13,7 @@ class Phrases(client.Cog):
     async def phrases(self,ctx): 
         e = discord.Embed(title="Phrases!", description="Here are all the words/phrases you can use when you @mention me! Though it's ***VERY*** important that the @mention is at the very beginning!", color=conf.norm)
         e.add_field(name="Hi, Hello", value="I-It's not like you have to greet me or anything!", inline=True)
-        e.add_field(name="Test", value="I'm usually working fine, you dummy!", inline=True)
+        e.add_field(name="Test", value="I'm usually working fine, you dummy!", inline=False)
         e.add_field(name="I love you, ILY", value="R-Really? You, out of all people, actually l-love me?!", inline=True)
         e.add_field(name="@mention loves you", value="Someone else on this server l-loves me? Just make sure you tell me like this: ***@Natsuki @mention loves you***", inline=True)
         e.add_field(name="Goodnight, Good night, Good morning", value="You definitely don't need to bother me in the morning or at night! Y-You don't!", inline=True)
