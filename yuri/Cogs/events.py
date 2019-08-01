@@ -256,6 +256,14 @@ class Event(client.Cog):
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(natsukilove)
+
+            elif "test" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                if message.guild.id in conf.act2:
+                    await message.channel.send("I'm working fine, I promise you! Can we just read already??")
+                else:
+                    await message.channel.send("I-I believe I'm working properly... Oh, I hope I am...")
             
             else:
                 async with message.channel.typing():

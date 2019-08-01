@@ -292,37 +292,45 @@ class Event(client.Cog): #Silly man class leave alone thx
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(russian_list))
 
-            elif re.search("(sayori.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.sayori_id}>.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE): 
-                async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)  
-                await message.channel.send("Eh?? No, I'm not!!")
+            
 
             elif re.search("(monika.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.monika_id}>.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send("Monika isn't a meanie! And no, I don't feel obligated to say that for fear of her deleting me again...")
+                return
 
             elif re.search("(natsuki.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.natsuki_id}>.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send("Hey, she may be spunky, but she's not a meanie!")
+                return
 
             elif re.search("(yuri.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.yuri_id}>.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send("What?? Yuri is the last person who would ever be a meanie!")
+                return
 
+            elif re.search("(sayori.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.sayori_id}>.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE): 
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send("Eh?? No, I'm not!!")
+                return
 
             elif re.search(r".+\s.*(are|is).*meanie", message.content, re.IGNORECASE):
-    
-                meanie_list = [f"Hey! Stop being a meanie, {regex}!", f"We don't like meanies on this server, {regex}!", f"Are you being a meanie, {regex}? If so, please stop."]
-                regex = re.search(r"(.+)\s(are|is).*meanie", content).group(1)
 
+                regex = re.search(r"(.+)\s(are|is).*meanie", content).group(1)
+                meanie_list = [f"Hey! Stop being a meanie, {regex}!", f"We don't like meanies on this server, {regex}!", f"Are you being a meanie, {regex}? If so, please stop."]
+                
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(meanie_list))
 
-
+            elif "test" in message.content.lower():
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send("Testing, testing! 1-2-1-2 testing!")
             else:
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
