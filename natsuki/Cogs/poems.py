@@ -4,10 +4,10 @@ from Cogs.config import conf
 #Imports
 
 
-class Poems(client.Cog):#Class thing no touchy!!!111
+class Poems(client.Cog):
 
     def __init__(self, bot):
-         self.b = bot #Please no touchy thx
+         self.b = bot
 
     @client.command()
     async def poems(self,ctx):
@@ -26,10 +26,10 @@ class Poems(client.Cog):#Class thing no touchy!!!111
         poem_intros = ["I hope she doesn't get mad at me for showing you this...", "Oh! This is one of Natsuki's best poems!", "Aw, this is a cute one, just like her!"]
 
         if poem is None:
-            await ctx.send("What? This isn't a poem that i made!")
+            await ctx.send("What? This isn't a poem that I made!")
 
 #--------------------------------------------------------------
-        elif poem == "eagles can fly":
+        elif "eagles can fly" in poem.lower():
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await ctx.send(random.choice(poem_intros))
@@ -49,7 +49,7 @@ But that's about it.''')
 
 
 #--------------------------------------------------------------
-        elif poem == "amy likes spiders":
+        elif "amy likes spiders" in poem.lower():
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await ctx.send(random.choice(poem_intros))
@@ -93,7 +93,7 @@ And I'm gonna tell everyone.''')
 
 
 #--------------------------------------------------------------
-        elif poem == "i'll be your beach":
+        elif "i'll be your beach" in poem.lower():
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await ctx.send(random.choice(poem_intros))
@@ -137,7 +137,7 @@ You'll learn to love yourself again.''')
 
 
 #--------------------------------------------------------------
-        elif poem == "because you":
+        elif "because you" in poem.lower():
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await ctx.send(random.choice(poem_intros))

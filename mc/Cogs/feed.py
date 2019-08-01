@@ -119,7 +119,7 @@ class Feed(client.Cog):
         elif arg1 == "🎂":
             async with ctx.message.channel.typing():
                 await asyncio.sleep(conf.type_speed)  
-            await ctx.send(f"It's not my birthday, and even if it was, I don't want a cake {ctx.author.id}")
+            await ctx.send(f"It's not my birthday, and even if it was, I don't want a cake <@{ctx.author.id}>")
         #------------------- Birthday Cake -------------------
 
         elif arg1 == "🔪":
