@@ -13,10 +13,10 @@ class conf():
 
     if test_mode is False:
         sharding = True
-        version = "2.2L CS"
+        version = "2.3L Club Sandwich"
     else:
         sharding = False
-        version = "2.2B CS" # Testing mode should be beta.
+        version = "2.3B Club Sandwich" # Testing mode should be beta.
     #L|Launch    B|Beta
 
 
@@ -27,8 +27,7 @@ class conf():
     suc = 0xff42e2 # The Success (i did a thing) Embed Colour
 
     ''' These are just some error quotes so i can change them really quickly instead of doing the same quote for each error in every file '''
-    everyone_tag = "Did you try to make me ping everyone? Well, uhh. Nice try i suppose."
-    econfused = "Eh?"
+    everyone_tag = "Did you try to make me ping everyone? Well, uhh... Nice try, I suppose."
 
     ''' These are for the chat trigger'''
     w_tog_on = []
