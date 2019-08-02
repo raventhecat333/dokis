@@ -10,7 +10,6 @@ class Ask(client.Cog):
          self.b = bot
 
     @client.command()
-    @client.guild_only()
     async def ask(self, ctx, arg1=None):
         if arg1 is None:
             await ctx.send("I can't answer a non-existent question.")

@@ -11,45 +11,23 @@ class Changelog(client.Cog):
 
     @client.command()
     async def changelog(self,ctx): 
-        e = discord.Embed(title=f"A majour bug-fixing update! This has been changed at 28/07/2019. Version: {conf.version}",description='''
+        e = discord.Embed(title=f"A bug-fixing update! This has been changed on August 2, 2019. Version: {conf.version}",description='''
 ```
--Rewrote the tagging function to use regex [ALL]
+- Fixed self-hug responses [MONIKA, NATSUKI, SAYORI]
 
--Fixed the "Poems" command [MONIKA]
+- Dokis should tell us poems now [ALL DOKIS]
 
--Fixed "toggle" command [ALL]
+- Fixed mentioned love responses [ALL DOKIS]
 
--Updated a string for the toggle command [ALL]
+- All commands work in DMs now (except Yuri's Act toggle) [ALL DOKIS]
 
--Monika now has her own DBL link!
+- Sayori and Natsuki won't print "hugs None" unintentionally [NATSUKI, SAYORI]
 
--Traceback embed has the correct color [SAYORI, MC]
+- Fixed an issue where Natsuki didn't ping the user when hugging them [NATSUKI]
 
--Added DM support [YURI]
+- Sayori no longer butts into another doki's conversation [SAYORI]
 
--Added changelog command [ALL]
-
--MC has been made!
-
--The ACT system has been changed to use one list to fix some issues [YURI]
-
--The TOGGLE system has been changed to use one list to fix some issues [ALL]
-
--Added new playing statuses [ALL]
-
--Cogs are now loaded differently to make the file much more cleaner [ALL]
-
--Confused responses have been reverted back to the old responses [ALL]
-
--Added the command "Shard" to check what shard your guild is on [ALL]
-
--Added the "Act" command to check what act you're on [YURI]
-
--Changed the "that's not food" string [NATSUKI]
-
--Tea and coffee responses are are fixed [YURI, NATSUKI, SAYORI]
-
--Self-hug responses are fixed [SAYORI, YURI, MONIKA, NATSUKI]
+- The rest of the dokis respond to "@MC loves you" in its own way now (it used to be just Sayori doing it) [MONIKA, NATSUKI, YURI]
 ```
 ''', color=conf.norm)
         e.set_author(name=f"The Changelog for {conf.name}.",icon_url=self.b.user.avatar_url)

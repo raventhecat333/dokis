@@ -162,7 +162,7 @@ class Event(client.Cog):
                 natsukilove = "Sh-She does?"
                 monikalove = "Ahaha... I-I'm glad that I have a friend like Monika who loves me... :blush:"
                 sayorilove = "Haha. Well, she is a loving soul."
-                mclove = "Yay! My best friend loves me!!! :heart:"
+                mclove = "Uuuuuuuuuu..."
                 resempty = ["Y-Yes...?", "Did you want to talk to me...?", "Hm?"]
                 resbad= "I-I'm sorry, but I don't understand what you mean..."
 
@@ -181,7 +181,7 @@ class Event(client.Cog):
                 natsukilove = "Pfft. As if. That immature brat doesn't love anyone but herself."
                 monikalove = "I'll believe that when that bitch says it to my face!"
                 sayorilove = "Who the hell is Sayori? I don't know any Sayoris..."
-                mclove = "Yay! My best friend loves me!!! :heart:"
+                mclove = "Of course he loves me! And I will make sure **NOBODY** takes him away from me!"
                 resempty = ["Yes, my love?", "Oh, did someone call for me?"]
                 resbad = "I love you, but I have no clue what you just said."
 
@@ -258,6 +258,12 @@ class Event(client.Cog):
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(natsukilove)
+                return
+
+            elif re.search("(mc.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.mc_id}>.*loves.*you)", message.content, re.IGNORECASE): 
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send(mclove)
                 return
 
             elif re.search(r".+\s.*loves.*you", message.content, re.IGNORECASE):
@@ -421,6 +427,11 @@ class Event(client.Cog):
                 await message.channel.send(f"I love you too, you sexy <@{conf.mc_id}>! Now fuck me!!! :smirk:")
             else:
                 await message.channel.send("*tackle hugs MC*")
+
+        if "you're going to stab them to death if they try, aren't you?" in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA")
 
         # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
 

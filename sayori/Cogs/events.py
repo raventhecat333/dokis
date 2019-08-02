@@ -164,12 +164,8 @@ class Event(client.Cog): #Silly man class leave alone thx
                     return
 
             if word.lower() in kill_words:
-                if message.guild.id not in conf.w_tog_on:
+                if (message.guild.id not in conf.w_tog_on) or (message.author.id is (conf.natsuki_id or conf.yuri_id)):
                     return
-
-                if message.author.id is conf.natsuki_id:
-                    return
-
 
                 elif message.content.upper().startswith(f"<@{self.b.user.id}>"):
                     pass
@@ -288,7 +284,7 @@ class Event(client.Cog): #Silly man class leave alone thx
             elif re.search("(mc.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.mc_id}>.*loves.*you)", message.content, re.IGNORECASE):
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)
-                await message.channel.send(yurilove)
+                await message.channel.send(mclove)
                 return
 
             elif re.search("cyka.*blyat", message.content, re.IGNORECASE): 

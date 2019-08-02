@@ -10,7 +10,6 @@ class Feed(client.Cog):
          self.b = bot #
 
     @client.command()
-    @client.guild_only()
     async def feed(self,ctx, arg1=None): 
         if arg1 is None:
             await ctx.send("H-hey! Don't feel like you have to feed me anything! I'm okay!")

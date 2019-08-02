@@ -178,6 +178,7 @@ class Event(client.Cog): #Silly man class leave alone thx
             natsukilove = "Oh, really? She, of all people, said that?"
             yurilove = "Well, that's a pleasant surprise! And I understand why she doesn't have the courage to say it to me directly."
             sayorilove = "Ahaha!~ Well, after everything that's happened between us, that's nice to hear!"
+            mclove = "He does? Well, that's nice to hear. ~~I'm still not letting anyone else take him from me, though.~~"
             respempty = ["Yes?", "Does somebody need me?", "I'm here!"]
             resbad = "I'm afraid I don't understand what you said. I'm terribly sorry!"
 
@@ -257,6 +258,12 @@ class Event(client.Cog): #Silly man class leave alone thx
                 await message.channel.send(yurilove)
                 return
 
+            elif re.search("(mc.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.mc_id}>.*loves.*you)", message.content, re.IGNORECASE): 
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send(mclove)
+                return
+
             elif re.search(r".+\s.*loves.*you", message.content, re.IGNORECASE):
                 regex = re.search(r"(.+)\s.*loves.*you", content).group(1)
                 mentioned_love_reactions = [f"Well, of course {regex} does! Why wouldn't they? Ahaha!~", f"{regex}, I can certainly see why you'd be a little embarassed to tell me that! But it's okay; I love you, too!", f"W-Well, I suppose you can't control how you feel about people, {regex}, but I'm the Club President, so I have to stay professional! ~~It's okay, my love; I love you very much, as well!~~"]
@@ -333,18 +340,13 @@ class Event(client.Cog): #Silly man class leave alone thx
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("I-I do too!")
+
+        if "~~of course you won't let anyone take me from you. you'll just delete them if they try.~~" in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("~~I said I was sorry, MC! I won't do it again!!!~~")
+
             # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
 
         
 def setup(bot):

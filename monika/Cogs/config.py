@@ -14,10 +14,10 @@ class conf():
 
     if test_mode is False:
         sharding = True
-        version = "2.2L Club Sandwich"
+        version = "2.3L Club Sandwich"
     else:
         sharding = False
-        version = "2.2B Club Sandwich" # Testing mode should be beta.
+        version = "2.3B Club Sandwich" # Testing mode should be beta.
     #L|Launch    B|Beta
 
     ''' Just wanted to clear out that these hex codes bellow are for embed colours so i don't have to keep changing them in every single fucking file '''
@@ -27,8 +27,7 @@ class conf():
     suc = 0xff42e2 # The Success i did a thing Embed Colour
 
     ''' These are just some error quotes so i can change them really quickly instead of doing the same quote for each error in every file '''
-    everyone_tag = "Hey! Do you **WANT** everyone to freak out in the chat?! Because I won't let you do that!"
-    econfused = "I'm afraid I don't understand what you said. I'm terribly sorry!"
+    everyone_tag = "There's no way I'm letting you ping everyone."
 
     ''' These are for the chat trigger''' 
     w_tog_on = []
