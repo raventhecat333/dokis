@@ -271,32 +271,43 @@ class Event(client.Cog): #Silly man class leave alone thx
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(monikalove)
+                return
 
             elif re.search("(natsuki.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.natsuki_id}>.*loves.*you)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(natsukilove)
+                return
 
-            elif re.search("(yuri.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.yuri_id}>.*loves.*you)", message.content, re.IGNORECASE): 
+            elif re.search("(yuri.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.yuri_id}>.*loves.*you)", message.content, re.IGNORECASE):
                 async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)  
+                    await asyncio.sleep(conf.type_speed)
                 await message.channel.send(yurilove)
+                return
 
-            elif re.search("(mc.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.mc_id}>.*loves.*you)", message.content, re.IGNORECASE): 
+            elif re.search("(mc.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.mc_id}>.*loves.*you)", message.content, re.IGNORECASE):
                 async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)  
+                    await asyncio.sleep(conf.type_speed)
                 await message.channel.send(yurilove)
+                return
 
             elif re.search("cyka.*blyat", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(random.choice(russian_list))
 
-            
+            elif re.search(r".+\s.*loves.*you", message.content, re.IGNORECASE):
+                regex = re.search(r"(.+)\s.*loves.*you", content).group(1)
+                love_tag_reactions = [f"Aww! Well, you can tell {regex} that I love them, too!", f"{regex} does? Well, that's so sweet to hear!", f"And I love {regex}, too! :heart:", f"Yay! I'm loved by {regex}!"]
+
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send(random.choice(love_tag_reactions))
+                return
 
             elif re.search("(monika.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.monika_id}>.*(are|is being|is).*a.*meanie)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
-                    await asyncio.sleep(conf.type_speed)  
+                    await asyncio.sleep(conf.type_speed)
                 await message.channel.send("Monika isn't a meanie! And no, I don't feel obligated to say that for fear of her deleting me again...")
                 return
 
