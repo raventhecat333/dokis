@@ -101,6 +101,7 @@ class Event(client.Cog): #Silly man class leave alone thx
             monikalove = "Act 2 says otherwise."
             yurilove = "W-Well it's not like I love her back or anything!!"
             sayorilove = "S-shut up! No she doesn't!"
+            mclove = "Ha! I'm sure he does! I-I'll believe it when he tells me that himself!"
             respempty = "Yes?"
             resbad = "Uh... What?"
 
@@ -178,6 +179,12 @@ class Event(client.Cog): #Silly man class leave alone thx
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(yurilove)
+                return
+
+            elif re.search("(mc.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.mc_id}>.*loves.*you)", message.content, re.IGNORECASE): 
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)  
+                await message.channel.send(mclove)
                 return
 
             elif re.search(r".+\s.*loves.*you", message.content, re.IGNORECASE):
@@ -279,6 +286,11 @@ class Event(client.Cog): #Silly man class leave alone thx
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed) 
             await message.channel.send("*hugs back*")
+
+        if "i'm not surprised she would say that, given how much of a tsundere she is." in message.content.lower() and message.author.id == conf.mc_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("***I AM NOT A TSUNDERE, YOU BAKA!!!***")
 
         # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
 

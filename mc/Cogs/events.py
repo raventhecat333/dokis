@@ -297,6 +297,26 @@ class Event(client.Cog):
             async with message.channel.typing():
                 await asyncio.sleep(conf.type_speed)
             await message.channel.send("*hugs Natsuki*")
+
+        if "ha! i'm sure he does! i-i'll believe it when he tells me that himself!" in message.content.lower() and message.author.id == conf.natsuki_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("I'm not surprised she would say that, given how much of a tsundere she is.")
+
+        if "he does? well, that's nice to hear. ~~i'm still not letting anyone else take him from me, though.~~" in message.content.lower() and message.author.id == conf.monika_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("~~Of course you won't let anyone take me from you. You'll just delete them if they try.~~")
+
+        if "yay! my best friend loves me!!!" in message.content.lower() and message.author.id == conf.sayori_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("Uhhhhhhh...")
+
+        if "of course he loves me! and I will make sure **nobody** takes him away from me!" in message.content.lower() and message.author.id == conf.yuri_id:
+            async with message.channel.typing():
+                await asyncio.sleep(conf.type_speed)
+            await message.channel.send("You're going to stab them to death if they try, aren't you?")
     
         # -------------------------------------------------------Interactions with other Doki's!-------------------------------------------------------
 
