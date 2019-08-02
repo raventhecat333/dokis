@@ -7,8 +7,8 @@ class conf():
     cogd = "Cogs"
     type_speed = 2
     playing_msg = [f"Type 'mc_help' for help!","Doki Doki Literature Club","with a shoe lace","aloof","in a dark void"]
-    admins = [480580173431832577, 279732337971953664, 310496481435975693, 270057011251642368]
-    #         Tsumiki             Cheezy              IDroid              Cole
+    admins = [480580173431832577, 310496481435975693, 270057011251642368]
+    #         Tsumiki             IDroid              Cole 
     test_mode = False  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
 
     if test_mode is False:

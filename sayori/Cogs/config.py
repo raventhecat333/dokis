@@ -7,7 +7,7 @@ class conf():
     cogd = "Cogs"
     type_speed = 2
     playing_msg = [f"Type 's_help' for help!","Doki Doki Literature Club","with the crayons!","Katawa Shoujo","with Mr. Cow!", "with a noose!"]
-    admins = [480580173431832577, 279732337971953664, 310496481435975693, 270057011251642368]
+    admins = [480580173431832577, 310496481435975693, 270057011251642368]
     #         Tsumiki             Cheezy              IDroid              Cole 
     test_mode = False  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
 

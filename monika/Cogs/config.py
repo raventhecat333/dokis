@@ -8,8 +8,8 @@ class conf():
     type_speed = 2
     cooldown_timer = 1.5
     playing_msg = ["Type 'm_help' for help!","Doki Doki Literature Club","the piano!", "Super Smash Bros Ultimate.", "If My Heart Had Wings", "with you!", "Just Monika.", "from your computer!", "your reality!"]
-    admins = [480580173431832577, 279732337971953664, 310496481435975693, 270057011251642368]
-    #         Tsumiki             Cheezy              IDroid              Cole 
+    admins = [480580173431832577, 310496481435975693, 270057011251642368]
+    #         Tsumiki             IDroid              Cole 
     test_mode = False  #To enable this function, use any value that is NOT "False" Otherwise you would be disabling this function
 
     if test_mode is False:
