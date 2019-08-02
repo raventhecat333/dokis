@@ -26,8 +26,7 @@ class conf():
     suc = 0xff42e2 # The Success (i did a thing) Embed Colour
 
     ''' These are just some error quotes so i can change them really quickly instead of doing the same quote for each error in every file '''
-    everyone_tag = "Nice try to ping everyone, Baka."
-    econfused = "Uh?"
+    everyone_tag = "Nice try, you meanie."
 
     ''' These are for the chat trigger'''
     w_tog_on = []
