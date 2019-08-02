@@ -246,16 +246,32 @@ class Event(client.Cog):
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(sayorilove)
+                return
 
             elif re.search("(monika.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.monika_id}>.*loves.*you)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(monikalove)
+                return
 
             elif re.search("(natsuki.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.natsuki_id}>.*loves.*you)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(natsukilove)
+                return
+
+            elif re.search(r".+\s.*loves.*you", message.content, re.IGNORECASE):
+                regex = re.search(r"(.+)\s.*loves.*you", content).group(1)
+                act1_mentioned_love_reactions = [f"O-Oh, {regex} does...? W-Well, that's nice to hear.", f"Uuu... I-I'm flattered, {regex}...", "R-Really? {regex} loves me...?", "W-Well... I-I think I love {regex}, too...!"]
+                act2_mentioned_love_reactions = [f"Ohoho, well I think it's safe to say that {regex} doesn't love me as much as you do.", f"{regex} does, do they? Well, I beg to differ.", "I'm sorry, {regex}, but I already have a lover, and they belong to me and me alone.", "Well, I suppose I could touch myself to {regex}, as well..."]
+
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                if message.guild.id in conf.act2:
+                    await message.channel.send(random.choice(act2_mentioned_love_reactions))
+                else:
+                    await message.channel.send(random.choice(act1_mentioned_love_reactions))
+                return
 
             elif "test" in message.content.lower():
                 async with message.channel.typing():

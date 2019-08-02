@@ -34,6 +34,13 @@ Python Version: {pv}
             e2 = discord.Embed(title=f'''Does Guild use chat triggers: Yes
 ''',color=0x36393f)        
 
+        if conf.sharding is True:
+            e3 = discord.Embed(title=f'''Number of Shards: {len(self.b.shards)}
+Total Guilds: {len(self.b.guilds)}
+''',color=0x36393f)
+        else:
+            pass
+
         if not ctx.guild.id in conf.act2:
             e4 = discord.Embed(title=f'''Is Guild in ACT2: No
 ''',color=0x36393f)

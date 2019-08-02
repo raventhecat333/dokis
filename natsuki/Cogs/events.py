@@ -166,16 +166,28 @@ class Event(client.Cog): #Silly man class leave alone thx
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(sayorilove)
+                return
 
             elif re.search("(monika.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.monika_id}>.*loves.*you)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(monikalove)
+                return
 
             elif re.search("(yuri.*loves.*you)", message.content, re.IGNORECASE) or re.search(f"(<@!?{conf.yuri_id}>.*loves.*you)", message.content, re.IGNORECASE): 
                 async with message.channel.typing():
                     await asyncio.sleep(conf.type_speed)  
                 await message.channel.send(yurilove)
+                return
+
+            elif re.search(r".+\s.*loves.*you", message.content, re.IGNORECASE):
+                regex = re.search(r"(.+)\s.*loves.*you", content).group(1)
+                mentioned_love_reactions = [f"W-well, it's not like I love {regex} back or anything!", f"Shut up! {regex} doesn't love me!", f"{regex} loves me? Yeah, I'll believe that when they tell me that, themselves!"]
+
+                async with message.channel.typing():
+                    await asyncio.sleep(conf.type_speed)
+                await message.channel.send(random.choice(mentioned_love_reactions))
+                return
             
             elif "test" in message.content.lower():
                 async with message.channel.typing():
