@@ -164,12 +164,8 @@ class Event(client.Cog): #Silly man class leave alone thx
                     return
 
             if word.lower() in kill_words:
-                if message.guild.id not in conf.w_tog_on:
+                if (message.guild.id not in conf.w_tog_on) or (message.author.id is (conf.natsuki_id or conf.yuri_id)):
                     return
-
-                if message.author.id is conf.natsuki_id:
-                    return
-
 
                 elif message.content.upper().startswith(f"<@{self.b.user.id}>"):
                     pass
