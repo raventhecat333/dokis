@@ -55,8 +55,5 @@ MC: {conf.mc_id}
         await ctx.send(embed=e4)
 
 
-
-
-
 def setup(bot):
     bot.add_cog(Debug(bot))
