@@ -2,7 +2,7 @@ class conf():
 
     token = "token"
     prefix1 = "m_"
-    prefix2 = "M_"  # There are 2 prefixes cause i keep getting blasted about how mobile users start there sentence with a captial letter, it's here now, shut the fuck up   
+    prefix2 = "M_"
     name = "Monika"
     cogd = "Cogs"
     type_speed = 2
@@ -32,11 +32,6 @@ class conf():
 
     ''' These are for the chat trigger''' 
     w_tog_on = []
-    event_cooldown = []
-
-
-    exp_on = []
-
 
     ''' Doki Bot's ID'S '''
     if test_mode is True or test_mode is 1:
