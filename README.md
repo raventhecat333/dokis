@@ -11,4 +11,4 @@ Please do not modify any contents within the "master" branch and instead do so i
 
 
 If your looking for the legacy doki code, please see
-<a href="https://github.com/sayori34/legacy-dokis
+https://github.com/sayori34/legacy-dokis
