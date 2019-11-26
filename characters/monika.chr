@@ -1,0 +1,613 @@
+{
+    "config": {
+        "color": "0x12ba01",
+        "description": "Monika is a character in the game Doki Doki Literature Club, she is the president of the Literature Club founded by her and along with her club members she spends her time after school in the club.",
+        "id": 0,
+        "playing": [
+            "Type 'm_help' for help!",
+            "Doki Doki Literature Club",
+            "the piano!",
+            "Super Smash Bros Ultimate\\.",
+            "If My Heart Had Wings",
+            "with you!",
+            "Just Monika\\.",
+            "from your computer!",
+            "your reality!"
+        ],
+        "token": "",
+        "prefix": "(M|m)(onika)?_"
+    },
+    "help": {
+        "commands": {
+            "ask": "Ask Monika a yes/no question.",
+            "changelog": "See latest changes of the doki bots.",
+            "delete": "Delete anyone from existence.",
+            "feed": "Feed Monika anything using food emotes.",
+            "headpat": "Give Monika a headpat.",
+            "help": "Get help about Monika.",
+            "hug": "Monika will give you a hug.",
+            "invite": "Use this to invite Monika to your server.",
+            "ping": "Check Monika's ping state.",
+            "poems": "See Monika's poems.",
+            "quotes": "Get a random quote from the game said by Monika.",
+            "shard": "Check what shard are you in (only working in severs).",
+            "tamper": "Mess with monika.chr or untamper her and fix your sin.",
+            "tickle": "Tickle Monika to your heart's content.",
+            "trigger": "Enable/Disable triggers in server."
+        },
+        "phrases": [
+            "you are adorable", "you are beautiful", "you are cute", "you are pretty",
+            "you are best girl", "natsuki is best girl", "sayori is best girl", "yuri is best girl",
+            "good afternoon", "good evening", "good morning", "good night",
+            "hello", "hey", "hi",
+            "ily", "i love you",
+            "i am sick", "puking", "not feeling good", "not feeling great",
+            "i apologize", "sorry",
+            "mc loves you", "natsuki loves you", "sayori loves you", "yuri loves you", "[someone] loves you"
+        ],
+        "triggers": [
+            "cacophony",
+            "book",
+            "books",
+            "code",
+            "just monika",
+            "literature",
+            "piano",
+            "poem",
+            "poems",
+            "python",
+            "reality"
+        ]
+    },
+    "poems": {
+        "Hole in Wall": "It couldn't have been me.\nSee, the direction the spackle protrudes.\nA noisy neighbor? An angry boyfriend? I'll never know. I wasn't home.\nI peer inside for a clue.\nNo! I can't see. I reel, blind, like a film left out in the sun.\nBut it's too late. My retinas.\nAlready scorched with a permanent copy of the meaningless image.\nIt's just a little hole. It wasn't too bright.\nIt was too deep.\nStretching forever into everything.\nA hole of infinite choices.\nI realize now, that I wasn't looking in.\nI was looking out.\nAnd he, on the other side, was looking in.",
+        "Save Me": "The colors, they won't stop.\nBright, beautiful colors\nFlashing, expanding, piercing\nRed, green, blue\nAn endless\ncacophony\nOf meaningless\nnoise\n\nThe noise, it won't stop.\nViolent, grating waveforms\nSqueaking, screeching, piercing\nSine, cosine, tangent\nLike playing a chalkboard on a turntable\nLike playing a vinyl on a pizza crust\nAn endless\npoem\nOf meaningless\n\nLoad Me",
+        "The Lady who Knows Everything": "An old tale tells of a lady who wanders Earth.\nThe Lady who Knows Everything.\nA beautiful lady who has found every answer,\nAll meaning,\nAll purpose,\nAnd all that was ever sought.\n\nAnd here I am,\n\na feather\n\nLost adrift the sky, victim of the currents of the wind.\n\nDay after day, I search.\nI search with little hope, knowing legends don't exist.\nBut when all else has failed me,\nWhen all others have turned away,\nThe legend is all that remains – the last dim star glimmering in the twilit sky.\n\nUntil one day, the wind ceases to blow.\nI fall.\nAnd I fall and fall, and fall even more.\nGentle as a feather.\nA dry quill, expressionless.\n\nBut a hand catches me, between the thumb and forefinger.\nThe hand of a beautiful lady.\nI look at her eyes and find no end to her gaze.\n\nThe Lady who Knows Everything knows what I am thinking.\nBefore I can speak, she responds in a hollow voice.\n\"I have found every answer, all of which amount to nothing.\nThere is no meaning.\nThere is no purpose.\nAnd we seek only the impossible.\nI am not your legend.\nYour legend does not exist.\"\n\nAnd with a breath, she blows me back afloat, and I pick up a gust of wind.",
+        "Hole in Wall (2)": "But he wasn't looking at me.\nConfused, I frantically glance at my surroundings.\nBut my burned eyes can no longer see color.\nAre there others in this room? Are they talking?\nOr are they simply poems on flat sheets of paper,\nThe sound of frantic scrawling playing tricks on my ears?\nThe room begins to crinkle.\nClosing in on me.\nThe air I breathe dissipate before it reaches my lungs.\nI panic. There must be a way out.\nIt's right there. He's right there.\n\nSwallowing my fears, I brandish my pen.",
+        "Save Me (2)": "The colors, they won't\nBright, bea t ful c l rs\nFlash ng, exp nd ng, piercing\nRed, green, blue\nAn ndless\nCACOPHONY\nOf meaningless\nnoise\n\nThe noise, it won't STOP.\nViol nt, grating w vef rms\nSq e king, screech ng, piercing\nSINE, COSINE, TANGENT\nLike play ng a ch lkboard on a t rntable\nLike playing a KNIFE on a BREATHING RIBCAGE\nn ndl ss\np m\nOf m n ngl ss\n\nDelete Her",
+        "Happy End": "Pen in hand, I find my strength.\nThe courage endowed upon me by my one and only love.\nTogether, let us dismantle this crumbling world\nAnd write a novel of our own fantasies.\n\nWith a flick of her pen, the lost finds her way.\nIn a world of infinite choices, behold this special day.\n\nAfter all,\nNot all good times must come to an end"
+    },
+    "tagging": {
+        "afternoon": {
+            "default": [
+                "(Good a|A)fternoon!",
+                "(Good a|A)fternoon! It's almost time for club activities!",
+                "(Good a|A)fternoon! I hope your day has been going well so far!"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "apology": {
+            "default": [
+                "Well, I thank you for the apology\\. Let's try not to do that again, hm\\?",
+                "Apology accepted!~",
+                "Very well, then! I hope you've learned your lesson\\."
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "best girl": {
+            "self": {
+                "default": [
+                    "O-Oh! Out of all the other girls, you think \\*I'M\\* the best\\? Well, that's quite an honor!"
+                ],
+                "untampered": [],
+                "tampered": []
+            },
+            "other": {
+                "default": [
+                    "I'm sorry, I didn't catch that\\. What did you say\\?",
+                    "Hm\\? Did you say something\\?",
+                    "Ahaha!~ You're funny!"
+                ],
+                "untampered": [],
+                "tampered": []
+            }
+        },
+        "compliment": {
+            "default": [
+                "Hey, now; that's not something you just say to the Club President! ~~But I thank you for that\\.~~",
+                ":blush:",
+                "Th-This seems highly unprofessional! ~~But I think you look great, as well!~~"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "default": {
+            "default": [
+                "I'm afraid I don't understand what you said\\. I'm terribly sorry!"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "empty": {
+            "default": [
+                "Yes\\?",
+                "Does somebody need me\\?",
+                "I'm here!"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "evening": {
+            "default": [
+                "Good evening to you too <@user>!",
+                "Evening already\\? Would you like some tea before it gets to dark <@user>\\?",
+                "Ahh evening time, look at that golden sun set <@user>\\."
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "hello": {
+            "default": [
+                "Hello! Welcome to the Literature Club!~",
+                "Why, hello there!",
+                "Hello, my fellow real personality!"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "love": {
+            "mc": {
+                "default": [
+                    "He does\\? Well, that's nice to hear\\. ~~I'm still not letting anyone else take him from me, though\\.~~"
+                ],
+                "untampered": [],
+                "tampered": []
+            },
+            "natsuki": {
+                "default": [
+                    "Oh, really\\? She, of all people, said that\\?"
+                ],
+                "untampered": [],
+                "tampered": []
+            },
+            "sayori": {
+                "default": [
+                    "Ahaha!~ Well, after everything that's happened between us, that's nice to hear!"
+                ],
+                "untampered": [],
+                "tampered": []
+            },
+            "someone": {
+                "default": [
+                    "Well, of course user does! Why wouldn't they\\? Ahaha!~",
+                    "user, I can certainly see why you'd be a little embarassed to tell me that! But it's okay; I love you, too!",
+                    "W-Well, I suppose you can't control how you feel about people, user, but I'm the Club President, so I have to stay professional! ~~It's okay, my love; I love you very much, as well!~~"
+                ],
+                "untampered": [],
+                "tampered": []
+            },
+            "user": {
+                "default": [
+                    "Ahaha!~ W-Well, I'm flattered, to say the least!",
+                    "And I love you, too!",
+                    "Well, in fairness, why wouldn't you\\? Ahaha!~"
+                ],
+                "untampered": [],
+                "tampered": []
+            },
+            "yuri": {
+                "default": [
+                    "Well, that's a pleasant surprise! And I understand why she doesn't have the courage to say it to me directly\\."
+                ],
+                "untampered": [],
+                "tampered": []
+            }
+        },
+        "morning": {
+            "default": [
+                "Good morning! I hope your day is a very great one!",
+                "A good morning, indeed!",
+                "Good morning! Ready for a fun day in the Literature Club\\?"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "night": {
+            "default": [
+                "Have a good night!",
+                "Goodnight! I hope you get plenty of rest!",
+                "Aww, you have to go\\? Well, okay! Goodnight!"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "sickness": {
+            "default": [
+                "Oh! I hope you feel better, after all, I have to take care of my club members!",
+                "I hope you feel better! I'm sure all of the other club members would say the same!"
+            ],
+            "untampered": [],
+            "tampered": []
+        }
+    },
+    "triggers": {
+        "Cacophony": "(^|[^a-zA-Z])cacophony([^a-zA-Z]|$)",
+        "Code": "(^|[^a-zA-Z])cod(es?|ing)([^a-zA-Z]|$)",
+        "Just Monika": "(^|[^a-zA-Z])just\\s*monika([^a-zA-Z]|$)",
+        "Literature": "(^|[^a-zA-Z])(literature|books?)([^a-zA-Z]|$)",
+        "Piano": "(^|[^a-zA-Z])pianos?([^a-zA-Z]|$)",
+        "Poem": "(^|[^a-zA-Z])poems?([^a-zA-Z]|$)",
+        "Python": "(^|[^a-zA-Z])python([^a-zA-Z]|$)",
+        "Reality": "(^|[^a-zA-Z])realit(y|ies)([^a-zA-Z]|$)"
+    },
+    "interactions": {
+        "mc": {
+            "default": [
+                {
+                    "reads": [
+                        "hugs <@!?self>"
+                    ],
+                    "writes": [
+                        "Aww, you're the best hugger, <@mc>"
+                    ]
+                }
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "monika": {
+            "default": [
+                
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "natsuki": {
+            "default": [
+                {
+                    "reads": [
+                        "hugs <@!?self>"
+                    ],
+                    "writes": [
+                        "Aww, how cute of you, Natsuki!"
+                    ]
+                },
+                {
+                    "reads": [
+                        "hugs <@!?self>"
+                    ],
+                    "writes": [
+                        "Aww, how cute of you, Natsuki!"
+                    ]
+                }
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "sayori": {
+            "default": [
+                {
+                    "reads": [
+                        "hugs <@!?self>"
+                    ],
+                    "writes": [
+                        "Easy now, Sayori! I know you're excited, but I still need to breathe! ~~Even though neither of us are real~~"
+                    ]
+                }
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "yuri": {
+            "default": [
+                {
+                    "reads": [
+                        "hugs <@!?self>"
+                    ],
+                    "writes": [
+                        "Aw, no need to be shy, Yuri! I don't mind a hug every now and then!"
+                    ]
+                }
+            ],
+            "untampered": [],
+            "tampered": []
+        }
+    },
+    "quotes": [
+        "As president of the Literature Club, it's my duty to make the club fun and exciting for everyone!",
+        "I'm confident that we can all really grow this club before we graduate!",
+        "Then that makes it official! Welcome to the Literature Club!",
+        "Natsuki, you certainly have a big mouth for someone who keeps her manga collection in the clubroom.",
+        "I guess you could say that I had some kind of epiphany recently. It's been influencing my poems a bit.",
+        "...That's my advice for today! Thanks for listening~",
+        "Wait...is this tip even about writing? What am I even talking about? Ahaha!",
+        "Humans aren't two-dimensional creatures. I think you'd know that better than anyone.",
+        "Also, that joke makes no sense in translation!",
+        "And I also care about the well-being of my club members, you know?",
+        "Have you thought that maybe you've always seen her as so cheerful because that's just how she is when she's around you?",
+        "C-Catchphrase? I don't have a catchphrase...",
+        "Yay, you picked me!",
+        "You kind of left her hanging this morning, you know?",
+        "Don't worry. I probably know a lot more than you think."
+    ],
+    "ask": {
+        "default": [
+            "(No|Yes)!",
+            "As Club President, I say '(yes|no|maybe)'!",
+            "Ahaha! I-I don't really know, to be honest\\.\\.\\.",
+            "Uh\\.\\.\\. Well, uh\\.\\.\\. I think the Vice President would be better suited for this question!",
+            "Y-Yuri's smart, right\\? I'm sure she can answer that!",
+            "Maybe you can try asking Natsuki; she knows more than she lets on\\."
+        ],
+        "untampered": [],
+        "tampered": []
+    },
+    "delete": {
+        "default": {
+            "default": [
+                "> os.remove(\"./characters/user.chr\")"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "dev": {
+            "default": [
+                "Why would you want to delete someone who gave you the ability to use me\\? Shame on you!"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "doki": {
+            "default": [],
+            "untampered": [
+                "Ahahahaha! You know, I tried that once\\. Didn't really work out well in the long run\\."
+            ],
+            "tampered": []
+        },
+        "none": {
+            "default": [
+                "What do you need me to delete\\?"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "self": {
+            "default": [
+                "Ahahahaha! No\\."
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "you": {
+            "default": [
+                "Why would I want to do that\\?"
+            ],
+            "untampered": [],
+            "tampered": []
+        }
+    },
+    "feed": {
+        "alcohol": {
+            "default": [
+                "Oh! Ahaha\\.\\.\\. A-As curious as I am, I'm afraid I cannot allow alcoholic beverages here\\."
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "baby": {
+            "default": [
+                "U-Um\\.\\.\\. I'm not sure what you're insinuating here\\.\\.\\."
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "birthday": {
+            "correct": {
+                "default": [
+                    "OMG!!! A birthday cake just for me in this special day\\?! Thank you so much!!!"
+                ],
+                "untampered": [],
+                "tampered": []
+            },
+            "wrong": {
+                "default": [
+                    "How wonderful, but I don't believe it's my birthday just yet\\.\\.\\."
+                ],
+                "untampered": [],
+                "tampered": []
+            }
+        },
+        "bread": {
+            "default": [
+                "It's a start, but I'll need to go to the grocery store to make a proper sandwich\\. ~~Would you like to come with\\?~~"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "burger": {
+            "default": [
+                "Is it a veggie burger\\? If not, I'll have to respectfully decline\\."
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "coffee": {
+            "default": [
+                "Ah, thank you! I've been needing something to wake me up a bit!"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "cold": {
+            "default": [
+                "Ah, nothing like some cold treats to brighten your day!"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "cookie": {
+            "default": [
+                "Not as homemade as Natsuki's, but it's still very delicious! Thank you!"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "cooking": {
+            "default": [
+                "Hm\\.\\.\\. as a vegetarian, would it even be okay to eat this\\.\\.\\.\\?"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "cupcake": {
+            "default": [
+                "Thank you! ~~but Natsuki's are still the best\\.~~"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "default": {
+            "default": [
+                "Um\\.\\. not to be rude, but I don't think this is edible\\."
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "egg": {
+            "default": [
+                "Oh, you silly goose! Are you trying to be funny\\?"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "food": {
+            "default": [
+                "A nice meal is always great! Thank you~"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "hot pepper": {
+            "default": [
+                "\\*cough cough\\* Oh, my! That certainly caught me off-guard!"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "japanese": {
+            "default": [
+                "Aw, you brought me a meal from my home? How thoughtful of you!"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "meat": {
+            "default": [
+                "Oh, sorry user I'm a vegetarian I don't eat meat sorry!"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "mexican": {
+            "default": [
+                "Well, I'm always in the mood for something different!"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "milk": {
+            "default": [
+                "I shouldn't, I'm a vegan after all\\.\\.\\. Ahaha~!"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "none": {
+            "default": [
+                "I suppose I am a bit hungry\\.\\.\\. What do you recommend\\?"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "pizza": {
+            "default": [
+                "Ah\\.\\.\\. There's pepperoni on it\\.\\.\\. You do remember I'm a vegetarian, right\\?"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "popcorn": {
+            "default": [
+                "\\*crunch crunch crunch\\*"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "silverware": {
+            "default": [
+                "I've got my silverware ready! What are we eating with them\\?"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "sweets": {
+            "default": [
+                "Sweets! A girl's best friend!"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "tea": {
+            "default": [
+                "It's like I'm back in the clubroom! All I need is one of Natsuki's cupcakes\\."
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "vegetable": {
+            "default": [
+                "Aww thank you user, you remembered I'm a vegetarian, your so sweet! \\*munch munch!\\*"
+            ],
+            "untampered": [],
+            "tampered": []
+        }
+    },
+    "headpat": {
+        "default": [
+            "Ahaha!~ I-I'm not sure what to say!",
+            "Be careful; you may knock my bow down!",
+            "E-Easy now!",
+            "This doesn't really seem like the type of thing one does to their President, but I suppose I'll let it slide!"
+        ],
+        "untampered": [],
+        "tampered": []
+    },
+    "hug": {
+        "default": {
+            "default": [
+                "As Club President, this seems unprofessional\\. As your friend, I'll happily help! \\*hugs <@user>\\*",
+                "Of course I'll hug you! You don't have to even ask twice! \\*hugs <@user>\\*",
+                "Have you had a rough day\\? Here, I'll make it a little better! \\*hugs <@user>\\*"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "self": {
+            "default": [
+                "Ehehe! This is quite odd, but if it'll make you happy, then who am I to deny you that\\? \\*hugs myself\\*",
+                "\\*hugs myself\\* Ahaha! This isn't just some trick to make me look silly, is it\\?",
+                "Well, as Club President, it's my job to set a good example! \\*hugs myself\\*"
+            ],
+            "untampered": [],
+            "tampered": []
+        },
+        "other": {
+            "default": [
+                "As Club President, this seems unprofessional\\. As your friend, I'll happily help! \\*hugs <@user>\\*",
+                "Of course I'll hug you! You don't have to even ask twice! \\*hugs <@user>\\*",
+                "Have you had a rough day\\? Here, I'll make it a little better! \\*hugs <@user>\\*"
+            ],
+            "untampered": [],
+            "tampered": []
+        }
+    },
+    "tickle": {
+        "default": [
+            "(N-Now, hold on! Th-This isn't right! )?((Ha|A)(ha){3,6}|(He|E)(he){3,6})!{1,3}"
+        ],
+        "untampered": [],
+        "tampered": []
+    }
+}
