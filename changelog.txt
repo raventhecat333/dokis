@@ -1,0 +1,21 @@
+- Yuri shares her act commands with all dokis and renames it to "tamper" (feature available, not much changes though)[ALL DOKIS]
+
+- Added database! no longer broken bots breaking anyone who tamprred or disabled triggers [ALL DOKIS]
+
+- Fixed some typos and syntax errors [ALL DOKIS]
+
+- New format for some of the commands [ALL DOKIS]
+
+- Bots no longer shut down that often [ALL DOKIS]
+
+- Full DM chat support, dokis can chat with you in DM now! [ALL DOKIS]
+
+- Feed command has surfaced all food emotes, now they can eat more [ALL DOKIS]
+
+- Commands now have aliases [ALL DOKIS]
+
+- MC got a very special poem for you [MC]
+
+- Poems now split depending on the doki personality (change via tamper command) [ALL DOKIS]
+
+- Electric Dokiloo [???]
