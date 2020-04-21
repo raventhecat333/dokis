@@ -12,10 +12,6 @@ def run_chr(chr):
         print(traceback.format_exc)
         print(error)
 
-#region global varianle settings
-globalVars.setInteractions()
-#endregion
-
 characters =  chrs.getCharacters()
 
 for chr in [file for file in os.listdir('./characters') if file.endswith('.py')]:
