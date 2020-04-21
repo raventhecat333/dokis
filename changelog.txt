@@ -12,7 +12,7 @@
 
 - Feed command has surfaced all food emotes, now they can eat more [ALL DOKIS]
 
-- Commands now have aliases [ALL DOKIS]
+- Prefixes and commands now have aliases [ALL DOKIS]
 
 - MC got a very special poem for you [MC]
 
