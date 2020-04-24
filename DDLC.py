@@ -1,4 +1,4 @@
-import asyncio, chrs, globalVars, os, sqlite3, subprocess, sys, threading, traceback
+import asyncio, chrs, os, sqlite3, subprocess, sys, threading, traceback
 from bot import Character
 
 def run_chr(chr):
