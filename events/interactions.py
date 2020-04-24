@@ -1,4 +1,4 @@
-import asyncio, discord, globalVars, random
+import asyncio, discord, random
 import discord.ext.commands as client
 
 class Interactions(client.Cog):
