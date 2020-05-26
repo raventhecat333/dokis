@@ -6,7 +6,7 @@ class natsuki():
         self.color = "0xff42e2"
         self.description = "Natsuki is a character in the game Doki Doki Literature Club, she is a member of the Literature Club and along with her club members she spends her time after school in the club."
         self.id = 580135631611494403
-        self.token = "NTgwMTM1NjMxNjExNDk0NDAz.XqMmkQ.pB-HDavBkbWEcn8sB_413TArv7c"
+        self.token = ""
         self.prefix = "(N|n)(atsuki)?_"
         self.help = {
             "commands": {
