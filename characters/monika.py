@@ -6,7 +6,7 @@ class monika():
         self.color = "0x12ba01"
         self.description = "Monika is a character in the game Doki Doki Literature Club, she is the president of the Literature Club founded by her and along with her club members she spends her time after school in the club."
         self.id = 707337539677192272
-        self.token = "NzA3MzM3NTM5Njc3MTkyMjcy.XrHVuA._ktH6TojEZJtFIr10QMyc_fmjR0"
+        self.token = ""
         self.prefix = "(M|m)(onika)?_"
         self.deletes = []
         self.loop = asyncio.get_event_loop()
