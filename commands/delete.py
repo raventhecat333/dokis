@@ -18,11 +18,11 @@ class Delete(client.Cog):
 
         if not victim:
             await self.bot.send(ctx, self.bot.character.delete(tamper=tampered, victim=""))
-        elif not tampered and re.search(f"^(monika|<@!?436351740787294208>|sayori|<@!?425696108455657472>|yuri|<@!?436350586670153730>|natsuki|<@!?433834936450023424>)$", victim, re.IGNORECASE):
+        elif not tampered and re.search(f"^(monika|<@!?707337539677192272>|sayori|<@!?580133736721678341>|yuri|<@!?580134475250532352>|natsuki|<@!?580135631611494403>)$", victim, re.IGNORECASE):
             await self.bot.send(ctx, self.bot.character.delete(tamper=tampered, victim="doki"))
         elif re.search(f"^me|<@!?{ctx.author.id}>$", victim, re.IGNORECASE):
             await self.bot.send(ctx, self.bot.character.delete(tamper=tampered, victim="player"))
-        elif re.search(f"^(<@!?({'|'.join(json.loads(open('config.json').read())['devs'])})>)$", victim, re.IGNORECASE):
+        elif re.search(f"^(<@!?({'|'.join(list(str(x) for x in json.loads(open('config.json').read())['devs']))})>)$", victim, re.IGNORECASE):
             await self.bot.send(ctx, self.bot.character.delete(tamper=tampered, victim="dev"))
         elif re.search(f"^({self.bot.name})|<@!?{self.bot.user.id}>$", victim, re.IGNORECASE):
             await self.bot.send(ctx, self.bot.character.delete(tamper=tampered, victim="self"))

@@ -1,6 +1,8 @@
+4.0.0
+
 - Yuri shares her act commands with all dokis and renames it to "tamper" (feature available, not much changes though)[ALL DOKIS]
 
-- Added database! no longer broken bots breaking anyone who tamprred or disabled triggers [ALL DOKIS]
+- Added database! no longer broken bots breaking anyone who tampered or disabled triggers [ALL DOKIS]
 
 - Fixed some typos and syntax errors [ALL DOKIS]
 
@@ -19,3 +21,7 @@
 - Poems now split depending on the doki personality (change via tamper command) [ALL DOKIS]
 
 - Electric Dokiloo [???]
+
+4.0.1
+
+- Major bug fixes [ALL DOKIS]

@@ -1,4 +1,4 @@
-import asyncio, chrs, discord, importlib, os, re, rstr, sqlite3, sre_yield, traceback
+import asyncio, chrs, discord, importlib, json, os, re, rstr, sqlite3, sre_yield, traceback
 from discord.ext import commands
 
 #character class
@@ -10,7 +10,9 @@ class Character(commands.AutoShardedBot):
         self.globalConnection = sqlite3.connect('global.db')
         self.globalCursor = self.globalConnection.cursor()
         self.chrs = chrs.getCharacters()
-        super().__init__(command_prefix=sre_yield.AllStrings(self.character.prefix), status=discord.Status.idle, activity=discord.Game(name="Starting Up..."))
+        config = json.loads(open("config.json", "r").read())
+        super().__init__(command_prefix=sre_yield.AllStrings(self.character.prefix), status=discord.Status.idle, activity=discord.Game(name="Starting Up..."), owner_ids=config["devs"])
+        self.load_extension("jishaku")
         for file in os.listdir("commands"):
             if file.endswith(".py"):
                 name = file[:-3]
@@ -25,7 +27,6 @@ class Character(commands.AutoShardedBot):
                 except (discord.ClientException, ModuleNotFoundError):
                     print(f'[{self.name}] Failed to load command: {name}')
                     print(traceback.format_exc())
-
         for file in os.listdir(f"events"):
             if file.endswith(".py"):
                 name = file[:-3]
@@ -35,7 +36,6 @@ class Character(commands.AutoShardedBot):
                 except (discord.ClientException, ModuleNotFoundError):
                     print(f'[{self.name}] Failed to load event: {name}')
                     print(traceback.format_exc())
-        
 
     async def on_ready(self):
         print(f'Logged on as {self.user} with {self.name}.chr!')

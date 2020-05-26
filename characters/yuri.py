@@ -5,8 +5,8 @@ class yuri():
     def __init__(self):
         self.color = "0x8524c8"
         self.description = "Yuri is a character in the game Doki Doki Literature Club, she is a member of the Literature Club and along with her club members she spends her time after school in the club."
-        self.id = 0
-        self.token = ""
+        self.id = 580134475250532352
+        self.token = "NTgwMTM0NDc1MjUwNTMyMzUy.XqMmvg.14y3YKHmImXlvYoRhVut1Xf_hok"
         self.prefix = "(Y|y)(uri)?_"
         self.help = {
             "commands": {
@@ -91,7 +91,7 @@ class yuri():
             elif "cookie" in food:
                 return "Oh, the chocolate chips just melt in my mouth!"
             elif "cupcake" in food:
-                return "T-Thank you, slowly bites Oh.. It tastes almost as good as Natsuki's cupcakes."
+                return "T-Thank you, *slowly bites* Oh.. It tastes almost as good as Natsuki's cupcakes."
             elif "japanese" in food:
                 return "Ah... Now this is something I recognize and love. Er, not that I don't love the other foods I've been offered! Uuu... why do I say these things..."
             elif "takeout" in food:
@@ -237,7 +237,7 @@ class yuri():
                     "*hugs myself* Oh, dear, this must look so embarassing! Uuuu...!"
                 ])
         else:
-            if not target:
+            if not target or target == "mc":
                 return "No. I refuse to hug anyone other than you."
             elif target == "player":
                 return random.choice([
@@ -436,7 +436,7 @@ class yuri():
                     "A truly beautiful afternoon, it is.",
                     "Ah, it's times like this where I just want to sit outsite and read a good book."
                 ])
-            elif re.search("(^|[^A-Za-z])((^|yuri|<@!?436350586670153730>) *is|you('re| *are)) *(adorable|amazing|beautiful|cute|hot|pretty)([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search(f"(^|[^A-Za-z])((^|yuri|<@!?{self.id}>) *is|you('re| *are)) *(adorable|amazing|beautiful|cute|hot|pretty)([^A-Za-z]|$)", content, re.IGNORECASE):
                 return random.choice([
                     "Y-You really think so...?",
                     "Uuu... :flushed:",
@@ -450,22 +450,22 @@ class yuri():
                     "N-No, I'm the one who should be sorry; I mess up everything...",
                     "Consider your apology accepted, then!"
                 ])
-            elif re.search("(^|[^A-Za-z])(natsuki|<@!?433834936450023424>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(natsuki|<@!?580135631611494403>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Sh-She does?"
-            elif re.search("(^|[^A-Za-z])(monika|<@!?436351740787294208>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(monika|<@!?707337539677192272>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Ahaha... I-I'm glad that I have a friend like Monika who loves me... :blush:"
-            elif re.search("(^|[^A-Za-z])(sayori|<@!?425696108455657472>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(sayori|<@!?580133736721678341>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Haha. Well, she is a loving soul."
-            elif re.search("(^|[^A-Za-z])(mc|<@!?596407346176065552>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(mc|<@!?606721454297448448>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Uuuuuuuuuu..."
             elif re.search("(^|[^A-Za-z])(i('m| *am) *(feel(ing)?)? *sick|not *feeling *(good|great)|puk(ed?|ing))([^A-Za-z]|$)", content, re.IGNORECASE):
                 return random.choice([
                     "O-Oh... I hope y-you feel better soon.",
                     "Oh... please do feel better."
                 ])
-            elif re.search("(^|[^A-Za-z])(monika|<@!?436351740787294208>|natsuki|<@!?433834936450023424>|sayori|<@!?425696108455657472>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(monika|<@!?707337539677192272>|natsuki|<@!?580135631611494403>|sayori|<@!?580133736721678341>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "W-Well, I suppose that's true; she's much better than I am..."
-            elif re.search("(^|[^A-Za-z])(^is|you('re| *are)?|yuri|<@!?436350586670153730>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search(f"(^|[^A-Za-z])(^is|you('re| *are)?|yuri|<@!?{self.id}>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Oh! Uh... Well, I'm glad you think that!"
             else:
                 return "I-I'm sorry, but I don't understand what you mean..."
@@ -505,7 +505,7 @@ class yuri():
                     "Good afternoon! But who cares what time it is; we'll be together forever, right??",
                     "A perfect afternoon for just staring at each other, telling what kind of dirty things we could do together..."
                 ])
-            elif re.search("(^|[^A-Za-z])((^|yuri|<@!?436350586670153730>) *is|you('re| *are)) *(adorable|amazing|beautiful|cute|hot|pretty)([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search(f"(^|[^A-Za-z])((^|yuri|<@!?{self.id}>) *is|you('re| *are)) *(adorable|amazing|beautiful|cute|hot|pretty)([^A-Za-z]|$)", content, re.IGNORECASE):
                 return random.choice([
                     "Ohoho, stop it, you! I'm nothing compared to you!",
                     "But you're 10 times as amazing!",
@@ -519,19 +519,19 @@ class yuri():
                     "Well, if it'll make you feel better, I accept your apology.",
                     "Uhuhu. You look so cute when you apologize like that!"
                 ])
-            elif re.search("(^|[^A-Za-z])(natsuki|<@!?433834936450023424>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(natsuki|<@!?580135631611494403>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Pfft. As if. That immature brat doesn't love anyone but herself."
-            elif re.search("(^|[^A-Za-z])(monika|<@!?436351740787294208>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(monika|<@!?707337539677192272>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "I'll believe that when that bitch says it to my face!"
-            elif re.search("(^|[^A-Za-z])(sayori|<@!?425696108455657472>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(sayori|<@!?580133736721678341>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Who the hell is Sayori? I don't know any Sayoris..."
-            elif re.search("(^|[^A-Za-z])(mc|<@!?596407346176065552>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(mc|<@!?606721454297448448>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Of course he loves me! And I will make sure **NOBODY** takes him away from me!"
             elif re.search("(^|[^A-Za-z])(i('m| *am) *(feel(ing)?)? *sick|not *feeling *(good|great)|puk(ed?|ing))([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Feel better soon my love so we can love each other forever!"
-            elif re.search("(^|[^A-Za-z])(monika|<@!?436351740787294208>|natsuki|<@!?433834936450023424>|sayori|<@!?425696108455657472>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(monika|<@!?707337539677192272>|natsuki|<@!?580135631611494403>|sayori|<@!?580133736721678341>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "No, she's fucking not."
-            elif re.search("(^|[^A-Za-z])(^is|you('re| *are)?|yuri|<@!?436350586670153730>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search(f"(^|[^A-Za-z])(^is|you('re| *are)?|yuri|<@!?{self.id}>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "AHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA"
             else:
                 return "I love you, but I have no clue what you just said."

@@ -1,9 +1,15 @@
 {
+    "test bot": {
+        "id": 458359353582551070,
+        "token": "NDU4MzU5MzUzNTgyNTUxMDcw.XrUItg.Ryv63iKJhInjwdGttOsTYvM_Oys",
+        "active": false
+    },
     "devs": [
-        "480580173431832577",
-        "320286336433258506"
+        320286336433258506,
+        271920728675319808,
+        516280857468731395
     ],
-    "version": "4.0.0",
+    "version": "4.0.1",
     "colors": {
         "error": "0xc91313",
         "warn": "0xff42e2",

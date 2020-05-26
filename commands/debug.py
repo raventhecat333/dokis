@@ -25,8 +25,8 @@ class Debug(client.Cog):
 **Python Version:** {'.'.join(map(str, sys.version_info[:3]))}
 **Shards**: {len(self.bot.shards)}
 **Guilds:** {len(self.bot.guilds)}
-**Are triggers on?** {triggerMode}
-**Is on tamper mode here?** {tamperMode}''',
+**Are Triggers Enabled?** {triggerMode}
+**Is Tamper Mode Enabled?** {tamperMode}''',
         color = int(color, base=16))
         await ctx.send(embed=e)
 

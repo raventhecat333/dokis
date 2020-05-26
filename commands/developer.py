@@ -8,7 +8,7 @@ class Developer(client.Cog):
          self.bot = bot
 
     def is_dev(self, id):
-        return str(id) in json.loads(open("config.json",'r').read())["devs"]
+        return id in json.loads(open("config.json",'r').read())["devs"]
 
     @client.command()
     async def shutdown(self,ctx):

@@ -13,7 +13,7 @@ class Invite(client.Cog):
     async def invite(self,ctx):
         color = self.bot.character.color
         e = discord.Embed(title = f"Invite {self.bot.user.name}!",
-        description = f"[Click here to invite {self.bot.name}.chr!](https://discordbots.org/bot/{self.bot.user.id})",
+        description = f"[Click here to invite {self.bot.name}.chr!](https://discord.com/api/oauth2/authorize?client_id={self.bot.user.id}&permissions=8&scope=bot)",
         color=int(color, base=16))
         await ctx.send(embed=e)
 

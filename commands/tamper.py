@@ -13,6 +13,11 @@ class Tamper(client.Cog):
     async def tamper(self,ctx):
         color = self.bot.character.color
         if ctx.guild is not None:
+            member = await ctx.guild.fetch_member(ctx.author.id)
+            if not ctx.channel.permissions_for(member).administrator:
+                e = discord.Embed(title="You got no permissions to do that!",color=int(color, base=16))
+                await ctx.send(embed=e)
+                return
             if self.bot.globalCursor.execute(f"SELECT * FROM tampered WHERE bot = '{self.bot.name}' AND type = 'guild' AND id = {ctx.guild.id}").fetchone() is None:
                 self.bot.globalCursor.execute(f"INSERT INTO tampered VALUES ('{self.bot.name}','guild',{ctx.guild.id})")
                 self.bot.globalConnection.commit()

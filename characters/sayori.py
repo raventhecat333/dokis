@@ -5,8 +5,8 @@ class sayori():
     def __init__(self):
         self.color = "0x3eb0ff"
         self.description = "Sayori is a character in the game Doki Doki Literature Club, she is the vice president of the Literature Club founded by Monika and along with the other club members she spends her time after school in the club."
-        self.id = 0
-        self.token = ""
+        self.id = 580133736721678341
+        self.token = "NTgwMTMzNzM2NzIxNjc4MzQx.XqMmsw.IS8cOl_y0wCRk_7ftZt82usJ5j8"
         self.prefix = "(S|s)(ayori)?_"
         self.help = {
             "commands": {
@@ -49,7 +49,7 @@ class sayori():
             "Doki Doki Literature Club",
             "with the crayons!",
             "Katawa Shoujo",
-            "with Mr. Cow!",
+            r"with Mr\. Cow!",
             "with a noose!"
         ]
 
@@ -57,7 +57,7 @@ class sayori():
         if not tamper:
             if not nothing:
                 return random.choice([
-                    rstr.xeger(r"(Yes|Of course( not)?|No|Maybe|Possibly)[!\\.]"),
+                    rstr.xeger(r"(Yes|Of course( not)?|No|Maybe|Possibly)[!\.]"),
                     rstr.xeger(r"My vice president powers tell me '(yes|no|maybe)'!"),
                     rstr.xeger(r"(Yes|Of course( not)?|No), silly!"),
                     "I'd say ask Monika, but she's busy being ~~a meanie~~ an amazing club president!",
@@ -66,14 +66,14 @@ class sayori():
                     "You've got a better chance of having a happy ending in DDLC! Ehehe...~",
                     "Not really.",
                     "J-Just a little bit!",
-                    "Maybe we should ask The Magic Conch, instead\\."
+                    "Maybe we should ask The Magic Conch, instead."
                 ])
             else:
                 return "I can't answer the question if you don't ask one, silly!"
         else:
             if not nothing:
                 return random.choice([
-                    rstr.xeger(r"(Yes|Of course( not)?|No|Maybe|Possibly)[!\\.]"),
+                    rstr.xeger(r"(Yes|Of course( not)?|No|Maybe|Possibly)[!\.]"),
                     rstr.xeger(r"My vice president powers tell me '(yes|no|maybe)'!"),
                     rstr.xeger(r"(Yes|Of course( not)?|No), silly!"),
                     "I'd say ask Monika, but she's busy being ~~a meanie~~ an amazing club president!",
@@ -283,7 +283,7 @@ class sayori():
                     f"One hug, coming right up! *hugs {targetName}*",
                     f"I'll try not to squeeze too hard! *hugs {targetName}*",
                     f"Time for the super-mega-cinnamon-bun hug! *hugs {targetName}*",
-                    f"How could I say no to a hug? *hugs {targetName}>*",
+                    f"How could I say no to a hug? *hugs {targetName}*",
                     f"Yay, hugs! *hugs {targetName}*"
                 ])
             elif target == "self":
@@ -294,12 +294,12 @@ class sayori():
                     "How can I say no to that? *hugs myself*"
                 ])
         else:
-            if not target or target == "player":
+            if not target or target == "mc" or target == "player":
                 return random.choice([
                     f"One hug, coming right up! *hugs {targetName}*",
                     f"I'll try not to squeeze too hard! *hugs {targetName}*",
                     f"Time for the super-mega-cinnamon-bun hug! *hugs {targetName}*",
-                    f"How could I say no to a hug? *hugs {targetName}>*",
+                    f"How could I say no to a hug? *hugs {targetName}*",
                     f"Yay, hugs! *hugs {targetName}*"
                 ])
             elif target == "self":
@@ -460,7 +460,7 @@ class sayori():
             else:
                 return random.choice([poem1,poem2])
         else:
-            return "Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of\nGet.\nOut.\nOf.\nMy.\nHead.\n\n\nGet out of my head before I do what I know is best for you.\nGet out of my head before I listen to everything she said to me.\nGet out of my head before I show you how much I love you.\nGet out of my head before I finish writing this poem.\n\n\n\nBut a poem is never actually finished.\nIt just stops moving."
+            return ["","Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get out of\nGet.\nOut.\nOf.\nMy.\nHead.\n\n\nGet out of my head before I do what I know is best for you.\nGet out of my head before I listen to everything she said to me.\nGet out of my head before I show you how much I love you.\nGet out of my head before I finish writing this poem.\n\n\n\nBut a poem is never actually finished.\nIt just stops moving."]
 
     def quotes(self):
         return random.choice([
@@ -531,7 +531,7 @@ class sayori():
                     "Afternoon?? Shoot! I'm late for school again!",
                     "Afternoon!"
                 ])
-            elif re.search("(^|[^A-Za-z])((^|sayori|<@!?425696108455657472>) *is|you('re| *are)) *(adorable|amazing|beautiful|cute|hot|pretty)([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search(f"(^|[^A-Za-z])((^|sayori|<@!?{self.id}>) *is|you('re| *are)) *(adorable|amazing|beautiful|cute|hot|pretty)([^A-Za-z]|$)", content, re.IGNORECASE):
                 return random.choice([
                     "Awww! Thank you so much! :blush:",
                     "I know you are, but what am I? :stuck_out_tongue_closed_eyes:",
@@ -545,22 +545,22 @@ class sayori():
                     "Thank you for apologizing!",
                     "Okay. Just try not to do it again!"
                 ])
-            elif re.search("(^|[^A-Za-z])(natsuki|<@!?433834936450023424>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(natsuki|<@!?580135631611494403>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Awww, she does??"
-            elif re.search("(^|[^A-Za-z])(yuri|<@!?436350586670153730>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(yuri|<@!?580134475250532352>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Well, of course she does! Yuri loves everybody!"
-            elif re.search("(^|[^A-Za-z])(sayori|<@!?425696108455657472>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search(f"(^|[^A-Za-z])(sayori|<@!?{self.id}>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Yay! I'm glad she does!"
-            elif re.search("(^|[^A-Za-z])(mc|<@!?596407346176065552>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(mc|<@!?606721454297448448>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Yay! My best friend loves me!!! :heart:"
             elif re.search("(^|[^A-Za-z])(i('m| *am) *(feel(ing)?)? *sick|not *feeling *(good|great)|puk(ed?|ing))([^A-Za-z]|$)", content, re.IGNORECASE):
                 return random.choice([
                     "Don't worry! I'm sure you'll feel better soon!",
                     "Aww... get plenty of rest, and eat a lot of healthy foods!"
                 ])
-            elif re.search("(^|[^A-Za-z])(monika|<@!?436351740787294208>|natsuki|<@!?433834936450023424>|yuri|<@!?436350586670153730>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(monika|<@!?707337539677192272>|natsuki|<@!?580135631611494403>|yuri|<@!?580134475250532352>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Well, I respect your opinion!"
-            elif re.search("(^|[^A-Za-z])(^is|you('re| *are)?|sayori|<@!?425696108455657472>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search(f"(^|[^A-Za-z])(^is|you('re| *are)?|sayori|<@!?{self.id}>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "S-Stop it! That's not true!"
             else:
                 return random.choice([
@@ -610,7 +610,7 @@ class sayori():
                     "Afternoon?? Shoot! I'm late for school again!",
                     "Afternoon!"
                 ])
-            elif re.search("(^|[^A-Za-z])((^|sayori|<@!?425696108455657472>) *is|you('re| *are)) *(adorable|amazing|beautiful|cute|hot|pretty)([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search(f"(^|[^A-Za-z])((^|sayori|<@!?{self.id}>) *is|you('re| *are)) *(adorable|amazing|beautiful|cute|hot|pretty)([^A-Za-z]|$)", content, re.IGNORECASE):
                 return random.choice([
                     "Awww! Thank you so much! :blush:",
                     "I know you are, but what am I? :stuck_out_tongue_closed_eyes:",
@@ -624,22 +624,22 @@ class sayori():
                     "Thank you for apologizing!",
                     "Okay. Just try not to do it again!"
                 ])
-            elif re.search("(^|[^A-Za-z])(natsuki|<@!?433834936450023424>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(natsuki|<@!?580135631611494403>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Awww, she does??"
-            elif re.search("(^|[^A-Za-z])(yuri|<@!?436350586670153730>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(yuri|<@!?580134475250532352>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Well, of course she does! Yuri loves everybody!"
-            elif re.search("(^|[^A-Za-z])(sayori|<@!?425696108455657472>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search(f"(^|[^A-Za-z])(sayori|<@!?{self.id}>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Yay! I'm glad she does!"
-            elif re.search("(^|[^A-Za-z])(mc|<@!?596407346176065552>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(mc|<@!?606721454297448448>) *loves *you([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Yay! My best friend loves me!!! :heart:"
             elif re.search("(^|[^A-Za-z])(i('m| *am) *(feel(ing)?)? *sick|not *feeling *(good|great)|puk(ed?|ing))([^A-Za-z]|$)", content, re.IGNORECASE):
                 return random.choice([
                     "Don't worry! I'm sure you'll feel better soon!",
                     "Aww... get plenty of rest, and eat a lot of healthy foods!"
                 ])
-            elif re.search("(^|[^A-Za-z])(monika|<@!?436351740787294208>|natsuki|<@!?433834936450023424>|yuri|<@!?436350586670153730>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(monika|<@!?707337539677192272>|natsuki|<@!?580135631611494403>|yuri|<@!?580134475250532352>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Well, I respect your opinion!"
-            elif re.search("(^|[^A-Za-z])(^is|you('re| *are)?|sayori|<@!?425696108455657472>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search(f"(^|[^A-Za-z])(^is|you('re| *are)?|sayori|<@!?{self.id}>) *best *(doki|girl)([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "S-Stop it! That's not true!"
             else:
                 return random.choice([
@@ -689,7 +689,7 @@ class sayori():
                 ])
             elif re.search("(^|[^A-Za-z])kill(s|ing|ed)?([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Can we change the topic to something more wholesome please?"
-            elif re.search("(^|[^A-Za-z])(mean(ies?)?|bull(y|i|ies))([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(mean(y|ies?)|bull(y|i|ies))([^A-Za-z]|$)", content, re.IGNORECASE):
                 return random.choice([
                     "Do we have a meanie in the server? If so, please stop.",
                     "Cease your bulli, you meanie!",
@@ -723,7 +723,7 @@ class sayori():
                 ])
             elif re.search("(^|[^A-Za-z])kill(s|ing|ed)?([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Can we change the topic to something more wholesome please?"
-            elif re.search("(^|[^A-Za-z])(mean(ies?)?|bull(y|i|ies))([^A-Za-z]|$)", content, re.IGNORECASE):
+            elif re.search("(^|[^A-Za-z])(mean(y|ies?)|bull(y|i|ies))([^A-Za-z]|$)", content, re.IGNORECASE):
                 return random.choice([
                     "Do we have a meanie in the server? If so, please stop.",
                     "Cease your bulli, you meanie!",

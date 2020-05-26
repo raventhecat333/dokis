@@ -26,13 +26,13 @@ class Confess(client.Cog):
         natsuki = next( (c for c in self.bot.chrs if c["name"].lower() == "natsuki"), None)
         natsukiID = natsuki["character"].id
 
-        if re.search(f"^(monika|<@!?436351740787294208>)", target, re.IGNORECASE):
+        if re.search(f"^(monika|<@!?707337539677192272>)", target, re.IGNORECASE):
             await self.bot.send(ctx, self.bot.character.confess(target="monika", targetName=f"<@{monikaID}>"))
-        elif re.search(f"^(sayori|<@!?425696108455657472>)", target, re.IGNORECASE):
+        elif re.search(f"^(sayori|<@!?580133736721678341>)", target, re.IGNORECASE):
             await self.bot.send(ctx, self.bot.character.confess(target="sayori", targetName=f"<@{sayoriID}>"))
-        elif re.search(f"^(yuri|<@!?436350586670153730>)", target, re.IGNORECASE):
+        elif re.search(f"^(yuri|<@!?580134475250532352>)", target, re.IGNORECASE):
             await self.bot.send(ctx, self.bot.character.confess(target="yuri", targetName=f"<@{yuriID}>"))
-        elif re.search(f"^(natsuki|<@!?433834936450023424>)", target, re.IGNORECASE):
+        elif re.search(f"^(natsuki|<@!?580135631611494403>)", target, re.IGNORECASE):
             await self.bot.send(ctx, self.bot.character.confess(target="natsuki", targetName=f"<@{natsukiID}>"))
         else:
             await self.bot.send(ctx, self.bot.character.confess(target="", targetName=target))
