@@ -6,7 +6,7 @@ class yuri():
         self.color = "0x8524c8"
         self.description = "Yuri is a character in the game Doki Doki Literature Club, she is a member of the Literature Club and along with her club members she spends her time after school in the club."
         self.id = 580134475250532352
-        self.token = "NTgwMTM0NDc1MjUwNTMyMzUy.XqMmvg.14y3YKHmImXlvYoRhVut1Xf_hok"
+        self.token = ""
         self.prefix = "(Y|y)(uri)?_"
         self.help = {
             "commands": {
