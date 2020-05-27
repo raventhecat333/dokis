@@ -11,7 +11,7 @@ class Support(client.Cog):
         return id in json.loads(open("config.json",'r').read())["devs"]
 
     def is_support_server(self, id):
-        return id == 711705409462993016
+        return id == 714923554939863121
 
     @client.command()
     async def announce(self,ctx):
@@ -22,7 +22,8 @@ class Support(client.Cog):
         desc = message.partition('|')[2]
         color = self.bot.character.color
         e = discord.Embed(title = title, description=desc, color=int(color, base=16))
-        e.set_image(url=ctx.message.attachments[0].url)
+        if ctx.message.attachments[0]:
+            e.set_image(url=ctx.message.attachments[0].url)
         await next(c for c in ctx.guild.text_channels if "announcements" in c.name).send("@everyone",embed=e)
 
 def setup(bot):
