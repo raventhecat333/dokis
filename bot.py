@@ -69,3 +69,6 @@ class Character(commands.AutoShardedBot):
             await self.send(sender, self.character.everyone())
             return True
         return False
+
+    async def checkTamper(self, id, type="user"):
+        return True if self.globalCursor.execute(f"SELECT * FROM tampered WHERE bot = '{self.name}' AND type = '{type}' AND id = {id}").fetchone() is not None else False

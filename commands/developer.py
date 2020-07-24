@@ -1,4 +1,4 @@
-import discord, json, rstr, subprocess, sys
+import discord, json, subprocess, sys
 import discord.ext.commands as client
 
 

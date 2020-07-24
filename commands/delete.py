@@ -1,4 +1,4 @@
-import discord, json, re, rstr
+import discord, json, re
 import discord.ext.commands as client
 from discord.ext.commands.cooldowns import BucketType
 
@@ -13,7 +13,7 @@ class Delete(client.Cog):
     async def delete(self,ctx):
         if await self.bot.detectEveryoneMention(ctx):
             return
-        tampered = True if self.bot.globalCursor.execute(f"SELECT * FROM tampered WHERE bot = '{self.bot.name}' AND (type = 'guild' AND id = {ctx.guild.id if ctx.guild else 0}) OR (type = 'user' AND id = {ctx.author.id})").fetchone() is not None else False
+        tampered = await self.bot.checkTamper(ctx.guild.id if ctx.guild else ctx.author.id, type = "guild" if ctx.guild else "user")
         victim = ctx.message.content.partition(' ')[2]
 
         if not victim:

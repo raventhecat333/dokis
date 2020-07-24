@@ -1,4 +1,4 @@
-import discord, json, rstr, subprocess, sys
+import discord, json
 import discord.ext.commands as client
 
 
@@ -11,7 +11,7 @@ class Support(client.Cog):
         return id in json.loads(open("config.json",'r').read())["devs"]
 
     def is_support_server(self, id):
-        return id == 711705409462993016
+        return id == json.loads(open("config.json",'r').read())["support server"]["invite"]
 
     @client.command()
     async def announce(self,ctx):

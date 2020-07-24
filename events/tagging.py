@@ -8,7 +8,7 @@ class Tagging(client.Cog):
 
     @client.Cog.listener()
     async def on_message(self, message):
-        tampered = True if self.bot.globalCursor.execute(f"SELECT * FROM tampered WHERE bot = '{self.bot.name}' AND (type = 'guild' AND id = {message.guild.id if message.guild else 0}) OR (type = 'user' AND id = {message.author.id})").fetchone() is not None else False
+        tampered = await self.bot.checkTamper(message.guild.id if message.guild else message.author.id, type = "guild" if message.guild else "user")
         if (message.author.bot
         or (message.guild
             and not re.search(f"^<@!?{self.bot.user.id}>", message.content))

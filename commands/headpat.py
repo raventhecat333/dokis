@@ -1,4 +1,4 @@
-import discord, random
+import discord
 import discord.ext.commands as client
 from discord.ext.commands.cooldowns import BucketType
 
@@ -13,7 +13,7 @@ class Headpat(client.Cog):
     async def headpat(self,ctx):
         if await self.bot.detectEveryoneMention(ctx):
             return
-        tampered = 1 if self.bot.globalCursor.execute(f"SELECT * FROM tampered WHERE bot = '{self.bot.name}' AND (type = 'guild' AND id = {ctx.guild.id if ctx.guild else 0}) OR (type = 'user' AND id = {ctx.author.id})").fetchone() is not None else 0
+        tampered = await self.bot.checkTamper(ctx.guild.id if ctx.guild else ctx.author.id, type = "guild" if ctx.guild else "user")
         await self.bot.send(ctx, self.bot.character.headpat(tamper=tampered))
 
 def setup(bot):

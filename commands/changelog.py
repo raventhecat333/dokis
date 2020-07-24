@@ -1,4 +1,4 @@
-import discord, json, os, rstr, time
+import discord, json, os, time
 import discord.ext.commands as client
 from datetime import datetime
 

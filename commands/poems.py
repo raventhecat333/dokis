@@ -13,7 +13,7 @@ class Poems(client.Cog):
     async def poems(self,ctx):
         if await self.bot.detectEveryoneMention(ctx):
             return
-        tampered = True if self.bot.globalCursor.execute(f"SELECT * FROM tampered WHERE bot = '{self.bot.name}' AND (type = 'guild' AND id = {ctx.guild.id if ctx.guild else 0}) OR (type = 'user' AND id = {ctx.author.id})").fetchone() is not None else False
+        tampered = await self.bot.checkTamper(ctx.guild.id if ctx.guild else ctx.author.id, type = "guild" if ctx.guild else "user")
         color = self.bot.character.color
         poemName = ctx.message.content.partition(' ')[2]
         poem = self.bot.character.poems(tamper=tampered, name=poemName)
@@ -23,10 +23,7 @@ class Poems(client.Cog):
             await self.bot.send(ctx, "", embed= e)
             e = discord.Embed(description=poem_half_second,color=int(color, base=16))
             await self.bot.send(ctx, "", embed= e)
-        else:    
-            print("---------------------------")
-            print(poem[1])
-            print("---------------------------")
+        else:
             e = discord.Embed(title=poem[0], description=poem[1],color=int(color, base=16))
             await self.bot.send(ctx, "", embed= e)
 
