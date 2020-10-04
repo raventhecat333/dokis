@@ -50,7 +50,7 @@ class Help(client.Cog):
             e.add_field(name = "Commands", value = f"Commands are actions to interact with {self.bot.name}, either directly or through cmd, to know what commands you can use, write ``{rstr.xeger(self.bot.character.prefix)}help commands``.", inline = False)
             e.add_field(name = "Phrases", value = f"Phrases are variants of words to talk with {self.bot.name}, to talk, mention {self.bot.name} at the beginning, to know what you can say to {self.bot.name}, write ``{rstr.xeger(self.bot.character.prefix)}help phrases``.", inline = False)
             e.add_field(name = "Triggers", value = f"Trigger words are words that {self.bot.name} reacts to, it can be toggled on and off using ``{rstr.xeger(self.bot.character.prefix)}trigger``, to know what trigger words there are, write ``{rstr.xeger(self.bot.character.prefix)}help triggers``.", inline = False)
-            e.add_field(name = "Got a suggestion or bug report?", value = f"[Click here to tell the devs about it](https://support.dokis.dev/) or [join the support server](https://discord.gg/vxJP86x).", inline = False)
+            e.add_field(name = "Got a suggestion or bug report?", value = f"[Click here to tell the devs about it](https://support.dokis.dev/) or [join the support server](https://discord.gg/36duEzQ).", inline = False)
             e.set_footer(text = f"Thanks for reading!", icon_url = self.bot.user.avatar_url)
             
         await ctx.send(embed=e)

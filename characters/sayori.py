@@ -6,7 +6,7 @@ class sayori():
         self.color = "0x3eb0ff"
         self.description = "Sayori is a character in the game Doki Doki Literature Club, she is the vice president of the Literature Club founded by Monika and along with the other club members she spends her time after school in the club."
         self.id = 580133736721678341
-        self.token = "NTgwMTMzNzM2NzIxNjc4MzQx.XqMmsw.IS8cOl_y0wCRk_7ftZt82usJ5j8"
+        self.token = ""
         self.prefix = "(S|s)(ayori)?_"
         self.help = {
             "commands": {

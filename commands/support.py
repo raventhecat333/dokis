@@ -26,4 +26,3 @@ class Support(client.Cog):
         await next(c for c in ctx.guild.text_channels if "announcements" in c.name).send("@everyone",embed=e)
 
 def setup(bot):
-    bot.add_cog(Support(bot))
