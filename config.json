@@ -1,8 +1,12 @@
 {
     "test bot": {
         "id": 458359353582551070,
-        "token": "NDU4MzU5MzUzNTgyNTUxMDcw.XrUItg.Ryv63iKJhInjwdGttOsTYvM_Oys",
+        "token": "[CLASSIFIED]",
         "active": false
+    },
+    "support server": {
+        "id": 714923554939863121,
+        "invite": "https://discord.gg/36duEzQ"
     },
     "devs": [
         320286336433258506,

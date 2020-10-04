@@ -1,4 +1,4 @@
-import discord, random
+import discord
 import discord.ext.commands as client
 from discord.ext.commands.cooldowns import BucketType
 

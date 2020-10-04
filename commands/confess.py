@@ -1,4 +1,4 @@
-import discord, json, re, rstr
+import discord, re
 import discord.ext.commands as client
 from discord.ext.commands.cooldowns import BucketType
 

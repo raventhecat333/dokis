@@ -1,6 +1,5 @@
-import discord, json, os, rstr, sys, time
+import discord, json, rstr, sys
 import discord.ext.commands as client
-from datetime import datetime
 
 class Debug(client.Cog):
 
@@ -14,9 +13,9 @@ class Debug(client.Cog):
         config = json.loads(open("config.json", "r").read())
         color = self.bot.character.color
         onTrigger = self.bot.globalCursor.execute(f"SELECT * FROM offTriggers WHERE (type = 'guild' AND id = '{0 if not ctx.guild else ctx.guild.id}') OR ( type = 'user' AND id = '{ctx.author.id}')").fetchone()
-        onTamper = self.bot.globalCursor.execute(f"SELECT * FROM tampered WHERE (type = 'guild' AND id = '{0 if not ctx.guild else ctx.guild.id}') OR ( type = 'user' AND id = '{ctx.author.id}')").fetchone()
+        onTamper = await self.bot.checkTamper(ctx.guild.id if ctx.guild else ctx.author.id, type = "guild" if ctx.guild else "user")
         triggerMode = 'Yes' if onTrigger is None else 'No'
-        tamperMode = 'Yes' if onTamper is not None else 'No'
+        tamperMode = 'Yes' if onTamper else 'No'
         e = discord.Embed(title = f"Debug info for {self.bot.name}", description = f'''**Version:** {config['version']}
 **Username:** {self.bot.user.name}#{self.bot.user.discriminator}
 **ID:** {self.bot.user.id}

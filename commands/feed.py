@@ -13,7 +13,7 @@ class Feed(client.Cog):
     async def feed(self,ctx):
         if await self.bot.detectEveryoneMention(ctx):
             return
-        tampered = True if self.bot.globalCursor.execute(f"SELECT * FROM tampered WHERE bot = '{self.bot.name}' AND (type = 'guild' AND id = {ctx.guild.id if ctx.guild else 0}) OR (type = 'user' AND id = {ctx.author.id})").fetchone() is not None else False
+        tampered = await self.bot.checkTamper(ctx.guild.id if ctx.guild else ctx.author.id, type = "guild" if ctx.guild else "user")
         fed = ctx.message.content.partition(' ')[2]
         options = []
         if not fed:

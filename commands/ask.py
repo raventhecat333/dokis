@@ -1,7 +1,6 @@
-import discord, random, rstr
+import discord
 import discord.ext.commands as client
 from discord.ext.commands.cooldowns import BucketType
-
 
 class Ask(client.Cog):
 
@@ -13,7 +12,7 @@ class Ask(client.Cog):
     async def ask(self,ctx):
         if await self.bot.detectEveryoneMention(ctx):
             return
-        tampered = True if self.bot.globalCursor.execute(f"SELECT * FROM tampered WHERE bot = '{self.bot.name}' AND (type = 'guild' AND id = {ctx.guild.id if ctx.guild else 0}) OR (type = 'user' AND id = {ctx.author.id})").fetchone() is not None else False
+        tampered = await self.bot.checkTamper(ctx.guild.id if ctx.guild else ctx.author.id, type = "guild" if ctx.guild else "user")
         if not ctx.message.content.partition(' ')[2]:
             await self.bot.send(ctx, self.bot.character.ask(tamper=tampered, nothing=True))
         else:

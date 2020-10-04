@@ -10,7 +10,7 @@ class Interactions(client.Cog):
     async def on_message(self, message):
         if not message.author.bot:
             return
-        tampered = True if self.bot.globalCursor.execute(f"SELECT * FROM tampered WHERE bot = '{self.bot.name}' AND (type = 'guild' AND id = {message.guild.id if message.guild else 0}) OR (type = 'user' AND id = {message.author.id})").fetchone() is not None else False
+        tampered = await self.bot.checkTamper(message.guild.id if message.guild else message.author.id, type = "guild" if message.guild else "user")
         reply = self.bot.character.interactions(tamper=tampered, bot=self.bot, message=message)
         if isinstance(reply, discord.Embed):
             await self.bot.send(message.channel, "", reply)
