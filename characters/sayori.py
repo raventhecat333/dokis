@@ -6,7 +6,7 @@ class sayori():
         self.color = "0x3eb0ff"
         self.description = "Sayori is a character in the game Doki Doki Literature Club, she is the vice president of the Literature Club founded by Monika and along with the other club members she spends her time after school in the club."
         self.id = 580133736721678341
-        self.token = ""
+        self.token = "NTgwMTMzNzM2NzIxNjc4MzQx.XqMmsw.IS8cOl_y0wCRk_7ftZt82usJ5j8"
         self.prefix = "(S|s)(ayori)?_"
         self.help = {
             "commands": {
@@ -359,7 +359,7 @@ class sayori():
                 if "finnnnnnne, sayori." in content.lower():
                     return f"YAY! *keeps hugging <@{mcID}>*"
                 if f"<@{bot.user.id}>" in content.lower():
-                    return f"Yes, <@{mcID}>?*"
+                    return f"Yes, <@{mcID}>?"
                 if "i-i love you, sayori" in content.lower():
                     return f"I-I do too! *hugs MC*"
         else:
@@ -729,3 +729,10 @@ class sayori():
                     "Cease your bulli, you meanie!",
                     "Boo! You meanie..."
                 ])
+
+    def welcome(self, tamper=False, member=False):
+        if not tamper and member:
+            return rstr.xeger(r"Everyone! (The n|We have a n|N)ew member,? " + member + r", (is here|just joined)~?!( Ehehehe~)?e~")
+        elif member:
+            return f"{member} Welcome... I guess, what's the point of even joining when this club is failing..."
+        return
