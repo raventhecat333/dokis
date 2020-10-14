@@ -6,7 +6,7 @@ class monika():
         self.color = "0x12ba01"
         self.description = "Monika is a character in the game Doki Doki Literature Club, she is the president of the Literature Club founded by her and along with her club members she spends her time after school in the club."
         self.id = 707337539677192272
-        self.token = ""
+        self.token = "NzA3MzM3NTM5Njc3MTkyMjcy.XrHVuA._ktH6TojEZJtFIr10QMyc_fmjR0"
         self.prefix = "(M|m)(onika)?_"
         self.deletes = []
         self.loop = asyncio.get_event_loop()
@@ -341,8 +341,6 @@ class monika():
                 if "hm. i don't really like this yuri too much. give me a second." in content.lower():
                     return "y_tamper"
                 if "ugh, fine." in content.lower():
-                    user = next( (c for c in self.deletes if c[0] == message.channel.id), None)
-                    self.deletes.remove(user)
                     return discord.Embed(title=f"os.restore(\"./characters/{user[1]}.chr\")",color=int(self.color, base=16))
             elif message.author.id == sayoriID:
                 if re.search(r"\*hugs <@!?{0}>\*".format(bot.user.id), content, re.IGNORECASE):
@@ -700,9 +698,9 @@ class monika():
                 ])
             elif re.search("(^|[^A-Za-z])poems?([^A-Za-z]|$)", content, re.IGNORECASE):
                 return random.choice([
-                    "Ahaha, just me...and you, too!",
-                    "Ahaha, did someone call me? :heart:",
-                    "That's sweet of you, but it's not just me anymore!"
+                    "Hey, do you write poems too?",
+                    "Do you like to read poems?",
+                    "If you have any poems you'd like to share, I'd love to see them~"
                 ])
             elif re.search("(^|[^A-Za-z])(literature|books?)([^A-Za-z]|$)", content, re.IGNORECASE):
                 return random.choice([
@@ -716,3 +714,10 @@ class monika():
                     "Ahaha, did someone call me? :heart:",
                     "That's sweet of you, but it's not just me anymore!"
                 ])
+
+    def welcome(self, tamper=False, member=False):
+        if not tamper and member:
+            return rstr.xeger(r"Ah, " + member + r"! What a nice surprise! (Welcome to|Enjoy your stay in|Have a great time in) the club[!\.~]")
+        elif member:
+            return f"Welcome to the literature club {member} darling, now it's just you and me... forever."
+        return
