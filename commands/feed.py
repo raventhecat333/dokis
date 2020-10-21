@@ -62,7 +62,7 @@ class Feed(client.Cog):
             options.append("falafel")
         if re.search("^(🧊)$", fed):
             options.append("ice")
-        if re.search("^(🍣|🍱|🍛|🍙|🍚|🍘|🍜|🍢|🍡|🍥|🍲)$", fed):
+        if re.search("^(🍣|🍱|🍛|🍙|🍚|🍘|🍜|🍢|🍡|🧋|🍥|🍲)$", fed):
             options.append("japanese")
         if re.search("^(🔪)$", fed):
             options.append("knife")
