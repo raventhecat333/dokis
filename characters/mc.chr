@@ -1,0 +1,21 @@
+{
+    "about": {
+        "name": "MC",
+        "occupation": "Club Member",
+        "color": "0xdb7915",
+        "id": "458359353582551070",
+        "token": "NDU4MzU5MzUzNTgyNTUxMDcw.WygOaQ.jqkuNelDYgy39sMJaxxxWVSmhNQ",
+        "prefix": "(M(C|c)|mc)_"
+    },
+    "triggers": {
+        "rope": "(^|[^A-Za-z])ropes?([^A-Za-z]|$)",
+        "poetry": "(^|[^A-Za-z])poetry([^A-Za-z]|$)"
+    },
+    "playing": [
+        "Type 'mc_help' for help!",
+        "Doki Doki Literature Club",
+        "with a shoe lace",
+        "aloof",
+        "in a dark void"
+    ]
+}

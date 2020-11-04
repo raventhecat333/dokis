@@ -1,0 +1,31 @@
+{
+    "about": {
+        "name": "Monika",
+        "occupation": "Club President",
+        "color": "0x12ba01",
+        "id": "458359353582551070",
+        "token": "NDU4MzU5MzUzNTgyNTUxMDcw.WygOaQ.jqkuNelDYgy39sMJaxxxWVSmhNQ",
+        "prefix": "(M|m)(onika)?_"
+    },
+    "triggers": {
+        "piano": "(^|[^A-Za-z])pianos?([^A-Za-z]|$)",
+        "cacophony": "(^|[^A-Za-z])cacophony([^A-Za-z]|$)",
+        "code": "(^|[^A-Za-z])cod(e(s|d|rs?)?|ing)([^A-Za-z]|$)",
+        "python": "(^|[^A-Za-z])python([^A-Za-z]|$)",
+        "reality": "(^|[^A-Za-z])realit(y|ies)([^A-Za-z]|$)",
+        "poems": "(^|[^A-Za-z])poems?([^A-Za-z]|$)",
+        "literature": "(^|[^A-Za-z])(literature|books?)([^A-Za-z]|$)",
+        "just monika": "(^|[^A-Za-z])just *monika([^A-Za-z]|$)"
+    },
+    "playing": [
+        "Type 'm_help' for help!",
+        "Doki Doki Literature Club",
+        "the piano!",
+        "Super Smash Bros Ultimate\\.",
+        "If My Heart Had Wings",
+        "with you!",
+        "Just Monika\\.",
+        "from your computer!",
+        "your reality!"
+    ]
+}
