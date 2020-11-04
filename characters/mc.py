@@ -6,7 +6,7 @@ class mc():
         self.color = "0xdb7915"
         self.description = "MC is the main character in the game Doki Doki Literature Club, he is the newest member of the Literature Club and along with his club members he spends his time after school in the club and is the neighbor of Sayori"
         self.id = 606721454297448448
-        self.token = ""
+        self.token = "NjA2NzIxNDU0Mjk3NDQ4NDQ4.XqMmVQ.5n--3UKFFynYT1s7vnVd87L0_Lg"
         self.prefix = "(M(C|c)|mc)_"
         self.rename = True
         self.help = {
@@ -1061,3 +1061,14 @@ class mc():
                 return "NO!"
             elif re.search("(^|[^A-Za-z])poetry([^A-Za-z]|$)", content, re.IGNORECASE):
                 return "Oh... you make poems too, cool."
+        
+    def welcome(self, tamper=False, member=False):
+        if not tamper and member:
+            return random.choice([
+                rstr.xeger(r"Welcome to the club( newest member)? " + member + r"\."),
+                f"Hey, {member}. Welcome to the club."
+            ])
+            
+        elif member:
+            return f"Ayyyo welcome to the club {member} little buddy!"
+        return

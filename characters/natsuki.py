@@ -6,7 +6,7 @@ class natsuki():
         self.color = "0xff42e2"
         self.description = "Natsuki is a character in the game Doki Doki Literature Club, she is a member of the Literature Club and along with her club members she spends her time after school in the club."
         self.id = 580135631611494403
-        self.token = ""
+        self.token = "NTgwMTM1NjMxNjExNDk0NDAz.XqMmkQ.pB-HDavBkbWEcn8sB_413TArv7c"
         self.prefix = "(N|n)(atsuki)?_"
         self.help = {
             "commands": {
@@ -685,3 +685,10 @@ class natsuki():
                     "...!",
                     "***MANGA IS LITERATURE!***"
                 ])
+
+    def welcome(self, tamper=False, member=False):
+        if not tamper and member:
+            return rstr.xeger(r"Seriously\?(You brought )?" + member + r"\? (Way to kill the atmosphere|I can't believe I thought this was a gonna be a small club|I didn't sign up for this)\.")
+        elif member:
+            return f"{member} Dammit why did the likes of YOU join the club?"
+        return

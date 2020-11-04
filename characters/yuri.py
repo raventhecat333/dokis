@@ -6,7 +6,7 @@ class yuri():
         self.color = "0x8524c8"
         self.description = "Yuri is a character in the game Doki Doki Literature Club, she is a member of the Literature Club and along with her club members she spends her time after school in the club."
         self.id = 580134475250532352
-        self.token = ""
+        self.token = "NTgwMTM0NDc1MjUwNTMyMzUy.XqMmvg.14y3YKHmImXlvYoRhVut1Xf_hok"
         self.prefix = "(Y|y)(uri)?_"
         self.help = {
             "commands": {
@@ -581,3 +581,10 @@ class yuri():
                     "Hahaha. Are you expecting me to do something naughty with a pen? Because I just might if you ask nicely...",
                     "Oh... Oh...! OH!!! YES, YES, YESYESYES!!!"
                 ])
+
+    def welcome(self, tamper=False, member=False):
+        if not tamper and member:
+            return rstr.xeger(r"Welcome to the Literature Club " + member + r"\. (It\'s a p|P)leasure (meeting you|to have you|to be with us)\.")
+        elif member:
+            return f"Welcome {member} my one true love! Please ignore any other whore who you encounter, they don't matter."
+        return
