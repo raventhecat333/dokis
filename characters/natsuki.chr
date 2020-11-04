@@ -18,5 +18,27 @@
         "Don't Starve",
         "Cooking Mama",
         "some anime through your computer!"
-    ]
+    ],
+    "messages": {
+        "Hug-About-From-Monika": {
+            "dialogues": [
+                "And why are you asking-"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "Monika",
+                "id": "Hug-To-Natsuki"
+            }
+        },
+        "Hug-From-Monika": {
+            "dialogues": [
+                "W-w-wha LET GO MONIKA!!"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        }
+    }
 }
