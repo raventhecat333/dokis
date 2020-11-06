@@ -1,0 +1,24 @@
+{
+    "about": {
+        "name": "Yuri",
+        "occupation": "Club Member",
+        "color": "0x8524c8",
+        "id": "458359353582551070",
+        "prefix": "(Y|y)(uri)?_"
+    },
+    "triggers": {
+        "cut": "(^|[^A-Za-z])(cut(s|ting|ted)?|stab(s|bing|bed)?)([^A-Za-z]|$)",
+        "knife": "(^|[^A-Za-z])kni(fe|(v|f)es)([^A-Za-z]|$)",
+        "pen": "(^|[^A-Za-z])pens?([^A-Za-z]|$)"
+    },
+    "playing": [
+        "Type 'y_help' for help!",
+        "Doki Doki Literature Club",
+        "with knifes!",
+        "Everlasting Summer",
+        "Yandere Simulator",
+        "with your pen!"
+    ],
+    "messages": {
+    }
+}
