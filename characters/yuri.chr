@@ -1,0 +1,48 @@
+{
+    "about": {
+        "name": "Yuri",
+        "occupation": "Club Member",
+        "color": "0x8524c8",
+        "id": "458359353582551070",
+        "prefix": "(Y|y)(uri)?_"
+    },
+    "triggers": {
+        "cut": "(^|[^A-Za-z])(cut(s|ting|ted)?|stab(s|bing|bed)?)([^A-Za-z]|$)",
+        "knife": "(^|[^A-Za-z])kni(fe|(v|f)es)([^A-Za-z]|$)",
+        "pen": "(^|[^A-Za-z])pens?([^A-Za-z]|$)"
+    },
+    "playing": [
+        "Type 'y_help' for help!",
+        "Doki Doki Literature Club",
+        "with knifes!",
+        "Everlasting Summer",
+        "Yandere Simulator",
+        "with your pen!"
+    ],
+    "messages": {
+        "everyone": {
+            "dialogues": [
+                "Hey! Do you \\*\\*WANT\\*\\* everyone to freak out in the chat\\?! Because I won't let you do that!"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Hug-Monika-Yuri-R1": {
+            "dialogues": [
+                "Aha\\.\\.\\.ha\\.\\.\\. T-thanks Monika\\.\\.\\.\\."
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Hug-MC-Yuri-R1": {
+            "dialogues": [
+                "A-ah! Oh\\.\\.\\. MC, that was a bit sudden\\."
+            ],
+            "tamper-dialogues": [
+
+            ]
+        }
+    }
+}

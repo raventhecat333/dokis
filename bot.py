@@ -1,74 +1,114 @@
-import asyncio, chrs, discord, importlib, json, os, re, rstr, sqlite3, sre_yield, traceback
+import asyncio, discord, importlib, json, os, random, re, rstr, sqlite3, sre_yield, traceback
 from discord.ext import commands
+from loop import loop
 
 #character class
 class Character(commands.AutoShardedBot):
 
-    def __init__(self, chr):
-        self.name = chr["name"]
-        self.character = chr["character"]
-        self.globalConnection = sqlite3.connect('global.db')
-        self.globalCursor = self.globalConnection.cursor()
-        self.chrs = chrs.getCharacters()
-        config = json.loads(open("config.json", "r").read())
-        super().__init__(command_prefix=sre_yield.AllStrings(self.character.prefix), status=discord.Status.idle, activity=discord.Game(name="Starting Up..."), owner_ids=config["devs"])
+    def __init__(self, chrfile):
+        self.Config = json.loads(open("config.json", "r").read())
+        self.ChrFile = chrfile
+        super().__init__(command_prefix=sre_yield.AllStrings(self.ChrFile["about"]["prefix"]), status=discord.Status.idle, activity=discord.Game(name="Starting Up..."), owner_ids=self.Config["perms"]["root"])
+
         self.load_extension("jishaku")
+
         for file in os.listdir("commands"):
+
             if file.endswith(".py"):
+
                 name = file[:-3]
+
                 try:
+
                     module = importlib.import_module(f"commands.{name}")
-                    if hasattr(module, "check") and getattr(module, "check")(self.character):
-                        self.load_extension(f"commands.{name}")
-                        print(f"[{self.name}] Loaded command: {name}")
-                    elif not hasattr(module, "check"):
-                        self.load_extension(f"commands.{name}")
-                        print(f"[{self.name}] Loaded command: {name}")
+
+                    if hasattr(module, "check") and not getattr(module, "check")(self.character):
+
+                        continue
+
+                    self.load_extension(f"commands.{name}")
+                    print(f'[{self.ChrFile["about"]["name"]}] Loaded command: {name}')
+
                 except (discord.ClientException, ModuleNotFoundError):
-                    print(f'[{self.name}] Failed to load command: {name}')
+
+                    print(f'[{self.ChrFile["about"]["name"]}] Failed to load command: {name}')
                     print(traceback.format_exc())
+
         for file in os.listdir(f"events"):
+
             if file.endswith(".py"):
+
                 name = file[:-3]
+
                 try:
+
                     self.load_extension(f"events.{name}")
-                    print(f"[{self.name}] Loaded event: {name}")
+                    print(f'[{self.ChrFile["about"]["name"]}] Loaded event: {name}')
+
                 except (discord.ClientException, ModuleNotFoundError):
-                    print(f'[{self.name}] Failed to load event: {name}')
+
+                    print(f'[{self.ChrFile["about"]["name"]}] Failed to load event: {name}')
                     print(traceback.format_exc())
 
-    async def on_ready(self):
-        print(f'Logged on as {self.user} with {self.name}.chr!')
-        self.loop.create_task(self.status_task())
+    def GetCharacter(self, Name):
 
-    async def on_disconnect(self):
-        print(f'{self.user} has disconnected from {self.name}.chr!')
+        return next(character for character in loop.characters if character.ChrFile["about"]["name"] == Name)
 
-    async def on_resumed(self):
-        print(f'{self.user} has resumed back to {self.name}.chr!')
+    async def Send(self, obj, textID, ping=None, embed=None):
 
-    async def status_task(self):
-        while not self.is_closed():
-            games = self.character.playing()
-            for game in games:
-                await self.change_presence(activity=discord.Game(name=rstr.xeger(game)))
-                await asyncio.sleep(900)
+        if not textID or self.ChrFile["messages"][textID]:
+            if obj.guild and obj.channel.permissions_for(self.get_guild(obj.guild.id).me).read_messages:
+                if obj.channel.permissions_for(self.get_guild(obj.guild.id).me).send_messages:
 
-    async def send(self, sender, message, embed=None):
-        try:
-            async with sender.message.channel.typing():
-                await asyncio.sleep(0.4)
-                await sender.send(message, embed=embed)
-        except:
-            async with sender.typing():
-                await asyncio.sleep(0.4)
-                await sender.send(message, embed=embed)
+                    # CHECK HERE FOR TAMPERATION LEVEL HERE AND DETERMINE TAMPER
 
-    async def detectEveryoneMention(self, sender):
+                    async with self.get_channel(obj.channel.id).typing():
+                        
+                        outputText = rstr.xeger(random.choice(self.ChrFile["messages"][textID]["dialogues"]))
+
+                        # TESTING FOR THE PLACEHOLDERS
+                        #outputText +=  + "ping - {ping} / author - {author} / author_username - {author_username} / author_nickname - {author_nickname} / author_id - {author_id} / mention - {mention} / mention_username - {mention_username} / mention_nickname - {mention_nickname} / mention_id - {mention_id} / content - {content} / content_clean - {content_clean}"
+                        
+                        outputText = outputText.replace("{ping}", f"<@!{ping}>")
+                        outputText = outputText.replace("{author}", f"{obj.message.author.mention}")
+                        outputText = outputText.replace("{author_username}", f"{obj.message.author.name}")
+                        outputText = outputText.replace("{author_nickname}", f"{obj.message.author.display_name}")
+                        outputText = outputText.replace("{author_id}", f"{obj.message.author.id}")
+
+                        mentions = ""
+                        mentionsUsernames = ""
+                        mentionsNicknames = ""
+                        mentionsIds = ""      
+
+                        for member in obj.message.mentions:
+                            mentions += f"{member.mention} "
+                            mentionsUsernames += f"{member.name} "
+                            mentionsNicknames += f"{member.display_name} "
+                            mentionsIds += f"{member.id} "                   
+                        
+                        outputText = outputText.replace("{mention}", f"{mentions}")
+                        outputText = outputText.replace("{mention_username}", f"{mentionsUsernames}")
+                        outputText = outputText.replace("{mention_nickname}", f"{mentionsNicknames}")
+                        outputText = outputText.replace("{mention_id}", f"{mentionsIds}")
+                        outputText = outputText.replace("{content}", f"{obj.message.content.partition(' ')[2]}")
+                        outputText = outputText.replace("{content_clean}", f"{obj.message.clean_content.partition(' ')[2]}")
+
+                        await asyncio.sleep(0.4)
+                        await self.get_channel(obj.channel.id).send(None if not textID else outputText, embed=embed)
+
+                        if "send" in self.ChrFile["messages"][textID]:
+
+                            await self.GetCharacter(self.ChrFile["messages"][textID]["send"]["to"]).Send(obj, self.ChrFile["messages"][textID]["send"]["id"])
+
+
+                elif obj.guild:
+
+                    if not obj.author.bot:
+
+                        await self.get_user(obj.author.id).send(f"I'm so sorry! But it appears {obj.guild.name} lacks the permissions to let me send messages at {obj.channel.name}!", embed=embed)
+
+    async def DetectEveryoneMention(self, sender):
         if re.search("@(everyone|here)",sender.message.content):
-            await self.send(sender, self.character.everyone())
+            await self.Send(sender, "everyone")
             return True
         return False
-
-    async def checkTamper(self, id, type="user"):
-        return True if self.globalCursor.execute(f"SELECT * FROM tampered WHERE bot = '{self.name}' AND type = '{type}' AND id = {id}").fetchone() is not None else False

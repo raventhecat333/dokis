@@ -1,0 +1,50 @@
+{
+    "about": {
+        "name": "Sayori",
+        "occupation": "Vice Club President",
+        "color": "0x3eb0ff",
+        "id": "458359353582551070",
+        "prefix": "(S|s)(ayori)?_"
+    },
+    "triggers": {
+        "cinnamon bun": "(^|[^A-Za-z])cinnamon *bun([^A-Za-z]|$)",
+        "breakfast": "(^|[^A-Za-z])breakfasts?([^A-Za-z]|$)",
+        "hang": "(^|[^A-Za-z])h(a|u)ng(s|ing|ed)?([^A-Za-z]|$)",
+        "kill self": "(^|[^A-Za-z])(h(a|u)ng(s|ing|ed)?|kill(s|ing|ed)?) *(my)?self([^A-Za-z]|$)",
+        "kill": "(^|[^A-Za-z])kill(s|ing|ed)?([^A-Za-z]|$)"
+    },
+    "playing": [
+        "Type 's_help' for help!",
+        "Doki Doki Literature Club",
+        "with the crayons!",
+        "Katawa Shoujo",
+        "with Mr\\. Cow!",
+        "with a noose!"
+    ],
+    "messages": {
+        "everyone": {
+            "dialogues": [
+                "Nice try, you meanie\\."
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Hug-Monika-Sayori-R1": {
+            "dialogues": [
+                "WHAA\\? AWW! Thanks Monika you're the best! \\*hugs Monika\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Hug-MC-Sayori-R1": {
+            "dialogues": [
+                "MC! I didn't expect you to hug me, but thanks for making my day hehe!~ \\*hugs back tightly\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        }
+    }
+}

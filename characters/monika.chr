@@ -1,0 +1,158 @@
+{
+    "about": {
+        "name": "Monika",
+        "occupation": "Club President",
+        "color": "0x12ba01",
+        "id": "458359353582551070",
+        "prefix": "(M|m)(onika)?_"
+    },
+    "triggers": {
+        "piano": "(^|[^A-Za-z])pianos?([^A-Za-z]|$)",
+        "cacophony": "(^|[^A-Za-z])cacophony([^A-Za-z]|$)",
+        "code": "(^|[^A-Za-z])cod(e(s|d|rs?)?|ing)([^A-Za-z]|$)",
+        "python": "(^|[^A-Za-z])python([^A-Za-z]|$)",
+        "reality": "(^|[^A-Za-z])realit(y|ies)([^A-Za-z]|$)",
+        "poems": "(^|[^A-Za-z])poems?([^A-Za-z]|$)",
+        "literature": "(^|[^A-Za-z])(literature|books?)([^A-Za-z]|$)",
+        "just monika": "(^|[^A-Za-z])just *monika([^A-Za-z]|$)"
+    },
+    "playing": [
+        "Type 'm_help' for help!",
+        "Doki Doki Literature Club",
+        "the piano!",
+        "Super Smash Bros Ultimate\\.",
+        "If My Heart Had Wings",
+        "with you!",
+        "Just Monika\\.",
+        "from your computer!",
+        "your reality!"
+    ],
+    "messages": {
+        "everyone": {
+            "dialogues": [
+                "There's no way I'm letting you ping everyone\\."
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Hug-Player-Monika" : {
+            "dialogues": [
+                "Awww! Thank you! \\*hugs {author}\\*",
+                "Thank you, {author}! That was so sweet of you!"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Hug-Monika-Player" : {
+            "dialogues": [
+                "As Club President, this seems unprofessional\\. As your friend, I'll happily help! \\*hugs {author}\\*",
+                "Of course I'll hug you! You don't have to even ask twice! \\*hugs {author}\\*",
+                "Have you had a rough day\\? Here, I'll make it a little better! \\*hugs {author}\\*",
+                "As club president, I feel it's the right thing to do! \\*hugs {author}\\*",
+                "Everyone loves a hug every once in a while, yeah\\? \\*hugs {author}\\*",
+                "Feeling down\\? Here! I hope this makes you feel better! \\*hugs {author}\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Hug-Monika-Target" : {
+            "dialogues": [
+                "As Club President, this seems unprofessional\\. As your friend, I'll happily help! \\*hugs {content}\\*",
+                "Of course I'll hug you! You don't have to even ask twice! \\*hugs {content}\\*",
+                "Have you had a rough day\\? Here, I'll make it a little better! \\*hugs {content}\\*",
+                "As club president, I feel it's the right thing to do! \\*hugs {content}\\*",
+                "Everyone loves a hug every once in a while, yeah\\? \\*hugs {content}\\*",
+                "Feeling down\\? Here! I hope this makes you feel better! \\*hugs {content}\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Hug-Monika-Monika" : {
+            "dialogues": [
+                "Ehehe! This is quite odd, but if it'll make you happy, then who am I to deny you that\\? \\*hugs myself\\*",
+                "\\*hugs myself\\* Ahaha! This isn't just some trick to make me look silly, is it\\?",
+                "Well, as Club President, it's my job to set a good example! \\*hugs myself\\*",
+                "Remember, you shouldn't forget about loving yourself! \\*hugs myself\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Hug-Monika-Natsuki": {
+            "dialogues": [
+                "Hey Natsuki! I heard that someone needs a hug!"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "Natsuki",
+                "id": "Hug-Monika-Natsuki-R1"
+            }
+        },
+        "Hug-Monika-Natsuki-R2": {
+            "dialogues": [
+                "\\*Hugs Natsuki\\* It's you, silly!"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "Natsuki",
+                "id": "Hug-Monika-Natsuki-R3"
+            }
+        },
+        "Hug-Monika-Sayori": {
+            "dialogues": [
+                "Sayori come here! \\*hugs Sayori\\*"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "Sayori",
+                "id": "Hug-Monika-Sayori-R1"
+            }
+        },
+        "Hug-Monika-Yuri": {
+            "dialogues": [
+                "Don't be shy now Yuri! \\*hugs Yuri\\*"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "Yuri",
+                "id": "Hug-Monika-Yuri-R1"
+            }
+        },
+        "Hug-Monika-MC": {
+            "dialogues": [
+                "I'd rather hug you instead, {author_nickname}\\. But I guess MC does need a bit of love after all! \\*hugs MC\\*"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "MC",
+                "id": "Hug-Monika-MC-R1"
+            }
+        },
+        "Hug-MC-Monika-R1": {
+            "dialogues": [
+                "Oh, MC, what a pleasant surprise, thank you!"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "MC",
+                "id": "Hug-MC-Monika-R2"
+            }
+        }
+    }
+}

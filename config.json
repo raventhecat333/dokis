@@ -1,21 +1,17 @@
 {
-    "test bot": {
-        "id": 458359353582551070,
-        "token": "[CLASSIFIED]",
-        "active": false
+    "colors": {
+        "error": "0xc91313",
+        "success": "0xff42e2",
+        "warn": "0xff42e2"
+    },
+    "perms": {
+        "root": [628616569836142605, 320286336433258506],
+        "dev": [412349278456119316],
+        "writer": [292106622539399169, 473371573064040448, 180340755993329664, 555905262611988482]
     },
     "support server": {
         "id": 714923554939863121,
-        "invite": "https://discord.gg/36duEzQ"
+        "invite": "https://discord.gg/a2ePdNf"
     },
-    "devs": [
-        320286336433258506,
-        628616569836142605
-    ],
-    "version": "4.0.1",
-    "colors": {
-        "error": "0xc91313",
-        "warn": "0xff42e2",
-        "success": "0xff42e2"
-    }
+    "version": "5.0"
 }

@@ -1,0 +1,147 @@
+{
+    "about": {
+        "name": "MC",
+        "occupation": "Club Member",
+        "color": "0xdb7915",
+        "id": "458359353582551070",
+        "prefix": "(M(C|c)|mc)_"
+    },
+    "triggers": {
+        "rope": "(^|[^A-Za-z])ropes?([^A-Za-z]|$)",
+        "poetry": "(^|[^A-Za-z])poetry([^A-Za-z]|$)"
+    },
+    "playing": [
+        "Type 'mc_help' for help!",
+        "Doki Doki Literature Club",
+        "with a shoe lace",
+        "aloof",
+        "in a dark void"
+    ],
+    "messages": {
+        "everyone": {
+            "dialogues": [
+                "Did you try to make me ping everyone\\? Well, uhh\\.\\.\\. Nice try, I suppose\\."
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Hug-Player-MC": {
+            "dialogues": [
+                "What are you doing\\?",
+                "This is just embarrassing\\.\\.\\.",
+                "If it makes you happy, then fine, I'll hug you back\\. \\*hugs {author}\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Hug-MC-Player": {
+            "dialogues": [
+                "Uh, ok\\? \\*hugs {author}\\*",
+                "I don't do hugs\\.",
+                "I mean, if you want\\. \\*hugs {author}\\*",
+                "If it makes you happy, then fine\\. \\*hugs {author}\\*",
+                "No thanks, I'm fine\\.",
+                "\\*runs away\\*",
+                "\\*hugs {author}\\* This never happened\\.\\.\\.",
+                "I don't like hugging people, especially strangers. It's weird\\.",
+                "\\*walks away\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Hug-MC-Target": {
+            "dialogues": [
+                "Uh, ok\\? \\*hugs {content}\\*",
+                "I don't do hugs\\.",
+                "I mean, if you want. \\*hugs {content}\\*",
+                "If it makes you happy, then fine\\. \\*hugs {content}\\*",
+                "No thanks, I'm fine\\.",
+                "\\*runs away\\*",
+                "\\*hugs {content}\\* This never happened\\.\\.\\.",
+                "I don't like hugging people, especially strangers. It's weird\\.",
+                "\\*walks away\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Hug-MC-MC": {
+            "dialogues": [
+                "\\.\\.\\.fine\\. \\*hugs myself\\*",
+                "Well, if you say so\\.\\.\\. \\*hugs myself\\*",
+                "\\*hugs myself\\* Huh\\. Now I see why you guys like my hugs so much\\.",
+                "I'm not hugging myself\\? I don't want to look like a weirdo\\."
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Hug-MC-Monika": {
+            "dialogues": [
+                "Ok I hope she doesn't mind this\\.\\.\\. \\*hugs Monika\\*"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "Monika",
+                "id": "Hug-MC-Monika-R1"
+            }
+        },
+        "Hug-MC-Monika-R2": {
+            "dialogues": [
+                "You're welcome!"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },   
+        "Hug-MC-Natsuki": {
+            "dialogues": [
+                "Oh, Natsuki!! \\*tackle hugs Natsuki\\*"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "Natsuki",
+                "id": "Hug-MC-Natsuki-R1"
+            }
+        },
+        "Hug-MC-Sayori": {
+            "dialogues": [
+                "You want me to hug her\\? Isn't that more like something a boyfriend would do\\? Well, ok\\.\\.\\. \\*hugs Sayori\\*"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "Sayori",
+                "id": "Hug-MC-Sayori-R1"
+            }
+        },
+        "Hug-MC-Yuri": {
+            "dialogues": [
+                "I hope I don't scare her\\.\\.\\. \\*hugs Yuri\\*"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "Yuri",
+                "id": "Hug-MC-Yuri-R1"
+            }
+        },
+        "Hug-Monika-MC-R1": {
+            "dialogues": [
+                "Wah- Oh, thanks, Monika\\."
+            ],
+            "tamper-dialogues": [
+
+            ]
+        }   
+    }
+}
