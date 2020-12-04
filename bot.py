@@ -48,7 +48,7 @@ class Character(commands.AutoShardedBot):
         print(f'{self.user} has resumed back to {self.name}.chr!')
 
     async def status_task(self):
-        while not self.is_closed():
+        if not self.is_closed():
             games = self.character.playing()
             for game in games:
                 await self.change_presence(activity=discord.Game(name=rstr.xeger(game)))
