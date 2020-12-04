@@ -48,7 +48,7 @@ class Character(commands.AutoShardedBot):
         print(f'{self.user} has resumed back to {self.name}.chr!')
 
     async def status_task(self):
-        while not self.is_closed():
+        if not self.is_closed():
             games = self.character.playing()
             for game in games:
                 await self.change_presence(activity=discord.Game(name=rstr.xeger(game)))
@@ -56,13 +56,19 @@ class Character(commands.AutoShardedBot):
 
     async def send(self, sender, message, embed=None):
         try:
-            async with sender.message.channel.typing():
-                await asyncio.sleep(0.4)
-                await sender.send(message, embed=embed)
+            if sender.guild and sender.channel.permissions_for(sender.guild.me).send_messages:
+                async with sender.message.channel.typing():
+                    await asyncio.sleep(0.4)
+                    await sender.send(message, embed=embed)
+            else:
+                await sender.send("I'm so sorry! But it appears your server lacks the permissions to send messages!", embed=embed)
         except:
-            async with sender.typing():
-                await asyncio.sleep(0.4)
-                await sender.send(message, embed=embed)
+            if sender.guild and sender.permissions_for(sender.guild.me).send_messages:
+                async with sender.typing():
+                    await asyncio.sleep(0.4)
+                    await sender.send(message, embed=embed)
+            else:
+                await sender.send("I'm so sorry! But it appears your server lacks the permissions to send messages!", embed=embed)
 
     async def detectEveryoneMention(self, sender):
         if re.search("@(everyone|here)",sender.message.content):
