@@ -3,7 +3,7 @@
         "name": "MC",
         "occupation": "Club Member",
         "color": "0xdb7915",
-        "id": "458359353582551070",
+        "id": "606721454297448448",
         "prefix": "(M(C|c)|mc)_"
     },
     "triggers": {
@@ -142,6 +142,58 @@
             "tamper-dialogues": [
 
             ]
-        }   
+        },
+        "Tickle-Monika-MC-R1": {
+            "dialogues": [
+                "Monika, I'm not ticklish\\."
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "Monika",
+                "id": "Tickle-Monika-MC-R2"
+            }
+        },
+        "Tickle-Monika-MC-R3": {
+            "dialogues": [
+                "Monika, don't\\.\\.\\."
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "Monika",
+                "id": "Tickle-Monika-MC-R4"
+            }
+        },
+        "Boop-Monika-MC-R1": {
+            "dialogues": [
+                "Huh\\? Monika\\? What was that for\\?"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "Monika",
+                "id": "Boop-Monika-MC-R2"
+            }
+        },
+        "Boop-Monika-MC-R3": {
+            "dialogues": [
+                "U-uh\\.\\.\\. okay\\."
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Headpat-Monika-MC-R1": {
+            "dialogues": [
+                "Wah-- Oh, that felt kind of nice actually\\.\\.\\. :flushed:"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        }
     }
 }

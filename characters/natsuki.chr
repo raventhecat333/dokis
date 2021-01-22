@@ -3,7 +3,7 @@
         "name": "Natsuki",
         "occupation": "Club Member",
         "color": "0xff42e2",
-        "id": "458359353582551070",
+        "id": "580135631611494403",
         "prefix": "(N|n)(atsuki)?_"
     },
     "triggers": {
@@ -29,7 +29,7 @@
         },
         "Hug-Player-Natsuki": {
             "dialogues": [
-                "Fine\\.\\.\\. I'll hug you back\\.\\.\\. \\*hugs {author}\\*,
+                "Fine\\.\\.\\. I'll hug you back\\.\\.\\. \\*hugs {author}\\*",
                 "Ah- jeez, let me go you idiot!"                
             ],
             "tamper-dialogues": [

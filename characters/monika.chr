@@ -3,7 +3,7 @@
         "name": "Monika",
         "occupation": "Club President",
         "color": "0x12ba01",
-        "id": "458359353582551070",
+        "id": "707337539677192272",
         "prefix": "(M|m)(onika)?_"
     },
     "triggers": {
@@ -152,6 +152,185 @@
             "send": {
                 "to": "MC",
                 "id": "Hug-MC-Monika-R2"
+            }
+        },
+        "Tickle-Player-Monika" : {
+            "dialogues": [
+                "\\*\\*A-ahahaha!\\*\\* I'll get you back! \\*\\*Ahahahaha!\\*\\*",
+                "\\*\\*Ahahahaha\\.\\.\\.\\*\\* No! Stop it! \\*\\*Ahahaha\\.\\.\\.\\*\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Tickle-Monika-Player" : {
+            "dialogues": [
+                "Hey! I'm the president, and I won't let this slide! \\*tickles {author}\\*",
+                "Oh!\\? Alright! I'll do anything for my club members!~ \\*tickles {author}\\*",
+                "Ahaha!~ You asked for it, silly!~ \\*tickles {author}\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Tickle-Monika-Target" : {
+            "dialogues": [
+                "Hey! I'm the president, and I won't let this slide! \\*tickles {content}\\*",
+                "Oh!\\? Alright! I'll do anything for my club members!~ \\*tickles {content}\\*",
+                "Ahaha!~ You asked for it, silly!~ \\*tickles {content}\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Tickle-Monika-Monika" : {
+            "dialogues": [
+                "I can't tickle myself, silly!"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Tickle-Monika-MC": {
+            "dialogues": [
+                "Ok, {author_nickname}! \\*tickles MC\\*"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "MC",
+                "id": "Tickle-Monika-MC-R1"
+            }
+        },
+        "Tickle-Monika-MC-R2": {
+            "dialogues": [
+                "Oh, is that so\\? That can be changed\\.\\.\\. \\*opens console\\*"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "MC",
+                "id": "Tickle-Monika-MC-R3"
+            }
+        },
+        "Tickle-Monika-MC-R4": {
+            "dialogues": [
+                "\\*sigh\\* Fine\\.\\.\\. \\*closes console\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Boop-Player-Monika" : {
+            "dialogues": [
+                "Well, that's certainly pretty sweet!",
+                "Thank you, {author}\\. What a pleasent surprise\\."
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Boop-Monika-Player" : {
+            "dialogues": [
+                "Hehehe\\.\\.\\. That's an odd request but sure! \\*boops {author}\\*",
+                "\\*boops {author}\\* Don't mind if I do!~",
+                "Well, can't say no! \\*boops {author}\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Boop-Monika-Target" : {
+            "dialogues": [
+                "Hehehe\\.\\.\\. That's an odd request but sure! \\*boops {content}\\*",
+                "\\*boops {content}\\* Don't mind if I do!~",
+                "Well, can't say no! \\*boops {content}\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Boop-Monika-Monika" : {
+            "dialogues": [
+                "Ahaha! I don't think I can boop myself, silly!"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Boop-Monika-MC": {
+            "dialogues": [
+                "Alright {author_nickname}, I'll do that for you! \\*boops MC\\*"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "MC",
+                "id": "Boop-Monika-MC-R1"
+            }
+        }, 
+        "Boop-Monika-MC-R2": {
+            "dialogues": [
+                "I just felt like doing it\\."
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "MC",
+                "id": "Boop-Monika-MC-R3"
+            }
+        },
+        "Headpat-Player-Monika" : {
+            "dialogues": [
+                "Be gentle! You might knock my bow down!",
+                "Oh, thank you, {author}\\. That really cheered me up!"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Headpat-Monika-Player" : {
+            "dialogues": [
+                "If it makes you happy, sure! \\*headpats {author}\\*",
+                "As club president, I'll happily help! \\*headpats {author}\\*",
+                "A headpat\\? Well that's a pretty odd request but I don't mind! \\*headpats {author}\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Headpat-Monika-Target" : {
+            "dialogues": [
+                "If it makes you happy, sure! \\*headpats {content}\\*",
+                "As club president, I'll happily help! \\*headpats {content}\\*",
+                "A headpat\\? Well that's a pretty odd request but I don't mind! \\*headpats {content}\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Headpat-Monika-Monika" : {
+            "dialogues": [
+                "I've got to set a good example for my club members, haven't I\\? \\*headpats herself\\*"
+            ],
+            "tamper-dialogues": [
+
+            ]
+        },
+        "Headpat-Monika-MC": {
+            "dialogues": [
+                "Ok, I'll do that for you {author_nickname}\\.\\.\\. \\*headpats MC\\*"
+            ],
+            "tamper-dialogues": [
+
+            ],
+            "send": {
+                "to": "MC",
+                "id": "Headpat-Monika-MC-R1"
             }
         }
     }
