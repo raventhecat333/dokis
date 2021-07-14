@@ -1,4 +1,4 @@
 Main doki repo
-DO NOT MODIFY - DO NOT COPY
+The code of the DDLC discord bots, which due to no active development team, have been retired.
 # dokis
 DDLC Bot repo
